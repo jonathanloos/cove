@@ -1,0 +1,340 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser($owner: String!) {
+  onCreateUser(owner: $owner) {
+    id
+    userSub
+    name
+    email
+    phone
+    warningSigns {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    copingStrategies {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    contacts {
+      items {
+        id
+        userID
+        name
+        automaticTextMessage
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    places {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdateUser($owner: String!) {
+  onUpdateUser(owner: $owner) {
+    id
+    userSub
+    name
+    email
+    phone
+    warningSigns {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    copingStrategies {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    contacts {
+      items {
+        id
+        userID
+        name
+        automaticTextMessage
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    places {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeleteUser($owner: String!) {
+  onDeleteUser(owner: $owner) {
+    id
+    userSub
+    name
+    email
+    phone
+    warningSigns {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    copingStrategies {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    contacts {
+      items {
+        id
+        userID
+        name
+        automaticTextMessage
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    places {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnCreateWarningSign($owner: String!) {
+  onCreateWarningSign(owner: $owner) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdateWarningSign($owner: String!) {
+  onUpdateWarningSign(owner: $owner) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeleteWarningSign($owner: String!) {
+  onDeleteWarningSign(owner: $owner) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnCreateCopingStrategy($owner: String!) {
+  onCreateCopingStrategy(owner: $owner) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdateCopingStrategy($owner: String!) {
+  onUpdateCopingStrategy(owner: $owner) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeleteCopingStrategy($owner: String!) {
+  onDeleteCopingStrategy(owner: $owner) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnCreateContact($owner: String!) {
+  onCreateContact(owner: $owner) {
+    id
+    userID
+    name
+    automaticTextMessage
+    phone
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdateContact($owner: String!) {
+  onUpdateContact(owner: $owner) {
+    id
+    userID
+    name
+    automaticTextMessage
+    phone
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeleteContact($owner: String!) {
+  onDeleteContact(owner: $owner) {
+    id
+    userID
+    name
+    automaticTextMessage
+    phone
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnCreatePlace($owner: String!) {
+  onCreatePlace(owner: $owner) {
+    id
+    userID
+    title
+    description
+    address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnUpdatePlace($owner: String!) {
+  onUpdatePlace(owner: $owner) {
+    id
+    userID
+    title
+    description
+    address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+subscription OnDeletePlace($owner: String!) {
+  onDeletePlace(owner: $owner) {
+    id
+    userID
+    title
+    description
+    address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}

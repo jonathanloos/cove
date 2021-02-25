@@ -1,0 +1,39 @@
+<ion-header no-border>
+  <ion-toolbar class="page-header">
+    <ion-item lines="none" class="title-item" class="ion-no-padding">
+      <ion-back-button defaultHref="tabs/safety-plan" slot="start" class="ion-no-margin"></ion-back-button>
+      <ion-label class="page-title" style="margin-top: 10px;">Coping Strategies</ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen #content>
+  <ng-template [ngIf]="!adding" [ngIfElse]="showForm">
+    <div class="ion-text-center">
+      <ion-chip outline color="primary" (click)="displayForm()">
+        <ion-icon name="add"></ion-icon>
+        <ion-label>Strategy</ion-label>
+      </ion-chip>
+    </div>
+  </ng-template>
+  <ng-template #showForm>
+    <form (ngSubmit)="create()" [formGroup]="strategyForm">
+      <ion-card class="brainstorm-card">
+        <ion-card-header class="card-header-border">
+          <ion-input class="display-medium card-header-title" color="primary" placeholder="Title" name="title" formControlName="title"></ion-input>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item class="ion-no-padding">
+            <ion-label position="stacked">Description</ion-label>
+            <ion-textarea formControlName="description" name="description" placeholder="Add a description to your strategy" class="caption description-box subdued ion-no-margin" autoGrow="true"></ion-textarea>
+          </ion-item>
+          <ion-button color="light" style="margin: 10px" (click)="reset()">Cancel</ion-button>
+          <ion-button color="primary" style="float: right; margin: 10px;" type="submit" [disabled]="!strategyForm.valid">Save</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </ng-template>
+  <ion-card *ngFor="let strategy of strategies" class="brainstorm-card">
+    <app-strategy [strategy]="strategy"></app-strategy>
+  </ion-card>
+</ion-content>

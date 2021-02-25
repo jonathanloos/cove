@@ -1,0 +1,33 @@
+<form [formGroup]="signForm" (ngSubmit)="save()">
+  <ion-card-header class="card-header-border">
+    <ion-item lines="none" class="ion-no-padding">
+      <ng-template [ngIf]="editing && sign.id == elementId" [ngIfElse]="showTitle">
+        <ion-input class="display-medium card-header-title" color="primary" name="title" formControlName="title" value="{{sign.title}}"></ion-input>
+      </ng-template>
+      <ng-template #showTitle>
+        <ion-text class="display-medium card-header-title" color="primary">{{sign.title}}</ion-text>
+        <app-ellipsis [id]="sign.id" [type]="'ws'" slot="end"></app-ellipsis>
+      </ng-template>
+    </ion-item>
+  </ion-card-header>
+  <ng-template [ngIf]="editing || sign.description">
+    <ion-card-content>
+      <ng-template [ngIf]="editing && sign.id == elementId" [ngIfElse]="showDesc">
+        <ion-textarea 
+          autoGrow="true"
+          class="body ion-no-padding" 
+          name="description" 
+          formControlName="description"
+          value="{{sign.description}}"
+          clearInput></ion-textarea>
+      </ng-template>
+      <ng-template #showDesc>
+        <p class="body">{{sign.description}}</p>
+      </ng-template>
+    </ion-card-content>
+    <ng-template [ngIf]="editing && sign.id == elementId">
+      <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
+      <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
+    </ng-template>
+  </ng-template>
+</form>

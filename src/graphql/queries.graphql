@@ -1,0 +1,225 @@
+# this is an auto generated file. This will be overwritten
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    userSub
+    name
+    email
+    phone
+    warningSigns {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    copingStrategies {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    contacts {
+      items {
+        id
+        userID
+        name
+        automaticTextMessage
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    places {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userSub
+      name
+      email
+      phone
+      warningSigns {
+        nextToken
+      }
+      copingStrategies {
+        nextToken
+      }
+      contacts {
+        nextToken
+      }
+      places {
+        nextToken
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+    nextToken
+  }
+}
+query GetWarningSign($id: ID!) {
+  getWarningSign(id: $id) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+query ListWarningSigns(
+  $filter: ModelWarningSignFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listWarningSigns(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      title
+      description
+      createdAt
+      updatedAt
+      owner
+    }
+    nextToken
+  }
+}
+query GetCopingStrategy($id: ID!) {
+  getCopingStrategy(id: $id) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+query ListCopingStrategys(
+  $filter: ModelCopingStrategyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCopingStrategys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      title
+      description
+      createdAt
+      updatedAt
+      owner
+    }
+    nextToken
+  }
+}
+query GetContact($id: ID!) {
+  getContact(id: $id) {
+    id
+    userID
+    name
+    automaticTextMessage
+    phone
+    createdAt
+    updatedAt
+    owner
+  }
+}
+query ListContacts(
+  $filter: ModelContactFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listContacts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      name
+      automaticTextMessage
+      phone
+      createdAt
+      updatedAt
+      owner
+    }
+    nextToken
+  }
+}
+query GetPlace($id: ID!) {
+  getPlace(id: $id) {
+    id
+    userID
+    title
+    description
+    address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+query ListPlaces(
+  $filter: ModelPlaceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPlaces(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      userID
+      title
+      description
+      address {
+        street
+        city
+        postalCode
+        province
+        country
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+    nextToken
+  }
+}

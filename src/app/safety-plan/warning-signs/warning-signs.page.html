@@ -1,0 +1,44 @@
+<ion-header no-border>
+  <ion-toolbar class="page-header">
+    <ion-item lines="none" class="title-item" class="ion-no-padding">
+      <ion-back-button defaultHref="tabs/safety-plan" slot="start" class="ion-no-margin"></ion-back-button>
+      <ion-label class="page-title" style="margin-top: 10px;">Warning Signs</ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content fullscreen>
+  <ng-template [ngIf]="!adding" [ngIfElse]="showForm">
+    <div class="ion-text-center">
+      <ion-chip outline color="primary" (click)="displayForm()">
+        <ion-icon name="add"></ion-icon>
+        <ion-label>Warning Sign</ion-label>
+      </ion-chip>
+    </div>
+  </ng-template>
+  <ng-template #showForm>
+    <form [formGroup]="wsForm" (ngSubmit)="create()">
+      <ion-card class="brainstorm-card">
+        <ion-card-header class="card-header-border">
+          <ion-item lines="none" class="ion-no-padding">
+            <ion-input class="display-medium card-header-title" color="primary" name="title" formControlName="title" placeholder="Title"></ion-input>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-textarea 
+              autoGrow="true"
+              class="body ion-no-padding" 
+              name="description" 
+              formControlName="description"
+              placeholder="Description"
+              clearInput></ion-textarea>
+        </ion-card-content>
+        <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
+        <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
+      </ion-card>
+    </form>
+  </ng-template>
+  <ion-card *ngFor="let sign of signs" class="brainstorm-card">
+    <app-sign [sign]="sign"></app-sign>
+  </ion-card>
+</ion-content>

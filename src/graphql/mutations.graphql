@@ -1,0 +1,385 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    userSub
+    name
+    email
+    phone
+    warningSigns {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    copingStrategies {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    contacts {
+      items {
+        id
+        userID
+        name
+        automaticTextMessage
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    places {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    userSub
+    name
+    email
+    phone
+    warningSigns {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    copingStrategies {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    contacts {
+      items {
+        id
+        userID
+        name
+        automaticTextMessage
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    places {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    userSub
+    name
+    email
+    phone
+    warningSigns {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    copingStrategies {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    contacts {
+      items {
+        id
+        userID
+        name
+        automaticTextMessage
+        phone
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    places {
+      items {
+        id
+        userID
+        title
+        description
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation CreateWarningSign(
+  $input: CreateWarningSignInput!
+  $condition: ModelWarningSignConditionInput
+) {
+  createWarningSign(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation UpdateWarningSign(
+  $input: UpdateWarningSignInput!
+  $condition: ModelWarningSignConditionInput
+) {
+  updateWarningSign(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation DeleteWarningSign(
+  $input: DeleteWarningSignInput!
+  $condition: ModelWarningSignConditionInput
+) {
+  deleteWarningSign(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation CreateCopingStrategy(
+  $input: CreateCopingStrategyInput!
+  $condition: ModelCopingStrategyConditionInput
+) {
+  createCopingStrategy(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation UpdateCopingStrategy(
+  $input: UpdateCopingStrategyInput!
+  $condition: ModelCopingStrategyConditionInput
+) {
+  updateCopingStrategy(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation DeleteCopingStrategy(
+  $input: DeleteCopingStrategyInput!
+  $condition: ModelCopingStrategyConditionInput
+) {
+  deleteCopingStrategy(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation CreateContact(
+  $input: CreateContactInput!
+  $condition: ModelContactConditionInput
+) {
+  createContact(input: $input, condition: $condition) {
+    id
+    userID
+    name
+    automaticTextMessage
+    phone
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation UpdateContact(
+  $input: UpdateContactInput!
+  $condition: ModelContactConditionInput
+) {
+  updateContact(input: $input, condition: $condition) {
+    id
+    userID
+    name
+    automaticTextMessage
+    phone
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation DeleteContact(
+  $input: DeleteContactInput!
+  $condition: ModelContactConditionInput
+) {
+  deleteContact(input: $input, condition: $condition) {
+    id
+    userID
+    name
+    automaticTextMessage
+    phone
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation CreatePlace(
+  $input: CreatePlaceInput!
+  $condition: ModelPlaceConditionInput
+) {
+  createPlace(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation UpdatePlace(
+  $input: UpdatePlaceInput!
+  $condition: ModelPlaceConditionInput
+) {
+  updatePlace(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}
+mutation DeletePlace(
+  $input: DeletePlaceInput!
+  $condition: ModelPlaceConditionInput
+) {
+  deletePlace(input: $input, condition: $condition) {
+    id
+    userID
+    title
+    description
+    address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    createdAt
+    updatedAt
+    owner
+  }
+}

@@ -1,0 +1,27 @@
+<form (ngSubmit)="save()" [formGroup]="CSForm">
+  <ion-card-header class="card-header-border">
+    <ion-item lines="none" class="ion-no-padding">
+      <ng-template [ngIf]="editing && elementId==strategy.id" [ngIfElse]="showBlock">
+        <ion-input name="title" formControlName="title" class="display-medium card-header-title" color="primary"></ion-input>
+      </ng-template>
+      <ng-template #showBlock>
+        <ion-text class="display-medium card-header-title" color="primary">{{strategy.title}}</ion-text>
+        <app-ellipsis [id]="strategy.id" [type]="'cs'" slot="end"></app-ellipsis>
+      </ng-template>
+    </ion-item>
+  </ion-card-header>
+  <ng-template [ngIf]="editing || strategy.description">
+    <ion-card-content>
+      <ng-template [ngIf]="editing && elementId==strategy.id" [ngIfElse]="showDetailsBlock">
+        <ion-textarea name="description" formControlName="description" class="body ion-no-padding" autoGrow="true"></ion-textarea>
+      </ng-template>
+      <ng-template #showDetailsBlock>
+        <p class="body">{{strategy.description}}</p>
+      </ng-template>
+      <ng-template [ngIf]="editing && elementId==strategy.id">
+        <ion-button (click)="reset()" color="light" style="margin: 10px;">Cancel</ion-button>
+        <ion-button type="submit" color="primary" style="float: right; margin: 10px;">Save</ion-button>
+      </ng-template>
+    </ion-card-content>
+  </ng-template>
+</form>

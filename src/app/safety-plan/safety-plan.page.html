@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-toolbar class="page-header">
+    <ion-item lines="none" class="title-item" class="ion-no-padding">
+      <ion-avatar>
+        <img src="../assets/icons/icon-72x72.png">
+      </ion-avatar>
+      <h1 class="page-title" style="margin-top: 10px;"><b>My Safety Plan</b></h1>
+      <br/>
+      <small><ion-text color="medium">v0.0.6</ion-text></small>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="brainstorm-card">
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="ion-no-padding other-items" *ngFor="let item of menu_items; let i = index" [ngClass]="{'first-item': i == 0, 'last-item': i == 3}" lines="none">
+          <ion-grid routerLink="{{item.path}}" routerDirection="forward">
+            <ion-row style="width: 100%;">
+              <ion-col size="2" style="text-align: center;">
+                <div shape="round" class="sp-icon-div">
+                  <ion-icon color="primary" name="{{item.icon}}"></ion-icon>
+                </div>
+              </ion-col>
+              <ion-col size="9">
+                  <h6 class="h6" style="padding-top: 5px;">{{item.title}}</h6>
+                  <div *ngFor="let detail of item.details">
+                    <ion-text class="caption subdued list-ws-item">{{detail}}</ion-text>
+                  </div>
+              </ion-col>
+              <ion-col size="1">
+                <ion-icon name="arrow-dropright"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  
+  <ion-slides [options]="slideOpts">
+    <ion-slide>
+      <div class="slide">
+        <img src="../assets/images/undraw_enter_uhqk.svg" class="w-50 mt-4 d-inline-block"/>
+        <div class="mx-4">
+          <h2>Glad you're back 🤗</h2>
+          <p>Always remember you matter, you are worth it and you are <ion-text color="danger">loved.</ion-text></p>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="card brainstorm-card m-2 mt-4 shadow-sm">
+            <div class="card-body">
+              <ion-item>
+                <ion-input name="email" formControlName="email" type="text" placeholder="Email"></ion-input>
+              </ion-item>
+              <ion-item style="margin-top: 1rem;">
+                <ion-input name="password" formControlName="password" type="password" placeholder="Password"></ion-input>
+                <ion-button color="primary" type="submit" slot="end">Login <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+              </ion-item>
+            </div>
+          </div>
+          <div class="mb-0 mt-3 mx-2">
+            <div class="float-left">
+              <br/>
+              <ion-button color="light" [routerLink]="['/entry']"><ion-icon slot="start" name="arrow-back"></ion-icon>Back</ion-button>
+            </div>
+            <div class="float-right text-right">
+              <small><ion-text color="medium">Don't have an account?</ion-text></small><br/>
+              <ion-button color="light" [routerLink]="['/register']">Sign Up</ion-button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

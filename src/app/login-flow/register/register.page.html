@@ -1,0 +1,36 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  
+  <ion-slides [options]="slideOpts">
+    <ion-slide>
+      <img src="../assets/images/undraw_mobile_login_ikmv.svg"/>
+      <h2 class="mt-3">Hey there! Lets get started.</h2>
+      <p class="mx-3 mb-3">We're excited to have you join our community. To help keep your information safe and secure, please provide your email and a password.</p>
+      <form [formGroup]="registerForm" (ngSubmit)="proceedToVerification()">
+        <ion-card class="brainstorm-card">
+          <ion-card-content>
+            <ion-item>
+              <ion-input name="email" formControlName="email" type="text" placeholder="Email"></ion-input>
+            </ion-item>
+            <ion-item class="mt-2">
+              <ion-input name="password" formControlName="password" type="password" placeholder="Password"></ion-input>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <div class="float-right mr-3">
+          <ion-chip outline color="primary" [routerLink]="['/login']">
+            <ion-icon name="person"></ion-icon>
+            <ion-label>Already have an account? Login here</ion-label>
+            <ion-icon name="arrow-forward"></ion-icon>
+          </ion-chip>
+        </div>
+        <ion-item  lines="none" class="fixed-bottom mb-3 mx-3">
+          <ion-button fill="clear" [routerLink]="['/entry']" slot="start">Back <ion-icon slot="start" name="arrow-back"></ion-icon></ion-button>
+          <ion-button color="primary" type="submit" slot="end">Next <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+        </ion-item>
+      </form>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,19 @@
+.first-item{
+  padding-top: 0 !important;
+}
+
+.other-items{
+  padding: 0.5rem 0 0.5rem 0;
+  border-bottom: 1px solid rgba(228, 228, 228, 0.6);
+}
+
+.last-item{
+  padding-bottom: 0 !important;
+  border: none !important;
+}
+
+.list-ws-item{
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

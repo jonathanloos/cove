@@ -1,0 +1,28 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="slideOpts">
+    <ion-slide>
+      <img src="../assets/images/undraw_authentication_fsn5.svg"/>
+      <h2>Check your email!</h2>
+      <p>We've sent you a 6 digit confirmation code to finish your account setup. Please type it in below: </p>
+      <div class="absolute-bottom">
+        <form [formGroup]="verificationCodeForm" (ngSubmit)="confirmVerificationCode()">
+          <ion-card class="brainstorm-card" style="background-color: white; width: 90vw; margin: 0; margin-left: -50%; padding: 1rem;">
+            <ion-card-content>
+              <ion-item>
+                <ion-input name="code" formControlName="code" type="number" placeholder="Verification Code"></ion-input>
+                <small><ion-text id="formErrors" color="danger"></ion-text></small>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <ion-item  style="width: 90vw; margin: 0; margin-left: -50%; margin-top: 1rem;" lines="none">
+            <ion-button fill="clear" [routerLink]="['/register']" slot="start">Back <ion-icon slot="start" name="arrow-back"></ion-icon></ion-button>
+            <ion-button fill="clear" type="submit" slot="end">Confirm Account <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+          </ion-item>
+        </form>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

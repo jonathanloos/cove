@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-covemobileapp-dev-152616-authRole",
+      "UnauthRoleArn": "arn:aws:iam::762139536326:role/amplify-covemobileapp-dev-152616-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::762139536326:role/amplify-covemobileapp-dev-152616-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-covemobileapp-dev-152616-deployment",
+      "UnauthRoleName": "amplify-covemobileapp-dev-152616-unauthRole",
+      "StackName": "amplify-covemobileapp-dev-152616",
+      "StackId": "arn:aws:cloudformation:ca-central-1:762139536326:stack/amplify-covemobileapp-dev-152616/3f3b0ea0-5db9-11eb-9d53-0a05f3960164",
+      "AmplifyAppId": "d3kfpdkxdpsls5"
+    },
+    "categories": {
+      "auth": {
+        "covemobileapp45ceac02": {}
+      }
+    }
+  }
+}

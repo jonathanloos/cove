@@ -1,0 +1,41 @@
+<form [formGroup]="PTCForm" (ngSubmit)="save()">
+  <ion-card-header class="card-header-border">
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-avatar slot="start">
+        <img src="../../../assets/avatars/img_avatar2.png"/>
+      </ion-avatar>
+      <ion-input name="name" formControlName="name" class="heading ion-no-padding" value="{{contact.name}}" readonly="{{!editing || contact.id != elementId}}"></ion-input>
+      <ng-template [ngIf]="contact.id != elementId">
+        <app-ellipsis [id]="contact.id" [type]="'pc'" slot="end"></app-ellipsis>
+      </ng-template>
+    </ion-item>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label position="stacked">
+        <p class="body subdued" style="margin-top: 0px !important;">Phone</p>
+      </ion-label>
+      <ion-input name="phone" formControlName="phone" class="body" style="margin-top: 0px !important;" value="{{contact.phone}}" readonly="{{!editing || contact.id != elementId}}"></ion-input>
+    </ion-item>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label position="stacked">
+        <p class="body subdued" style="margin-top: 0px !important;">Automatic Message</p>
+      </ion-label>
+      <ion-textarea name="automaticTextMessage" formControlName="automaticTextMessage" class="body" style="margin-top: 0px !important;" value="{{contact.automaticTextMessage}}" autoGrow="true" readonly="{{!editing || contact.id != elementId}}"></ion-textarea>
+    </ion-item>
+    <ng-template [ngIf]="editing && contact.id == elementId">
+      <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
+      <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
+    </ng-template>
+    <ng-template [ngIf]="!editing && !(contact.id == elementId)">
+      <ion-row class="ion-justify-content-center ion-text-center">
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="6" size-xs="6">
+          <a href="{{call_link}}" style="text-decoration: none"><ion-text  color="success"><ion-icon name="call"  style="vertical-align: middle;"></ion-icon> Call</ion-text></a>
+        </ion-col>
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="6" size-xs="6">
+          <a [attr.href]="text_message_link | safeUrl" style="text-decoration: none"><ion-text  color="primary"><ion-icon name="chatbubbles" style="vertical-align: middle;"></ion-icon> Message</ion-text></a>
+        </ion-col>
+      </ion-row>
+    </ng-template>
+  </ion-card-content>
+</form>

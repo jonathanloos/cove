@@ -1,0 +1,49 @@
+type User @model @auth(rules: [{ allow: owner }]){
+  id: ID!
+  userSub: ID!
+  name: String
+  email: String!
+  phone: String
+  warningSigns: [WarningSign] @connection(keyName: "byUser", fields: ["id"])
+  copingStrategies: [CopingStrategy] @connection(keyName: "byUser", fields: ["id"])
+  contacts: [Contact] @connection(keyName: "byUser", fields: ["id"])
+  places: [Place] @connection(keyName: "byUser", fields: ["id"])
+}
+
+type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+  id: ID!
+  userID: ID!
+  title: String!
+  description: String
+}
+
+type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+  id: ID!
+  userID: ID!
+  title: String!
+  description: String
+}
+
+type Contact @model @key(name: "byUser", fields: ["userID", "name"]) @auth(rules: [{ allow: owner }]){
+  id: ID!
+  userID: ID!
+  name: String
+  automaticTextMessage: String!
+  phone: String
+}
+
+type Place @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+  id: ID!
+  userID: ID!
+  title: String!
+  description: String
+  address: Address
+}
+
+type Address {
+  street: String,
+  city: String,
+  postalCode: String,
+  province: String,
+  country: String
+}

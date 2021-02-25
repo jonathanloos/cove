@@ -1,0 +1,63 @@
+<ion-header no-border>
+</ion-header>
+
+<ion-content>
+  <h1 class="page-title ion-text-center" style="margin-top: 3rem;">
+    <div *ngIf="user$ | async as user">
+      <b>Hi {{user.name}}!</b><br/>
+      <ion-chip  color="primary">
+        <ion-avatar>
+          <img src="../assets/avatars/logo.svg">
+        </ion-avatar>
+        <ion-label>Member since {{user.createdAt}}</ion-label>
+      </ion-chip>
+    </div>
+  </h1>
+  <ion-card class="brainstorm-card">
+    <ion-card-content>
+      <form [formGroup]="userForm" (ngSubmit)="update()">
+        <div class="ion-text-center">
+        </div>
+        <div class="ion-padding">
+          <ion-item>
+            <ion-label color="medium">Name: </ion-label>
+            <ion-input *ngIf="user$ | async" formControlName="name" name="name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label color="medium">Email: </ion-label>
+            <ion-input *ngIf="user$ | async" formControlName="email" name="email"></ion-input>
+          </ion-item>
+        </div>
+  
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit">Save</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="brainstorm-card">
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="ion-no-padding other-items" *ngFor="let item of menu_items; let i = index" [ngClass]="{'first-item': i == 0, 'last-item': i == 3}" (click)="openWebsite()">
+          <ion-grid>
+            <ion-row style="width: 100%;">
+              <ion-col size="2" style="text-align: center;">
+                <div shape="round" class="sp-icon-div">
+                  <ion-icon color="primary" name="{{item.icon}}"></ion-icon>
+                </div>
+              </ion-col>
+              <ion-col size="10">
+                  <h6 class="h6" style="padding-top: 5px;">{{item.title}}</h6>
+                  <div *ngFor="let detail of item.details">
+                    <ion-text class="caption subdued list-ws-item">{{detail}}</ion-text>
+                  </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-button class="mx-2" expand="block" color="light" (click)="signOut()">Sign Out</ion-button>
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-toolbar class="page-header">
+    <ion-back-button defaultHref="tabs/safety-plan" slot="start" class="ion-no-margin"></ion-back-button>
+    <h1 class="page-title" style="margin-top: 10px;">People To Call</h1>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen #content>
+  <ng-template [ngIf]="!adding" [ngIfElse]="showForm">
+    <div class="ion-text-center">
+      <ion-chip outline color="primary" (click)="displayForm()">
+        <ion-icon name="add"></ion-icon>
+        <ion-label>Contact</ion-label>
+      </ion-chip>
+    </div>
+  </ng-template>
+  <ng-template #showForm>
+    <form [formGroup]="newPTCForm" (ngSubmit)="create()">
+      <ion-card class="brainstorm-card">
+        <ion-card-header class="card-header-border">
+          <ion-item lines="none" class="ion-no-padding">
+            <ion-avatar slot="start">
+              <img src="../../../assets/avatars/img_avatar2.png"/>
+            </ion-avatar>
+            <ion-label position="floating">
+              <p class="body subdued" style="margin-top: 0px !important;">Name</p>
+            </ion-label>
+            <ion-input name="name" formControlName="name" class="heading ion-no-padding" (keyup)="updateDefaultMessage($event)"></ion-input>
+          </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label position="floating">
+                <p class="body subdued" style="margin-top: 0px !important;">Phone</p>
+              </ion-label>
+              <ion-input name="phone" formControlName="phone" class="body" style="margin-top: 0px !important;"></ion-input>
+            </ion-item>
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label position="stacked">
+                <p class="body subdued" style="margin-top: 0px !important;">Automatic Message</p>
+              </ion-label>
+              <ion-textarea name="automaticTextMessage" formControlName="automaticTextMessage" class="body" style="margin-top: 0px !important;" value="{{defaultMessage}}" autoGrow="true"></ion-textarea>
+            </ion-item>
+            <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
+            <ion-button color="primary" type="submit" style="float: right; margin: 10px;" [disabled]="!newPTCForm.valid">Save</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </ng-template>
+  <ion-card *ngFor="let contact of personal_contacts" class="brainstorm-card">
+    <app-person [contact]="contact"></app-person>
+  </ion-card>
+</ion-content>

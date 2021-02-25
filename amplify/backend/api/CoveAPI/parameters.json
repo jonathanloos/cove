@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "CoveAPI",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authcovemobileapp45ceac02",
+      "Outputs.UserPoolId"
+    ]
+  }
+}
