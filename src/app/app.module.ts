@@ -24,10 +24,6 @@ import { ContactService } from './core/services/contacts/contact.service';
 import { PlaceService } from './core/services/places/place.service';
 import { SQLite } from '@ionic-native/sqlite/ngx';
  
-import { Camera } from '@ionic-native/Camera/ngx';
-import { File } from '@ionic-native/File/ngx';
-import { WebView } from '@ionic-native/ionic-webview/ngx';
-import { FilePath } from '@ionic-native/file-path/ngx';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SafeUrlPipe } from './core/services/pipe/safe-url.pipe';
@@ -77,10 +73,6 @@ Amplify.configure(awsconfig);
     LaunchNavigator,
     GetHelpComponent,
     SQLite,
-    Camera,
-    File,
-    WebView,
-    FilePath,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

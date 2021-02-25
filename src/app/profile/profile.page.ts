@@ -15,7 +15,7 @@ import { MutableModel } from "@aws-amplify/datastore";
 })
 export class ProfilePage implements OnInit {
   private user : User;
-  private user$ = new Observable<User>((observer : Observer<User>) => {
+  public user$ = new Observable<User>((observer : Observer<User>) => {
     this.authService.currentUserSubject.subscribe(user => {
       this.user = user
       observer.next(user);
