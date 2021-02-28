@@ -6,6 +6,7 @@ import { ContactService } from '../core/services/contacts/contact.service';
 import { PlaceService } from '../core/services/places/place.service';
 import { WarningSignsService } from '../core/services/warning-signs/warning-signs.service';
 import { User } from 'src/models';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-safety-plan',
@@ -48,7 +49,8 @@ export class SafetyPlanPage {
     private authService: AuthService,
     private copingStrategyService: CopingStrategiesService,
     private ContactService: ContactService,
-    private PlaceService: PlaceService
+    private PlaceService: PlaceService,
+    public toastController: ToastController,
     ) {}
 
   async ngOnInit(){  }
@@ -56,6 +58,7 @@ export class SafetyPlanPage {
   async ionViewWillEnter(){
     await this.authService.currentAuthenticatedUser().then(async (user) => {
       this.currentUser = user;
+      this.presentToast(this.currentUser.name, 'success')
       await this.warningSignService.list(this.currentUser.id).then((signs : any) => {
         this.menu_items[0].details = [];
         if(signs.length > 0){
@@ -99,6 +102,16 @@ export class SafetyPlanPage {
           this.menu_items[3].details.push("Log your first place here.")
         }
       });
+    })
+    .catch((err) => {this.presentToast(err, 'danger')});
+  }
+
+  async presentToast(message: string, type: string) {
+    const toast = await this.toastController.create({
+      message: message,
+      color: type,
+      duration: 2000
     });
+    await toast.present();
   }
 }
