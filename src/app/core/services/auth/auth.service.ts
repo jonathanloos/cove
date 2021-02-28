@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   public async register(user: User){
-    await this.scrubLocalDb(user.userSub);
+    // await this.scrubLocalDb(user.userSub);
     await this.userService.create(user).then(async (user : any) => {
       await this.loadUser();
     });
@@ -51,7 +51,15 @@ export class AuthService {
 
   public async currentAuthenticatedUser(){
     return await Auth.currentAuthenticatedUser().then(async (user) => {
-      return await this.userService.get();
+      const currentUserInDb = await this.userService.get();
+      // Check if there's a user, otherwise create them.
+      if(currentUserInDb){
+        console.log("Found a user!", currentUserInDb)
+        return currentUserInDb;
+      }else{
+        console.log("Couldn't find a user", user)
+        return undefined
+      }
     })
       .catch(error => { return error });
   }
@@ -87,16 +95,16 @@ export class AuthService {
     return await this.userService.get().then(async user => {
       const currentLoadedUser = user;
       // Only sync data the user can see
-      DataStore.configure({
-        // Selective Sync Config
-        syncExpressions: [
-          syncExpression(User, s => s.userSub('eq', userSub)),
-          syncExpression(Contact, s => s.userID('eq', userSub)),
-          syncExpression(CopingStrategy, s => s.userID('eq', userSub)),
-          syncExpression(Place, s => s.userID('eq', userSub)),
-          syncExpression(WarningSign, s => s.userID('eq', userSub)),
-        ]
-      });
+      // DataStore.configure({
+      //   // Selective Sync Config
+      //   syncExpressions: [
+      //     syncExpression(User, s => s.userSub('eq', userSub)),
+      //     syncExpression(Contact, s => s.userID('eq', userSub)),
+      //     syncExpression(CopingStrategy, s => s.userID('eq', userSub)),
+      //     syncExpression(Place, s => s.userID('eq', userSub)),
+      //     syncExpression(WarningSign, s => s.userID('eq', userSub)),
+      //   ]
+      // });
       // If logged in user != current user in db
       if(currentLoadedUser != undefined && currentLoadedUser.userSub != userSub){
         // Clear local cache

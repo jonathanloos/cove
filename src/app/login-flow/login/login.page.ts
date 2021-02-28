@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastController, AlertController, LoadingController } from '@ionic/angular';
+import { DataStore } from 'aws-amplify';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 
@@ -46,12 +47,13 @@ export class LoginPage implements OnInit {
 
       await this.authService.signIn(this.loginForm.value.email, this.loginForm.value.password).then(async (res) => {
         loading.dismiss();
-        await this.authService.scrubLocalDb(res.attributes.sub).then(async () => {
+        DataStore.query;
+        // await this.authService.scrubLocalDb(res.attributes.sub).then(async () => {
           this.loginForm.reset();
 
           const url = "/tabs/safety-plan";
           this.router.navigateByUrl(url);
-        });
+        // });
       })
       .catch( async err => { 
         loading.dismiss();

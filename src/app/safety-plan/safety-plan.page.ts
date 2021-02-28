@@ -59,6 +59,7 @@ export class SafetyPlanPage {
     await this.authService.currentAuthenticatedUser().then(async (user) => {
       this.currentUser = user;
       this.presentToast(this.currentUser.name, 'success')
+      console.log("Idk... ", user)
       await this.warningSignService.list(this.currentUser.id).then((signs : any) => {
         this.menu_items[0].details = [];
         if(signs.length > 0){
