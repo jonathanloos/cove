@@ -1,6 +1,6 @@
 {
     "identityPoolName": "covemobileapp45ceac02_identitypool_45ceac02",
-    "allowUnauthenticatedIdentities": true,
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "covemo45ceac02",
     "userPoolName": "covemobileapp45ceac02_userpool_45ceac02",
     "autoVerifiedAttributes": [
@@ -45,7 +45,7 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "manual",
     "usernameAttributes": [
         "email"
     ],
@@ -57,5 +57,9 @@
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": []
+    "dependsOn": [],
+    "thirdPartyAuth": false,
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "hostedUI": false
 }

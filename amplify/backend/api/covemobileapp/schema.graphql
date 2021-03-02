@@ -1,4 +1,4 @@
-type User @model @auth(rules: [{ allow: owner }]){
+type User @model{
   id: ID!
   userSub: ID!
   name: String
@@ -10,21 +10,21 @@ type User @model @auth(rules: [{ allow: owner }]){
   places: [Place] @connection(keyName: "byUser", fields: ["id"])
 }
 
-type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]){
   id: ID!
   userID: ID!
   title: String!
   description: String
 }
 
-type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]){
   id: ID!
   userID: ID!
   title: String!
   description: String
 }
 
-type Contact @model @key(name: "byUser", fields: ["userID", "name"]) @auth(rules: [{ allow: owner }]){
+type Contact @model @key(name: "byUser", fields: ["userID", "name"]){
   id: ID!
   userID: ID!
   name: String
@@ -32,7 +32,7 @@ type Contact @model @key(name: "byUser", fields: ["userID", "name"]) @auth(rules
   phone: String
 }
 
-type Place @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+type Place @model @key(name: "byUser", fields: ["userID", "title"]){
   id: ID!
   userID: ID!
   title: String!

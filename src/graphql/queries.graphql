@@ -14,7 +14,6 @@ query GetUser($id: ID!) {
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -26,7 +25,6 @@ query GetUser($id: ID!) {
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -39,7 +37,6 @@ query GetUser($id: ID!) {
         phone
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -51,13 +48,11 @@ query GetUser($id: ID!) {
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
     createdAt
     updatedAt
-    owner
   }
 }
 query ListUsers(
@@ -86,7 +81,6 @@ query ListUsers(
       }
       createdAt
       updatedAt
-      owner
     }
     nextToken
   }
@@ -99,7 +93,6 @@ query GetWarningSign($id: ID!) {
     description
     createdAt
     updatedAt
-    owner
   }
 }
 query ListWarningSigns(
@@ -115,7 +108,6 @@ query ListWarningSigns(
       description
       createdAt
       updatedAt
-      owner
     }
     nextToken
   }
@@ -128,7 +120,6 @@ query GetCopingStrategy($id: ID!) {
     description
     createdAt
     updatedAt
-    owner
   }
 }
 query ListCopingStrategys(
@@ -144,7 +135,6 @@ query ListCopingStrategys(
       description
       createdAt
       updatedAt
-      owner
     }
     nextToken
   }
@@ -158,7 +148,6 @@ query GetContact($id: ID!) {
     phone
     createdAt
     updatedAt
-    owner
   }
 }
 query ListContacts(
@@ -175,7 +164,6 @@ query ListContacts(
       phone
       createdAt
       updatedAt
-      owner
     }
     nextToken
   }
@@ -195,7 +183,6 @@ query GetPlace($id: ID!) {
     }
     createdAt
     updatedAt
-    owner
   }
 }
 query ListPlaces(
@@ -218,7 +205,6 @@ query ListPlaces(
       }
       createdAt
       updatedAt
-      owner
     }
     nextToken
   }

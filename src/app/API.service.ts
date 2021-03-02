@@ -284,7 +284,6 @@ export type CreateUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -298,7 +297,6 @@ export type CreateUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -313,7 +311,6 @@ export type CreateUserMutation = {
       phone: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -327,13 +324,11 @@ export type CreateUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateUserMutation = {
@@ -353,7 +348,6 @@ export type UpdateUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -367,7 +361,6 @@ export type UpdateUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -382,7 +375,6 @@ export type UpdateUserMutation = {
       phone: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -396,13 +388,11 @@ export type UpdateUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteUserMutation = {
@@ -422,7 +412,6 @@ export type DeleteUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -436,7 +425,6 @@ export type DeleteUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -451,7 +439,6 @@ export type DeleteUserMutation = {
       phone: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -465,13 +452,11 @@ export type DeleteUserMutation = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateWarningSignMutation = {
@@ -482,7 +467,6 @@ export type CreateWarningSignMutation = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateWarningSignMutation = {
@@ -493,7 +477,6 @@ export type UpdateWarningSignMutation = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteWarningSignMutation = {
@@ -504,7 +487,6 @@ export type DeleteWarningSignMutation = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateCopingStrategyMutation = {
@@ -515,7 +497,6 @@ export type CreateCopingStrategyMutation = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateCopingStrategyMutation = {
@@ -526,7 +507,6 @@ export type UpdateCopingStrategyMutation = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteCopingStrategyMutation = {
@@ -537,7 +517,6 @@ export type DeleteCopingStrategyMutation = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateContactMutation = {
@@ -549,7 +528,6 @@ export type CreateContactMutation = {
   phone: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateContactMutation = {
@@ -561,7 +539,6 @@ export type UpdateContactMutation = {
   phone: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteContactMutation = {
@@ -573,7 +550,6 @@ export type DeleteContactMutation = {
   phone: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreatePlaceMutation = {
@@ -592,7 +568,6 @@ export type CreatePlaceMutation = {
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdatePlaceMutation = {
@@ -611,7 +586,6 @@ export type UpdatePlaceMutation = {
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeletePlaceMutation = {
@@ -630,7 +604,6 @@ export type DeletePlaceMutation = {
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type GetUserQuery = {
@@ -650,7 +623,6 @@ export type GetUserQuery = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -664,7 +636,6 @@ export type GetUserQuery = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -679,7 +650,6 @@ export type GetUserQuery = {
       phone: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -693,13 +663,11 @@ export type GetUserQuery = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListUsersQuery = {
@@ -729,7 +697,6 @@ export type ListUsersQuery = {
     } | null;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
 };
@@ -742,7 +709,6 @@ export type GetWarningSignQuery = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListWarningSignsQuery = {
@@ -755,7 +721,6 @@ export type ListWarningSignsQuery = {
     description: string | null;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
 };
@@ -768,7 +733,6 @@ export type GetCopingStrategyQuery = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListCopingStrategysQuery = {
@@ -781,7 +745,6 @@ export type ListCopingStrategysQuery = {
     description: string | null;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
 };
@@ -795,7 +758,6 @@ export type GetContactQuery = {
   phone: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListContactsQuery = {
@@ -809,7 +771,6 @@ export type ListContactsQuery = {
     phone: string | null;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
 };
@@ -830,7 +791,6 @@ export type GetPlaceQuery = {
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListPlacesQuery = {
@@ -851,7 +811,6 @@ export type ListPlacesQuery = {
     } | null;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
 };
@@ -873,7 +832,6 @@ export type OnCreateUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -887,7 +845,6 @@ export type OnCreateUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -902,7 +859,6 @@ export type OnCreateUserSubscription = {
       phone: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -916,13 +872,11 @@ export type OnCreateUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateUserSubscription = {
@@ -942,7 +896,6 @@ export type OnUpdateUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -956,7 +909,6 @@ export type OnUpdateUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -971,7 +923,6 @@ export type OnUpdateUserSubscription = {
       phone: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -985,13 +936,11 @@ export type OnUpdateUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteUserSubscription = {
@@ -1011,7 +960,6 @@ export type OnDeleteUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -1025,7 +973,6 @@ export type OnDeleteUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -1040,7 +987,6 @@ export type OnDeleteUserSubscription = {
       phone: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
@@ -1054,13 +1000,11 @@ export type OnDeleteUserSubscription = {
       description: string | null;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateWarningSignSubscription = {
@@ -1071,7 +1015,6 @@ export type OnCreateWarningSignSubscription = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateWarningSignSubscription = {
@@ -1082,7 +1025,6 @@ export type OnUpdateWarningSignSubscription = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteWarningSignSubscription = {
@@ -1093,7 +1035,6 @@ export type OnDeleteWarningSignSubscription = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateCopingStrategySubscription = {
@@ -1104,7 +1045,6 @@ export type OnCreateCopingStrategySubscription = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateCopingStrategySubscription = {
@@ -1115,7 +1055,6 @@ export type OnUpdateCopingStrategySubscription = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteCopingStrategySubscription = {
@@ -1126,7 +1065,6 @@ export type OnDeleteCopingStrategySubscription = {
   description: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateContactSubscription = {
@@ -1138,7 +1076,6 @@ export type OnCreateContactSubscription = {
   phone: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateContactSubscription = {
@@ -1150,7 +1087,6 @@ export type OnUpdateContactSubscription = {
   phone: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteContactSubscription = {
@@ -1162,7 +1098,6 @@ export type OnDeleteContactSubscription = {
   phone: string | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreatePlaceSubscription = {
@@ -1181,7 +1116,6 @@ export type OnCreatePlaceSubscription = {
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdatePlaceSubscription = {
@@ -1200,7 +1134,6 @@ export type OnUpdatePlaceSubscription = {
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeletePlaceSubscription = {
@@ -1219,7 +1152,6 @@ export type OnDeletePlaceSubscription = {
   } | null;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 @Injectable({
@@ -1248,7 +1180,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1262,7 +1193,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1277,7 +1207,6 @@ export class APIService {
               phone
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1291,13 +1220,11 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1333,7 +1260,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1347,7 +1273,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1362,7 +1287,6 @@ export class APIService {
               phone
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1376,13 +1300,11 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1418,7 +1340,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1432,7 +1353,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1447,7 +1367,6 @@ export class APIService {
               phone
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1461,13 +1380,11 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1494,7 +1411,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1521,7 +1437,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1548,7 +1463,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1575,7 +1489,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1602,7 +1515,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1629,7 +1541,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1657,7 +1568,6 @@ export class APIService {
           phone
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1685,7 +1595,6 @@ export class APIService {
           phone
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1713,7 +1622,6 @@ export class APIService {
           phone
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1748,7 +1656,6 @@ export class APIService {
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1783,7 +1690,6 @@ export class APIService {
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1818,7 +1724,6 @@ export class APIService {
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1851,7 +1756,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1865,7 +1769,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1880,7 +1783,6 @@ export class APIService {
               phone
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -1894,13 +1796,11 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -1944,7 +1844,6 @@ export class APIService {
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -1974,7 +1873,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -2001,7 +1899,6 @@ export class APIService {
             description
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2031,7 +1928,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -2058,7 +1954,6 @@ export class APIService {
             description
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2089,7 +1984,6 @@ export class APIService {
           phone
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -2117,7 +2011,6 @@ export class APIService {
             phone
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2155,7 +2048,6 @@ export class APIService {
           }
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -2190,7 +2082,6 @@ export class APIService {
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2214,8 +2105,8 @@ export class APIService {
     SubscriptionResponse<OnCreateUserSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateUser($owner: String!) {
-        onCreateUser(owner: $owner) {
+      `subscription OnCreateUser {
+        onCreateUser {
           __typename
           id
           userSub
@@ -2232,7 +2123,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2246,7 +2136,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2261,7 +2150,6 @@ export class APIService {
               phone
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2275,13 +2163,11 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2291,8 +2177,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateUserSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateUser($owner: String!) {
-        onUpdateUser(owner: $owner) {
+      `subscription OnUpdateUser {
+        onUpdateUser {
           __typename
           id
           userSub
@@ -2309,7 +2195,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2323,7 +2208,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2338,7 +2222,6 @@ export class APIService {
               phone
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2352,13 +2235,11 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2368,8 +2249,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteUserSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteUser($owner: String!) {
-        onDeleteUser(owner: $owner) {
+      `subscription OnDeleteUser {
+        onDeleteUser {
           __typename
           id
           userSub
@@ -2386,7 +2267,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2400,7 +2280,6 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2415,7 +2294,6 @@ export class APIService {
               phone
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2429,13 +2307,11 @@ export class APIService {
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2445,8 +2321,8 @@ export class APIService {
     SubscriptionResponse<OnCreateWarningSignSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateWarningSign($owner: String!) {
-        onCreateWarningSign(owner: $owner) {
+      `subscription OnCreateWarningSign {
+        onCreateWarningSign {
           __typename
           id
           userID
@@ -2454,7 +2330,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2464,8 +2339,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateWarningSignSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateWarningSign($owner: String!) {
-        onUpdateWarningSign(owner: $owner) {
+      `subscription OnUpdateWarningSign {
+        onUpdateWarningSign {
           __typename
           id
           userID
@@ -2473,7 +2348,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2483,8 +2357,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteWarningSignSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteWarningSign($owner: String!) {
-        onDeleteWarningSign(owner: $owner) {
+      `subscription OnDeleteWarningSign {
+        onDeleteWarningSign {
           __typename
           id
           userID
@@ -2492,7 +2366,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2502,8 +2375,8 @@ export class APIService {
     SubscriptionResponse<OnCreateCopingStrategySubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateCopingStrategy($owner: String!) {
-        onCreateCopingStrategy(owner: $owner) {
+      `subscription OnCreateCopingStrategy {
+        onCreateCopingStrategy {
           __typename
           id
           userID
@@ -2511,7 +2384,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2521,8 +2393,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateCopingStrategySubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateCopingStrategy($owner: String!) {
-        onUpdateCopingStrategy(owner: $owner) {
+      `subscription OnUpdateCopingStrategy {
+        onUpdateCopingStrategy {
           __typename
           id
           userID
@@ -2530,7 +2402,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2540,8 +2411,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteCopingStrategySubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteCopingStrategy($owner: String!) {
-        onDeleteCopingStrategy(owner: $owner) {
+      `subscription OnDeleteCopingStrategy {
+        onDeleteCopingStrategy {
           __typename
           id
           userID
@@ -2549,7 +2420,6 @@ export class APIService {
           description
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2559,8 +2429,8 @@ export class APIService {
     SubscriptionResponse<OnCreateContactSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateContact($owner: String!) {
-        onCreateContact(owner: $owner) {
+      `subscription OnCreateContact {
+        onCreateContact {
           __typename
           id
           userID
@@ -2569,7 +2439,6 @@ export class APIService {
           phone
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2579,8 +2448,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateContactSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateContact($owner: String!) {
-        onUpdateContact(owner: $owner) {
+      `subscription OnUpdateContact {
+        onUpdateContact {
           __typename
           id
           userID
@@ -2589,7 +2458,6 @@ export class APIService {
           phone
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2599,8 +2467,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteContactSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteContact($owner: String!) {
-        onDeleteContact(owner: $owner) {
+      `subscription OnDeleteContact {
+        onDeleteContact {
           __typename
           id
           userID
@@ -2609,7 +2477,6 @@ export class APIService {
           phone
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2619,8 +2486,8 @@ export class APIService {
     SubscriptionResponse<OnCreatePlaceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreatePlace($owner: String!) {
-        onCreatePlace(owner: $owner) {
+      `subscription OnCreatePlace {
+        onCreatePlace {
           __typename
           id
           userID
@@ -2636,7 +2503,6 @@ export class APIService {
           }
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2646,8 +2512,8 @@ export class APIService {
     SubscriptionResponse<OnUpdatePlaceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdatePlace($owner: String!) {
-        onUpdatePlace(owner: $owner) {
+      `subscription OnUpdatePlace {
+        onUpdatePlace {
           __typename
           id
           userID
@@ -2663,7 +2529,6 @@ export class APIService {
           }
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -2673,8 +2538,8 @@ export class APIService {
     SubscriptionResponse<OnDeletePlaceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeletePlace($owner: String!) {
-        onDeletePlace(owner: $owner) {
+      `subscription OnDeletePlace {
+        onDeletePlace {
           __typename
           id
           userID
@@ -2690,7 +2555,6 @@ export class APIService {
           }
           createdAt
           updatedAt
-          owner
         }
       }`
     )

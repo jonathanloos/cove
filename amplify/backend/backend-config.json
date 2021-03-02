@@ -1,6 +1,6 @@
 {
   "api": {
-    "CoveAPI": {
+    "covemobileapp": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {

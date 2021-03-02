@@ -17,7 +17,6 @@ mutation CreateUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -29,7 +28,6 @@ mutation CreateUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -42,7 +40,6 @@ mutation CreateUser(
         phone
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -54,13 +51,11 @@ mutation CreateUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
     createdAt
     updatedAt
-    owner
   }
 }
 mutation UpdateUser(
@@ -81,7 +76,6 @@ mutation UpdateUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -93,7 +87,6 @@ mutation UpdateUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -106,7 +99,6 @@ mutation UpdateUser(
         phone
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -118,13 +110,11 @@ mutation UpdateUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
     createdAt
     updatedAt
-    owner
   }
 }
 mutation DeleteUser(
@@ -145,7 +135,6 @@ mutation DeleteUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -157,7 +146,6 @@ mutation DeleteUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -170,7 +158,6 @@ mutation DeleteUser(
         phone
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -182,13 +169,11 @@ mutation DeleteUser(
         description
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
     createdAt
     updatedAt
-    owner
   }
 }
 mutation CreateWarningSign(
@@ -202,7 +187,6 @@ mutation CreateWarningSign(
     description
     createdAt
     updatedAt
-    owner
   }
 }
 mutation UpdateWarningSign(
@@ -216,7 +200,6 @@ mutation UpdateWarningSign(
     description
     createdAt
     updatedAt
-    owner
   }
 }
 mutation DeleteWarningSign(
@@ -230,7 +213,6 @@ mutation DeleteWarningSign(
     description
     createdAt
     updatedAt
-    owner
   }
 }
 mutation CreateCopingStrategy(
@@ -244,7 +226,6 @@ mutation CreateCopingStrategy(
     description
     createdAt
     updatedAt
-    owner
   }
 }
 mutation UpdateCopingStrategy(
@@ -258,7 +239,6 @@ mutation UpdateCopingStrategy(
     description
     createdAt
     updatedAt
-    owner
   }
 }
 mutation DeleteCopingStrategy(
@@ -272,7 +252,6 @@ mutation DeleteCopingStrategy(
     description
     createdAt
     updatedAt
-    owner
   }
 }
 mutation CreateContact(
@@ -287,7 +266,6 @@ mutation CreateContact(
     phone
     createdAt
     updatedAt
-    owner
   }
 }
 mutation UpdateContact(
@@ -302,7 +280,6 @@ mutation UpdateContact(
     phone
     createdAt
     updatedAt
-    owner
   }
 }
 mutation DeleteContact(
@@ -317,7 +294,6 @@ mutation DeleteContact(
     phone
     createdAt
     updatedAt
-    owner
   }
 }
 mutation CreatePlace(
@@ -338,7 +314,6 @@ mutation CreatePlace(
     }
     createdAt
     updatedAt
-    owner
   }
 }
 mutation UpdatePlace(
@@ -359,7 +334,6 @@ mutation UpdatePlace(
     }
     createdAt
     updatedAt
-    owner
   }
 }
 mutation DeletePlace(
@@ -380,6 +354,5 @@ mutation DeletePlace(
     }
     createdAt
     updatedAt
-    owner
   }
 }
