@@ -54,10 +54,8 @@ export class AuthService {
       const currentUserInDb = await this.userService.get();
       // Check if there's a user, otherwise create them.
       if(currentUserInDb){
-        console.log("Found a user!", currentUserInDb)
         return currentUserInDb;
       }else{
-        console.log("Couldn't find a user", user)
         return undefined
       }
     })

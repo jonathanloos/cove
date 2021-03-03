@@ -125,6 +125,7 @@ Parameters:
   userPoolGroupList:
     Type: CommaDelimitedList
       
+            
   serviceName:
     Type: String
   
@@ -145,23 +146,6 @@ Parameters:
   dependsOn:
     Type: CommaDelimitedList
       
-  
-  thirdPartyAuth:
-    Type: String
-            
-  
-  userPoolGroups:
-    Type: String
-            
-  
-  adminQueries:
-    Type: String
-            
-  
-  hostedUI:
-    Type: String
-            
-            
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -173,7 +157,7 @@ Resources:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'covemo45ceac02_sns-role', !Join ['',[ 'sns', '45ceac02', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'covemo8a468077_sns-role', !Join ['',[ 'sns', '8a468077', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
@@ -185,10 +169,10 @@ Resources:
               - "sts:AssumeRole"
             Condition:
               StringEquals:
-                sts:ExternalId: covemo45ceac02_role_external_id
+                sts:ExternalId: covemo8a468077_role_external_id
       Policies:
         -
-          PolicyName: covemo45ceac02-sns-policy
+          PolicyName: covemo8a468077-sns-policy
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
@@ -240,7 +224,7 @@ Resources:
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration:
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: covemo45ceac02_role_external_id
+        ExternalId: covemo8a468077_role_external_id
     
   
   
@@ -260,7 +244,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: covemo45ceac02_app_clientWeb
+      ClientName: covemo8a468077_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -270,7 +254,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: covemo45ceac02_app_client
+      ClientName: covemo8a468077_app_client
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -281,7 +265,7 @@ Resources:
   # Created to execute Lambda which gets userpool app client config values
     Type: 'AWS::IAM::Role'
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', '45ceac02', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, !Ref userpoolClientLambdaRole, !Join ['',['upClientLambdaRole', '8a468077', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -335,7 +319,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: covemo45ceac02_userpoolclient_lambda_iam_policy
+      PolicyName: covemo8a468077_userpoolclient_lambda_iam_policy
       Roles:
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -352,7 +336,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: covemo45ceac02_userpoolclient_lambda_log_policy
+      PolicyName: covemo8a468077_userpoolclient_lambda_log_policy
       Roles:
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -392,7 +376,7 @@ Resources:
   # Always created
     Type: AWS::Cognito::IdentityPool
     Properties:
-      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'covemobileapp45ceac02_identitypool_45ceac02', !Join ['',['covemobileapp45ceac02_identitypool_45ceac02', '__', !Ref env]]]
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'covemobileapp8a468077_identitypool_8a468077', !Join ['',['covemobileapp8a468077_identitypool_8a468077', '__', !Ref env]]]
       
       CognitoIdentityProviders:
         - ClientId:  !Ref UserPoolClient

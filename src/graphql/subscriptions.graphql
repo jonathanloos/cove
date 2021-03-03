@@ -12,10 +12,14 @@ subscription OnCreateUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -23,10 +27,14 @@ subscription OnCreateUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -35,10 +43,14 @@ subscription OnCreateUser {
         name
         automaticTextMessage
         phone
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -46,11 +58,18 @@ subscription OnCreateUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -68,10 +87,14 @@ subscription OnUpdateUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -79,10 +102,14 @@ subscription OnUpdateUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -91,10 +118,14 @@ subscription OnUpdateUser {
         name
         automaticTextMessage
         phone
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -102,11 +133,18 @@ subscription OnUpdateUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -124,10 +162,14 @@ subscription OnDeleteUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -135,10 +177,14 @@ subscription OnDeleteUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -147,10 +193,14 @@ subscription OnDeleteUser {
         name
         automaticTextMessage
         phone
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -158,11 +208,18 @@ subscription OnDeleteUser {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -173,6 +230,9 @@ subscription OnCreateWarningSign {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -183,6 +243,9 @@ subscription OnUpdateWarningSign {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -193,6 +256,9 @@ subscription OnDeleteWarningSign {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -203,6 +269,9 @@ subscription OnCreateCopingStrategy {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -213,6 +282,9 @@ subscription OnUpdateCopingStrategy {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -223,6 +295,9 @@ subscription OnDeleteCopingStrategy {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -234,6 +309,9 @@ subscription OnCreateContact {
     name
     automaticTextMessage
     phone
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -245,6 +323,9 @@ subscription OnUpdateContact {
     name
     automaticTextMessage
     phone
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -256,6 +337,9 @@ subscription OnDeleteContact {
     name
     automaticTextMessage
     phone
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -273,6 +357,9 @@ subscription OnCreatePlace {
       province
       country
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -290,6 +377,9 @@ subscription OnUpdatePlace {
       province
       country
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -307,6 +397,9 @@ subscription OnDeletePlace {
       province
       country
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }

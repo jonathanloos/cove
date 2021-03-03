@@ -1,4 +1,48 @@
 # this is an auto generated file. This will be overwritten
+query SyncUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncUsers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      userSub
+      name
+      email
+      phone
+      warningSigns {
+        nextToken
+        startedAt
+      }
+      copingStrategies {
+        nextToken
+        startedAt
+      }
+      contacts {
+        nextToken
+        startedAt
+      }
+      places {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
 query GetUser($id: ID!) {
   getUser(id: $id) {
     id
@@ -12,10 +56,14 @@ query GetUser($id: ID!) {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -23,10 +71,14 @@ query GetUser($id: ID!) {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -35,10 +87,14 @@ query GetUser($id: ID!) {
         name
         automaticTextMessage
         phone
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -46,11 +102,18 @@ query GetUser($id: ID!) {
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -69,20 +132,55 @@ query ListUsers(
       phone
       warningSigns {
         nextToken
+        startedAt
       }
       copingStrategies {
         nextToken
+        startedAt
       }
       contacts {
         nextToken
+        startedAt
       }
       places {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
+    startedAt
+  }
+}
+query SyncWarningSigns(
+  $filter: ModelWarningSignFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncWarningSigns(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      userID
+      title
+      description
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
   }
 }
 query GetWarningSign($id: ID!) {
@@ -91,6 +189,9 @@ query GetWarningSign($id: ID!) {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -106,10 +207,41 @@ query ListWarningSigns(
       userID
       title
       description
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
+    startedAt
+  }
+}
+query SyncCopingStrategies(
+  $filter: ModelCopingStrategyFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncCopingStrategies(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      userID
+      title
+      description
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
   }
 }
 query GetCopingStrategy($id: ID!) {
@@ -118,6 +250,9 @@ query GetCopingStrategy($id: ID!) {
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -133,10 +268,42 @@ query ListCopingStrategys(
       userID
       title
       description
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
+    startedAt
+  }
+}
+query SyncContacts(
+  $filter: ModelContactFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncContacts(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      userID
+      name
+      automaticTextMessage
+      phone
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
   }
 }
 query GetContact($id: ID!) {
@@ -146,6 +313,9 @@ query GetContact($id: ID!) {
     name
     automaticTextMessage
     phone
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -162,10 +332,48 @@ query ListContacts(
       name
       automaticTextMessage
       phone
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
+    startedAt
+  }
+}
+query SyncPlaces(
+  $filter: ModelPlaceFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncPlaces(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      userID
+      title
+      description
+      address {
+        street
+        city
+        postalCode
+        province
+        country
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
   }
 }
 query GetPlace($id: ID!) {
@@ -181,6 +389,9 @@ query GetPlace($id: ID!) {
       province
       country
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -203,9 +414,13 @@ query ListPlaces(
         province
         country
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
+    startedAt
   }
 }

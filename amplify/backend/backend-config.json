@@ -8,7 +8,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authcovemobileapp45ceac02"
+              "userPoolId": "authcovemobileapp8a468077"
             }
           },
           "additionalAuthenticationProviders": []
@@ -17,17 +17,12 @@
     }
   },
   "auth": {
-    "covemobileapp45ceac02": {
+    "covemobileapp8a468077": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
     }
   },
-  "analytics": {
-    "Cove": {
-      "service": "Pinpoint",
-      "providerPlugin": "awscloudformation"
-    }
-  }
+  "analytics": {}
 }

@@ -15,10 +15,14 @@ mutation CreateUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -26,10 +30,14 @@ mutation CreateUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -38,10 +46,14 @@ mutation CreateUser(
         name
         automaticTextMessage
         phone
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -49,11 +61,18 @@ mutation CreateUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -74,10 +93,14 @@ mutation UpdateUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -85,10 +108,14 @@ mutation UpdateUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -97,10 +124,14 @@ mutation UpdateUser(
         name
         automaticTextMessage
         phone
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -108,11 +139,18 @@ mutation UpdateUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -133,10 +171,14 @@ mutation DeleteUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -144,10 +186,14 @@ mutation DeleteUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -156,10 +202,14 @@ mutation DeleteUser(
         name
         automaticTextMessage
         phone
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -167,11 +217,18 @@ mutation DeleteUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -185,6 +242,9 @@ mutation CreateWarningSign(
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -198,6 +258,9 @@ mutation UpdateWarningSign(
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -211,6 +274,9 @@ mutation DeleteWarningSign(
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -224,6 +290,9 @@ mutation CreateCopingStrategy(
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -237,6 +306,9 @@ mutation UpdateCopingStrategy(
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -250,6 +322,9 @@ mutation DeleteCopingStrategy(
     userID
     title
     description
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -264,6 +339,9 @@ mutation CreateContact(
     name
     automaticTextMessage
     phone
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -278,6 +356,9 @@ mutation UpdateContact(
     name
     automaticTextMessage
     phone
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -292,6 +373,9 @@ mutation DeleteContact(
     name
     automaticTextMessage
     phone
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -312,6 +396,9 @@ mutation CreatePlace(
       province
       country
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -332,6 +419,9 @@ mutation UpdatePlace(
       province
       country
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -352,6 +442,9 @@ mutation DeletePlace(
       province
       country
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }

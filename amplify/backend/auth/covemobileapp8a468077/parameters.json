@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "covemobileapp45ceac02_identitypool_45ceac02",
+    "identityPoolName": "covemobileapp8a468077_identitypool_8a468077",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "covemo45ceac02",
-    "userPoolName": "covemobileapp45ceac02_userpool_45ceac02",
+    "resourceNameTruncated": "covemo8a468077",
+    "userPoolName": "covemobileapp8a468077_userpool_8a468077",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "covemo45ceac02_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "covemo8a468077_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "45ceac02",
-    "resourceName": "covemobileapp45ceac02",
+    "sharedId": "8a468077",
+    "resourceName": "covemobileapp8a468077",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,7 +45,7 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
+    "useDefault": "default",
     "usernameAttributes": [
         "email"
     ],
@@ -57,9 +57,5 @@
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": [],
-    "thirdPartyAuth": false,
-    "userPoolGroups": false,
-    "adminQueries": true,
-    "hostedUI": false
+    "dependsOn": []
 }

@@ -15,6 +15,7 @@ export type CreateUserInput = {
   name?: string | null;
   email: string;
   phone?: string | null;
+  _version?: number | null;
 };
 
 export type ModelUserConditionInput = {
@@ -88,10 +89,12 @@ export type UpdateUserInput = {
   name?: string | null;
   email?: string | null;
   phone?: string | null;
+  _version?: number | null;
 };
 
 export type DeleteUserInput = {
   id?: string | null;
+  _version?: number | null;
 };
 
 export type CreateWarningSignInput = {
@@ -99,6 +102,7 @@ export type CreateWarningSignInput = {
   userID: string;
   title: string;
   description?: string | null;
+  _version?: number | null;
 };
 
 export type ModelWarningSignConditionInput = {
@@ -115,10 +119,12 @@ export type UpdateWarningSignInput = {
   userID?: string | null;
   title?: string | null;
   description?: string | null;
+  _version?: number | null;
 };
 
 export type DeleteWarningSignInput = {
   id?: string | null;
+  _version?: number | null;
 };
 
 export type CreateCopingStrategyInput = {
@@ -126,6 +132,7 @@ export type CreateCopingStrategyInput = {
   userID: string;
   title: string;
   description?: string | null;
+  _version?: number | null;
 };
 
 export type ModelCopingStrategyConditionInput = {
@@ -142,10 +149,12 @@ export type UpdateCopingStrategyInput = {
   userID?: string | null;
   title?: string | null;
   description?: string | null;
+  _version?: number | null;
 };
 
 export type DeleteCopingStrategyInput = {
   id?: string | null;
+  _version?: number | null;
 };
 
 export type CreateContactInput = {
@@ -154,6 +163,7 @@ export type CreateContactInput = {
   name?: string | null;
   automaticTextMessage: string;
   phone?: string | null;
+  _version?: number | null;
 };
 
 export type ModelContactConditionInput = {
@@ -172,10 +182,12 @@ export type UpdateContactInput = {
   name?: string | null;
   automaticTextMessage?: string | null;
   phone?: string | null;
+  _version?: number | null;
 };
 
 export type DeleteContactInput = {
   id?: string | null;
+  _version?: number | null;
 };
 
 export type CreatePlaceInput = {
@@ -184,6 +196,7 @@ export type CreatePlaceInput = {
   title: string;
   description?: string | null;
   address?: AddressInput | null;
+  _version?: number | null;
 };
 
 export type AddressInput = {
@@ -209,10 +222,12 @@ export type UpdatePlaceInput = {
   title?: string | null;
   description?: string | null;
   address?: AddressInput | null;
+  _version?: number | null;
 };
 
 export type DeletePlaceInput = {
   id?: string | null;
+  _version?: number | null;
 };
 
 export type ModelUserFilterInput = {
@@ -282,10 +297,14 @@ export type CreateUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -295,10 +314,14 @@ export type CreateUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -309,10 +332,14 @@ export type CreateUserMutation = {
       name: string | null;
       automaticTextMessage: string;
       phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -322,11 +349,18 @@ export type CreateUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -346,10 +380,14 @@ export type UpdateUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -359,10 +397,14 @@ export type UpdateUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -373,10 +415,14 @@ export type UpdateUserMutation = {
       name: string | null;
       automaticTextMessage: string;
       phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -386,11 +432,18 @@ export type UpdateUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -410,10 +463,14 @@ export type DeleteUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -423,10 +480,14 @@ export type DeleteUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -437,10 +498,14 @@ export type DeleteUserMutation = {
       name: string | null;
       automaticTextMessage: string;
       phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -450,11 +515,18 @@ export type DeleteUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -465,6 +537,9 @@ export type CreateWarningSignMutation = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -475,6 +550,9 @@ export type UpdateWarningSignMutation = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -485,6 +563,9 @@ export type DeleteWarningSignMutation = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -495,6 +576,9 @@ export type CreateCopingStrategyMutation = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -505,6 +589,9 @@ export type UpdateCopingStrategyMutation = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -515,6 +602,9 @@ export type DeleteCopingStrategyMutation = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -526,6 +616,9 @@ export type CreateContactMutation = {
   name: string | null;
   automaticTextMessage: string;
   phone: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -537,6 +630,9 @@ export type UpdateContactMutation = {
   name: string | null;
   automaticTextMessage: string;
   phone: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -548,6 +644,9 @@ export type DeleteContactMutation = {
   name: string | null;
   automaticTextMessage: string;
   phone: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -566,6 +665,9 @@ export type CreatePlaceMutation = {
     province: string | null;
     country: string | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -584,6 +686,9 @@ export type UpdatePlaceMutation = {
     province: string | null;
     country: string | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -602,8 +707,50 @@ export type DeletePlaceMutation = {
     province: string | null;
     country: string | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
+};
+
+export type SyncUsersQuery = {
+  __typename: "ModelUserConnection";
+  items: Array<{
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
 };
 
 export type GetUserQuery = {
@@ -621,10 +768,14 @@ export type GetUserQuery = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -634,10 +785,14 @@ export type GetUserQuery = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -648,10 +803,14 @@ export type GetUserQuery = {
       name: string | null;
       automaticTextMessage: string;
       phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -661,11 +820,18 @@ export type GetUserQuery = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -682,23 +848,49 @@ export type ListUsersQuery = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
+      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
+      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
+      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
+      startedAt: number | null;
     } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
+  startedAt: number | null;
+};
+
+export type SyncWarningSignsQuery = {
+  __typename: "ModelWarningSignConnection";
+  items: Array<{
+    __typename: "WarningSign";
+    id: string;
+    userID: string;
+    title: string;
+    description: string | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
 };
 
 export type GetWarningSignQuery = {
@@ -707,6 +899,9 @@ export type GetWarningSignQuery = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -719,10 +914,32 @@ export type ListWarningSignsQuery = {
     userID: string;
     title: string;
     description: string | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
+  startedAt: number | null;
+};
+
+export type SyncCopingStrategiesQuery = {
+  __typename: "ModelCopingStrategyConnection";
+  items: Array<{
+    __typename: "CopingStrategy";
+    id: string;
+    userID: string;
+    title: string;
+    description: string | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
 };
 
 export type GetCopingStrategyQuery = {
@@ -731,6 +948,9 @@ export type GetCopingStrategyQuery = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -743,10 +963,33 @@ export type ListCopingStrategysQuery = {
     userID: string;
     title: string;
     description: string | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
+  startedAt: number | null;
+};
+
+export type SyncContactsQuery = {
+  __typename: "ModelContactConnection";
+  items: Array<{
+    __typename: "Contact";
+    id: string;
+    userID: string;
+    name: string | null;
+    automaticTextMessage: string;
+    phone: string | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
 };
 
 export type GetContactQuery = {
@@ -756,6 +999,9 @@ export type GetContactQuery = {
   name: string | null;
   automaticTextMessage: string;
   phone: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -769,10 +1015,40 @@ export type ListContactsQuery = {
     name: string | null;
     automaticTextMessage: string;
     phone: string | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
+  startedAt: number | null;
+};
+
+export type SyncPlacesQuery = {
+  __typename: "ModelPlaceConnection";
+  items: Array<{
+    __typename: "Place";
+    id: string;
+    userID: string;
+    title: string;
+    description: string | null;
+    address: {
+      __typename: "Address";
+      street: string | null;
+      city: string | null;
+      postalCode: string | null;
+      province: string | null;
+      country: string | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
 };
 
 export type GetPlaceQuery = {
@@ -789,6 +1065,9 @@ export type GetPlaceQuery = {
     province: string | null;
     country: string | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -809,10 +1088,14 @@ export type ListPlacesQuery = {
       province: string | null;
       country: string | null;
     } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
+  startedAt: number | null;
 };
 
 export type OnCreateUserSubscription = {
@@ -830,10 +1113,14 @@ export type OnCreateUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -843,10 +1130,14 @@ export type OnCreateUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -857,10 +1148,14 @@ export type OnCreateUserSubscription = {
       name: string | null;
       automaticTextMessage: string;
       phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -870,11 +1165,18 @@ export type OnCreateUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -894,10 +1196,14 @@ export type OnUpdateUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -907,10 +1213,14 @@ export type OnUpdateUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -921,10 +1231,14 @@ export type OnUpdateUserSubscription = {
       name: string | null;
       automaticTextMessage: string;
       phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -934,11 +1248,18 @@ export type OnUpdateUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -958,10 +1279,14 @@ export type OnDeleteUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -971,10 +1296,14 @@ export type OnDeleteUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -985,10 +1314,14 @@ export type OnDeleteUserSubscription = {
       name: string | null;
       automaticTextMessage: string;
       phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -998,11 +1331,18 @@ export type OnDeleteUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
+    startedAt: number | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1013,6 +1353,9 @@ export type OnCreateWarningSignSubscription = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1023,6 +1366,9 @@ export type OnUpdateWarningSignSubscription = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1033,6 +1379,9 @@ export type OnDeleteWarningSignSubscription = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1043,6 +1392,9 @@ export type OnCreateCopingStrategySubscription = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1053,6 +1405,9 @@ export type OnUpdateCopingStrategySubscription = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1063,6 +1418,9 @@ export type OnDeleteCopingStrategySubscription = {
   userID: string;
   title: string;
   description: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1074,6 +1432,9 @@ export type OnCreateContactSubscription = {
   name: string | null;
   automaticTextMessage: string;
   phone: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1085,6 +1446,9 @@ export type OnUpdateContactSubscription = {
   name: string | null;
   automaticTextMessage: string;
   phone: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1096,6 +1460,9 @@ export type OnDeleteContactSubscription = {
   name: string | null;
   automaticTextMessage: string;
   phone: string | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1114,6 +1481,9 @@ export type OnCreatePlaceSubscription = {
     province: string | null;
     country: string | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1132,6 +1502,9 @@ export type OnUpdatePlaceSubscription = {
     province: string | null;
     country: string | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1150,6 +1523,9 @@ export type OnDeletePlaceSubscription = {
     province: string | null;
     country: string | null;
   } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1178,10 +1554,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           copingStrategies {
             __typename
@@ -1191,10 +1571,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           contacts {
             __typename
@@ -1205,10 +1589,14 @@ export class APIService {
               name
               automaticTextMessage
               phone
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           places {
             __typename
@@ -1218,11 +1606,18 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1258,10 +1653,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           copingStrategies {
             __typename
@@ -1271,10 +1670,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           contacts {
             __typename
@@ -1285,10 +1688,14 @@ export class APIService {
               name
               automaticTextMessage
               phone
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           places {
             __typename
@@ -1298,11 +1705,18 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1338,10 +1752,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           copingStrategies {
             __typename
@@ -1351,10 +1769,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           contacts {
             __typename
@@ -1365,10 +1787,14 @@ export class APIService {
               name
               automaticTextMessage
               phone
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           places {
             __typename
@@ -1378,11 +1804,18 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1409,6 +1842,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1435,6 +1871,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1461,6 +1900,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1487,6 +1929,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1513,6 +1958,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1539,6 +1987,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1566,6 +2017,9 @@ export class APIService {
           name
           automaticTextMessage
           phone
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1593,6 +2047,9 @@ export class APIService {
           name
           automaticTextMessage
           phone
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1620,6 +2077,9 @@ export class APIService {
           name
           automaticTextMessage
           phone
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1654,6 +2114,9 @@ export class APIService {
             province
             country
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1688,6 +2151,9 @@ export class APIService {
             province
             country
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1722,6 +2188,9 @@ export class APIService {
             province
             country
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1736,6 +2205,70 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <DeletePlaceMutation>response.data.deletePlace;
+  }
+  async SyncUsers(
+    filter?: ModelUserFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncUsersQuery> {
+    const statement = `query SyncUsers($filter: ModelUserFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncUsers(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncUsersQuery>response.data.syncUsers;
   }
   async GetUser(id: string): Promise<GetUserQuery> {
     const statement = `query GetUser($id: ID!) {
@@ -1754,10 +2287,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           copingStrategies {
             __typename
@@ -1767,10 +2304,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           contacts {
             __typename
@@ -1781,10 +2322,14 @@ export class APIService {
               name
               automaticTextMessage
               phone
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           places {
             __typename
@@ -1794,11 +2339,18 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1829,23 +2381,31 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
+              startedAt
             }
             copingStrategies {
               __typename
               nextToken
+              startedAt
             }
             contacts {
               __typename
               nextToken
+              startedAt
             }
             places {
               __typename
               nextToken
+              startedAt
             }
+            _version
+            _deleted
+            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
+          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -1863,6 +2423,49 @@ export class APIService {
     )) as any;
     return <ListUsersQuery>response.data.listUsers;
   }
+  async SyncWarningSigns(
+    filter?: ModelWarningSignFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncWarningSignsQuery> {
+    const statement = `query SyncWarningSigns($filter: ModelWarningSignFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncWarningSigns(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            userID
+            title
+            description
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncWarningSignsQuery>response.data.syncWarningSigns;
+  }
   async GetWarningSign(id: string): Promise<GetWarningSignQuery> {
     const statement = `query GetWarningSign($id: ID!) {
         getWarningSign(id: $id) {
@@ -1871,6 +2474,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1897,10 +2503,14 @@ export class APIService {
             userID
             title
             description
+            _version
+            _deleted
+            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
+          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -1918,6 +2528,49 @@ export class APIService {
     )) as any;
     return <ListWarningSignsQuery>response.data.listWarningSigns;
   }
+  async SyncCopingStrategies(
+    filter?: ModelCopingStrategyFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncCopingStrategiesQuery> {
+    const statement = `query SyncCopingStrategies($filter: ModelCopingStrategyFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncCopingStrategies(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            userID
+            title
+            description
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncCopingStrategiesQuery>response.data.syncCopingStrategies;
+  }
   async GetCopingStrategy(id: string): Promise<GetCopingStrategyQuery> {
     const statement = `query GetCopingStrategy($id: ID!) {
         getCopingStrategy(id: $id) {
@@ -1926,6 +2579,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -1952,10 +2608,14 @@ export class APIService {
             userID
             title
             description
+            _version
+            _deleted
+            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
+          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -1973,6 +2633,50 @@ export class APIService {
     )) as any;
     return <ListCopingStrategysQuery>response.data.listCopingStrategys;
   }
+  async SyncContacts(
+    filter?: ModelContactFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncContactsQuery> {
+    const statement = `query SyncContacts($filter: ModelContactFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncContacts(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            userID
+            name
+            automaticTextMessage
+            phone
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncContactsQuery>response.data.syncContacts;
+  }
   async GetContact(id: string): Promise<GetContactQuery> {
     const statement = `query GetContact($id: ID!) {
         getContact(id: $id) {
@@ -1982,6 +2686,9 @@ export class APIService {
           name
           automaticTextMessage
           phone
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2009,10 +2716,14 @@ export class APIService {
             name
             automaticTextMessage
             phone
+            _version
+            _deleted
+            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
+          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -2030,6 +2741,57 @@ export class APIService {
     )) as any;
     return <ListContactsQuery>response.data.listContacts;
   }
+  async SyncPlaces(
+    filter?: ModelPlaceFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncPlacesQuery> {
+    const statement = `query SyncPlaces($filter: ModelPlaceFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncPlaces(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            userID
+            title
+            description
+            address {
+              __typename
+              street
+              city
+              postalCode
+              province
+              country
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncPlacesQuery>response.data.syncPlaces;
+  }
   async GetPlace(id: string): Promise<GetPlaceQuery> {
     const statement = `query GetPlace($id: ID!) {
         getPlace(id: $id) {
@@ -2046,6 +2808,9 @@ export class APIService {
             province
             country
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2080,10 +2845,14 @@ export class APIService {
               province
               country
             }
+            _version
+            _deleted
+            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
+          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -2121,10 +2890,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           copingStrategies {
             __typename
@@ -2134,10 +2907,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           contacts {
             __typename
@@ -2148,10 +2925,14 @@ export class APIService {
               name
               automaticTextMessage
               phone
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           places {
             __typename
@@ -2161,11 +2942,18 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2193,10 +2981,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           copingStrategies {
             __typename
@@ -2206,10 +2998,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           contacts {
             __typename
@@ -2220,10 +3016,14 @@ export class APIService {
               name
               automaticTextMessage
               phone
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           places {
             __typename
@@ -2233,11 +3033,18 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2265,10 +3072,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           copingStrategies {
             __typename
@@ -2278,10 +3089,14 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           contacts {
             __typename
@@ -2292,10 +3107,14 @@ export class APIService {
               name
               automaticTextMessage
               phone
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
           places {
             __typename
@@ -2305,11 +3124,18 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
+            startedAt
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2328,6 +3154,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2346,6 +3175,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2364,6 +3196,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2382,6 +3217,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2400,6 +3238,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2418,6 +3259,9 @@ export class APIService {
           userID
           title
           description
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2437,6 +3281,9 @@ export class APIService {
           name
           automaticTextMessage
           phone
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2456,6 +3303,9 @@ export class APIService {
           name
           automaticTextMessage
           phone
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2475,6 +3325,9 @@ export class APIService {
           name
           automaticTextMessage
           phone
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2501,6 +3354,9 @@ export class APIService {
             province
             country
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2527,6 +3383,9 @@ export class APIService {
             province
             country
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -2553,6 +3412,9 @@ export class APIService {
             province
             country
           }
+          _version
+          _deleted
+          _lastChangedAt
           createdAt
           updatedAt
         }
