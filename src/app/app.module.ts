@@ -48,7 +48,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register("ngsw-worker.js", {
+      enabled: environment.production,
+      registrationStrategy: "registerImmediately"
+    }),  
     AmplifyUIAngularModule,
     NgbModule
   ],
