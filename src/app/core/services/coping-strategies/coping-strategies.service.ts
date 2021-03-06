@@ -16,7 +16,7 @@ export class CopingStrategiesService {
   constructor( private api : APIService ) { }
 
   async list(userId : string){
-    return await DataStore.query(CopingStrategy, c => c.userID("eq", userId)).then((results : any) => {
+    return await DataStore.query(CopingStrategy, c => c.userID("eq", userId)).then((results : CopingStrategy[]) => {
       this.coping_strategies = results;
       this.strategiesChange.next(this.coping_strategies);
       return this.coping_strategies;
@@ -40,6 +40,7 @@ export class CopingStrategiesService {
   }
 
   async create(coping_strategy: CopingStrategy){
+    console.log("Create!")
     await DataStore.save(coping_strategy).then((result : CopingStrategy) => {
       this.list(result.userID)
     })

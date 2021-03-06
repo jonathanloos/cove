@@ -1,9 +1,7 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CopingStrategiesService } from 'src/app/core/services/coping-strategies/coping-strategies.service';
 import { UpdateCopingStrategyService } from 'src/app/core/services/coping-strategies/update-coping-strategy.service';
-import { ToastController } from '@ionic/angular';
-import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { CopingStrategy } from 'src/models';
 import { MutableModel } from "@aws-amplify/datastore";
 
@@ -15,19 +13,15 @@ import { MutableModel } from "@aws-amplify/datastore";
 export class StrategyComponent implements OnInit {
 
   @Input() strategy: CopingStrategy;
-  @ViewChild('fileInput', { static: false }) fileInput: ElementRef;
 
   editing: boolean = false;
   elementId: string = null;
   public CSForm: FormGroup;
   
   constructor(
-    private copingStrategyService: CopingStrategiesService,
     private CSService: CopingStrategiesService,
     private updateCSService: UpdateCopingStrategyService,
     private formBuilder: FormBuilder,
-    private webview: WebView,
-    private toastController: ToastController,
   ) {
 
     this.updateCSService.editChange.subscribe(result=> {

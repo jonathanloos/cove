@@ -20,16 +20,21 @@
     <form (ngSubmit)="create()" [formGroup]="strategyForm">
       <ion-card class="brainstorm-card">
         <ion-card-header class="card-header-border">
-          <ion-input class="display-medium card-header-title" color="primary" placeholder="Title" name="title" formControlName="title"></ion-input>
+          <ion-item lines="none" class="ion-no-padding">
+            <ion-input class="display-medium card-header-title" color="primary" name="title" formControlName="title" placeholder="Title"></ion-input>
+          </ion-item>
         </ion-card-header>
         <ion-card-content>
-          <ion-item class="ion-no-padding">
-            <ion-label position="stacked">Description</ion-label>
-            <ion-textarea formControlName="description" name="description" placeholder="Add a description to your strategy" class="caption description-box subdued ion-no-margin" autoGrow="true"></ion-textarea>
-          </ion-item>
-          <ion-button color="light" style="margin: 10px" (click)="reset()">Cancel</ion-button>
-          <ion-button color="primary" style="float: right; margin: 10px;" type="submit" [disabled]="!strategyForm.valid">Save</ion-button>
+            <ion-textarea 
+              autoGrow="true"
+              class="body ion-no-padding" 
+              name="description" 
+              formControlName="description"
+              placeholder="Description"
+              clearInput></ion-textarea>
         </ion-card-content>
+        <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
+        <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
       </ion-card>
     </form>
   </ng-template>
