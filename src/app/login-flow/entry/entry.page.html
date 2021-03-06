@@ -2,12 +2,14 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides [options]="slideOpts">
-    <ion-slide>
-      <div class="slide first-slide ion-text-center" style="background-image: url('../assets/images/photo-1559423869-190c0502c8a1.jpeg'); height: 100vh;background-size: cover; overflow: scroll;">
-        <img src="../assets/images/cove-logo-white.png" style="width: 40vw;">
+    <div class="vh-100 vw-100" style="background-color: black;">
+      <div class="ion-text-center vh-100 overflow-hidden m-auto" style="max-width: 910px;">
+        <img src="../assets/images/photo-1559423869-190c0502c8a1.jpeg" class="vh-100">
+        <div style="position: absolute; left: 50vw; top:  10%;">
+          <img src="../assets/images/cove-logo-white.png" class="w-100" style="margin-left: -100%; max-width: 500px;">
+        </div>
         <div class="absolute-bottom">
-          <ion-card class="brainstorm-card" style="background-color: white; width: 90vw; margin: 0; margin-left: -50%;">
+          <ion-card class="brainstorm-card" style="background-color: white; width: 90vw; margin: 0; margin-left: -50%; max-width: 500px;">
             <h3>Welcome 👋 </h3>
             <ion-card-content>
               <ion-text>For your safety, it is recommended that you complete your safety plan with someone supportive or a healthcare practitioner while you are not in a crisis.</ion-text><br/>
@@ -16,6 +18,5 @@
           </ion-card>
         </div>
       </div>
-    </ion-slide>
-  </ion-slides>
+    </div>
 </ion-content>
