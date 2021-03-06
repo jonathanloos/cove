@@ -4,12 +4,10 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { SwUpdate } from '@angular/service-worker';
 import { FormGroup } from '@angular/forms';
 
 // Auth
-import { Hub, Logger, syncExpression } from 'aws-amplify';
-import { AuthService } from './core/services/auth/auth.service';
+import { Hub, Logger } from 'aws-amplify';
 
 const logger = new Logger('cove-Logger');
 @Component({
@@ -24,10 +22,7 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    private swUpdate: SwUpdate,
-    private authService : AuthService
-  ) {
+    private statusBar: StatusBar  ) {
     this.initializeApp();
   }
 
@@ -36,7 +31,6 @@ export class AppComponent implements OnInit {
       switch (data.payload.event) {
           case 'signIn':
               logger.info('user signed in');
-              console.log("Sign In")
               break;
           case 'signUp':
               logger.info('user signed up');
@@ -66,12 +60,6 @@ export class AppComponent implements OnInit {
   }
 
   initializeApp() {
-    if (this.swUpdate.available) {
-      this.swUpdate.available.subscribe(() => {
-        if (confirm('A new version is available. Load it?'))
-          window.location.reload();
-      });
-    }
     this.platform.ready().then(async () => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();

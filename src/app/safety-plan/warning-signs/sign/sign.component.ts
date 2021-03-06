@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { WarningSignsService } from 'src/app/core/services/warning-signs/warning-signs.service';
 import { UpdateWarningSignService } from 'src/app/core/services/warning-signs/update-warning-sign.service';
@@ -20,7 +19,6 @@ export class SignComponent implements OnInit {
   public signForm: FormGroup;
   
   constructor(
-    private route: ActivatedRoute,
     private WSService: WarningSignsService,
     private updateWSService: UpdateWarningSignService,
     private formBuilder: FormBuilder

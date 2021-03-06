@@ -16,7 +16,6 @@ export class CopingStrategiesPage implements OnInit {
   @ViewChild('content') private content: any;
   
   currentUser: User;
-  currentUserSubscription: Subscription;
   
   public strategies: CopingStrategy[];
   public editing: boolean = false;
@@ -51,14 +50,12 @@ export class CopingStrategiesPage implements OnInit {
       })
     }
 
-  async ngOnInit() {  }
-
-  async ionViewWillEnter(){
-    this.currentUserSubscription = await this.authService.currentUser.subscribe(user => {
+  async ngOnInit() { 
+    await this.authService.currentAuthenticatedUser().then(async (user) => {
       this.currentUser = user;
       this.copingStrategyService.list(this.currentUser.id);
     });
-  }
+   }
 
   displayForm(){
     this.adding = true;
@@ -74,13 +71,10 @@ export class CopingStrategiesPage implements OnInit {
       title: this.strategyForm.value.title,
       description: this.strategyForm.value.description,
       userID: this.currentUser.id
-    })
+    });
+
 
     this.copingStrategyService.create(strategy);
     this.reset();
-  }
-
-  ngOnDestroy() :void{
-    this.currentUserSubscription.unsubscribe();
   }
 }
