@@ -9,6 +9,11 @@ import { FormGroup } from '@angular/forms';
 // Auth
 import { Hub, Logger } from 'aws-amplify';
 
+// Service Workers
+import { ServiceWorker } from 'aws-amplify';
+import { SwUpdate } from '@angular/service-worker';
+const serviceWorker = new ServiceWorker();
+
 const logger = new Logger('cove-Logger');
 @Component({
   selector: 'app-root',
@@ -22,11 +27,20 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar  ) {
+    private statusBar: StatusBar,
+    private swUpdate: SwUpdate  ) {
     this.initializeApp();
   }
 
-  async ngOnInit(){ 
+  async ngOnInit(){
+    // Check for updates
+    if (this.swUpdate.available) {
+      this.swUpdate.available.subscribe(() => {
+        if (confirm('A new version is available. Load it?'))
+          window.location.reload();
+      });
+    }
+
     const listener = async (data) => {
       switch (data.payload.event) {
           case 'signIn':
@@ -63,6 +77,9 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(async () => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      // Register Service workers
+      await serviceWorker.register();
     });
   }
 }
