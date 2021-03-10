@@ -16,7 +16,7 @@ export class ContactService {
   constructor( private api : APIService ) {  }
 
   public async list(userId : string) {
-    return await DataStore.query(Contact).then((results : any) => {
+    return await DataStore.query(Contact, c => c.userID("eq", userId)).then((results : any) => {
       this.contacts = results;
       this.contactsChange.next(this.contacts);
       return this.contacts;

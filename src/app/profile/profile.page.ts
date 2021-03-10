@@ -62,7 +62,6 @@ export class ProfilePage implements OnInit {
 
     this.userForm.controls['name'].setValue(this.user.name)
     this.userForm.controls['email'].setValue(this.user.email)
-    console.log(this.user)
   }
 
   async update(){

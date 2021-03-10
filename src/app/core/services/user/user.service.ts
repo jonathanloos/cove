@@ -10,8 +10,8 @@ export class UserService {
 
   constructor( private api : APIService ) {  }
 
-  async get() {
-    return await DataStore.query(User).then((result : any) => { return result[0] })
+  async get(userSub : string) {
+    return await DataStore.query(User, user => user.userSub("eq", userSub)).then((result : any) => { return result[0] })
       .catch(err => {console.log(err)})
   }
 

@@ -43,15 +43,9 @@ export class AuthService {
     });
   }
 
-  public async deleteProfile(){
-    // await this.userService.deleteProfile().then(() => {
-    //   this.currentUserSubject.next(null);
-    // });
-  }
-
   public async currentAuthenticatedUser(){
     return await Auth.currentAuthenticatedUser().then(async (user) => {
-      const currentUserInDb = await this.userService.get();
+      const currentUserInDb = await this.userService.get(user.attributes.sub);
       // Check if there's a user, otherwise create them.
       if(currentUserInDb){
         this.currentUserSubject.next(currentUserInDb)
@@ -91,7 +85,7 @@ export class AuthService {
   // When switching between accounts, remove old users data, pull new users data
   async scrubLocalDb(userSub? : string){
     // Grab current user in db
-    return await this.userService.get().then(async user => {
+    return await this.userService.get(userSub).then(async user => {
       const currentLoadedUser = user;
       // Only sync data the user can see
       // DataStore.configure({
