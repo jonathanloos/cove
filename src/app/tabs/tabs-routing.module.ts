@@ -32,7 +32,7 @@ const routes: Routes = [
           },
           {
             path: 'resources',
-            loadChildren: '../safety-plan/resources/resources.module#ResourcesPageModule'
+            loadChildren: '../safety-plan/help-resources/resources.module#ResourcesPageModule'
           }
         ]
       },
