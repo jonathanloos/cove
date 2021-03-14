@@ -1,0 +1,48 @@
+<ion-header no-border>
+  <ion-toolbar class="page-header">
+    <ion-item lines="none" class="title-item" class="ion-no-padding">
+      <ion-button (click)="dismiss()" slot="end">x</ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="d-flex justify-content-center mt-4">
+    <ion-avatar class="border">
+      <img src="{{resource[0].img_url}}"/>
+    </ion-avatar>
+  </div>
+  <div class="px-4 mt-3 text-center">
+    <h2 class="mb-4">{{resource[0].title}}</h2>
+    <ion-note>{{resource[0].description}}</ion-note>
+
+    <div class="text-left mt-4 pt-4">
+      <h5>Reachable by:</h5>
+      <ion-list>
+        <ion-item *ngIf="resource[0].phone.number != undefined" class="ion-no-padding" href="{{phone_url}}" >
+          <ion-label>
+            Phone: {{resource[0].phone.hours}}
+          </ion-label>
+          <ion-icon name="call" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item *ngIf="resource[0].sms.number != undefined" class="ion-no-padding">
+          <ion-icon name="text" slot="end"></ion-icon>
+          <a [attr.href]="sms_url | safeUrl" class="text-decoration-none text-dark w-100">
+            <ion-label>
+              SMS: {{resource[0].sms.hours}}
+            </ion-label>
+          </a>
+        </ion-item>
+        <ion-item class="ion-no-padding" *ngIf="resource[0].url != undefined" href="{{resource[0].url}}" target="_blank">
+          <ion-label>
+            Website:
+            <span *ngIf="resource[0].live_chat">
+              (live chat available)
+            </span>
+          </ion-label>
+          <ion-icon name="globe" slot="end"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
