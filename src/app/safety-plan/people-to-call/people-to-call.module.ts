@@ -9,7 +9,7 @@ import { PeopleToCallPageRoutingModule } from './people-to-call-routing.module';
 import { PeopleToCallPage } from './people-to-call.page';
 import { ComponentModule } from 'src/app/shared/component.module';
 import { PersonComponent } from './person/person.component';
-import { SafeUrlPipe } from 'src/app/core/services/pipe/safe-url.pipe';
+import { GlobalPipesModule } from 'src/app/global-pipes/global-pipes.module';
 
 @NgModule({
   imports: [
@@ -18,9 +18,10 @@ import { SafeUrlPipe } from 'src/app/core/services/pipe/safe-url.pipe';
     IonicModule,
     ComponentModule,
     ReactiveFormsModule,
-    PeopleToCallPageRoutingModule
+    PeopleToCallPageRoutingModule,
+    GlobalPipesModule
   ],
   providers:[],
-  declarations: [PeopleToCallPage, PersonComponent, SafeUrlPipe]
+  declarations: [PeopleToCallPage, PersonComponent]
 })
 export class PeopleToCallPageModule {}
