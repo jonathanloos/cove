@@ -31,7 +31,6 @@ import { GetHelpComponent } from './shared/get-help/get-help.component';
 
 /* Add Amplify imports */
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -53,8 +52,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       enabled: environment.production,
       registrationStrategy: "registerImmediately"
     }),  
-    AmplifyUIAngularModule,
-    NgbModule
+    AmplifyUIAngularModule
   ],
   providers: [
     StatusBar,

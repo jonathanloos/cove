@@ -29,6 +29,10 @@ const routes: Routes = [
           {
             path: 'people-to-call',
             loadChildren: '../safety-plan/people-to-call/people-to-call.module#PeopleToCallPageModule'
+          },
+          {
+            path: 'resources',
+            loadChildren: '../safety-plan/resources/resources.module#ResourcesPageModule'
           }
         ]
       },

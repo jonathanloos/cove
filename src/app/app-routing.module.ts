@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login-flow/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'resources',
+    loadChildren: () => import('./safety-plan/resources/resources.module').then( m => m.ResourcesPageModule)
   }
 ];
 @NgModule({

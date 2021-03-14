@@ -41,6 +41,15 @@ export class SafetyPlanPage {
       path:"places-to-go",
       title: "Places To Go",
       details: []
+    },
+    {
+      icon: "book",
+      path:"resources",
+      title: "Resources",
+      details: [
+        "24hr services",
+        "Helplines and centers"
+      ]
     }
   ];
 

@@ -15,7 +15,7 @@
   <ion-card class="brainstorm-card">
     <ion-card-content>
       <ion-list>
-        <ion-item class="ion-no-padding other-items" *ngFor="let item of menu_items; let i = index" [ngClass]="{'first-item': i == 0, 'last-item': i == 3}" lines="none">
+        <ion-item class="ion-no-padding other-items" *ngFor="let item of menu_items; let i = index" [ngClass]="{'first-item': i == 0, 'last-item': i == 4}" lines="none">
           <ion-grid routerLink="{{item.path}}" routerDirection="forward">
             <ion-row style="width: 100%;">
               <ion-col size="2" style="text-align: center;">
