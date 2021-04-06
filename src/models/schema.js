@@ -368,5 +368,5 @@ export const schema = {
             }
         }
     },
-    "version": "c38dddfe5d5f67d4ecc0f60168a611a2"
+    "version": "24877092dad96ef33d3572dea1877952"
 };
