@@ -1,0 +1,64 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cove-testing-195900-authRole",
+      "UnauthRoleArn": "arn:aws:iam::762139536326:role/amplify-cove-testing-195900-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::762139536326:role/amplify-cove-testing-195900-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-cove-testing-195900-deployment",
+      "UnauthRoleName": "amplify-cove-testing-195900-unauthRole",
+      "StackName": "amplify-cove-testing-195900",
+      "StackId": "arn:aws:cloudformation:ca-central-1:762139536326:stack/amplify-cove-testing-195900/e63d2a00-966a-11eb-bfd8-0e75e71712c2",
+      "AmplifyAppId": "d2yazbb87pwvcy"
+    }
+  },
+  "api": {
+    "covemobileapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authcovemobileapp8a468077"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "cdgsuqgtjnamjaqrmx4l7jw56y",
+        "GraphQLAPIEndpointOutput": "https://ezwkjeynbndoje6breas5az6mq.appsync-api.ca-central-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cove-testing-195900-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apicovemobileapp"
+      },
+      "lastPushTimeStamp": "2021-04-06T00:06:57.740Z",
+      "lastPushDirHash": "a7RqCMJv+K3e+zLBadIVcqDXuJI="
+    }
+  },
+  "auth": {
+    "covemobileapp8a468077": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-cove-testing-195900-deployment/amplify-cfn-templates/auth/covemobileapp8a468077-cloudformation-template.yml",
+        "logicalId": "authcovemobileapp8a468077"
+      },
+      "lastPushTimeStamp": "2021-04-06T00:06:57.740Z",
+      "output": {
+        "AppClientSecret": "10ce9mbc0v474besik8m37fkeujagh8cjrb765jpm12o9nhv4pu2",
+        "UserPoolId": "ca-central-1_cFiJjPtHe",
+        "AppClientIDWeb": "2hjrgc4npk6njktubotmjkcf1a",
+        "AppClientID": "727748gtbg6r052bqll38l1sb5",
+        "IdentityPoolId": "ca-central-1:d7225ecf-64e6-462f-8dfb-dba3a10e358b",
+        "IdentityPoolName": "covemobileapp8a468077_identitypool_8a468077__testing",
+        "UserPoolName": "covemobileapp8a468077_userpool_8a468077"
+      },
+      "lastPushDirHash": "uPc+coIN50j9gRiFTziHPmIjVS0="
+    }
+  },
+  "analytics": {}
+}

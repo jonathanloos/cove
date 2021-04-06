@@ -1,0 +1,11 @@
+{
+  "dev": {
+    "configLevel": "amplifyAdmin"
+  },
+  "production": {
+    "configLevel": "amplifyAdmin"
+  },
+  "testing": {
+    "configLevel": "amplifyAdmin"
+  }
+}
