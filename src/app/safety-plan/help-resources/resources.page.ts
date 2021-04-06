@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { HelpResourcesService } from 'src/app/core/services/help-resources/help-resources.service';
+import { HelpResource, User } from 'src/models';
 import { ResourceModalPage } from './resource-modal/resource-modal.page';
 
 @Component({
@@ -8,6 +11,7 @@ import { ResourceModalPage } from './resource-modal/resource-modal.page';
   styleUrls: ['./resources.page.scss'],
 })
 export class ResourcesPage implements OnInit {
+  public helpResources;
 
   public RESOURCES = [
     {
@@ -140,13 +144,17 @@ export class ResourcesPage implements OnInit {
     }
   ]
 
-  constructor(public modalController: ModalController) { }
+  constructor(
+      public modalController: ModalController,
+      private helpResourcesService: HelpResourcesService
+      ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    this.helpResources = await this.helpResourcesService.list();
   }
 
   async displayInfo(resource_id: number){
-    const resource = this.RESOURCES.filter((filtered_resource) => {
+    const resource = this.helpResources.filter((filtered_resource) => {
       if(filtered_resource.id == resource_id){
         return filtered_resource;
       }

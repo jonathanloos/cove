@@ -4,7 +4,7 @@ import { schema } from './schema';
 
 
 
-const { User, WarningSign, CopingStrategy, Contact, Place, Address } = initSchema(schema);
+const { User, WarningSign, CopingStrategy, Contact, Place, FavouriteUserResources, HelpResource, Address, ResourceContactInformation } = initSchema(schema);
 
 export {
   User,
@@ -12,5 +12,8 @@ export {
   CopingStrategy,
   Contact,
   Place,
-  Address
+  FavouriteUserResources,
+  HelpResource,
+  Address,
+  ResourceContactInformation
 };

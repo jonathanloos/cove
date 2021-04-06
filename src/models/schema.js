@@ -93,6 +93,20 @@ export const schema = {
                         "connectionType": "HAS_MANY",
                         "associatedWith": "userID"
                     }
+                },
+                "favouriteResources": {
+                    "name": "favouriteResources",
+                    "isArray": true,
+                    "type": {
+                        "model": "FavouriteUserResources"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "user"
+                    }
                 }
             },
             "syncable": true,
@@ -323,6 +337,161 @@ export const schema = {
                     }
                 }
             ]
+        },
+        "FavouriteUserResources": {
+            "name": "FavouriteUserResources",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "resource": {
+                    "name": "resource",
+                    "isArray": false,
+                    "type": {
+                        "model": "HelpResource"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "resourceID"
+                    }
+                },
+                "user": {
+                    "name": "user",
+                    "isArray": false,
+                    "type": {
+                        "model": "User"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "userID"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "FavouriteUserResources",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {
+                        "queries": null
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byUser",
+                        "fields": [
+                            "userID",
+                            "resourceID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byResource",
+                        "fields": [
+                            "resourceID",
+                            "userID"
+                        ]
+                    }
+                }
+            ]
+        },
+        "HelpResource": {
+            "name": "HelpResource",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "title": {
+                    "name": "title",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "description": {
+                    "name": "description",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "phone": {
+                    "name": "phone",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "ResourceContactInformation"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "sms": {
+                    "name": "sms",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "ResourceContactInformation"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "live_chat": {
+                    "name": "live_chat",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "img_url": {
+                    "name": "img_url",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "url": {
+                    "name": "url",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "userFavourites": {
+                    "name": "userFavourites",
+                    "isArray": true,
+                    "type": {
+                        "model": "FavouriteUserResources"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "resource"
+                    }
+                }
+            },
+            "syncable": true,
+            "pluralName": "HelpResources",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                }
+            ]
         }
     },
     "enums": {},
@@ -366,7 +535,26 @@ export const schema = {
                     "attributes": []
                 }
             }
+        },
+        "ResourceContactInformation": {
+            "name": "ResourceContactInformation",
+            "fields": {
+                "number": {
+                    "name": "number",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "hoursOfOperation": {
+                    "name": "hoursOfOperation",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
         }
     },
-    "version": "24877092dad96ef33d3572dea1877952"
+    "version": "9f85c5f0d0f2d1c06f896d6141d96f5c"
 };

@@ -230,6 +230,85 @@ export type DeletePlaceInput = {
   _version?: number | null;
 };
 
+export type CreateFavouriteUserResourcesInput = {
+  id?: string | null;
+  resourceID: string;
+  userID: string;
+  _version?: number | null;
+};
+
+export type ModelFavouriteUserResourcesConditionInput = {
+  resourceID?: ModelIDInput | null;
+  userID?: ModelIDInput | null;
+  and?: Array<ModelFavouriteUserResourcesConditionInput | null> | null;
+  or?: Array<ModelFavouriteUserResourcesConditionInput | null> | null;
+  not?: ModelFavouriteUserResourcesConditionInput | null;
+};
+
+export type UpdateFavouriteUserResourcesInput = {
+  id: string;
+  resourceID?: string | null;
+  userID?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteFavouriteUserResourcesInput = {
+  id?: string | null;
+  _version?: number | null;
+};
+
+export type CreateHelpResourceInput = {
+  id?: string | null;
+  title: string;
+  description?: string | null;
+  phone?: ResourceContactInformationInput | null;
+  sms?: ResourceContactInformationInput | null;
+  live_chat?: boolean | null;
+  img_url?: string | null;
+  url?: string | null;
+  _version?: number | null;
+};
+
+export type ResourceContactInformationInput = {
+  number?: string | null;
+  hoursOfOperation?: string | null;
+};
+
+export type ModelHelpResourceConditionInput = {
+  title?: ModelStringInput | null;
+  description?: ModelStringInput | null;
+  live_chat?: ModelBooleanInput | null;
+  img_url?: ModelStringInput | null;
+  url?: ModelStringInput | null;
+  and?: Array<ModelHelpResourceConditionInput | null> | null;
+  or?: Array<ModelHelpResourceConditionInput | null> | null;
+  not?: ModelHelpResourceConditionInput | null;
+};
+
+export type ModelBooleanInput = {
+  ne?: boolean | null;
+  eq?: boolean | null;
+  attributeExists?: boolean | null;
+  attributeType?: ModelAttributeTypes | null;
+};
+
+export type UpdateHelpResourceInput = {
+  id: string;
+  title?: string | null;
+  description?: string | null;
+  phone?: ResourceContactInformationInput | null;
+  sms?: ResourceContactInformationInput | null;
+  live_chat?: boolean | null;
+  img_url?: string | null;
+  url?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteHelpResourceInput = {
+  id?: string | null;
+  _version?: number | null;
+};
+
 export type ModelUserFilterInput = {
   id?: ModelIDInput | null;
   userSub?: ModelIDInput | null;
@@ -280,6 +359,27 @@ export type ModelPlaceFilterInput = {
   and?: Array<ModelPlaceFilterInput | null> | null;
   or?: Array<ModelPlaceFilterInput | null> | null;
   not?: ModelPlaceFilterInput | null;
+};
+
+export type ModelFavouriteUserResourcesFilterInput = {
+  id?: ModelIDInput | null;
+  resourceID?: ModelIDInput | null;
+  userID?: ModelIDInput | null;
+  and?: Array<ModelFavouriteUserResourcesFilterInput | null> | null;
+  or?: Array<ModelFavouriteUserResourcesFilterInput | null> | null;
+  not?: ModelFavouriteUserResourcesFilterInput | null;
+};
+
+export type ModelHelpResourceFilterInput = {
+  id?: ModelIDInput | null;
+  title?: ModelStringInput | null;
+  description?: ModelStringInput | null;
+  live_chat?: ModelBooleanInput | null;
+  img_url?: ModelStringInput | null;
+  url?: ModelStringInput | null;
+  and?: Array<ModelHelpResourceFilterInput | null> | null;
+  or?: Array<ModelHelpResourceFilterInput | null> | null;
+  not?: ModelHelpResourceFilterInput | null;
 };
 
 export type CreateUserMutation = {
@@ -349,6 +449,22 @@ export type CreateUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  favouriteResources: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -441,6 +557,22 @@ export type UpdateUserMutation = {
     nextToken: string | null;
     startedAt: number | null;
   } | null;
+  favouriteResources: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -515,6 +647,22 @@ export type DeleteUserMutation = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  favouriteResources: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -714,6 +862,366 @@ export type DeletePlaceMutation = {
   updatedAt: string;
 };
 
+export type CreateFavouriteUserResourcesMutation = {
+  __typename: "FavouriteUserResources";
+  id: string;
+  resourceID: string;
+  userID: string;
+  resource: {
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  user: {
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateFavouriteUserResourcesMutation = {
+  __typename: "FavouriteUserResources";
+  id: string;
+  resourceID: string;
+  userID: string;
+  resource: {
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  user: {
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteFavouriteUserResourcesMutation = {
+  __typename: "FavouriteUserResources";
+  id: string;
+  resourceID: string;
+  userID: string;
+  resource: {
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  user: {
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateHelpResourceMutation = {
+  __typename: "HelpResource";
+  id: string;
+  title: string;
+  description: string | null;
+  phone: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  sms: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  live_chat: boolean | null;
+  img_url: string | null;
+  url: string | null;
+  userFavourites: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateHelpResourceMutation = {
+  __typename: "HelpResource";
+  id: string;
+  title: string;
+  description: string | null;
+  phone: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  sms: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  live_chat: boolean | null;
+  img_url: string | null;
+  url: string | null;
+  userFavourites: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteHelpResourceMutation = {
+  __typename: "HelpResource";
+  id: string;
+  title: string;
+  description: string | null;
+  phone: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  sms: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  live_chat: boolean | null;
+  img_url: string | null;
+  url: string | null;
+  userFavourites: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type SyncUsersQuery = {
   __typename: "ModelUserConnection";
   items: Array<{
@@ -740,6 +1248,11 @@ export type SyncUsersQuery = {
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
       startedAt: number | null;
     } | null;
@@ -829,6 +1342,22 @@ export type GetUserQuery = {
     nextToken: string | null;
     startedAt: number | null;
   } | null;
+  favouriteResources: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -862,6 +1391,11 @@ export type ListUsersQuery = {
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
       startedAt: number | null;
     } | null;
@@ -1098,6 +1632,161 @@ export type ListPlacesQuery = {
   startedAt: number | null;
 };
 
+export type SyncFavouriteUserResourcesQuery = {
+  __typename: "ModelFavouriteUserResourcesConnection";
+  items: Array<{
+    __typename: "FavouriteUserResources";
+    id: string;
+    resourceID: string;
+    userID: string;
+    resource: {
+      __typename: "HelpResource";
+      id: string;
+      title: string;
+      description: string | null;
+      live_chat: boolean | null;
+      img_url: string | null;
+      url: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    };
+    user: {
+      __typename: "User";
+      id: string;
+      userSub: string;
+      name: string | null;
+      email: string;
+      phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    };
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
+};
+
+export type SyncHelpResourcesQuery = {
+  __typename: "ModelHelpResourceConnection";
+  items: Array<{
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
+};
+
+export type GetHelpResourceQuery = {
+  __typename: "HelpResource";
+  id: string;
+  title: string;
+  description: string | null;
+  phone: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  sms: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  live_chat: boolean | null;
+  img_url: string | null;
+  url: string | null;
+  userFavourites: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListHelpResourcesQuery = {
+  __typename: "ModelHelpResourceConnection";
+  items: Array<{
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
+};
+
 export type OnCreateUserSubscription = {
   __typename: "User";
   id: string;
@@ -1165,6 +1854,22 @@ export type OnCreateUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  favouriteResources: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1257,6 +1962,22 @@ export type OnUpdateUserSubscription = {
     nextToken: string | null;
     startedAt: number | null;
   } | null;
+  favouriteResources: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -1331,6 +2052,22 @@ export type OnDeleteUserSubscription = {
       userID: string;
       title: string;
       description: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  favouriteResources: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1530,6 +2267,366 @@ export type OnDeletePlaceSubscription = {
   updatedAt: string;
 };
 
+export type OnCreateFavouriteUserResourcesSubscription = {
+  __typename: "FavouriteUserResources";
+  id: string;
+  resourceID: string;
+  userID: string;
+  resource: {
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  user: {
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateFavouriteUserResourcesSubscription = {
+  __typename: "FavouriteUserResources";
+  id: string;
+  resourceID: string;
+  userID: string;
+  resource: {
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  user: {
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteFavouriteUserResourcesSubscription = {
+  __typename: "FavouriteUserResources";
+  id: string;
+  resourceID: string;
+  userID: string;
+  resource: {
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  user: {
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateHelpResourceSubscription = {
+  __typename: "HelpResource";
+  id: string;
+  title: string;
+  description: string | null;
+  phone: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  sms: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  live_chat: boolean | null;
+  img_url: string | null;
+  url: string | null;
+  userFavourites: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateHelpResourceSubscription = {
+  __typename: "HelpResource";
+  id: string;
+  title: string;
+  description: string | null;
+  phone: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  sms: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  live_chat: boolean | null;
+  img_url: string | null;
+  url: string | null;
+  userFavourites: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteHelpResourceSubscription = {
+  __typename: "HelpResource";
+  id: string;
+  title: string;
+  description: string | null;
+  phone: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  sms: {
+    __typename: "ResourceContactInformation";
+    number: string | null;
+    hoursOfOperation: string | null;
+  } | null;
+  live_chat: boolean | null;
+  img_url: string | null;
+  url: string | null;
+  userFavourites: {
+    __typename: "ModelFavouriteUserResourcesConnection";
+    items: Array<{
+      __typename: "FavouriteUserResources";
+      id: string;
+      resourceID: string;
+      userID: string;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    } | null> | null;
+    nextToken: string | null;
+    startedAt: number | null;
+  } | null;
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
 @Injectable({
   providedIn: "root"
 })
@@ -1606,6 +2703,22 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          favouriteResources {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
               _version
               _deleted
               _lastChangedAt
@@ -1714,6 +2827,22 @@ export class APIService {
             nextToken
             startedAt
           }
+          favouriteResources {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
           _version
           _deleted
           _lastChangedAt
@@ -1804,6 +2933,22 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          favouriteResources {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
               _version
               _deleted
               _lastChangedAt
@@ -2206,6 +3351,468 @@ export class APIService {
     )) as any;
     return <DeletePlaceMutation>response.data.deletePlace;
   }
+  async CreateFavouriteUserResources(
+    input: CreateFavouriteUserResourcesInput,
+    condition?: ModelFavouriteUserResourcesConditionInput
+  ): Promise<CreateFavouriteUserResourcesMutation> {
+    const statement = `mutation CreateFavouriteUserResources($input: CreateFavouriteUserResourcesInput!, $condition: ModelFavouriteUserResourcesConditionInput) {
+        createFavouriteUserResources(input: $input, condition: $condition) {
+          __typename
+          id
+          resourceID
+          userID
+          resource {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          user {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateFavouriteUserResourcesMutation>(
+      response.data.createFavouriteUserResources
+    );
+  }
+  async UpdateFavouriteUserResources(
+    input: UpdateFavouriteUserResourcesInput,
+    condition?: ModelFavouriteUserResourcesConditionInput
+  ): Promise<UpdateFavouriteUserResourcesMutation> {
+    const statement = `mutation UpdateFavouriteUserResources($input: UpdateFavouriteUserResourcesInput!, $condition: ModelFavouriteUserResourcesConditionInput) {
+        updateFavouriteUserResources(input: $input, condition: $condition) {
+          __typename
+          id
+          resourceID
+          userID
+          resource {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          user {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateFavouriteUserResourcesMutation>(
+      response.data.updateFavouriteUserResources
+    );
+  }
+  async DeleteFavouriteUserResources(
+    input: DeleteFavouriteUserResourcesInput,
+    condition?: ModelFavouriteUserResourcesConditionInput
+  ): Promise<DeleteFavouriteUserResourcesMutation> {
+    const statement = `mutation DeleteFavouriteUserResources($input: DeleteFavouriteUserResourcesInput!, $condition: ModelFavouriteUserResourcesConditionInput) {
+        deleteFavouriteUserResources(input: $input, condition: $condition) {
+          __typename
+          id
+          resourceID
+          userID
+          resource {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          user {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteFavouriteUserResourcesMutation>(
+      response.data.deleteFavouriteUserResources
+    );
+  }
+  async CreateHelpResource(
+    input: CreateHelpResourceInput,
+    condition?: ModelHelpResourceConditionInput
+  ): Promise<CreateHelpResourceMutation> {
+    const statement = `mutation CreateHelpResource($input: CreateHelpResourceInput!, $condition: ModelHelpResourceConditionInput) {
+        createHelpResource(input: $input, condition: $condition) {
+          __typename
+          id
+          title
+          description
+          phone {
+            __typename
+            number
+            hoursOfOperation
+          }
+          sms {
+            __typename
+            number
+            hoursOfOperation
+          }
+          live_chat
+          img_url
+          url
+          userFavourites {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateHelpResourceMutation>response.data.createHelpResource;
+  }
+  async UpdateHelpResource(
+    input: UpdateHelpResourceInput,
+    condition?: ModelHelpResourceConditionInput
+  ): Promise<UpdateHelpResourceMutation> {
+    const statement = `mutation UpdateHelpResource($input: UpdateHelpResourceInput!, $condition: ModelHelpResourceConditionInput) {
+        updateHelpResource(input: $input, condition: $condition) {
+          __typename
+          id
+          title
+          description
+          phone {
+            __typename
+            number
+            hoursOfOperation
+          }
+          sms {
+            __typename
+            number
+            hoursOfOperation
+          }
+          live_chat
+          img_url
+          url
+          userFavourites {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateHelpResourceMutation>response.data.updateHelpResource;
+  }
+  async DeleteHelpResource(
+    input: DeleteHelpResourceInput,
+    condition?: ModelHelpResourceConditionInput
+  ): Promise<DeleteHelpResourceMutation> {
+    const statement = `mutation DeleteHelpResource($input: DeleteHelpResourceInput!, $condition: ModelHelpResourceConditionInput) {
+        deleteHelpResource(input: $input, condition: $condition) {
+          __typename
+          id
+          title
+          description
+          phone {
+            __typename
+            number
+            hoursOfOperation
+          }
+          sms {
+            __typename
+            number
+            hoursOfOperation
+          }
+          live_chat
+          img_url
+          url
+          userFavourites {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteHelpResourceMutation>response.data.deleteHelpResource;
+  }
   async SyncUsers(
     filter?: ModelUserFilterInput,
     limit?: number,
@@ -2238,6 +3845,11 @@ export class APIService {
               startedAt
             }
             places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
               __typename
               nextToken
               startedAt
@@ -2348,6 +3960,22 @@ export class APIService {
             nextToken
             startedAt
           }
+          favouriteResources {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
           _version
           _deleted
           _lastChangedAt
@@ -2394,6 +4022,11 @@ export class APIService {
               startedAt
             }
             places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
               __typename
               nextToken
               startedAt
@@ -2870,6 +4503,244 @@ export class APIService {
     )) as any;
     return <ListPlacesQuery>response.data.listPlaces;
   }
+  async SyncFavouriteUserResources(
+    filter?: ModelFavouriteUserResourcesFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncFavouriteUserResourcesQuery> {
+    const statement = `query SyncFavouriteUserResources($filter: ModelFavouriteUserResourcesFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncFavouriteUserResources(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            resourceID
+            userID
+            resource {
+              __typename
+              id
+              title
+              description
+              live_chat
+              img_url
+              url
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            user {
+              __typename
+              id
+              userSub
+              name
+              email
+              phone
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncFavouriteUserResourcesQuery>(
+      response.data.syncFavouriteUserResources
+    );
+  }
+  async SyncHelpResources(
+    filter?: ModelHelpResourceFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncHelpResourcesQuery> {
+    const statement = `query SyncHelpResources($filter: ModelHelpResourceFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncHelpResources(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncHelpResourcesQuery>response.data.syncHelpResources;
+  }
+  async GetHelpResource(id: string): Promise<GetHelpResourceQuery> {
+    const statement = `query GetHelpResource($id: ID!) {
+        getHelpResource(id: $id) {
+          __typename
+          id
+          title
+          description
+          phone {
+            __typename
+            number
+            hoursOfOperation
+          }
+          sms {
+            __typename
+            number
+            hoursOfOperation
+          }
+          live_chat
+          img_url
+          url
+          userFavourites {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetHelpResourceQuery>response.data.getHelpResource;
+  }
+  async ListHelpResources(
+    filter?: ModelHelpResourceFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListHelpResourcesQuery> {
+    const statement = `query ListHelpResources($filter: ModelHelpResourceFilterInput, $limit: Int, $nextToken: String) {
+        listHelpResources(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListHelpResourcesQuery>response.data.listHelpResources;
+  }
   OnCreateUserListener: Observable<
     SubscriptionResponse<OnCreateUserSubscription>
   > = API.graphql(
@@ -2942,6 +4813,22 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          favouriteResources {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
               _version
               _deleted
               _lastChangedAt
@@ -3042,6 +4929,22 @@ export class APIService {
             nextToken
             startedAt
           }
+          favouriteResources {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
           _version
           _deleted
           _lastChangedAt
@@ -3124,6 +5027,22 @@ export class APIService {
               userID
               title
               description
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          favouriteResources {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
               _version
               _deleted
               _lastChangedAt
@@ -3421,4 +5340,418 @@ export class APIService {
       }`
     )
   ) as Observable<SubscriptionResponse<OnDeletePlaceSubscription>>;
+
+  OnCreateFavouriteUserResourcesListener: Observable<
+    SubscriptionResponse<OnCreateFavouriteUserResourcesSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateFavouriteUserResources {
+        onCreateFavouriteUserResources {
+          __typename
+          id
+          resourceID
+          userID
+          resource {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          user {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnCreateFavouriteUserResourcesSubscription>
+  >;
+
+  OnUpdateFavouriteUserResourcesListener: Observable<
+    SubscriptionResponse<OnUpdateFavouriteUserResourcesSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateFavouriteUserResources {
+        onUpdateFavouriteUserResources {
+          __typename
+          id
+          resourceID
+          userID
+          resource {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          user {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnUpdateFavouriteUserResourcesSubscription>
+  >;
+
+  OnDeleteFavouriteUserResourcesListener: Observable<
+    SubscriptionResponse<OnDeleteFavouriteUserResourcesSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteFavouriteUserResources {
+        onDeleteFavouriteUserResources {
+          __typename
+          id
+          resourceID
+          userID
+          resource {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          user {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnDeleteFavouriteUserResourcesSubscription>
+  >;
+
+  OnCreateHelpResourceListener: Observable<
+    SubscriptionResponse<OnCreateHelpResourceSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateHelpResource {
+        onCreateHelpResource {
+          __typename
+          id
+          title
+          description
+          phone {
+            __typename
+            number
+            hoursOfOperation
+          }
+          sms {
+            __typename
+            number
+            hoursOfOperation
+          }
+          live_chat
+          img_url
+          url
+          userFavourites {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnCreateHelpResourceSubscription>>;
+
+  OnUpdateHelpResourceListener: Observable<
+    SubscriptionResponse<OnUpdateHelpResourceSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateHelpResource {
+        onUpdateHelpResource {
+          __typename
+          id
+          title
+          description
+          phone {
+            __typename
+            number
+            hoursOfOperation
+          }
+          sms {
+            __typename
+            number
+            hoursOfOperation
+          }
+          live_chat
+          img_url
+          url
+          userFavourites {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnUpdateHelpResourceSubscription>>;
+
+  OnDeleteHelpResourceListener: Observable<
+    SubscriptionResponse<OnDeleteHelpResourceSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteHelpResource {
+        onDeleteHelpResource {
+          __typename
+          id
+          title
+          description
+          phone {
+            __typename
+            number
+            hoursOfOperation
+          }
+          sms {
+            __typename
+            number
+            hoursOfOperation
+          }
+          live_chat
+          img_url
+          url
+          userFavourites {
+            __typename
+            items {
+              __typename
+              id
+              resourceID
+              userID
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            nextToken
+            startedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnDeleteHelpResourceSubscription>>;
 }
