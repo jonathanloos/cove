@@ -11,7 +11,10 @@ import { ResourceModalPage } from './resource-modal/resource-modal.page';
   styleUrls: ['./resources.page.scss'],
 })
 export class ResourcesPage implements OnInit {
-  public helpResources;
+
+  public helpResources: any;
+  public favouriteResources: any = [];
+  public currentUser: User;
 
   public RESOURCES = [
     {
@@ -33,7 +36,7 @@ export class ResourcesPage implements OnInit {
     {
       id: 2,
       title: "Crisis Services Canada",
-      description: "Crisis Services Canada (CSC) is a national network of existing distress, crisis and suicide prevention line services committed to supporting any person living in Canada who is affected by suicide, in the most caring and least intrusive manner possible. If you’re thinking about suicide, are worried about a friend or loved one, the Canada Suicide Prevention Service is available",
+      description: "Crisis Services Canada (CSC) is a national network of existing distress, crisis and suicide prevention line services committed to supporting any person living in Canada who is affected by suicide, in the most caring and least intrusive manner possible. If you’re thinking about suicide, are worried about a friend or loved one, the Canada Suicide Prevention Service is available.",
       phone: {
         number: 18334564566,
         hours: "24/7"
@@ -72,7 +75,7 @@ export class ResourcesPage implements OnInit {
       },
       sms: {
         number: undefined,
-        hours: "24/7"
+        hours: ""
       },
       live_chat: true,
       img_url: "../../../assets/logos/hope_for_wellness.jpg",
@@ -146,11 +149,37 @@ export class ResourcesPage implements OnInit {
 
   constructor(
       public modalController: ModalController,
-      private helpResourcesService: HelpResourcesService
-      ) { }
+      private helpResourcesService: HelpResourcesService,
+      private authService: AuthService
+    ) {
+      helpResourcesService.favourite_resources_change.subscribe(result => {
+        this.getAndFilterResources();
+      })
+     }
 
   async ngOnInit() {
-    this.helpResources = await this.helpResourcesService.list();
+    await this.authService.currentAuthenticatedUser().then(async (user) => {
+      this.currentUser = user;
+      console.log(user)
+      this.getAndFilterResources();
+    });
+  }
+
+  private async getAndFilterResources(){
+    await this.helpResourcesService.list().then((resources:any) => {
+      if(this.currentUser.favouriteResources != undefined && this.currentUser.favouriteResources.length != 0 ){
+        this.favouriteResources = this.currentUser.favouriteResources;
+      } else {
+        this.favouriteResources = [];
+      }
+      console.log(this.currentUser.favouriteResources)
+      let favourited_ids = this.favouriteResources.map(r => r.id) 
+      this.helpResources = resources.filter((resource) => {
+        if (!favourited_ids.includes(resource.id)){
+          return resource
+        }
+      })
+    });
   }
 
   async displayInfo(resource_id: number){
@@ -167,6 +196,10 @@ export class ResourcesPage implements OnInit {
       }
     });
     return await modal.present();
+  }
+
+  async favourite(resource_id: string){
+    await this.helpResourcesService.favourite(resource_id)
   }
 
 }
