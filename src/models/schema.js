@@ -380,9 +380,7 @@ export const schema = {
             "attributes": [
                 {
                     "type": "model",
-                    "properties": {
-                        "queries": null
-                    }
+                    "properties": {}
                 },
                 {
                     "type": "key",
