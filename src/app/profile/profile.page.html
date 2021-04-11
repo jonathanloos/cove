@@ -5,12 +5,6 @@
   <h1 class="page-title ion-text-center" style="margin-top: 3rem;">
     <div *ngIf="user$ | async as user">
       <b>Hi {{user.name}}!</b><br/>
-      <ion-chip  color="primary">
-        <ion-avatar>
-          <img src="../assets/avatars/logo.svg">
-        </ion-avatar>
-        <ion-label>Member since {{user.createdAt}}</ion-label>
-      </ion-chip>
     </div>
   </h1>
   <ion-card class="brainstorm-card">

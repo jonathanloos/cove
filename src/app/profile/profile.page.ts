@@ -59,7 +59,6 @@ export class ProfilePage implements OnInit {
 
   async ionViewWillEnter(){
     this.user = await this.authService.currentAuthenticatedUser();
-
     this.userForm.controls['name'].setValue(this.user.name)
     this.userForm.controls['email'].setValue(this.user.email)
   }

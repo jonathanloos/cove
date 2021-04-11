@@ -8,6 +8,7 @@ type User @model{
   copingStrategies: [CopingStrategy] @connection(keyName: "byUser", fields: ["id"])
   contacts: [Contact] @connection(keyName: "byUser", fields: ["id"])
   places: [Place] @connection(keyName: "byUser", fields: ["id"])
+  favouriteResources: [FavouriteUserResources] @connection(keyName: "byUser", fields: ["id"])
 }
 
 type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]){
@@ -46,4 +47,33 @@ type Address {
   postalCode: String,
   province: String,
   country: String
+}
+
+type FavouriteUserResources
+  @model
+  @key(name: "byUser", fields: ["userID", "resourceID"]) 
+  @key(name: "byResource", fields: ["resourceID", "userID"]){
+    id: ID!
+    resourceID: ID!
+    userID: ID!
+    order: Int
+    resource: HelpResource! @connection(fields: ["resourceID"])
+    user: User! @connection(fields: ["userID"])
+}
+
+type HelpResource @model {
+  id: ID!
+  title: String!
+  description: String
+  phone: ResourceContactInformation
+  sms: ResourceContactInformation
+  live_chat: Boolean
+  img_url: String
+  url: String
+  userFavourites: [FavouriteUserResources] @connection(keyName: "byResource", fields: ["id"])
+}
+
+type ResourceContactInformation {
+  number: String,
+  hoursOfOperation: String
 }

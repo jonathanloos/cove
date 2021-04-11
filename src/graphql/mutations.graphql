@@ -70,6 +70,21 @@ mutation CreateUser(
       nextToken
       startedAt
     }
+    favouriteResources {
+      items {
+        id
+        resourceID
+        userID
+        order
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -148,6 +163,21 @@ mutation UpdateUser(
       nextToken
       startedAt
     }
+    favouriteResources {
+      items {
+        id
+        resourceID
+        userID
+        order
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
     _version
     _deleted
     _lastChangedAt
@@ -217,6 +247,21 @@ mutation DeleteUser(
         userID
         title
         description
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    favouriteResources {
+      items {
+        id
+        resourceID
+        userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -441,6 +486,348 @@ mutation DeletePlace(
       postalCode
       province
       country
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateFavouriteUserResources(
+  $input: CreateFavouriteUserResourcesInput!
+  $condition: ModelFavouriteUserResourcesConditionInput
+) {
+  createFavouriteUserResources(input: $input, condition: $condition) {
+    id
+    resourceID
+    userID
+    order
+    resource {
+      id
+      title
+      description
+      phone {
+        number
+        hoursOfOperation
+      }
+      sms {
+        number
+        hoursOfOperation
+      }
+      live_chat
+      img_url
+      url
+      userFavourites {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      userSub
+      name
+      email
+      phone
+      warningSigns {
+        nextToken
+        startedAt
+      }
+      copingStrategies {
+        nextToken
+        startedAt
+      }
+      contacts {
+        nextToken
+        startedAt
+      }
+      places {
+        nextToken
+        startedAt
+      }
+      favouriteResources {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateFavouriteUserResources(
+  $input: UpdateFavouriteUserResourcesInput!
+  $condition: ModelFavouriteUserResourcesConditionInput
+) {
+  updateFavouriteUserResources(input: $input, condition: $condition) {
+    id
+    resourceID
+    userID
+    order
+    resource {
+      id
+      title
+      description
+      phone {
+        number
+        hoursOfOperation
+      }
+      sms {
+        number
+        hoursOfOperation
+      }
+      live_chat
+      img_url
+      url
+      userFavourites {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      userSub
+      name
+      email
+      phone
+      warningSigns {
+        nextToken
+        startedAt
+      }
+      copingStrategies {
+        nextToken
+        startedAt
+      }
+      contacts {
+        nextToken
+        startedAt
+      }
+      places {
+        nextToken
+        startedAt
+      }
+      favouriteResources {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteFavouriteUserResources(
+  $input: DeleteFavouriteUserResourcesInput!
+  $condition: ModelFavouriteUserResourcesConditionInput
+) {
+  deleteFavouriteUserResources(input: $input, condition: $condition) {
+    id
+    resourceID
+    userID
+    order
+    resource {
+      id
+      title
+      description
+      phone {
+        number
+        hoursOfOperation
+      }
+      sms {
+        number
+        hoursOfOperation
+      }
+      live_chat
+      img_url
+      url
+      userFavourites {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      userSub
+      name
+      email
+      phone
+      warningSigns {
+        nextToken
+        startedAt
+      }
+      copingStrategies {
+        nextToken
+        startedAt
+      }
+      contacts {
+        nextToken
+        startedAt
+      }
+      places {
+        nextToken
+        startedAt
+      }
+      favouriteResources {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateHelpResource(
+  $input: CreateHelpResourceInput!
+  $condition: ModelHelpResourceConditionInput
+) {
+  createHelpResource(input: $input, condition: $condition) {
+    id
+    title
+    description
+    phone {
+      number
+      hoursOfOperation
+    }
+    sms {
+      number
+      hoursOfOperation
+    }
+    live_chat
+    img_url
+    url
+    userFavourites {
+      items {
+        id
+        resourceID
+        userID
+        order
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateHelpResource(
+  $input: UpdateHelpResourceInput!
+  $condition: ModelHelpResourceConditionInput
+) {
+  updateHelpResource(input: $input, condition: $condition) {
+    id
+    title
+    description
+    phone {
+      number
+      hoursOfOperation
+    }
+    sms {
+      number
+      hoursOfOperation
+    }
+    live_chat
+    img_url
+    url
+    userFavourites {
+      items {
+        id
+        resourceID
+        userID
+        order
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteHelpResource(
+  $input: DeleteHelpResourceInput!
+  $condition: ModelHelpResourceConditionInput
+) {
+  deleteHelpResource(input: $input, condition: $condition) {
+    id
+    title
+    description
+    phone {
+      number
+      hoursOfOperation
+    }
+    sms {
+      number
+      hoursOfOperation
+    }
+    live_chat
+    img_url
+    url
+    userFavourites {
+      items {
+        id
+        resourceID
+        userID
+        order
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+      startedAt
     }
     _version
     _deleted

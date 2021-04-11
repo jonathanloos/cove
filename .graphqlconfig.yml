@@ -1,6 +1,6 @@
 projects:
   covemobileapp:
-    schemaPath: src/graphql/schema.json
+    schemaPath: amplify/backend/api/covemobileapp/build/schema.graphql
     includes:
       - src/graphql/**/*.graphql
     excludes:

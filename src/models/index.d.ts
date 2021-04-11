@@ -11,6 +11,12 @@ export declare class Address {
   constructor(init: ModelInit<Address>);
 }
 
+export declare class ResourceContactInformation {
+  readonly number?: string;
+  readonly hoursOfOperation?: string;
+  constructor(init: ModelInit<ResourceContactInformation>);
+}
+
 export declare class User {
   readonly id: string;
   readonly userSub: string;
@@ -21,6 +27,7 @@ export declare class User {
   readonly copingStrategies?: (CopingStrategy | null)[];
   readonly contacts?: (Contact | null)[];
   readonly places?: (Place | null)[];
+  readonly favouriteResources?: (FavouriteUserResources | null)[];
   constructor(init: ModelInit<User>);
   static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
 }
@@ -61,4 +68,27 @@ export declare class Place {
   readonly address?: Address;
   constructor(init: ModelInit<Place>);
   static copyOf(source: Place, mutator: (draft: MutableModel<Place>) => MutableModel<Place> | void): Place;
+}
+
+export declare class FavouriteUserResources {
+  readonly id: string;
+  readonly order?: number;
+  readonly resource: HelpResource;
+  readonly user: User;
+  constructor(init: ModelInit<FavouriteUserResources>);
+  static copyOf(source: FavouriteUserResources, mutator: (draft: MutableModel<FavouriteUserResources>) => MutableModel<FavouriteUserResources> | void): FavouriteUserResources;
+}
+
+export declare class HelpResource {
+  readonly id: string;
+  readonly title: string;
+  readonly description?: string;
+  readonly phone?: ResourceContactInformation;
+  readonly sms?: ResourceContactInformation;
+  readonly live_chat?: boolean;
+  readonly img_url?: string;
+  readonly url?: string;
+  readonly userFavourites?: (FavouriteUserResources | null)[];
+  constructor(init: ModelInit<HelpResource>);
+  static copyOf(source: HelpResource, mutator: (draft: MutableModel<HelpResource>) => MutableModel<HelpResource> | void): HelpResource;
 }

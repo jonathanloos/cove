@@ -15,7 +15,6 @@ export class WarningSignsPage implements OnInit {
   @ViewChild('content') private content: any;
 
   currentUser: User;
-  currentUserSubscription: Subscription;
   
   signs: WarningSign[];
   adding:boolean = false;
@@ -24,7 +23,7 @@ export class WarningSignsPage implements OnInit {
   constructor(
     private warningSignService: WarningSignsService,
     private formBuilder: FormBuilder,
-    private authService: AuthService,
+    private authService: AuthService
     ) { 
 
       warningSignService.signsChange.subscribe(result => {
