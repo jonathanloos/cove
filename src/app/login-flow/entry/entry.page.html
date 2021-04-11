@@ -2,7 +2,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="vh-100 vw-100" style="background-color: black;">
+  <!-- <div class="vh-100 vw-100" style="background-color: black;">
     <div class="text-center m-auto" style="background-image: url('../assets/images/photo-1559423869-190c0502c8a1.jpeg'); height: 100vh; background-size: cover; max-width: 910px;">
       <div style="position: absolute; left: 50vw; top:  10%;">
         <img src="../assets/images/cove-logo-white.png" class="w-100" style="margin-left: -100%; max-width: 500px;">
@@ -15,6 +15,21 @@
           <ion-button class="mt-4" color="primary" [routerLink]="['/login']" routerDirection="forward" expand="block">Login</ion-button>
           <ion-button class="mt-4" color="light" [routerLink]="['/register']" routerDirection="forward" expand="block">Register</ion-button>
         </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="d-flex flex-column justify-content-center h-100 align-items-center text-center px-4" style="background-color: var(--ion-color-warning);">
+    <ion-avatar class="border shadow-sm mb-4" style="height: 100px !important; width: 100px !important;">
+      <img src="../assets/icons/icon-128x128.png">
+    </ion-avatar>
+    <h2 class="mt-4 text-white">Welcome to Cove 🏝</h2>
+    <p class="mb-4 p-0 text-white">For your safety, it is recommended that you complete your safety plan with someone supportive or a healthcare practitioner while you are not in a crisis.</p>
+    <div class="row w-100 mt-4">
+      <div class="col-6 p-1">
+        <ion-button class="w-100" color="primary" [routerLink]="['/login']" routerDirection="forward" slot="start">Login</ion-button>
+      </div>
+      <div class="col-6 p-1">
+        <ion-button class="w-100" color="light" [routerLink]="['/register']" routerDirection="forward" slot="end">Register</ion-button>
       </div>
     </div>
   </div>
