@@ -120,6 +120,7 @@ query GetUser($id: ID!) {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -462,6 +463,7 @@ query SyncFavouriteUserResources(
       id
       resourceID
       userID
+      order
       resource {
         id
         title
@@ -502,6 +504,7 @@ query GetFavouriteUserResources($id: ID!) {
     id
     resourceID
     userID
+    order
     resource {
       id
       title
@@ -580,6 +583,7 @@ query ListFavouriteUserResourcess(
       id
       resourceID
       userID
+      order
       resource {
         id
         title
@@ -677,6 +681,7 @@ query GetHelpResource($id: ID!) {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt

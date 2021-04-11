@@ -72,6 +72,7 @@ subscription OnCreateUser {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -161,6 +162,7 @@ subscription OnUpdateUser {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -250,6 +252,7 @@ subscription OnDeleteUser {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -451,6 +454,7 @@ subscription OnCreateFavouriteUserResources {
     id
     resourceID
     userID
+    order
     resource {
       id
       title
@@ -520,6 +524,7 @@ subscription OnUpdateFavouriteUserResources {
     id
     resourceID
     userID
+    order
     resource {
       id
       title
@@ -589,6 +594,7 @@ subscription OnDeleteFavouriteUserResources {
     id
     resourceID
     userID
+    order
     resource {
       id
       title
@@ -674,6 +680,7 @@ subscription OnCreateHelpResource {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -711,6 +718,7 @@ subscription OnUpdateHelpResource {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -748,6 +756,7 @@ subscription OnDeleteHelpResource {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt

@@ -348,6 +348,13 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "resource": {
                     "name": "resource",
                     "isArray": false,
@@ -554,5 +561,5 @@ export const schema = {
             }
         }
     },
-    "version": "9f85c5f0d0f2d1c06f896d6141d96f5c"
+    "version": "87c35d2b15f4c179103a7b85712c2408"
 };

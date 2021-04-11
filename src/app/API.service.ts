@@ -234,21 +234,36 @@ export type CreateFavouriteUserResourcesInput = {
   id?: string | null;
   resourceID: string;
   userID: string;
+  order?: number | null;
   _version?: number | null;
 };
 
 export type ModelFavouriteUserResourcesConditionInput = {
   resourceID?: ModelIDInput | null;
   userID?: ModelIDInput | null;
+  order?: ModelIntInput | null;
   and?: Array<ModelFavouriteUserResourcesConditionInput | null> | null;
   or?: Array<ModelFavouriteUserResourcesConditionInput | null> | null;
   not?: ModelFavouriteUserResourcesConditionInput | null;
+};
+
+export type ModelIntInput = {
+  ne?: number | null;
+  eq?: number | null;
+  le?: number | null;
+  lt?: number | null;
+  ge?: number | null;
+  gt?: number | null;
+  between?: Array<number | null> | null;
+  attributeExists?: boolean | null;
+  attributeType?: ModelAttributeTypes | null;
 };
 
 export type UpdateFavouriteUserResourcesInput = {
   id: string;
   resourceID?: string | null;
   userID?: string | null;
+  order?: number | null;
   _version?: number | null;
 };
 
@@ -365,6 +380,7 @@ export type ModelFavouriteUserResourcesFilterInput = {
   id?: ModelIDInput | null;
   resourceID?: ModelIDInput | null;
   userID?: ModelIDInput | null;
+  order?: ModelIntInput | null;
   and?: Array<ModelFavouriteUserResourcesFilterInput | null> | null;
   or?: Array<ModelFavouriteUserResourcesFilterInput | null> | null;
   not?: ModelFavouriteUserResourcesFilterInput | null;
@@ -465,6 +481,7 @@ export type CreateUserMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -564,6 +581,7 @@ export type UpdateUserMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -663,6 +681,7 @@ export type DeleteUserMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -867,6 +886,7 @@ export type CreateFavouriteUserResourcesMutation = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -946,6 +966,7 @@ export type UpdateFavouriteUserResourcesMutation = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -1025,6 +1046,7 @@ export type DeleteFavouriteUserResourcesMutation = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -1124,6 +1146,7 @@ export type CreateHelpResourceMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1165,6 +1188,7 @@ export type UpdateHelpResourceMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1206,6 +1230,7 @@ export type DeleteHelpResourceMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1349,6 +1374,7 @@ export type GetUserQuery = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1639,6 +1665,7 @@ export type SyncFavouriteUserResourcesQuery = {
     id: string;
     resourceID: string;
     userID: string;
+    order: number | null;
     resource: {
       __typename: "HelpResource";
       id: string;
@@ -1681,6 +1708,7 @@ export type GetFavouriteUserResourcesQuery = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -1762,6 +1790,7 @@ export type ListFavouriteUserResourcessQuery = {
     id: string;
     resourceID: string;
     userID: string;
+    order: number | null;
     resource: {
       __typename: "HelpResource";
       id: string;
@@ -1859,6 +1888,7 @@ export type GetHelpResourceQuery = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1993,6 +2023,7 @@ export type OnCreateUserSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2092,6 +2123,7 @@ export type OnUpdateUserSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2191,6 +2223,7 @@ export type OnDeleteUserSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2395,6 +2428,7 @@ export type OnCreateFavouriteUserResourcesSubscription = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -2474,6 +2508,7 @@ export type OnUpdateFavouriteUserResourcesSubscription = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -2553,6 +2588,7 @@ export type OnDeleteFavouriteUserResourcesSubscription = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -2652,6 +2688,7 @@ export type OnCreateHelpResourceSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2693,6 +2730,7 @@ export type OnUpdateHelpResourceSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2734,6 +2772,7 @@ export type OnDeleteHelpResourceSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2842,6 +2881,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -2957,6 +2997,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3072,6 +3113,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3484,6 +3526,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -3581,6 +3624,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -3678,6 +3722,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -3795,6 +3840,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3852,6 +3898,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3909,6 +3956,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -4090,6 +4138,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -4640,6 +4689,7 @@ export class APIService {
             id
             resourceID
             userID
+            order
             resource {
               __typename
               id
@@ -4706,6 +4756,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -4803,6 +4854,7 @@ export class APIService {
             id
             resourceID
             userID
+            order
             resource {
               __typename
               id
@@ -4944,6 +4996,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5112,6 +5165,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5219,6 +5273,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5326,6 +5381,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5634,6 +5690,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -5723,6 +5780,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -5812,6 +5870,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -5921,6 +5980,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5970,6 +6030,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -6019,6 +6080,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
