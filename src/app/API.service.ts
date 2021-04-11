@@ -234,21 +234,36 @@ export type CreateFavouriteUserResourcesInput = {
   id?: string | null;
   resourceID: string;
   userID: string;
+  order?: number | null;
   _version?: number | null;
 };
 
 export type ModelFavouriteUserResourcesConditionInput = {
   resourceID?: ModelIDInput | null;
   userID?: ModelIDInput | null;
+  order?: ModelIntInput | null;
   and?: Array<ModelFavouriteUserResourcesConditionInput | null> | null;
   or?: Array<ModelFavouriteUserResourcesConditionInput | null> | null;
   not?: ModelFavouriteUserResourcesConditionInput | null;
+};
+
+export type ModelIntInput = {
+  ne?: number | null;
+  eq?: number | null;
+  le?: number | null;
+  lt?: number | null;
+  ge?: number | null;
+  gt?: number | null;
+  between?: Array<number | null> | null;
+  attributeExists?: boolean | null;
+  attributeType?: ModelAttributeTypes | null;
 };
 
 export type UpdateFavouriteUserResourcesInput = {
   id: string;
   resourceID?: string | null;
   userID?: string | null;
+  order?: number | null;
   _version?: number | null;
 };
 
@@ -365,6 +380,7 @@ export type ModelFavouriteUserResourcesFilterInput = {
   id?: ModelIDInput | null;
   resourceID?: ModelIDInput | null;
   userID?: ModelIDInput | null;
+  order?: ModelIntInput | null;
   and?: Array<ModelFavouriteUserResourcesFilterInput | null> | null;
   or?: Array<ModelFavouriteUserResourcesFilterInput | null> | null;
   not?: ModelFavouriteUserResourcesFilterInput | null;
@@ -465,6 +481,7 @@ export type CreateUserMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -564,6 +581,7 @@ export type UpdateUserMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -663,6 +681,7 @@ export type DeleteUserMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -867,6 +886,7 @@ export type CreateFavouriteUserResourcesMutation = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -946,6 +966,7 @@ export type UpdateFavouriteUserResourcesMutation = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -1025,6 +1046,7 @@ export type DeleteFavouriteUserResourcesMutation = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -1124,6 +1146,7 @@ export type CreateHelpResourceMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1165,6 +1188,7 @@ export type UpdateHelpResourceMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1206,6 +1230,7 @@ export type DeleteHelpResourceMutation = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1349,6 +1374,7 @@ export type GetUserQuery = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1639,6 +1665,132 @@ export type SyncFavouriteUserResourcesQuery = {
     id: string;
     resourceID: string;
     userID: string;
+    order: number | null;
+    resource: {
+      __typename: "HelpResource";
+      id: string;
+      title: string;
+      description: string | null;
+      live_chat: boolean | null;
+      img_url: string | null;
+      url: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    };
+    user: {
+      __typename: "User";
+      id: string;
+      userSub: string;
+      name: string | null;
+      email: string;
+      phone: string | null;
+      _version: number;
+      _deleted: boolean | null;
+      _lastChangedAt: number;
+      createdAt: string;
+      updatedAt: string;
+    };
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken: string | null;
+  startedAt: number | null;
+};
+
+export type GetFavouriteUserResourcesQuery = {
+  __typename: "FavouriteUserResources";
+  id: string;
+  resourceID: string;
+  userID: string;
+  order: number | null;
+  resource: {
+    __typename: "HelpResource";
+    id: string;
+    title: string;
+    description: string | null;
+    phone: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    sms: {
+      __typename: "ResourceContactInformation";
+      number: string | null;
+      hoursOfOperation: string | null;
+    } | null;
+    live_chat: boolean | null;
+    img_url: string | null;
+    url: string | null;
+    userFavourites: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  user: {
+    __typename: "User";
+    id: string;
+    userSub: string;
+    name: string | null;
+    email: string;
+    phone: string | null;
+    warningSigns: {
+      __typename: "ModelWarningSignConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    copingStrategies: {
+      __typename: "ModelCopingStrategyConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    contacts: {
+      __typename: "ModelContactConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    places: {
+      __typename: "ModelPlaceConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    favouriteResources: {
+      __typename: "ModelFavouriteUserResourcesConnection";
+      nextToken: string | null;
+      startedAt: number | null;
+    } | null;
+    _version: number;
+    _deleted: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+  _version: number;
+  _deleted: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListFavouriteUserResourcessQuery = {
+  __typename: "ModelFavouriteUserResourcesConnection";
+  items: Array<{
+    __typename: "FavouriteUserResources";
+    id: string;
+    resourceID: string;
+    userID: string;
+    order: number | null;
     resource: {
       __typename: "HelpResource";
       id: string;
@@ -1736,6 +1888,7 @@ export type GetHelpResourceQuery = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1870,6 +2023,7 @@ export type OnCreateUserSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -1969,6 +2123,7 @@ export type OnUpdateUserSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2068,6 +2223,7 @@ export type OnDeleteUserSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2272,6 +2428,7 @@ export type OnCreateFavouriteUserResourcesSubscription = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -2351,6 +2508,7 @@ export type OnUpdateFavouriteUserResourcesSubscription = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -2430,6 +2588,7 @@ export type OnDeleteFavouriteUserResourcesSubscription = {
   id: string;
   resourceID: string;
   userID: string;
+  order: number | null;
   resource: {
     __typename: "HelpResource";
     id: string;
@@ -2529,6 +2688,7 @@ export type OnCreateHelpResourceSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2570,6 +2730,7 @@ export type OnUpdateHelpResourceSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2611,6 +2772,7 @@ export type OnDeleteHelpResourceSubscription = {
       id: string;
       resourceID: string;
       userID: string;
+      order: number | null;
       _version: number;
       _deleted: boolean | null;
       _lastChangedAt: number;
@@ -2719,6 +2881,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -2834,6 +2997,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -2949,6 +3113,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3361,6 +3526,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -3458,6 +3624,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -3555,6 +3722,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -3672,6 +3840,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3729,6 +3898,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3786,6 +3956,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -3967,6 +4138,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -4517,6 +4689,7 @@ export class APIService {
             id
             resourceID
             userID
+            order
             resource {
               __typename
               id
@@ -4572,6 +4745,168 @@ export class APIService {
     )) as any;
     return <SyncFavouriteUserResourcesQuery>(
       response.data.syncFavouriteUserResources
+    );
+  }
+  async GetFavouriteUserResources(
+    id: string
+  ): Promise<GetFavouriteUserResourcesQuery> {
+    const statement = `query GetFavouriteUserResources($id: ID!) {
+        getFavouriteUserResources(id: $id) {
+          __typename
+          id
+          resourceID
+          userID
+          order
+          resource {
+            __typename
+            id
+            title
+            description
+            phone {
+              __typename
+              number
+              hoursOfOperation
+            }
+            sms {
+              __typename
+              number
+              hoursOfOperation
+            }
+            live_chat
+            img_url
+            url
+            userFavourites {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          user {
+            __typename
+            id
+            userSub
+            name
+            email
+            phone
+            warningSigns {
+              __typename
+              nextToken
+              startedAt
+            }
+            copingStrategies {
+              __typename
+              nextToken
+              startedAt
+            }
+            contacts {
+              __typename
+              nextToken
+              startedAt
+            }
+            places {
+              __typename
+              nextToken
+              startedAt
+            }
+            favouriteResources {
+              __typename
+              nextToken
+              startedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetFavouriteUserResourcesQuery>(
+      response.data.getFavouriteUserResources
+    );
+  }
+  async ListFavouriteUserResourcess(
+    filter?: ModelFavouriteUserResourcesFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListFavouriteUserResourcessQuery> {
+    const statement = `query ListFavouriteUserResourcess($filter: ModelFavouriteUserResourcesFilterInput, $limit: Int, $nextToken: String) {
+        listFavouriteUserResourcess(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            resourceID
+            userID
+            order
+            resource {
+              __typename
+              id
+              title
+              description
+              live_chat
+              img_url
+              url
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            user {
+              __typename
+              id
+              userSub
+              name
+              email
+              phone
+              _version
+              _deleted
+              _lastChangedAt
+              createdAt
+              updatedAt
+            }
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListFavouriteUserResourcessQuery>(
+      response.data.listFavouriteUserResourcess
     );
   }
   async SyncHelpResources(
@@ -4661,6 +4996,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -4829,6 +5165,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -4936,6 +5273,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5043,6 +5381,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5351,6 +5690,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -5440,6 +5780,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -5529,6 +5870,7 @@ export class APIService {
           id
           resourceID
           userID
+          order
           resource {
             __typename
             id
@@ -5638,6 +5980,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5687,6 +6030,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt
@@ -5736,6 +6080,7 @@ export class APIService {
               id
               resourceID
               userID
+              order
               _version
               _deleted
               _lastChangedAt

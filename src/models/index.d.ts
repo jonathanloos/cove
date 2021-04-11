@@ -72,6 +72,7 @@ export declare class Place {
 
 export declare class FavouriteUserResources {
   readonly id: string;
+  readonly order?: number;
   readonly resource: HelpResource;
   readonly user: User;
   constructor(init: ModelInit<FavouriteUserResources>);

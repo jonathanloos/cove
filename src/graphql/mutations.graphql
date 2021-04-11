@@ -75,6 +75,7 @@ mutation CreateUser(
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -167,6 +168,7 @@ mutation UpdateUser(
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -259,6 +261,7 @@ mutation DeleteUser(
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -499,6 +502,7 @@ mutation CreateFavouriteUserResources(
     id
     resourceID
     userID
+    order
     resource {
       id
       title
@@ -571,6 +575,7 @@ mutation UpdateFavouriteUserResources(
     id
     resourceID
     userID
+    order
     resource {
       id
       title
@@ -643,6 +648,7 @@ mutation DeleteFavouriteUserResources(
     id
     resourceID
     userID
+    order
     resource {
       id
       title
@@ -731,6 +737,7 @@ mutation CreateHelpResource(
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -771,6 +778,7 @@ mutation UpdateHelpResource(
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -811,6 +819,7 @@ mutation DeleteHelpResource(
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt

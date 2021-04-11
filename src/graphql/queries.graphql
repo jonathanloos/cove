@@ -120,6 +120,7 @@ query GetUser($id: ID!) {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt
@@ -462,6 +463,127 @@ query SyncFavouriteUserResources(
       id
       resourceID
       userID
+      order
+      resource {
+        id
+        title
+        description
+        live_chat
+        img_url
+        url
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      user {
+        id
+        userSub
+        name
+        email
+        phone
+        _version
+        _deleted
+        _lastChangedAt
+        createdAt
+        updatedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetFavouriteUserResources($id: ID!) {
+  getFavouriteUserResources(id: $id) {
+    id
+    resourceID
+    userID
+    order
+    resource {
+      id
+      title
+      description
+      phone {
+        number
+        hoursOfOperation
+      }
+      sms {
+        number
+        hoursOfOperation
+      }
+      live_chat
+      img_url
+      url
+      userFavourites {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    user {
+      id
+      userSub
+      name
+      email
+      phone
+      warningSigns {
+        nextToken
+        startedAt
+      }
+      copingStrategies {
+        nextToken
+        startedAt
+      }
+      contacts {
+        nextToken
+        startedAt
+      }
+      places {
+        nextToken
+        startedAt
+      }
+      favouriteResources {
+        nextToken
+        startedAt
+      }
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListFavouriteUserResourcess(
+  $filter: ModelFavouriteUserResourcesFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFavouriteUserResourcess(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      resourceID
+      userID
+      order
       resource {
         id
         title
@@ -559,6 +681,7 @@ query GetHelpResource($id: ID!) {
         id
         resourceID
         userID
+        order
         _version
         _deleted
         _lastChangedAt

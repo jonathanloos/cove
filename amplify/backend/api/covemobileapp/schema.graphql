@@ -49,15 +49,14 @@ type Address {
   country: String
 }
 
-# Create a join model and disable queries as you don't need them
-# and can query through Post.editors and User.posts
 type FavouriteUserResources
-  @model(queries: null)
+  @model
   @key(name: "byUser", fields: ["userID", "resourceID"]) 
   @key(name: "byResource", fields: ["resourceID", "userID"]){
     id: ID!
     resourceID: ID!
     userID: ID!
+    order: Int
     resource: HelpResource! @connection(fields: ["resourceID"])
     user: User! @connection(fields: ["userID"])
 }
