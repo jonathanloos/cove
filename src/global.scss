@@ -126,3 +126,9 @@
     border-radius: 5px;
     --box-shadow: none;
 }
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
