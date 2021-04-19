@@ -5,19 +5,26 @@ import { EditPopoverComponent } from './edit-popover/edit-popover.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ModalComponent } from './get-help/modal/modal.component';
+import { EmptyStateButtonComponent } from './empty-state-button/empty-state-button.component';
 
 
 
 @NgModule({
-  declarations: [EllipsisComponent, EditPopoverComponent, ModalComponent],
+  declarations: [
+    EllipsisComponent, 
+    EditPopoverComponent, 
+    ModalComponent, 
+    EmptyStateButtonComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    IonicModule,
+    IonicModule
   ],
   exports:[
-    EllipsisComponent
+    EllipsisComponent,
+    EmptyStateButtonComponent
   ],
   bootstrap:[EditPopoverComponent]
 })
