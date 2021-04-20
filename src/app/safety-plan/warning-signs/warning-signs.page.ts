@@ -4,7 +4,6 @@ import { WarningSignsService } from 'src/app/core/services/warning-signs/warning
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { User, WarningSign } from 'src/models';
-import { WarningSignEmptyStatePage } from 'src/app/modals/warning-sign-empty-state/warning-sign-empty-state.page';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
 import { ToastController } from '@ionic/angular';
 

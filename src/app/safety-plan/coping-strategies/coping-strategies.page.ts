@@ -28,7 +28,7 @@ export class CopingStrategiesPage implements OnInit {
 
   public payload = {
     title: "Coping Strategies",
-    description: "If you feel like you're approaching a crisis, it's important to ...",
+    description: "List happy memories, fun activities you could do and anything else that can help you avoid a crisis.",
     list_prompt: "Here are some common coping strategies you can use in your safety plan:",
     items: [
       {

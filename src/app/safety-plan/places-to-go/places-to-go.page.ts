@@ -26,7 +26,7 @@ export class PlacesToGoPage implements OnInit {
 
   public payload = {
     title: "Places To Go",
-    description: "Sometimes changing your environment can affect your mood in positive ways.",
+    description: "Changing your environment can help change your frame of mind. List safe spaces that help you feel comfortable.",
     list_prompt: "Here are some common places you can use in your safety plan:",
     items: [
       {
@@ -112,6 +112,7 @@ export class PlacesToGoPage implements OnInit {
       userID: this.currentUser.id
     })
     await this.PlaceService.create(newPlace).then(() => {
+      this.adding = !this.adding;
       this.presentToast("Added place to your list.", "primary")
     });
   }
