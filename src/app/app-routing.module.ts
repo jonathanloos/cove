@@ -27,6 +27,11 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login-flow/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'empty-state-modal',
+    loadChildren: () => import('./modals/empty-state-modal/empty-state-modal.module').then( m => m.EmptyStateModalPageModule),
+    canActivate: [false]
   }
 ];
 @NgModule({

@@ -8,17 +8,25 @@
 </ion-header>
 
 <ion-content fullscreen #content>
-  <ng-template [ngIf]="!adding" [ngIfElse]="showForm">
-    <div class="ion-text-center">
+  <div class="mx-3 d-flex justify-content-between">
+    <div></div>
+    <div *ngIf="adding">
+      <div></div>
+    </div>
+    <div *ngIf="!adding">
       <ion-chip outline color="primary" (click)="displayForm()">
         <ion-icon name="add"></ion-icon>
         <ion-label>Strategy</ion-label>
       </ion-chip>
     </div>
-  </ng-template>
-  <ng-template #showForm>
+    <div *ngIf="user$ | async as user">
+      <app-empty-state-button [userID]="user.id" [payload]="payload"></app-empty-state-button>
+    </div>
+  </div>
+
+  <div *ngIf="adding">
     <form (ngSubmit)="create()" [formGroup]="strategyForm">
-      <ion-card class="brainstorm-card">
+      <ion-card class="brainstorm-card mt-1">
         <ion-card-header class="card-header-border">
           <ion-item lines="none" class="ion-no-padding">
             <ion-input class="display-medium card-header-title" color="primary" name="title" formControlName="title" placeholder="Title"></ion-input>
@@ -37,8 +45,9 @@
         <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
       </ion-card>
     </form>
-  </ng-template>
-  <ion-card *ngFor="let strategy of strategies" class="brainstorm-card">
+  </div>
+
+  <ion-card *ngFor="let strategy of strategies; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
     <app-strategy [strategy]="strategy"></app-strategy>
   </ion-card>
 </ion-content>

@@ -8,16 +8,23 @@
 </ion-header>
 
 <ion-content #content>
-  <ng-template [ngIf]="!adding" [ngIfElse]="showForm">
-    <div class="ion-text-center">
+  <div class="mx-3 d-flex justify-content-between">
+    <div></div>
+    <div *ngIf="adding">
+      <div></div>
+    </div>
+    <div *ngIf="!adding">
       <ion-chip outline color="primary" (click)="displayForm()">
         <ion-icon name="add"></ion-icon>
-        <ion-label>Place</ion-label>
+        <ion-label>Safe Place</ion-label>
       </ion-chip>
     </div>
-  </ng-template>
-  <ng-template #showForm>
-    <ion-card class="brainstorm-card">
+    <div *ngIf="user$ | async as user">
+      <app-empty-state-button [userID]="user.id" [payload]="payload"></app-empty-state-button>
+    </div>
+  </div>
+  <div *ngIf="adding">
+    <ion-card class="brainstorm-card m-1">
       <form [formGroup]="PTGForm" (ngSubmit)="create()">
         <ion-card-header class="card-header-border">
           <ion-item lines="none" class="ion-no-padding">
@@ -50,8 +57,8 @@
         </ion-card-content>
       </form>
     </ion-card>
-  </ng-template>
-  <ion-card *ngFor="let place of places" class="brainstorm-card">
+  </div>
+  <ion-card *ngFor="let place of places; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
     <app-place [place]="place"></app-place>
   </ion-card>
 </ion-content>
