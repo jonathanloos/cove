@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ResourcesPage } from './resources.page';
+import { EmptyStateModalPage } from './empty-state-modal.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ResourcesPage
+    component: EmptyStateModalPage
   }
 ];
 
 @NgModule({
-  imports: [
-      RouterModule.forChild(routes)
-  ],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ResourcesPageRoutingModule {}
+export class EmptyStateModalPageRoutingModule {}

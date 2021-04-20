@@ -4,8 +4,8 @@ import { BehaviorSubject, Observable, Observer, Subject } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { HelpResourcesService } from 'src/app/core/services/help-resources/help-resources.service';
 import { FavouriteUserResources, HelpResource, User } from 'src/models';
-import { ResourceModalPage } from './resource-modal/resource-modal.page';
 import { ItemReorderEventDetail } from '@ionic/core';
+import { ResourceModalPage } from 'src/app/modals/resource-modal/resource-modal.page';
 
 @Component({
   selector: 'app-resources',
