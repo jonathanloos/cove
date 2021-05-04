@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@agm/core@^3.0.0-beta.0":
+  version "3.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/@agm/core/-/core-3.0.0-beta.0.tgz#a9cfbe10a435142076a74687856b1adcccdcbac1"
+  integrity sha512-KNmKbe89Nen7s7+mX63RgX88jBfajUZCFqkHIQ8Fd+Lf/ko/IY6yw4kPh0iYGxgPVPjpsHJ06GZ5m3ZxpEVX9A==
+  dependencies:
+    tslib "^2.0.0"
+
 "@angular-builders/custom-webpack@^9.1.0":
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/@angular-builders/custom-webpack/-/custom-webpack-9.2.0.tgz#dbb2a4deb3529bc5c9a68150980c6436d692c583"
@@ -3767,6 +3774,11 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/googlemaps@3.39.12":
+  version "3.39.12"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.39.12.tgz#2546b5256a6555f929e130866ee2ee72931062fc"
+  integrity sha512-z1RMvlQfmsLbg5kc0dGjSHK7DL64mOCbbtqp/Le2M3ov7xPB1d+stia38hqmOXw5dPO1dL/5fscn73d0uomkbw==
 
 "@types/jasmine@*":
   version "3.5.14"

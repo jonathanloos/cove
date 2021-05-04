@@ -31,6 +31,7 @@ import { GetHelpComponent } from './shared/get-help/get-help.component';
 
 /* Add Amplify imports */
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,11 @@ import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
       enabled: environment.production,
       registrationStrategy: "registerImmediately"
     }),  
-    AmplifyUIAngularModule
+    AmplifyUIAngularModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDER16t6Erih2cQQzSyPI50sKtQ1EVcyPc',
+      libraries: ['places']
+    })
   ],
   providers: [
     StatusBar,

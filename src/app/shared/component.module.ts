@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ModalComponent } from './get-help/modal/modal.component';
 import { EmptyStateButtonComponent } from './empty-state-button/empty-state-button.component';
+import { GoogleMapsSearchBarComponent } from './google-maps-search-bar/google-maps-search-bar.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -14,17 +16,20 @@ import { EmptyStateButtonComponent } from './empty-state-button/empty-state-butt
     EllipsisComponent, 
     EditPopoverComponent, 
     ModalComponent, 
-    EmptyStateButtonComponent
+    EmptyStateButtonComponent,
+    GoogleMapsSearchBarComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    IonicModule
+    IonicModule,
+    AgmCoreModule
   ],
   exports:[
     EllipsisComponent,
-    EmptyStateButtonComponent
+    EmptyStateButtonComponent,
+    GoogleMapsSearchBarComponent
   ],
   bootstrap:[EditPopoverComponent]
 })
