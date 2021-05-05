@@ -27,11 +27,12 @@ export class GoogleMapsSearchBarComponent implements OnInit {
     this.mapsAPILoader.load().then(() => {
       this.setCurrentLocation();
       this.geoCoder = new google.maps.Geocoder;
-  
+
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
       autocomplete.addListener("place_changed", () => {
         console.log('places changes')
         this.ngZone.run(() => {
+          console.log(autocomplete)
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
           console.log(place)
   

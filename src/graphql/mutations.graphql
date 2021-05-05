@@ -441,6 +441,20 @@ mutation CreatePlace(
       province
       country
     }
+    latitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    longitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
     _version
     _deleted
     _lastChangedAt
@@ -464,6 +478,20 @@ mutation UpdatePlace(
       province
       country
     }
+    latitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    longitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
     _version
     _deleted
     _lastChangedAt
@@ -481,6 +509,20 @@ mutation DeletePlace(
     title
     description
     address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    latitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    longitude {
       street
       city
       postalCode

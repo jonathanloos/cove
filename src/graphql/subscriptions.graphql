@@ -402,6 +402,20 @@ subscription OnCreatePlace {
       province
       country
     }
+    latitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    longitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
     _version
     _deleted
     _lastChangedAt
@@ -422,6 +436,20 @@ subscription OnUpdatePlace {
       province
       country
     }
+    latitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    longitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
     _version
     _deleted
     _lastChangedAt
@@ -436,6 +464,20 @@ subscription OnDeletePlace {
     title
     description
     address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    latitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    longitude {
       street
       city
       postalCode
