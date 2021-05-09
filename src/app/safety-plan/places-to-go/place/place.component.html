@@ -54,4 +54,33 @@
     </ng-template>
   </ion-card-content>
 </form>
-<img src="{{mapsURL$ | async}}"/>
+<ng-template [ngIf]="editing && place.id == elementId" [ngIfElse]="showMap">
+  <ion-card class="brainstorm-card">
+    <ion-card-content class="p-0">
+      <div class="h-100 w-100 d-flex flex-row">
+        <div class="w-25 align-self-center">
+          <img src="../assets/images/edit.png" style="height: 35px; width: 35px;" class="m-auto">
+        </div>
+        <div class="align-self-center m-3 w-75">
+          <ion-text class="display-medium card-header-title" color="primary">{{place.title}}</ion-text>
+          <p>{{place.description.length >= 150 ? (place.description.substring(0,150) + "...") : place.description}}</p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ng-template>
+<ng-template #showMap>
+  <ion-card class="brainstorm-card" (click)="launchActionSheet()">
+    <ion-card-content class="p-0">
+      <div class="h-100 w-100 d-flex flex-row">
+        <div class="w-25 align-self-center">
+          <img src="{{mapsURL$ | async}}"/>
+        </div>
+        <div class="align-self-center m-3 w-75">
+          <ion-text class="display-medium card-header-title" color="primary">{{place.title}}</ion-text>
+          <p>{{place.description}}</p>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ng-template>

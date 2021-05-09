@@ -30,11 +30,8 @@ export class GoogleMapsSearchBarComponent implements OnInit {
 
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
       autocomplete.addListener("place_changed", () => {
-        console.log('places changes')
         this.ngZone.run(() => {
-          console.log(autocomplete)
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-          console.log(place)
   
           if (place.geometry === undefined || place.geometry === null) {
             return;
@@ -65,7 +62,6 @@ export class GoogleMapsSearchBarComponent implements OnInit {
         if (results[0]) {
           this.zoom = 12;
           this.address = results[0].formatted_address;
-          console.log(results)
         } else {
           window.alert('No results found');
         }
