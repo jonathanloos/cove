@@ -317,6 +317,24 @@ export const schema = {
                     },
                     "isRequired": false,
                     "attributes": []
+                },
+                "latitude": {
+                    "name": "latitude",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Address"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "longitude": {
+                    "name": "longitude",
+                    "isArray": false,
+                    "type": {
+                        "nonModel": "Address"
+                    },
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -561,5 +579,5 @@ export const schema = {
             }
         }
     },
-    "version": "87c35d2b15f4c179103a7b85712c2408"
+    "version": "370ffb3e8ca2dffe9185dc93374acc53"
 };

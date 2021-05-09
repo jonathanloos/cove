@@ -389,6 +389,20 @@ query SyncPlaces(
         province
         country
       }
+      latitude {
+        street
+        city
+        postalCode
+        province
+        country
+      }
+      longitude {
+        street
+        city
+        postalCode
+        province
+        country
+      }
       _version
       _deleted
       _lastChangedAt
@@ -406,6 +420,20 @@ query GetPlace($id: ID!) {
     title
     description
     address {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    latitude {
+      street
+      city
+      postalCode
+      province
+      country
+    }
+    longitude {
       street
       city
       postalCode
@@ -431,6 +459,20 @@ query ListPlaces(
       title
       description
       address {
+        street
+        city
+        postalCode
+        province
+        country
+      }
+      latitude {
+        street
+        city
+        postalCode
+        province
+        country
+      }
+      longitude {
         street
         city
         postalCode
