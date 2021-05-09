@@ -5,7 +5,6 @@ import { ExternalAppService } from 'src/app/core/services/external-app/external-
 import { UpdatePlaceService } from 'src/app/core/services/places/update-place.service';
 import { Place } from 'src/models';
 import { MutableModel } from "@aws-amplify/datastore";
-import { MapsAPILoader } from '@agm/core';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { ActionSheetController } from '@ionic/angular';
 
@@ -30,7 +29,6 @@ export class PlaceComponent implements OnInit {
     private externalService: ExternalAppService,
     private updatePTGService: UpdatePlaceService,
     private formBuilder: FormBuilder,
-    private mapsAPILoader: MapsAPILoader,
     public actionSheetController: ActionSheetController
     ) {
 
@@ -46,7 +44,7 @@ export class PlaceComponent implements OnInit {
    }
   
    ngOnInit() { 
-      if (this.place.longitude == undefined && this.place.latitude == undefined){
+      if (this.place.longitude == undefined && this.place.latitude == undefined && this.place.address.street != ''){
         this.geoCoder = new google.maps.Geocoder;
         let formatted_address = this.place.address.street + ', ' + this.place.address.city + ', ' + this.place.address.postalCode
         let g_address = this.geoCoder.geocode({ 'address': formatted_address }, (results, status) => {
@@ -60,18 +58,13 @@ export class PlaceComponent implements OnInit {
           this.constructMapsStaticUrl();
           // TODO: Handle if the place couldn't be found.
         });
-      } else {
+      } else if (this.place.longitude != undefined && this.place.latitude != undefined) {
         this.constructMapsStaticUrl();
       }
       
       this.PTGForm = this.formBuilder.group({
         title: [this.place.title, Validators.required],
-        description: [this.place.description],
-        street: [this.place.address.street],
-        city: [this.place.address.city],
-        province: ['Ontario'],
-        postalCode: [this.place.address.postalCode],
-        country: ['Canada']
+        description: [this.place.description]
       })
   }
 
@@ -88,15 +81,25 @@ export class PlaceComponent implements OnInit {
     this.updatePTGService.cancelOperation();
   }
 
+  updateAddress(ev){
+    const new_place = Place.copyOf(this.place, (mutable_place: MutableModel<Place>) => {
+      mutable_place.address.street = ev.street;
+      mutable_place.address.city = ev.city;
+      mutable_place.address.province = ev.province;
+      mutable_place.address.postalCode = ev.postalCode;
+      mutable_place.address.country = ev.country;
+      mutable_place.latitude = ev.latitude
+      mutable_place.longitude = ev.longitude
+      return mutable_place
+    });
+
+    this.place = new_place;
+  }
+
   save(){
     const new_place = Place.copyOf(this.place, (mutable_place: MutableModel<Place>) => {
       mutable_place.title = this.PTGForm.value.title;
       mutable_place.description = this.PTGForm.value.description;
-      mutable_place.address.street = this.PTGForm.value.street;
-      mutable_place.address.city = this.PTGForm.value.city;
-      mutable_place.address.province = this.PTGForm.value.province;
-      mutable_place.address.postalCode = this.PTGForm.value.postalCode;
-      mutable_place.address.country = this.PTGForm.value.country;
       return mutable_place
     })
 
@@ -128,15 +131,10 @@ export class PlaceComponent implements OnInit {
         text: 'Cancel',
         icon: 'close',
         role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
+        handler: () => {}
       }]
     });
     await actionSheet.present();
-
-    const { role } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
   }
 
   mapsSelector() {
@@ -162,8 +160,7 @@ export class PlaceComponent implements OnInit {
     const baseline = "https://maps.googleapis.com/maps/api/staticmap?"
     const formatted_address = this.place.address.street + ', ' + this.place.address.city + ', ' + this.place.address.postalCode
     const searchRegExp = /\s/g;
-    let size = "150x150";
-
+    let size = "150x200";
     if(this.place.description.length >= 130){
       size = "150x300";
     } else if (this.place.description.length >= 100) {
@@ -172,7 +169,7 @@ export class PlaceComponent implements OnInit {
 
     const params = {
       center: formatted_address.replace(searchRegExp, '+'),
-      zoom: '10',
+      zoom: '12',
       size: size,
       maptype: 'roadmap',
       markers: 'color:blue%7C' + this.place.latitude + ',' + this.place.longitude,

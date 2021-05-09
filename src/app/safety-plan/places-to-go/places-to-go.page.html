@@ -39,27 +39,15 @@
             name="description"
             formControlName="description"
             clearInput></ion-textarea>
-          <ion-item class="ion-no-padding" style="vertical-align: middle;" lines="none">
-            <ion-label class="ion-no-padding ion-no-margin"><h2>Address</h2></ion-label>
-            <ion-label position="stacked"><p>Street</p></ion-label>
-            <ion-input formControlName="street" name="street" class="body ion-no-padding" style="margin-top: 0px !important;" placeholder="Street"></ion-input>
-            <ion-label position="stacked"><p>City</p></ion-label>
-            <ion-input formControlName="city" name="city" class="body ion-no-padding" style="margin-top: 0px !important;" placeholder="City"></ion-input>
-            <ion-label position="stacked"><p>Postal Code</p></ion-label>
-            <ion-input formControlName="postalCode" name="postalCode" class="body ion-no-padding" style="margin-top: 0px !important;" placeholder="Postal Code"></ion-input>
-            <ion-label position="stacked"><p>Province</p></ion-label>
-            <ion-input formControlName="province" name="province" class="body ion-no-padding" style="margin-top: 0px !important;" readonly></ion-input>
-            <ion-label position="stacked"><p>Country</p></ion-label>
-            <ion-input formControlName="country" name="country" class="body ion-no-padding" style="margin-top: 0px !important;" readonly></ion-input>
-          </ion-item>
+          <app-google-maps-search-bar (addressChanged)="updateAddress($event)"></app-google-maps-search-bar>
           <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
           <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
         </ion-card-content>
       </form>
     </ion-card>
   </div>
-  <ion-card *ngFor="let place of places; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
+  <!-- <ion-card *ngFor="let place of places; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
     <app-place [place]="place"></app-place>
-  </ion-card>
-  <app-google-maps-search-bar></app-google-maps-search-bar>
+  </ion-card> -->
+  <app-place *ngFor="let place of places" [place]="place"></app-place>
 </ion-content>
