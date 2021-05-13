@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { APIService } from 'src/app/API.service';
-import { DataStore } from '@aws-amplify/datastore'
+import { DataStore, SortDirection, Predicates } from 'aws-amplify';
 import { WarningSign } from 'src/models';
 
 @Injectable({
@@ -16,8 +16,17 @@ export class WarningSignsService {
   constructor( private api : APIService ) {  }
 
   public async list(userId: string) {
-    return await DataStore.query(WarningSign, c => c.userID("eq", userId)).then((results : WarningSign[]) => {
+    return await DataStore.query(WarningSign, Predicates.ALL, {
+      sort: s => s.order(SortDirection.ASCENDING)
+    }).then((results : WarningSign[]) => {
       this.warning_signs = results;
+
+      if(this.warning_signs[0].order == undefined){
+        for(var i = 0; i < this.warning_signs.length; i++){
+          console.log(i)
+        }
+      }
+      
       this.signsChange.next(this.warning_signs);
       return this.warning_signs;
     })

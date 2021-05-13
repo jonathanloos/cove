@@ -148,6 +148,13 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -579,5 +586,5 @@ export const schema = {
             }
         }
     },
-    "version": "370ffb3e8ca2dffe9185dc93374acc53"
+    "version": "7cc98eac325087f4f6dbf70f50e63ba6"
 };

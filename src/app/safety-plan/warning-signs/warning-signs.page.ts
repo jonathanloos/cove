@@ -74,7 +74,7 @@ export class WarningSignsPage implements OnInit {
 
       this.emptyStateTransferService.addEmptyStateToList.subscribe((sign) => {
         this.saveWarningSign(sign);
-      })
+      });
     }
 
   async ngOnInit() { 
@@ -83,6 +83,14 @@ export class WarningSignsPage implements OnInit {
       this.user$.next(user)
       this.warningSignService.list(this.currentUser.id);
     });
+  }
+
+  toggleReorderGroup(ev) {
+    // this.warningSignService.userFavourites(this.currentUser.id);
+    // this.reordering = !this.reordering;
+    // if(this.reorderGroup != undefined){
+    //   this.reorderGroup.disabled = !this.reorderGroup.disabled;
+    // }
   }
 
   displayForm(){

@@ -16,6 +16,7 @@ type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]){
   userID: ID!
   title: String!
   description: String
+  order: Int
 }
 
 type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]){
