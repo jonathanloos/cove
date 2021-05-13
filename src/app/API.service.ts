@@ -196,6 +196,8 @@ export type CreatePlaceInput = {
   title: string;
   description?: string | null;
   address?: AddressInput | null;
+  latitude?: AddressInput | null;
+  longitude?: AddressInput | null;
   _version?: number | null;
 };
 
@@ -222,6 +224,8 @@ export type UpdatePlaceInput = {
   title?: string | null;
   description?: string | null;
   address?: AddressInput | null;
+  latitude?: AddressInput | null;
+  longitude?: AddressInput | null;
   _version?: number | null;
 };
 
@@ -832,6 +836,22 @@ export type CreatePlaceMutation = {
     province: string | null;
     country: string | null;
   } | null;
+  latitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  longitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -853,6 +873,22 @@ export type UpdatePlaceMutation = {
     province: string | null;
     country: string | null;
   } | null;
+  latitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  longitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -867,6 +903,22 @@ export type DeletePlaceMutation = {
   title: string;
   description: string | null;
   address: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  latitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  longitude: {
     __typename: "Address";
     street: string | null;
     city: string | null;
@@ -1601,6 +1653,22 @@ export type SyncPlacesQuery = {
       province: string | null;
       country: string | null;
     } | null;
+    latitude: {
+      __typename: "Address";
+      street: string | null;
+      city: string | null;
+      postalCode: string | null;
+      province: string | null;
+      country: string | null;
+    } | null;
+    longitude: {
+      __typename: "Address";
+      street: string | null;
+      city: string | null;
+      postalCode: string | null;
+      province: string | null;
+      country: string | null;
+    } | null;
     _version: number;
     _deleted: boolean | null;
     _lastChangedAt: number;
@@ -1625,6 +1693,22 @@ export type GetPlaceQuery = {
     province: string | null;
     country: string | null;
   } | null;
+  latitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  longitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -1641,6 +1725,22 @@ export type ListPlacesQuery = {
     title: string;
     description: string | null;
     address: {
+      __typename: "Address";
+      street: string | null;
+      city: string | null;
+      postalCode: string | null;
+      province: string | null;
+      country: string | null;
+    } | null;
+    latitude: {
+      __typename: "Address";
+      street: string | null;
+      city: string | null;
+      postalCode: string | null;
+      province: string | null;
+      country: string | null;
+    } | null;
+    longitude: {
       __typename: "Address";
       street: string | null;
       city: string | null;
@@ -2374,6 +2474,22 @@ export type OnCreatePlaceSubscription = {
     province: string | null;
     country: string | null;
   } | null;
+  latitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  longitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -2395,6 +2511,22 @@ export type OnUpdatePlaceSubscription = {
     province: string | null;
     country: string | null;
   } | null;
+  latitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  longitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
@@ -2409,6 +2541,22 @@ export type OnDeletePlaceSubscription = {
   title: string;
   description: string | null;
   address: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  latitude: {
+    __typename: "Address";
+    street: string | null;
+    city: string | null;
+    postalCode: string | null;
+    province: string | null;
+    country: string | null;
+  } | null;
+  longitude: {
     __typename: "Address";
     street: string | null;
     city: string | null;
@@ -3424,6 +3572,22 @@ export class APIService {
             province
             country
           }
+          latitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          longitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
           _version
           _deleted
           _lastChangedAt
@@ -3461,6 +3625,22 @@ export class APIService {
             province
             country
           }
+          latitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          longitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
           _version
           _deleted
           _lastChangedAt
@@ -3491,6 +3671,22 @@ export class APIService {
           title
           description
           address {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          latitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          longitude {
             __typename
             street
             city
@@ -4569,6 +4765,22 @@ export class APIService {
               province
               country
             }
+            latitude {
+              __typename
+              street
+              city
+              postalCode
+              province
+              country
+            }
+            longitude {
+              __typename
+              street
+              city
+              postalCode
+              province
+              country
+            }
             _version
             _deleted
             _lastChangedAt
@@ -4613,6 +4825,22 @@ export class APIService {
             province
             country
           }
+          latitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          longitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
           _version
           _deleted
           _lastChangedAt
@@ -4643,6 +4871,22 @@ export class APIService {
             title
             description
             address {
+              __typename
+              street
+              city
+              postalCode
+              province
+              country
+            }
+            latitude {
+              __typename
+              street
+              city
+              postalCode
+              province
+              country
+            }
+            longitude {
               __typename
               street
               city
@@ -5612,6 +5856,22 @@ export class APIService {
             province
             country
           }
+          latitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          longitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
           _version
           _deleted
           _lastChangedAt
@@ -5641,6 +5901,22 @@ export class APIService {
             province
             country
           }
+          latitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          longitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
           _version
           _deleted
           _lastChangedAt
@@ -5663,6 +5939,22 @@ export class APIService {
           title
           description
           address {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          latitude {
+            __typename
+            street
+            city
+            postalCode
+            province
+            country
+          }
+          longitude {
             __typename
             street
             city

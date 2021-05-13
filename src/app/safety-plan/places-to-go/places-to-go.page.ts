@@ -3,11 +3,10 @@ import { PlaceService } from 'src/app/core/services/places/place.service';
 import { ExternalAppService } from 'src/app/core/services/external-app/external-app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
-import { Place, User } from 'src/models';
+import { Address, Place, User } from 'src/models';
 import { Subject, BehaviorSubject } from 'rxjs';
 import { ToastController } from '@ionic/angular';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
-
 @Component({
   selector: 'app-places-to-go',
   templateUrl: './places-to-go.page.html',
@@ -23,6 +22,16 @@ export class PlacesToGoPage implements OnInit {
   places: Place[];
   editing: boolean = false;
   adding:boolean = false;
+  address: Address = new Address({
+    street: "",
+    city: "",
+    province: "",
+    country: "",
+    postalCode: ""
+  });
+  
+  latitude = undefined;
+  longitude = undefined;
 
   public payload = {
     title: "Places To Go",
@@ -64,12 +73,7 @@ export class PlacesToGoPage implements OnInit {
 
     this.PTGForm = this.formBuilder.group({
       title: ['', Validators.required],
-      description: [''],
-      street: [''],
-      city: [''],
-      province: ['Ontario'],
-      postalCode: [''],
-      country: ['Canada']
+      description: ['']
     })
 
     this.emptyStateTransferService.addEmptyStateToList.subscribe((place) => {
@@ -98,19 +102,30 @@ export class PlacesToGoPage implements OnInit {
     this.PTGForm.reset();
   }
 
+  updateAddress(ev){
+    this.address = new Address({
+      street: ev.street,
+      city: ev.city,
+      province: ev.province,
+      postalCode: ev.postalCode,
+      country: ev.country
+    });
+
+    this.longitude = ev.longitude;
+    this.latitude = ev.latitude;
+  }
+
   async savePlace(place: any){
+
     const newPlace = new Place({
       title: place.title,
       description: place.description,
-      address: {
-        street: "",
-        city: "",
-        postalCode: "",
-        province: "Ontario",
-        country: "Canada"
-      },
+      address: this.address,
+      longitude: this.longitude,
+      latitude: this.latitude,
       userID: this.currentUser.id
-    })
+    });
+
     await this.PlaceService.create(newPlace).then(() => {
       this.adding = !this.adding;
       this.presentToast("Added place to your list.", "primary")
@@ -122,14 +137,9 @@ export class PlacesToGoPage implements OnInit {
     const place = new Place({
       title: this.PTGForm.value.title,
       description: this.PTGForm.value.description,
-      address: {
-          street: this.PTGForm.value.street,
-          city: this.PTGForm.value.city,
-          province: this.PTGForm.value.province,
-          postalCode: this.PTGForm.value.postalCode,
-          country: this.PTGForm.value.country,
-
-      },
+      address: this.address,
+      longitude: this.longitude,
+      latitude: this.latitude,
       userID: this.currentUser.id
     })
 
