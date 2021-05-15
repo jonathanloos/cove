@@ -37,6 +37,7 @@ export declare class WarningSign {
   readonly userID: string;
   readonly title: string;
   readonly description?: string;
+  readonly order?: number;
   constructor(init: ModelInit<WarningSign>);
   static copyOf(source: WarningSign, mutator: (draft: MutableModel<WarningSign>) => MutableModel<WarningSign> | void): WarningSign;
 }

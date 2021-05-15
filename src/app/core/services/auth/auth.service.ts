@@ -117,5 +117,17 @@ export class AuthService {
       return error
     }
   }
+
+  public async sendForgotPasswordConfirmationCode(email: string){
+    return Auth.forgotPassword(email)
+            .then(data => {return data})
+            .catch(err => {return err});
+  }
+
+  public async confirmPasswordConfirmationCode(email: string, code: string, new_password: string){
+    return Auth.forgotPasswordSubmit(email, code, new_password)
+            .then(data => {return data})
+            .catch(err => {return err});
+  }
 }
 

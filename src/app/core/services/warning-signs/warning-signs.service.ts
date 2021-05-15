@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { APIService } from 'src/app/API.service';
-import { DataStore } from '@aws-amplify/datastore'
+import { DataStore, SortDirection, Predicates } from 'aws-amplify';
 import { WarningSign } from 'src/models';
+import { MutableModel } from "@aws-amplify/datastore";
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,25 @@ export class WarningSignsService {
 
   public signsChange: Subject<WarningSign[]> = new Subject<WarningSign[]>();
 
-  constructor( private api : APIService ) {  }
+  constructor( ) {  }
 
   public async list(userId: string) {
-    return await DataStore.query(WarningSign, c => c.userID("eq", userId)).then((results : WarningSign[]) => {
+    return await DataStore.query(WarningSign, ws => ws.userID("eq", userId), {
+      sort: s => s.order(SortDirection.ASCENDING),
+    }).then((results : WarningSign[]) => {
       this.warning_signs = results;
+
+      // Temp method to backfill order, too lazy to write a migration
+      if(this.warning_signs[0].order == undefined){
+        for(var i = 0; i < this.warning_signs.length; i++){
+          const warning_sign = WarningSign.copyOf(this.warning_signs[i], (mutable_sign: MutableModel<WarningSign>) => {
+            mutable_sign.order = i;
+            return mutable_sign
+          });
+          DataStore.save(warning_sign);
+        }
+      }
+      
       this.signsChange.next(this.warning_signs);
       return this.warning_signs;
     })
@@ -52,5 +67,19 @@ export class WarningSignsService {
       this.list(result.userID);
     })
     .catch(err => {console.log(err)})
+  }
+
+  public orderIdResolver(warningSignIdsInOrder: any[]){
+    let userId = undefined;
+
+    warningSignIdsInOrder.forEach(async (id, index) => {
+      let warningSign = await DataStore.query(WarningSign, id);
+
+      const updated_favourite_resource = WarningSign.copyOf(warningSign, (mutable_sign: MutableModel<WarningSign>) => {
+        mutable_sign.order = index;
+        return mutable_sign
+      });
+      await DataStore.save(updated_favourite_resource)
+    });
   }
 }
