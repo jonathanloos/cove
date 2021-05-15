@@ -5,7 +5,8 @@ import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { User, WarningSign } from 'src/models';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
-import { ToastController } from '@ionic/angular';
+import { IonReorderGroup, ToastController } from '@ionic/angular';
+import { ItemReorderEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-warning-signs',
@@ -15,6 +16,7 @@ import { ToastController } from '@ionic/angular';
 export class WarningSignsPage implements OnInit {
 
   @ViewChild('content') private content: any;
+  @ViewChild(IonReorderGroup) reorderGroup: IonReorderGroup;
 
   currentUser: User;
   public user$ : Subject<User> = new BehaviorSubject<User>(null);
@@ -23,6 +25,7 @@ export class WarningSignsPage implements OnInit {
   signs: WarningSign[];
   adding:boolean = false;
   public wsForm: FormGroup;
+  public reordering = false;
 
   public payload = {
     title: "Warning Signs",
@@ -86,11 +89,24 @@ export class WarningSignsPage implements OnInit {
   }
 
   toggleReorderGroup(ev) {
-    // this.warningSignService.userFavourites(this.currentUser.id);
-    // this.reordering = !this.reordering;
-    // if(this.reorderGroup != undefined){
-    //   this.reorderGroup.disabled = !this.reorderGroup.disabled;
-    // }
+    this.warningSignService.list(this.currentUser.id);
+
+    this.reordering = !this.reordering;
+    if(this.reorderGroup != undefined){
+      this.reorderGroup.disabled = !this.reorderGroup.disabled;
+    }
+  }
+
+  async doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
+    ev.detail.complete();
+
+    let items = document.getElementsByClassName('reorder-item');
+    let ids = [];
+    for (var i = 0; i < items.length; i++) {
+      ids.push(items[i].getAttribute('id'));
+    };
+
+    await this.warningSignService.orderIdResolver(ids);
   }
 
   displayForm(){

@@ -9,10 +9,9 @@
 
 <ion-content #content fullscreen>
   <div class="mx-3 d-flex justify-content-between">
-    <div></div>
-    <div *ngIf="adding">
-      <div></div>
-    </div>
+    <ion-chip outline color="primary" (click)="toggleReorderGroup()">
+      <ion-label><ion-icon name="reorder"></ion-icon></ion-label>
+    </ion-chip>
     <div *ngIf="!adding">
       <ion-chip outline color="primary" (click)="displayForm()">
         <ion-icon name="add"></ion-icon>
@@ -46,7 +45,19 @@
       </ion-card>
     </form>
   </div>
-  <ion-card *ngFor="let sign of signs; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
-    <app-sign [sign]="sign"></app-sign>
-  </ion-card>
+  <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
+    <ion-list>
+      <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
+        <ion-item *ngFor="let sign of signs" class="reorder-item" id="{{sign.id}}">
+          <ion-label>{{sign.title}}</ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+      </ion-reorder-group>
+    </ion-list>
+  </ng-template>
+  <ng-template #showBlock>
+    <ion-card *ngFor="let sign of signs; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
+      <app-sign [sign]="sign"></app-sign>
+    </ion-card>
+  </ng-template>
 </ion-content>
