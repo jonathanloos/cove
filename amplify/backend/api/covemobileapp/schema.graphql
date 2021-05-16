@@ -42,8 +42,8 @@ type Place @model @key(name: "byUser", fields: ["userID", "title"]){
   title: String!
   description: String
   address: Address
-  latitude: Address
-  longitude: Address
+  latitude: Float
+  longitude: Float
   order: Int
 }
 

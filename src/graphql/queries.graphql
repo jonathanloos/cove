@@ -1,52 +1,4 @@
 # this is an auto generated file. This will be overwritten
-query SyncUsers(
-  $filter: ModelUserFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncUsers(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      userSub
-      name
-      email
-      phone
-      warningSigns {
-        nextToken
-        startedAt
-      }
-      copingStrategies {
-        nextToken
-        startedAt
-      }
-      contacts {
-        nextToken
-        startedAt
-      }
-      places {
-        nextToken
-        startedAt
-      }
-      favouriteResources {
-        nextToken
-        startedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
-  }
-}
 query GetUser($id: ID!) {
   getUser(id: $id) {
     id
@@ -61,14 +13,10 @@ query GetUser($id: ID!) {
         title
         description
         order
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
-      startedAt
     }
     copingStrategies {
       items {
@@ -77,14 +25,10 @@ query GetUser($id: ID!) {
         title
         description
         order
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
-      startedAt
     }
     contacts {
       items {
@@ -94,14 +38,10 @@ query GetUser($id: ID!) {
         automaticTextMessage
         phone
         order
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
-      startedAt
     }
     places {
       items {
@@ -109,15 +49,13 @@ query GetUser($id: ID!) {
         userID
         title
         description
+        latitude
+        longitude
         order
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
-      startedAt
     }
     favouriteResources {
       items {
@@ -125,18 +63,11 @@ query GetUser($id: ID!) {
         resourceID
         userID
         order
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
-      startedAt
     }
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -155,60 +86,23 @@ query ListUsers(
       phone
       warningSigns {
         nextToken
-        startedAt
       }
       copingStrategies {
         nextToken
-        startedAt
       }
       contacts {
         nextToken
-        startedAt
       }
       places {
         nextToken
-        startedAt
       }
       favouriteResources {
         nextToken
-        startedAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
-  }
-}
-query SyncWarningSigns(
-  $filter: ModelWarningSignFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncWarningSigns(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      userID
-      title
-      description
-      order
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
   }
 }
 query GetWarningSign($id: ID!) {
@@ -218,9 +112,6 @@ query GetWarningSign($id: ID!) {
     title
     description
     order
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -237,42 +128,10 @@ query ListWarningSigns(
       title
       description
       order
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
-  }
-}
-query SyncCopingStrategies(
-  $filter: ModelCopingStrategyFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncCopingStrategies(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      userID
-      title
-      description
-      order
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
   }
 }
 query GetCopingStrategy($id: ID!) {
@@ -282,9 +141,6 @@ query GetCopingStrategy($id: ID!) {
     title
     description
     order
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -301,43 +157,10 @@ query ListCopingStrategys(
       title
       description
       order
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
-  }
-}
-query SyncContacts(
-  $filter: ModelContactFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncContacts(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      userID
-      name
-      automaticTextMessage
-      phone
-      order
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
   }
 }
 query GetContact($id: ID!) {
@@ -348,9 +171,6 @@ query GetContact($id: ID!) {
     automaticTextMessage
     phone
     order
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -368,63 +188,10 @@ query ListContacts(
       automaticTextMessage
       phone
       order
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
-  }
-}
-query SyncPlaces(
-  $filter: ModelPlaceFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncPlaces(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      userID
-      title
-      description
-      address {
-        street
-        city
-        postalCode
-        province
-        country
-      }
-      latitude {
-        street
-        city
-        postalCode
-        province
-        country
-      }
-      longitude {
-        street
-        city
-        postalCode
-        province
-        country
-      }
-      order
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
   }
 }
 query GetPlace($id: ID!) {
@@ -440,24 +207,9 @@ query GetPlace($id: ID!) {
       province
       country
     }
-    latitude {
-      street
-      city
-      postalCode
-      province
-      country
-    }
-    longitude {
-      street
-      city
-      postalCode
-      province
-      country
-    }
+    latitude
+    longitude
     order
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -480,81 +232,13 @@ query ListPlaces(
         province
         country
       }
-      latitude {
-        street
-        city
-        postalCode
-        province
-        country
-      }
-      longitude {
-        street
-        city
-        postalCode
-        province
-        country
-      }
+      latitude
+      longitude
       order
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
-  }
-}
-query SyncFavouriteUserResources(
-  $filter: ModelFavouriteUserResourcesFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncFavouriteUserResources(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      resourceID
-      userID
-      order
-      resource {
-        id
-        title
-        description
-        live_chat
-        img_url
-        url
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      user {
-        id
-        userSub
-        name
-        email
-        phone
-        _version
-        _deleted
-        _lastChangedAt
-        createdAt
-        updatedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
   }
 }
 query GetFavouriteUserResources($id: ID!) {
@@ -580,11 +264,7 @@ query GetFavouriteUserResources($id: ID!) {
       url
       userFavourites {
         nextToken
-        startedAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -596,33 +276,22 @@ query GetFavouriteUserResources($id: ID!) {
       phone
       warningSigns {
         nextToken
-        startedAt
       }
       copingStrategies {
         nextToken
-        startedAt
       }
       contacts {
         nextToken
-        startedAt
       }
       places {
         nextToken
-        startedAt
       }
       favouriteResources {
         nextToken
-        startedAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -649,9 +318,6 @@ query ListFavouriteUserResourcess(
         live_chat
         img_url
         url
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
@@ -661,61 +327,13 @@ query ListFavouriteUserResourcess(
         name
         email
         phone
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
-  }
-}
-query SyncHelpResources(
-  $filter: ModelHelpResourceFilterInput
-  $limit: Int
-  $nextToken: String
-  $lastSync: AWSTimestamp
-) {
-  syncHelpResources(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-    lastSync: $lastSync
-  ) {
-    items {
-      id
-      title
-      description
-      phone {
-        number
-        hoursOfOperation
-      }
-      sms {
-        number
-        hoursOfOperation
-      }
-      live_chat
-      img_url
-      url
-      userFavourites {
-        nextToken
-        startedAt
-      }
-      _version
-      _deleted
-      _lastChangedAt
-      createdAt
-      updatedAt
-    }
-    nextToken
-    startedAt
   }
 }
 query GetHelpResource($id: ID!) {
@@ -740,18 +358,11 @@ query GetHelpResource($id: ID!) {
         resourceID
         userID
         order
-        _version
-        _deleted
-        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
-      startedAt
     }
-    _version
-    _deleted
-    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -779,15 +390,10 @@ query ListHelpResources(
       url
       userFavourites {
         nextToken
-        startedAt
       }
-      _version
-      _deleted
-      _lastChangedAt
       createdAt
       updatedAt
     }
     nextToken
-    startedAt
   }
 }
