@@ -6,7 +6,8 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 import { CopingStrategy, User } from 'src/models';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
-import { ToastController } from '@ionic/angular';
+import { IonReorderGroup, ToastController } from '@ionic/angular';
+import { ItemReorderEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-coping-strategies',
@@ -16,6 +17,7 @@ import { ToastController } from '@ionic/angular';
 export class CopingStrategiesPage implements OnInit {
 
   @ViewChild('content') private content: any;
+  @ViewChild(IonReorderGroup) reorderGroup: IonReorderGroup;
   
   currentUser: User;
   public user$ : Subject<User> = new BehaviorSubject<User>(null);
@@ -25,6 +27,8 @@ export class CopingStrategiesPage implements OnInit {
   public elementId: string;
   strategyForm: FormGroup;
   adding:boolean = false;
+
+  public reordering = false;
 
   public payload = {
     title: "Coping Strategies",
@@ -85,6 +89,29 @@ export class CopingStrategiesPage implements OnInit {
       this.user$.next(user)
       this.copingStrategyService.list(this.currentUser.id);
     });
+  }
+
+  toggleReorderGroup(ev) {
+    this.copingStrategyService.list(this.currentUser.id);
+    this.reordering = !this.reordering;
+    if(this.reorderGroup != undefined){
+      this.reorderGroup.disabled = !this.reorderGroup.disabled;
+    }
+  }
+
+  async doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
+    // Finish the reorder and position the item in the DOM based on
+    // where the gesture ended. This method can also be called directly
+    // by the reorder group
+    ev.detail.complete();
+
+    let items = document.getElementsByClassName('reorder-item');
+    let ids = [];
+    for (var i = 0; i < items.length; i++) {
+      ids.push(items[i].getAttribute('id'));
+    };
+
+    await this.copingStrategyService.orderIdResolver(ids);
   }
 
   async saveCopingStrategy(sign: any){

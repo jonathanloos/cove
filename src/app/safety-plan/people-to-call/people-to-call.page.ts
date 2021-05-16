@@ -3,11 +3,12 @@ import { ContactService } from 'src/app/core/services/contacts/contact.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import parsePhoneNumber from 'libphonenumber-js'
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController, IonReorderGroup, ToastController } from '@ionic/angular';
 import { Contact, User } from 'src/models';
 import { MutableModel } from "@aws-amplify/datastore";
 import { Subject, BehaviorSubject } from 'rxjs';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
+import { ItemReorderEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-people-to-call',
@@ -16,9 +17,11 @@ import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-sta
 })
 export class PeopleToCallPage implements OnInit {
   @ViewChild('content') private content: any;
+  @ViewChild(IonReorderGroup) reorderGroup: IonReorderGroup;
 
   currentUser: User;
   public user$ : Subject<User> = new BehaviorSubject<User>(null);
+  public reordering = false;
   
   public payload = {
     title: "People to Call",
@@ -51,14 +54,14 @@ export class PeopleToCallPage implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private PTCService: ContactService,
+    private contactService: ContactService,
     private authService: AuthService,
     public alertController: AlertController,
     private emptyStateTransferService: EmptyStateObjectTransferService,
     public toastController: ToastController
     ) {
 
-    PTCService.contactsChange.subscribe(result => {
+    contactService.contactsChange.subscribe(result => {
       this.personal_contacts = result
       if(this.personal_contacts.length == 0){
         this.adding = true;
@@ -80,8 +83,29 @@ export class PeopleToCallPage implements OnInit {
     await this.authService.currentAuthenticatedUser().then(async (user) => {
       this.currentUser = user;
       this.user$.next(user)
-      this.PTCService.list(this.currentUser.id);
+      this.contactService.list(this.currentUser.id);
     });
+  }
+
+  toggleReorderGroup(ev) {
+    this.contactService.list(this.currentUser.id);
+
+    this.reordering = !this.reordering;
+    if(this.reorderGroup != undefined){
+      this.reorderGroup.disabled = !this.reorderGroup.disabled;
+    }
+  }
+
+  async doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
+    ev.detail.complete();
+
+    let items = document.getElementsByClassName('reorder-item');
+    let ids = [];
+    for (var i = 0; i < items.length; i++) {
+      ids.push(items[i].getAttribute('id'));
+    };
+
+    await this.contactService.orderIdResolver(ids);
   }
 
   displayForm(){
@@ -150,13 +174,13 @@ export class PeopleToCallPage implements OnInit {
       automaticTextMessage: contact.automaticTextMessage,
       userID: this.currentUser.id
     })
-    await this.PTCService.create(newContact).then(() => {
+    await this.contactService.create(newContact).then(() => {
       this.presentToast("Added contact to your list.", "primary")
     });
   }
 
   createContact(contact : Contact){
-    this.PTCService.create(contact);
+    this.contactService.create(contact);
     this.reset();
   }
 

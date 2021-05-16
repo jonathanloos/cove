@@ -148,6 +148,13 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -197,6 +204,13 @@ export const schema = {
                     "name": "description",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -255,6 +269,13 @@ export const schema = {
                     "name": "phone",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -333,6 +354,13 @@ export const schema = {
                     "type": {
                         "nonModel": "Address"
                     },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -579,5 +607,5 @@ export const schema = {
             }
         }
     },
-    "version": "370ffb3e8ca2dffe9185dc93374acc53"
+    "version": "2c018dd07b85c9ec310e0e0ad4bbfb57"
 };

@@ -15,6 +15,7 @@ mutation CreateUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -30,6 +31,7 @@ mutation CreateUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -46,6 +48,7 @@ mutation CreateUser(
         name
         automaticTextMessage
         phone
+        order
         _version
         _deleted
         _lastChangedAt
@@ -61,6 +64,7 @@ mutation CreateUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -108,6 +112,7 @@ mutation UpdateUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -123,6 +128,7 @@ mutation UpdateUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -139,6 +145,7 @@ mutation UpdateUser(
         name
         automaticTextMessage
         phone
+        order
         _version
         _deleted
         _lastChangedAt
@@ -154,6 +161,7 @@ mutation UpdateUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -201,6 +209,7 @@ mutation DeleteUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -216,6 +225,7 @@ mutation DeleteUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -232,6 +242,7 @@ mutation DeleteUser(
         name
         automaticTextMessage
         phone
+        order
         _version
         _deleted
         _lastChangedAt
@@ -247,6 +258,7 @@ mutation DeleteUser(
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -287,6 +299,7 @@ mutation CreateWarningSign(
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -303,6 +316,7 @@ mutation UpdateWarningSign(
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -319,6 +333,7 @@ mutation DeleteWarningSign(
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -335,6 +350,7 @@ mutation CreateCopingStrategy(
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -351,6 +367,7 @@ mutation UpdateCopingStrategy(
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -367,6 +384,7 @@ mutation DeleteCopingStrategy(
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -384,6 +402,7 @@ mutation CreateContact(
     name
     automaticTextMessage
     phone
+    order
     _version
     _deleted
     _lastChangedAt
@@ -401,6 +420,7 @@ mutation UpdateContact(
     name
     automaticTextMessage
     phone
+    order
     _version
     _deleted
     _lastChangedAt
@@ -418,6 +438,7 @@ mutation DeleteContact(
     name
     automaticTextMessage
     phone
+    order
     _version
     _deleted
     _lastChangedAt
@@ -455,6 +476,7 @@ mutation CreatePlace(
       province
       country
     }
+    order
     _version
     _deleted
     _lastChangedAt
@@ -492,6 +514,7 @@ mutation UpdatePlace(
       province
       country
     }
+    order
     _version
     _deleted
     _lastChangedAt
@@ -529,6 +552,7 @@ mutation DeletePlace(
       province
       country
     }
+    order
     _version
     _deleted
     _lastChangedAt

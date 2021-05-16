@@ -12,6 +12,7 @@ subscription OnCreateUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -27,6 +28,7 @@ subscription OnCreateUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -43,6 +45,7 @@ subscription OnCreateUser {
         name
         automaticTextMessage
         phone
+        order
         _version
         _deleted
         _lastChangedAt
@@ -58,6 +61,7 @@ subscription OnCreateUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -102,6 +106,7 @@ subscription OnUpdateUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -117,6 +122,7 @@ subscription OnUpdateUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -133,6 +139,7 @@ subscription OnUpdateUser {
         name
         automaticTextMessage
         phone
+        order
         _version
         _deleted
         _lastChangedAt
@@ -148,6 +155,7 @@ subscription OnUpdateUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -192,6 +200,7 @@ subscription OnDeleteUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -207,6 +216,7 @@ subscription OnDeleteUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -223,6 +233,7 @@ subscription OnDeleteUser {
         name
         automaticTextMessage
         phone
+        order
         _version
         _deleted
         _lastChangedAt
@@ -238,6 +249,7 @@ subscription OnDeleteUser {
         userID
         title
         description
+        order
         _version
         _deleted
         _lastChangedAt
@@ -275,6 +287,7 @@ subscription OnCreateWarningSign {
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -288,6 +301,7 @@ subscription OnUpdateWarningSign {
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -301,6 +315,7 @@ subscription OnDeleteWarningSign {
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -314,6 +329,7 @@ subscription OnCreateCopingStrategy {
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -327,6 +343,7 @@ subscription OnUpdateCopingStrategy {
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -340,6 +357,7 @@ subscription OnDeleteCopingStrategy {
     userID
     title
     description
+    order
     _version
     _deleted
     _lastChangedAt
@@ -354,6 +372,7 @@ subscription OnCreateContact {
     name
     automaticTextMessage
     phone
+    order
     _version
     _deleted
     _lastChangedAt
@@ -368,6 +387,7 @@ subscription OnUpdateContact {
     name
     automaticTextMessage
     phone
+    order
     _version
     _deleted
     _lastChangedAt
@@ -382,6 +402,7 @@ subscription OnDeleteContact {
     name
     automaticTextMessage
     phone
+    order
     _version
     _deleted
     _lastChangedAt
@@ -416,6 +437,7 @@ subscription OnCreatePlace {
       province
       country
     }
+    order
     _version
     _deleted
     _lastChangedAt
@@ -450,6 +472,7 @@ subscription OnUpdatePlace {
       province
       country
     }
+    order
     _version
     _deleted
     _lastChangedAt
@@ -484,6 +507,7 @@ subscription OnDeletePlace {
       province
       country
     }
+    order
     _version
     _deleted
     _lastChangedAt

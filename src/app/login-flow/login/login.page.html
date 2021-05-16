@@ -9,7 +9,7 @@
 <ion-content>
   <div id="spacer" style="height: 15vh; width: 100vw;"></div>
   <div class="mx-4">
-    <h2>Glad to have back</h2>
+    <h2>Glad to have you back</h2>
     <p class="my-4">Always remember you matter, you are worth it and you are <ion-text color="danger">loved.</ion-text></p>
     <div id="spacer" style="height: 5vh; width: 100vw;"></div>
     <form [formGroup]="loginForm" (ngSubmit)="login()">
@@ -21,5 +21,11 @@
       </ion-item>
       <ion-button class="mt-4" color="primary" type="submit" expand="block">Login</ion-button>
     </form>
+    <div class="d-flex flex-row justify-content-center mt-4">
+      <span class="w-25 border-top" style="height: 15px;"></span>
+    </div>
+    <div class="w-100 text-center">
+      <a class="text-primary" (click)="launchPasswordResetFlow()">Forgot your password?</a>
+    </div>
   </div>
 </ion-content>
