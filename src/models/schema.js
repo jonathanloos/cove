@@ -206,6 +206,13 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -262,6 +269,13 @@ export const schema = {
                     "name": "phone",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -340,6 +354,13 @@ export const schema = {
                     "type": {
                         "nonModel": "Address"
                     },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -586,5 +607,5 @@ export const schema = {
             }
         }
     },
-    "version": "7cc98eac325087f4f6dbf70f50e63ba6"
+    "version": "2c018dd07b85c9ec310e0e0ad4bbfb57"
 };

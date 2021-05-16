@@ -70,16 +70,14 @@ export class WarningSignsService {
   }
 
   public orderIdResolver(warningSignIdsInOrder: any[]){
-    let userId = undefined;
-
     warningSignIdsInOrder.forEach(async (id, index) => {
       let warningSign = await DataStore.query(WarningSign, id);
 
-      const updated_favourite_resource = WarningSign.copyOf(warningSign, (mutable_sign: MutableModel<WarningSign>) => {
+      const updated_sign = WarningSign.copyOf(warningSign, (mutable_sign: MutableModel<WarningSign>) => {
         mutable_sign.order = index;
         return mutable_sign
       });
-      await DataStore.save(updated_favourite_resource)
+      await DataStore.save(updated_sign)
     });
   }
 }

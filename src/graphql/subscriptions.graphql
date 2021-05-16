@@ -13,10 +13,14 @@ subscription OnCreateUser {
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -24,10 +28,15 @@ subscription OnCreateUser {
         userID
         title
         description
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -36,10 +45,15 @@ subscription OnCreateUser {
         name
         automaticTextMessage
         phone
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -47,10 +61,15 @@ subscription OnCreateUser {
         userID
         title
         description
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     favouriteResources {
       items {
@@ -58,11 +77,18 @@ subscription OnCreateUser {
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -81,10 +107,14 @@ subscription OnUpdateUser {
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -92,10 +122,15 @@ subscription OnUpdateUser {
         userID
         title
         description
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -104,10 +139,15 @@ subscription OnUpdateUser {
         name
         automaticTextMessage
         phone
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -115,10 +155,15 @@ subscription OnUpdateUser {
         userID
         title
         description
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     favouriteResources {
       items {
@@ -126,11 +171,18 @@ subscription OnUpdateUser {
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -149,10 +201,14 @@ subscription OnDeleteUser {
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -160,10 +216,15 @@ subscription OnDeleteUser {
         userID
         title
         description
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -172,10 +233,15 @@ subscription OnDeleteUser {
         name
         automaticTextMessage
         phone
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -183,10 +249,15 @@ subscription OnDeleteUser {
         userID
         title
         description
+        order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     favouriteResources {
       items {
@@ -194,11 +265,18 @@ subscription OnDeleteUser {
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -210,6 +288,9 @@ subscription OnCreateWarningSign {
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -221,6 +302,9 @@ subscription OnUpdateWarningSign {
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -232,6 +316,9 @@ subscription OnDeleteWarningSign {
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -242,6 +329,10 @@ subscription OnCreateCopingStrategy {
     userID
     title
     description
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -252,6 +343,10 @@ subscription OnUpdateCopingStrategy {
     userID
     title
     description
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -262,6 +357,10 @@ subscription OnDeleteCopingStrategy {
     userID
     title
     description
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -273,6 +372,10 @@ subscription OnCreateContact {
     name
     automaticTextMessage
     phone
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -284,6 +387,10 @@ subscription OnUpdateContact {
     name
     automaticTextMessage
     phone
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -295,6 +402,10 @@ subscription OnDeleteContact {
     name
     automaticTextMessage
     phone
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -326,6 +437,10 @@ subscription OnCreatePlace {
       province
       country
     }
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -357,6 +472,10 @@ subscription OnUpdatePlace {
       province
       country
     }
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -388,6 +507,10 @@ subscription OnDeletePlace {
       province
       country
     }
+    order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -415,7 +538,11 @@ subscription OnCreateFavouriteUserResources {
       url
       userFavourites {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -427,22 +554,33 @@ subscription OnCreateFavouriteUserResources {
       phone
       warningSigns {
         nextToken
+        startedAt
       }
       copingStrategies {
         nextToken
+        startedAt
       }
       contacts {
         nextToken
+        startedAt
       }
       places {
         nextToken
+        startedAt
       }
       favouriteResources {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -470,7 +608,11 @@ subscription OnUpdateFavouriteUserResources {
       url
       userFavourites {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -482,22 +624,33 @@ subscription OnUpdateFavouriteUserResources {
       phone
       warningSigns {
         nextToken
+        startedAt
       }
       copingStrategies {
         nextToken
+        startedAt
       }
       contacts {
         nextToken
+        startedAt
       }
       places {
         nextToken
+        startedAt
       }
       favouriteResources {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -525,7 +678,11 @@ subscription OnDeleteFavouriteUserResources {
       url
       userFavourites {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -537,22 +694,33 @@ subscription OnDeleteFavouriteUserResources {
       phone
       warningSigns {
         nextToken
+        startedAt
       }
       copingStrategies {
         nextToken
+        startedAt
       }
       contacts {
         nextToken
+        startedAt
       }
       places {
         nextToken
+        startedAt
       }
       favouriteResources {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -579,11 +747,18 @@ subscription OnCreateHelpResource {
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -610,11 +785,18 @@ subscription OnUpdateHelpResource {
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -641,11 +823,18 @@ subscription OnDeleteHelpResource {
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
