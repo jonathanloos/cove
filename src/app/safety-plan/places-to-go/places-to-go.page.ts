@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PlaceService } from 'src/app/core/services/places/place.service';
 import { ExternalAppService } from 'src/app/core/services/external-app/external-app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { Address, Place, User } from 'src/models';
 import { Subject, BehaviorSubject } from 'rxjs';
-import { ToastController } from '@ionic/angular';
+import { IonReorderGroup, ToastController } from '@ionic/angular';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
+import { ItemReorderEventDetail } from '@ionic/core';
+import { PlaceService } from 'src/app/core/services/places/place.service';
 @Component({
   selector: 'app-places-to-go',
   templateUrl: './places-to-go.page.html',
@@ -15,9 +16,11 @@ import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-sta
 export class PlacesToGoPage implements OnInit {
   
   @ViewChild('content') private content: any;
+  @ViewChild(IonReorderGroup) reorderGroup: IonReorderGroup;
 
   currentUser: User;
   public user$ : Subject<User> = new BehaviorSubject<User>(null);
+  public reordering = false;
   
   places: Place[];
   editing: boolean = false;
@@ -56,7 +59,7 @@ export class PlacesToGoPage implements OnInit {
   public PTGForm: FormGroup;
 
   constructor(
-    private PlaceService: PlaceService,
+    private placesService: PlaceService,
     private externalService: ExternalAppService,
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -64,7 +67,7 @@ export class PlacesToGoPage implements OnInit {
     public toastController: ToastController
     ) {
 
-    PlaceService.placesChange.subscribe(result => {
+    placesService.placesChange.subscribe(result => {
       this.places = result;
       if(this.places.length == 0){
         this.adding = true;
@@ -85,8 +88,29 @@ export class PlacesToGoPage implements OnInit {
     await this.authService.currentAuthenticatedUser().then(async (user) => {
       this.currentUser = user;
       this.user$.next(user)
-      this.PlaceService.list(this.currentUser.id);
+      this.placesService.list(this.currentUser.id);
     });
+  }
+
+  toggleReorderGroup(ev) {
+    this.placesService.list(this.currentUser.id);
+
+    this.reordering = !this.reordering;
+    if(this.reorderGroup != undefined){
+      this.reorderGroup.disabled = !this.reorderGroup.disabled;
+    }
+  }
+
+  async doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
+    ev.detail.complete();
+
+    let items = document.getElementsByClassName('reorder-item');
+    let ids = [];
+    for (var i = 0; i < items.length; i++) {
+      ids.push(items[i].getAttribute('id'));
+    };
+
+    await this.placesService.orderIdResolver(ids);
   }
 
   launchMaps(address: any){
@@ -126,7 +150,7 @@ export class PlacesToGoPage implements OnInit {
       userID: this.currentUser.id
     });
 
-    await this.PlaceService.create(newPlace).then(() => {
+    await this.placesService.create(newPlace).then(() => {
       this.adding = !this.adding;
       this.presentToast("Added place to your list.", "primary")
     });
@@ -143,7 +167,7 @@ export class PlacesToGoPage implements OnInit {
       userID: this.currentUser.id
     })
 
-    this.PlaceService.create(place);
+    this.placesService.create(place);
 
     this.reset();
   }

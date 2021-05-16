@@ -9,10 +9,9 @@
 
 <ion-content #content>
   <div class="mx-3 d-flex justify-content-between">
-    <div></div>
-    <div *ngIf="adding">
-      <div></div>
-    </div>
+    <ion-chip outline color="primary" (click)="toggleReorderGroup()">
+      <ion-label><ion-icon name="reorder"></ion-icon></ion-label>
+    </ion-chip>
     <div *ngIf="!adding">
       <ion-chip outline color="primary" (click)="displayForm()">
         <ion-icon name="add"></ion-icon>
@@ -46,8 +45,17 @@
       </form>
     </ion-card>
   </div>
-  <!-- <ion-card *ngFor="let place of places; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
-    <app-place [place]="place"></app-place>
-  </ion-card> -->
-  <app-place *ngFor="let place of places" [place]="place"></app-place>
+  <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
+    <ion-list>
+      <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
+        <ion-item *ngFor="let place of places" class="reorder-item" id="{{place.id}}">
+          <ion-label>{{place.title}}</ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+      </ion-reorder-group>
+    </ion-list>
+  </ng-template>
+  <ng-template #showBlock>
+    <app-place *ngFor="let place of places" [place]="place"></app-place>
+  </ng-template>
 </ion-content>
