@@ -91,7 +91,7 @@ export class CopingStrategiesPage implements OnInit {
     });
   }
 
-  toggleReorderGroup(ev) {
+  toggleReorderGroup() {
     this.copingStrategyService.list(this.currentUser.id);
     this.reordering = !this.reordering;
     if(this.reorderGroup != undefined){
