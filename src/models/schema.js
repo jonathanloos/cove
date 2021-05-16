@@ -342,18 +342,14 @@ export const schema = {
                 "latitude": {
                     "name": "latitude",
                     "isArray": false,
-                    "type": {
-                        "nonModel": "Address"
-                    },
+                    "type": "Float",
                     "isRequired": false,
                     "attributes": []
                 },
                 "longitude": {
                     "name": "longitude",
                     "isArray": false,
-                    "type": {
-                        "nonModel": "Address"
-                    },
+                    "type": "Float",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -607,5 +603,5 @@ export const schema = {
             }
         }
     },
-    "version": "2c018dd07b85c9ec310e0e0ad4bbfb57"
+    "version": "77edcc1ab8db4c3c3dee976b2e557158"
 };

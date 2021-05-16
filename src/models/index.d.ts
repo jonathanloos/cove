@@ -69,8 +69,8 @@ export declare class Place {
   readonly title: string;
   readonly description?: string;
   readonly address?: Address;
-  readonly latitude?: Address;
-  readonly longitude?: Address;
+  readonly latitude?: number;
+  readonly longitude?: number;
   readonly order?: number;
   constructor(init: ModelInit<Place>);
   static copyOf(source: Place, mutator: (draft: MutableModel<Place>) => MutableModel<Place> | void): Place;
