@@ -3,6 +3,8 @@ import { Subject } from 'rxjs';
 import { APIService } from 'src/app/API.service';
 import { DataStore } from '@aws-amplify/datastore'
 import { Contact } from 'src/models';
+import { SortDirection } from 'aws-amplify';
+import { MutableModel } from "@aws-amplify/datastore";
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +18,22 @@ export class ContactService {
   constructor( private api : APIService ) {  }
 
   public async list(userId : string) {
-    return await DataStore.query(Contact, c => c.userID("eq", userId)).then((results : any) => {
+    return await DataStore.query(Contact, c => c.userID("eq", userId), {
+      sort: s => s.order(SortDirection.ASCENDING),
+    }).then((results : any) => {
       this.contacts = results;
+
+      // Temp method to backfill order, too lazy to write a migration
+      if(this.contacts[0].order == undefined){
+        for(var i = 0; i < this.contacts.length; i++){
+          const warning_sign = Contact.copyOf(this.contacts[i], (mutable_contact: MutableModel<Contact>) => {
+            mutable_contact.order = i;
+            return mutable_contact
+          });
+          DataStore.save(warning_sign);
+        }
+      }
+
       this.contactsChange.next(this.contacts);
       return this.contacts;
     })
@@ -52,5 +68,17 @@ export class ContactService {
       this.list(result.userID);
     })
     .catch(err => {console.log(err)})
+  }
+
+  public orderIdResolver(contactIdsInOrder: any[]){
+    contactIdsInOrder.forEach(async (id, index) => {
+      let contact = await DataStore.query(Contact, id);
+
+      const updated_contact = Contact.copyOf(contact, (mutable_contact: MutableModel<Contact>) => {
+        mutable_contact.order = index;
+        return mutable_contact
+      });
+      await DataStore.save(updated_contact)
+    });
   }
 }

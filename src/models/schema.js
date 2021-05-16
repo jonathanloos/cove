@@ -148,6 +148,13 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
                 }
             },
             "syncable": true,
@@ -197,6 +204,13 @@ export const schema = {
                     "name": "description",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -255,6 +269,13 @@ export const schema = {
                     "name": "phone",
                     "isArray": false,
                     "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -321,18 +342,21 @@ export const schema = {
                 "latitude": {
                     "name": "latitude",
                     "isArray": false,
-                    "type": {
-                        "nonModel": "Address"
-                    },
+                    "type": "Float",
                     "isRequired": false,
                     "attributes": []
                 },
                 "longitude": {
                     "name": "longitude",
                     "isArray": false,
-                    "type": {
-                        "nonModel": "Address"
-                    },
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "order": {
+                    "name": "order",
+                    "isArray": false,
+                    "type": "Int",
                     "isRequired": false,
                     "attributes": []
                 }
@@ -579,5 +603,5 @@ export const schema = {
             }
         }
     },
-    "version": "370ffb3e8ca2dffe9185dc93374acc53"
+    "version": "77edcc1ab8db4c3c3dee976b2e557158"
 };

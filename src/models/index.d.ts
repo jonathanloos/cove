@@ -37,6 +37,7 @@ export declare class WarningSign {
   readonly userID: string;
   readonly title: string;
   readonly description?: string;
+  readonly order?: number;
   constructor(init: ModelInit<WarningSign>);
   static copyOf(source: WarningSign, mutator: (draft: MutableModel<WarningSign>) => MutableModel<WarningSign> | void): WarningSign;
 }
@@ -46,6 +47,7 @@ export declare class CopingStrategy {
   readonly userID: string;
   readonly title: string;
   readonly description?: string;
+  readonly order?: number;
   constructor(init: ModelInit<CopingStrategy>);
   static copyOf(source: CopingStrategy, mutator: (draft: MutableModel<CopingStrategy>) => MutableModel<CopingStrategy> | void): CopingStrategy;
 }
@@ -56,6 +58,7 @@ export declare class Contact {
   readonly name?: string;
   readonly automaticTextMessage: string;
   readonly phone?: string;
+  readonly order?: number;
   constructor(init: ModelInit<Contact>);
   static copyOf(source: Contact, mutator: (draft: MutableModel<Contact>) => MutableModel<Contact> | void): Contact;
 }
@@ -66,8 +69,9 @@ export declare class Place {
   readonly title: string;
   readonly description?: string;
   readonly address?: Address;
-  readonly latitude?: Address;
-  readonly longitude?: Address;
+  readonly latitude?: number;
+  readonly longitude?: number;
+  readonly order?: number;
   constructor(init: ModelInit<Place>);
   static copyOf(source: Place, mutator: (draft: MutableModel<Place>) => MutableModel<Place> | void): Place;
 }

@@ -161,10 +161,11 @@ export class PlaceComponent implements OnInit {
     const formatted_address = this.place.address.street + ', ' + this.place.address.city + ', ' + this.place.address.postalCode
     const searchRegExp = /\s/g;
     let size = "150x200";
-    if(this.place.description.length >= 130){
+
+    if(this.place.description.length >= 130 || this.place.title.length >= 20){
       size = "150x300";
-    } else if (this.place.description.length >= 100) {
-      size = "150x250"
+    } else if (this.place.description.length >= 90) {
+      size = "150x250";
     }
 
     const params = {

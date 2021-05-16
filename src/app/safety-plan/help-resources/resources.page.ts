@@ -56,7 +56,7 @@ export class ResourcesPage implements OnInit {
     });
   }
 
-  toggleReorderGroup(ev) {
+  toggleReorderGroup() {
     this.helpResourcesService.userFavourites(this.currentUser.id);
     this.reordering = !this.reordering;
     if(this.reorderGroup != undefined){

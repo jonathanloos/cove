@@ -16,6 +16,7 @@ type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]){
   userID: ID!
   title: String!
   description: String
+  order: Int
 }
 
 type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]){
@@ -23,6 +24,7 @@ type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]){
   userID: ID!
   title: String!
   description: String
+  order: Int
 }
 
 type Contact @model @key(name: "byUser", fields: ["userID", "name"]){
@@ -31,6 +33,7 @@ type Contact @model @key(name: "byUser", fields: ["userID", "name"]){
   name: String
   automaticTextMessage: String!
   phone: String
+  order: Int
 }
 
 type Place @model @key(name: "byUser", fields: ["userID", "title"]){
@@ -39,8 +42,9 @@ type Place @model @key(name: "byUser", fields: ["userID", "title"]){
   title: String!
   description: String
   address: Address
-  latitude: Address
-  longitude: Address
+  latitude: Float
+  longitude: Float
+  order: Int
 }
 
 type Address {

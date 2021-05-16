@@ -1,58 +1,3 @@
-<!-- <form [formGroup]="PTGForm" (ngSubmit)="save()">
-  <ion-card-header class="card-header-border">
-    <ion-item lines="none" class="ion-no-padding">
-      <ng-template [ngIf]="editing && place.id == elementId" [ngIfElse]="showTitle">
-        <ion-input class="display-medium card-header-title" color="primary" value="{{place.title}}" name="title" formControlName="title"></ion-input>
-      </ng-template>
-      <ng-template #showTitle>
-        <ion-text class="display-medium card-header-title" color="primary">{{place.title}}</ion-text>
-        <ng-template [ngIf]="place.id != elementId">
-          <app-ellipsis [id]="place.id" [type]="'ptg'" slot="end"></app-ellipsis>
-        </ng-template>
-      </ng-template>
-    </ion-item>
-  </ion-card-header>
-  <ion-card-content>
-    <ng-template [ngIf]="editing && place.id == elementId" [ngIfElse]="showDesc">
-      <ion-textarea 
-        autoGrow="true"
-        class="body ion-no-padding" 
-        value="{{place.description}}"
-        name="description"
-        formControlName="description"
-        clearInput></ion-textarea>
-    </ng-template>
-    <ng-template #showDesc>
-      <p color="medium" style="margin-top: 20px;">{{place.description}}</p>
-    </ng-template>
-    <ion-list lines="full" class="ion-no-margin">
-      <ion-item>
-        <ion-label color="medium">Street: </ion-label>
-        <ion-input formControlName="street" name="street" value="{{place.address.street}}" readonly="{{!editing && place.id != elementId}}"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label color="medium">City: </ion-label>
-        <ion-input formControlName="city" name="city" value="{{place.address.city}}" readonly="{{!editing && place.id != elementId}}"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label color="medium">Postal Code: </ion-label>
-        <ion-input formControlName="postalCode" name="postalCode" value="{{place.address.postalCode}}" readonly="{{!editing && place.id != elementId}}"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label color="medium">Province: </ion-label>
-        <ion-input formControlName="province" name="province" value="Ontario" readonly="true"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label color="medium">Country: </ion-label>
-        <ion-input formControlName="country" name="country" value="Canada" readonly="true"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ng-template [ngIf]="editing && place.id == elementId">
-      <ion-button color="light" (click)="cancel()" style="margin: 10px;">Cancel</ion-button>
-      <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
-    </ng-template>
-  </ion-card-content>
-</form> -->
 <ng-template [ngIf]="editing && place.id == elementId" [ngIfElse]="showMap">
   <form [formGroup]="PTGForm" (ngSubmit)="save()">
     <ion-card class="brainstorm-card">
@@ -83,9 +28,9 @@
   <ion-card class="brainstorm-card" (click)="launchActionSheet()">
     <ion-card-content class="p-0">
       <div class="h-100 w-100 d-flex flex-row">
-        <div class="w-25 align-self-center">
+        <div class="w-25 h-100">
           <div *ngIf="(mapsURL$ | async) as mapsURL; else showQuestionMark">
-            <img src="{{mapsURL}}"/>
+            <img src="{{mapsURL}}" height="100%" width="auto"/>
           </div>
           <ng-template #showQuestionMark>
             <img src="../assets/images/edit.png" style="height: 35px; width: 35px;" class="m-auto">

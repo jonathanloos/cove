@@ -47,12 +47,13 @@ export class LoginPage implements OnInit {
 
       await this.authService.signIn(this.loginForm.value.email, this.loginForm.value.password).then(async (res) => {
         loading.dismiss();
-        DataStore.query;
-        // await this.authService.scrubLocalDb(res.attributes.sub).then(async () => {
-          this.loginForm.reset();
+        this.userService.get(res.attributes.sub);
 
-          const url = "/tabs/safety-plan";
-          this.router.navigateByUrl(url);
+        // await this.authService.scrubLocalDb(res.attributes.sub).then(async () => {
+        this.loginForm.reset();
+
+        const url = "/tabs/safety-plan";
+        this.router.navigateByUrl(url);
         // });
       })
       .catch( async err => { 
@@ -85,6 +86,42 @@ export class LoginPage implements OnInit {
         }
       })
     }
+  }
+
+  async launchPasswordResetFlow(){
+    const alert = await this.alertController.create({
+      header: "Reset Password?",
+      message: "To verify it's you, we'll send you a code to enter in the next screen. From there you can change your password.",
+      inputs: [
+        {
+          name: 'email',
+          type: 'email',
+          id: 'email1',
+          value: this.loginForm.value.email == undefined ? '' : this.loginForm.value.email,
+          placeholder: 'Enter Email Here...'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+        }, {
+          text: 'Continue',
+          handler: async (data) => {
+            await this.authService.sendForgotPasswordConfirmationCode(data.email).then(succ => {
+              console.log(succ)
+              localStorage.setItem("signup_email", data.email);
+              console.log('navigate')
+              this.router.navigate(['/password-reset'])
+            })
+            .catch(err => {this.presentToast(err.message, "danger")})
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   async presentToast(message: string, type: string) {
