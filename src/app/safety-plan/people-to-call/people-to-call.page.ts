@@ -87,7 +87,7 @@ export class PeopleToCallPage implements OnInit {
     });
   }
 
-  toggleReorderGroup(ev) {
+  toggleReorderGroup() {
     this.contactService.list(this.currentUser.id);
 
     this.reordering = !this.reordering;

@@ -92,7 +92,7 @@ export class PlacesToGoPage implements OnInit {
     });
   }
 
-  toggleReorderGroup(ev) {
+  toggleReorderGroup() {
     this.placesService.list(this.currentUser.id);
 
     this.reordering = !this.reordering;

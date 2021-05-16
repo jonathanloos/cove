@@ -88,7 +88,7 @@ export class WarningSignsPage implements OnInit {
     });
   }
 
-  toggleReorderGroup(ev) {
+  toggleReorderGroup() {
     this.warningSignService.list(this.currentUser.id);
 
     this.reordering = !this.reordering;

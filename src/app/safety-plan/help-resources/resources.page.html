@@ -11,7 +11,7 @@
   <div *ngIf="(favouriteResources$ | async)?.length > 0">
     <ion-item lines="none">
       <h4>Favourites</h4>
-      <ion-text slot="end" color="primary"><span (click)="toggleReorderGroup($event)">Reorder</span></ion-text>
+      <ion-text slot="end" color="primary"><span (click)="toggleReorderGroup()">Reorder</span></ion-text>
     </ion-item>
     <ion-card class="brainstorm-card m-1">
       <ion-card-content>
