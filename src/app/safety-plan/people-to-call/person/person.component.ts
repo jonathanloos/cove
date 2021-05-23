@@ -58,7 +58,7 @@ export class PersonComponent implements OnInit {
 
   }
   
-  async reset(){
+  async cancel(){
     let curr = await this.contactsService.get(this.contact.id);
     this.PTCForm.setValue({
       id: curr.id,

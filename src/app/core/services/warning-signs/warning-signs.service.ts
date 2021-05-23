@@ -23,7 +23,7 @@ export class WarningSignsService {
       this.warning_signs = results;
 
       // Temp method to backfill order, too lazy to write a migration
-      if(this.warning_signs[0].order == undefined){
+      if(this.warning_signs.length > 0 && this.warning_signs[0].order == undefined){
         for(var i = 0; i < this.warning_signs.length; i++){
           const warning_sign = WarningSign.copyOf(this.warning_signs[i], (mutable_sign: MutableModel<WarningSign>) => {
             mutable_sign.order = i;

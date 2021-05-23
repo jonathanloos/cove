@@ -24,7 +24,7 @@ export class CopingStrategiesService {
       this.coping_strategies = results;
 
       // Temp method to backfill order, too lazy to write a migration
-      if(this.coping_strategies[0].order == undefined){
+      if(this.coping_strategies.length > 0 && this.coping_strategies[0].order == undefined){
         for(var i = 0; i < this.coping_strategies.length; i++){
           const warning_sign = CopingStrategy.copyOf(this.coping_strategies[i], (mutable_sign: MutableModel<CopingStrategy>) => {
             mutable_sign.order = i;

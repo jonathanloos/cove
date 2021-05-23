@@ -43,7 +43,7 @@ export class SignComponent implements OnInit {
     })
   }
 
-  async reset(){
+  async cancel(){
     let curr = await this.WSService.get(this.sign.id);
     this.signForm.setValue({
       id: curr.id, 

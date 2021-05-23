@@ -19,7 +19,7 @@
         <p class="body">{{strategy.description}}</p>
       </ng-template>
       <ng-template [ngIf]="editing && elementId==strategy.id">
-        <ion-button (click)="reset()" color="light" style="margin: 10px;">Cancel</ion-button>
+        <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
         <ion-button type="submit" color="primary" style="float: right; margin: 10px;">Save</ion-button>
       </ng-template>
     </ion-card-content>

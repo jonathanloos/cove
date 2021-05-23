@@ -8,6 +8,7 @@ import { ModalComponent } from './get-help/modal/modal.component';
 import { EmptyStateButtonComponent } from './empty-state-button/empty-state-button.component';
 import { GoogleMapsSearchBarComponent } from './google-maps-search-bar/google-maps-search-bar.component';
 import { AgmCoreModule } from '@agm/core';
+import { ElementToolbarComponent } from './element-toolbar/element-toolbar.component';
 
 
 
@@ -17,7 +18,8 @@ import { AgmCoreModule } from '@agm/core';
     EditPopoverComponent, 
     ModalComponent, 
     EmptyStateButtonComponent,
-    GoogleMapsSearchBarComponent
+    GoogleMapsSearchBarComponent,
+    ElementToolbarComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { AgmCoreModule } from '@agm/core';
   exports:[
     EllipsisComponent,
     EmptyStateButtonComponent,
-    GoogleMapsSearchBarComponent
+    GoogleMapsSearchBarComponent,
+    ElementToolbarComponent
   ],
   bootstrap:[EditPopoverComponent]
 })

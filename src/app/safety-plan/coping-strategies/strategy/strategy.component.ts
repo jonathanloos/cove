@@ -43,7 +43,7 @@ export class StrategyComponent implements OnInit {
     });
   }
 
-  async reset(){
+  async cancel(){
     let curr = await this.CSService.get(this.strategy.id);
     if(curr !== undefined){
       this.CSForm.setValue({

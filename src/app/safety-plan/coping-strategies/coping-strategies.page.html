@@ -8,19 +8,15 @@
 </ion-header>
 
 <ion-content fullscreen #content>
-  <div class="mx-3 d-flex justify-content-between">
-    <ion-chip outline color="primary" class="py-1" (click)="toggleReorderGroup()">
-      <ion-label><ion-icon name="reorder"></ion-icon></ion-label>
-    </ion-chip>
-    <div *ngIf="!adding">
-      <ion-chip outline color="primary" (click)="displayForm()">
-        <ion-icon name="add"></ion-icon>
-        <ion-label>Strategy</ion-label>
-      </ion-chip>
-    </div>
-    <div *ngIf="user$ | async as user">
-      <app-empty-state-button [userID]="user.id" [payload]="payload"></app-empty-state-button>
-    </div>
+  <div *ngIf="user$ | async as user">
+    <app-element-toolbar 
+      [addBtnText]="'Strategy'" 
+      [adding]="adding" 
+      [userId]="user.id"
+      [payload]="payload"
+      (reorderEvent)="toggleReorderGroup()"
+      (addingEvent)="adding = !adding"
+    ></app-element-toolbar>
   </div>
 
   <div *ngIf="adding">
@@ -40,7 +36,7 @@
               placeholder="Description"
               clearInput></ion-textarea>
         </ion-card-content>
-        <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
+        <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
         <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
       </ion-card>
     </form>

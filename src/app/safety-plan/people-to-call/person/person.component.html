@@ -24,7 +24,7 @@
       <ion-textarea name="automaticTextMessage" formControlName="automaticTextMessage" class="body" style="margin-top: 0px !important;" value="{{contact.automaticTextMessage}}" autoGrow="true" readonly="{{!editing || contact.id != elementId}}"></ion-textarea>
     </ion-item>
     <ng-template [ngIf]="editing && contact.id == elementId">
-      <ion-button color="light" (click)="reset()" style="margin: 10px;">Cancel</ion-button>
+      <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
       <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
     </ng-template>
     <ng-template [ngIf]="!editing && !(contact.id == elementId)">

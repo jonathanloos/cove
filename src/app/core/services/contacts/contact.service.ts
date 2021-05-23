@@ -24,7 +24,7 @@ export class ContactService {
       this.contacts = results;
 
       // Temp method to backfill order, too lazy to write a migration
-      if(this.contacts[0].order == undefined){
+      if(this.contacts.length > 0 && this.contacts[0].order == undefined){
         for(var i = 0; i < this.contacts.length; i++){
           const warning_sign = Contact.copyOf(this.contacts[i], (mutable_contact: MutableModel<Contact>) => {
             mutable_contact.order = i;
@@ -33,7 +33,7 @@ export class ContactService {
           DataStore.save(warning_sign);
         }
       }
-
+      
       this.contactsChange.next(this.contacts);
       return this.contacts;
     })

@@ -130,7 +130,7 @@ export class CopingStrategiesPage implements OnInit {
     this.adding = true;
   }
 
-  reset(){
+  cancel(){
     this.adding = false;
     this.strategyForm.reset();
   }
@@ -144,7 +144,7 @@ export class CopingStrategiesPage implements OnInit {
 
 
     this.copingStrategyService.create(strategy);
-    this.reset();
+    this.cancel();
   }
 
   async presentToast(message: string, type: string) {

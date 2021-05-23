@@ -18,7 +18,7 @@
             <app-google-maps-search-bar [current_address]="place.address.street + ', ' + place.address.city" (addressChanged)="updateAddress($event)"></app-google-maps-search-bar>
           </div>
         </div>
-        <ion-button color="light" (click)="cancel()" style="margin: 10px;">Cancel</ion-button>
+        <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
         <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
       </ion-card-content>
     </ion-card>

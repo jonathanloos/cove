@@ -24,7 +24,7 @@ export class PlaceService {
       this.places = results;
 
       // Temp method to backfill order, too lazy to write a migration
-      if(this.places[0].order == undefined){
+      if(this.places.length > 0 && this.places[0].order == undefined){
         for(var i = 0; i < this.places.length; i++){
           const new_place = Place.copyOf(this.places[i], (mutable_place: MutableModel<Place>) => {
             mutable_place.order = i;
