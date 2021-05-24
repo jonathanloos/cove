@@ -6,6 +6,7 @@ import { HelpResourcesService } from 'src/app/core/services/help-resources/help-
 import { FavouriteUserResources, HelpResource, User } from 'src/models';
 import { ItemReorderEventDetail } from '@ionic/core';
 import { ResourceModalPage } from 'src/app/modals/resource-modal/resource-modal.page';
+import { ResourceDetailModalComponent } from 'src/app/modals/resource-detail-modal/resource-detail-modal.component';
 
 @Component({
   selector: 'app-resources',
@@ -65,9 +66,6 @@ export class ResourcesPage implements OnInit {
   }
 
   async doReorder(ev: CustomEvent<ItemReorderEventDetail>) {
-    // Finish the reorder and position the item in the DOM based on
-    // where the gesture ended. This method can also be called directly
-    // by the reorder group
     ev.detail.complete();
 
     let items = document.getElementsByClassName('reorder-item');
@@ -87,7 +85,7 @@ export class ResourcesPage implements OnInit {
     });
 
     const modal = await this.modalController.create({
-      component: ResourceModalPage,
+      component: ResourceDetailModalComponent,
       componentProps: {
         'resource' : resource
       }

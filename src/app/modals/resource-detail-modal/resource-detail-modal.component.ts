@@ -2,12 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-resource-modal',
-  templateUrl: './resource-modal.page.html',
-  styleUrls: ['./resource-modal.page.scss'],
+  selector: 'app-resource-detail-modal',
+  templateUrl: './resource-detail-modal.component.html',
+  styleUrls: ['./resource-detail-modal.component.scss'],
 })
-export class ResourceModalPage implements OnInit {
-
+export class ResourceDetailModalComponent implements OnInit {
+  
   @Input() resource;
   phone_url: String = "";
   sms_url: String = "";
@@ -15,13 +15,13 @@ export class ResourceModalPage implements OnInit {
   constructor(public modalController: ModalController) { }
 
   ngOnInit() {
-      if(this.resource[0].phone.number != undefined){
-        this.phone_url = "tel:" + this.resource[0].phone.number ;
-      }
+    if(this.resource[0].phone.number != undefined){
+      this.phone_url = "tel:" + this.resource[0].phone.number ;
+    }
 
-      if(this.resource[0].sms.number != undefined){
-        this.sms_url = "sms:/" + this.resource[0].sms.number;
-      }
+    if(this.resource[0].sms.number != undefined){
+      this.sms_url = "sms:/" + this.resource[0].sms.number;
+    }
   }
 
   dismiss() {
