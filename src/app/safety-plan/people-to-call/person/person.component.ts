@@ -85,7 +85,6 @@ export class PersonComponent implements OnInit {
           {
             text: 'Edit',
             role: 'cancel',
-            cssClass: 'secondary',
             handler: () => {
             }
           }, {

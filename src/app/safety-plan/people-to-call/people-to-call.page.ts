@@ -137,7 +137,6 @@ export class PeopleToCallPage implements OnInit {
           {
             text: 'Edit',
             role: 'cancel',
-            cssClass: 'secondary',
             handler: () => {
             }
           }, {

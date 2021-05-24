@@ -1,35 +1,60 @@
 <ion-header no-border>
+  <div class="mx-4 py-3 d-flex justify-content-end text-muted">
+    <span class="h4 mr-3" (click)="share()"><ion-icon name="share"></ion-icon></span>
+    <span class="h4" (click)="settings()"><ion-icon name="settings"></ion-icon></span>
+  </div>
 </ion-header>
 
 <ion-content>
-  <h1 class="page-title ion-text-center" style="margin-top: 3rem;">
-    <div *ngIf="user$ | async as user">
-      <b>Hi {{user.name}}!</b><br/>
+  <div *ngIf="user$ | async as user">
+    <div class="row m-4 mb-0">
+      <div class="col-3">
+        <ion-avatar slot="start">
+          <img src="../../../assets/avatars/img_avatar2.png"/>
+        </ion-avatar>
+      </div>
+      <div class="col-9 text-left">
+          <h3 class="mb-0">{{user.name}}</h3>
+          <small class="text-muted mb-0">{{user.email}}</small>
+      </div>
     </div>
-  </h1>
-  <ion-card class="brainstorm-card">
-    <ion-card-content>
-      <form [formGroup]="userForm" (ngSubmit)="update()">
-        <div class="ion-text-center">
-        </div>
-        <div class="ion-padding">
-          <ion-item>
-            <ion-label color="medium">Name: </ion-label>
-            <ion-input *ngIf="user$ | async" formControlName="name" name="name"></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label color="medium">Email: </ion-label>
-            <ion-input *ngIf="user$ | async" formControlName="email" name="email"></ion-input>
-          </ion-item>
-        </div>
-  
-        <div class="ion-padding">
-          <ion-button expand="block" type="submit">Save</ion-button>
-        </div>
-      </form>
-    </ion-card-content>
-  </ion-card>
+    <p class="mx-4 px-2 text-muted">
+      <ng-template [ngIf]="user.bio.length > 0" [ngIfElse]="promptBio">
+        {{user.bio}}
+      </ng-template>
+      <ng-template #promptBio>
+        Add your bio in settings!
+      </ng-template>
+    </p>
+  </div>
+  <div class="row mx-4 mt-4 mb-0 align-items-center">
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{warningSignCount$ | async}}</h3>
+        <span><small>Warning Signs</small></span>
+      </div>
+    </div>
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{copingStrategyCount$ | async}}</h3>
+        <span><small>Coping Strategies</small></span>
+      </div>
+    </div>
+  </div>
+  <div class="row mx-4 mt-0 mb-4 align-items-center">
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{placesCount$ | async}}</h3>
+        <span><small>Places To Go</small></span>
+      </div>
+    </div>
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{contactsCount$ | async}}</h3>
+        <span><small>People To Call</small></span>
+      </div>
+    </div>
+  </div>
   <ion-card class="brainstorm-card">
     <ion-card-content>
       <ion-list>

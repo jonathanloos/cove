@@ -21,8 +21,6 @@ const logger = new Logger('cove-Logger');
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public warningSignForm: FormGroup;
-  public userForm: FormGroup;
 
   constructor(
     private platform: Platform,

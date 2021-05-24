@@ -38,6 +38,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "bio": {
+                    "name": "bio",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "warningSigns": {
                     "name": "warningSigns",
                     "isArray": true,
@@ -603,5 +610,5 @@ export const schema = {
             }
         }
     },
-    "version": "77edcc1ab8db4c3c3dee976b2e557158"
+    "version": "c21fa433e9a145a41de230525ce72056"
 };

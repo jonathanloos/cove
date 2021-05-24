@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-toolbar >
+    <ion-item lines="none"  class="ion-no-padding">
+      <ion-label class="page-title ml-2">Edit your Info</ion-label>
+      <ion-chip outline color="dark" (click)="dismiss()" slot="end" class="mr-0">
+        <ion-label>Close</ion-label>
+      </ion-chip>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="brainstorm-card">
+    <ion-card-content>
+      <form [formGroup]="updateUserForm" (ngSubmit)="saveUser()">
+        <ion-item lines="none" class="ion-no-padding">
+          <ion-label position="stacked">Name:</ion-label>
+          <ion-input name="name" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item lines="none" class="ion-no-padding" style="min-height: 40px;">
+          <ion-label position="stacked">Bio:</ion-label>
+          <ion-textarea name="bio" formControlName="bio" maxlength="140" autoGrow="true" style="min-height: 40px;"></ion-textarea>
+        </ion-item>
+        <ion-button type="submit" [disabled]="!updateUserForm.valid">Submit</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
