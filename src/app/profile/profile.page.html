@@ -1,6 +1,6 @@
 <ion-header no-border>
   <div class="mx-4 py-3 d-flex justify-content-end text-muted">
-    <span class="h4 mr-3" (click)="share()"><ion-icon name="share"></ion-icon></span>
+    <a class="h4 mr-3" href="sms:/&body='Hey there, have you heard of tryconve.ca?'"><ion-icon name="share"></ion-icon></a>
     <span class="h4" (click)="settings()"><ion-icon name="settings"></ion-icon></span>
   </div>
 </ion-header>
@@ -78,5 +78,7 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <ion-button class="mx-2" expand="block" color="light" (click)="signOut()">Sign Out</ion-button>
+  <div class="w-100 text-center">
+    <span color="light" class="btn bg-transparent border-0 text-primary text-underline m-2" (click)="signOut()"><u>Sign Out</u></span>
+  </div>
 </ion-content>

@@ -1,4 +1,4 @@
-<form (ngSubmit)="save()" [formGroup]="CSForm">
+<form [formGroup]="CSForm">
   <ion-card-header class="card-header-border">
     <ion-item lines="none" class="ion-no-padding">
       <ng-template [ngIf]="editing && elementId==strategy.id" [ngIfElse]="showBlock">
@@ -20,7 +20,7 @@
       </ng-template>
       <ng-template [ngIf]="editing && elementId==strategy.id">
         <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-        <ion-button type="submit" color="primary" style="float: right; margin: 10px;">Save</ion-button>
+        <ion-button (click)="save()" color="primary" style="float: right; margin: 10px;">Save</ion-button>
       </ng-template>
     </ion-card-content>
   </ng-template>

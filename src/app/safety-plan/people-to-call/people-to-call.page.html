@@ -42,7 +42,7 @@
               <ion-textarea name="automaticTextMessage" formControlName="automaticTextMessage" class="body" style="margin-top: 0px !important;" value="{{defaultMessage}}" autoGrow="true"></ion-textarea>
             </ion-item>
             <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-            <ion-button color="primary" type="submit" style="float: right; margin: 10px;" [disabled]="!newPTCForm.valid">Save</ion-button>
+            <ion-button color="primary" (click)="create()" style="float: right; margin: 10px;" [disabled]="!newPTCForm.valid">Save</ion-button>
         </ion-card-content>
       </ion-card>
     </form>

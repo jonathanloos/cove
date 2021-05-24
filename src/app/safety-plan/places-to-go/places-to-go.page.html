@@ -32,7 +32,7 @@
             clearInput></ion-textarea>
           <app-google-maps-search-bar (addressChanged)="updateAddress($event)"></app-google-maps-search-bar>
           <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-          <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
+          <ion-button color="primary" (click)="create()" style="float: right; margin: 10px;">Save</ion-button>
         </ion-card-content>
       </form>
     </ion-card>

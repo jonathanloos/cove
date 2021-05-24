@@ -1,4 +1,4 @@
-<form [formGroup]="signForm" (ngSubmit)="save()">
+<form [formGroup]="signForm" >
   <ion-card-header class="card-header-border">
     <ion-item lines="none" class="ion-no-padding">
       <ng-template [ngIf]="editing && sign.id == elementId" [ngIfElse]="showTitle">
@@ -27,7 +27,7 @@
     </ion-card-content>
     <ng-template [ngIf]="editing && sign.id == elementId">
       <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-      <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
+      <ion-button color="primary" (click)="save()" style="float: right; margin: 10px;">Save</ion-button>
     </ng-template>
   </ng-template>
 </form>

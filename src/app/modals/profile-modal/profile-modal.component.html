@@ -12,7 +12,7 @@
 <ion-content>
   <ion-card class="brainstorm-card">
     <ion-card-content>
-      <form [formGroup]="updateUserForm" (ngSubmit)="saveUser()">
+      <form [formGroup]="updateUserForm">
         <ion-item lines="none" class="ion-no-padding">
           <ion-label position="stacked">Name:</ion-label>
           <ion-input name="name" formControlName="name"></ion-input>
@@ -21,7 +21,7 @@
           <ion-label position="stacked">Bio:</ion-label>
           <ion-textarea name="bio" formControlName="bio" maxlength="140" autoGrow="true" style="min-height: 40px;"></ion-textarea>
         </ion-item>
-        <ion-button type="submit" [disabled]="!updateUserForm.valid">Submit</ion-button>
+        <ion-button (click)="saveUser()" [disabled]="!updateUserForm.valid">Submit</ion-button>
       </form>
     </ion-card-content>
   </ion-card>

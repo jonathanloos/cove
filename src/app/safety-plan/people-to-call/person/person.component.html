@@ -25,7 +25,7 @@
     </ion-item>
     <ng-template [ngIf]="editing && contact.id == elementId">
       <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-      <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
+      <ion-button color="primary" (click)="save()" style="float: right; margin: 10px;">Save</ion-button>
     </ng-template>
     <ng-template [ngIf]="!editing && !(contact.id == elementId)">
       <ion-row class="ion-justify-content-center ion-text-center">
