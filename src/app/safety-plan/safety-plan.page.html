@@ -1,39 +1,26 @@
 <ion-header no-border>
-  <ion-toolbar class="page-header">
-    <ion-item lines="none" class="title-item" class="ion-no-padding">
-      <ion-avatar>
-        <img src="../assets/icons/icon-72x72.png">
-      </ion-avatar>
-      <h1 class="page-title" style="margin-top: 10px;"><b>My Safety Plan</b></h1>
-    </ion-item>
-  </ion-toolbar>
+  <app-top-toolbar [pageTitle]="'My Safety Plan'"></app-top-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card class="brainstorm-card">
     <ion-card-content>
-      <ion-list>
-        <ion-item class="ion-no-padding other-items" *ngFor="let item of menu_items; let i = index" [ngClass]="{'first-item': i == 0, 'last-item': i == 4}" lines="none">
-          <ion-grid routerLink="{{item.path}}" routerDirection="forward">
-            <ion-row style="width: 100%;">
-              <ion-col size="2" style="text-align: center;">
-                <div shape="round" class="sp-icon-div">
-                  <ion-icon color="primary" name="{{item.icon}}"></ion-icon>
-                </div>
-              </ion-col>
-              <ion-col size="9">
-                  <h6 class="h6" style="padding-top: 5px;">{{item.title}}</h6>
-                  <div *ngFor="let detail of item.details">
-                    <ion-text class="caption subdued list-ws-item">{{detail}}</ion-text>
-                  </div>
-              </ion-col>
-              <ion-col size="1">
-                <ion-icon name="arrow-dropright"></ion-icon>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-      </ion-list>
+      <div class="row w-100 border-bottom py-3 m-0" *ngFor="let item of menu_items; let i = index" [ngClass]="{'border-0': i == 4}" routerLink="{{item.path}}" routerDirection="forward">
+        <div class="col-2 px-0 d-flex align-items-center justify-content-center">
+          <div shape="round" class="sp-icon-div">
+            <ion-icon color="primary" name="{{item.icon}}"></ion-icon>
+          </div>
+        </div>
+        <div class="col-10 d-flex flex-row pr-0 align-items-center">
+          <div class="flex-grow-1 d-flex flex-column">
+            <h6 class="h6" style="padding-top: 5px;">{{item.title}}</h6>
+            <div *ngFor="let detail of item.details">
+              <ion-text class="caption subdued">{{detail}}</ion-text>
+            </div>
+          </div>
+          <ion-icon name="arrow-dropright" style="font-size: 24px;"></ion-icon>
+        </div>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>

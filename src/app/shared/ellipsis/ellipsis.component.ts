@@ -20,7 +20,6 @@ export class EllipsisComponent implements OnInit {
     const popover = await this.popoverController.create({
       component: EditPopoverComponent,
       event: ev,
-      translucent: true,
       componentProps: {
         type : this.type,
         id: this.id

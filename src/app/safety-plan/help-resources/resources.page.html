@@ -1,16 +1,11 @@
 <ion-header no-border>
-  <ion-toolbar class="page-header">
-    <ion-item lines="none" class="title-item" class="ion-no-padding">
-      <ion-back-button defaultHref="tabs/safety-plan" slot="start" class="ion-no-margin"></ion-back-button>
-      <ion-label class="page-title" style="margin-top: 10px;">Resources</ion-label>
-    </ion-item>
-  </ion-toolbar>
+  <app-top-toolbar [pageTitle]="'Help Resources'"></app-top-toolbar>
 </ion-header>
 
 <ion-content>
   <div *ngIf="(favouriteResources$ | async)?.length > 0">
     <ion-item lines="none">
-      <h4>Favourites</h4>
+      <h4 class="text-primary mb-2 mt-4">Favourites</h4>
       <ion-text slot="end" color="primary"><span (click)="toggleReorderGroup()">Reorder</span></ion-text>
     </ion-item>
     <ion-card class="brainstorm-card m-1">
@@ -18,7 +13,7 @@
         <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
           <ion-list>
             <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
-              <ion-item *ngFor="let favouriteResource of favouriteResources$ | async" class="reorder-item" id="{{favouriteResource.id}}">
+              <ion-item *ngFor="let favouriteResource of favouriteResources$ | async" class="reorder-item ion-no-padding" id="{{favouriteResource.id}}">
                 <ion-avatar slot="start">
                   <img src="{{favouriteResource.resource.img_url}}">
                 </ion-avatar>
@@ -32,7 +27,7 @@
           <ion-list>
             <ion-item-sliding class="ion-no-padding pl-0" *ngFor="let favouriteResource of favouriteResources$ | async">
           
-              <ion-item (click)="displayInfo(favouriteResource.resource.id)">
+              <ion-item (click)="displayInfo(favouriteResource.resource.id)" class="ion-no-padding">
                 <ion-avatar slot="start" class="border">
                   <img src="{{favouriteResource.resource.img_url}}">
                 </ion-avatar>
@@ -54,7 +49,7 @@
       </ion-card-content>
     </ion-card>
     <ion-item lines="none">
-      <h4>Helpful Resources</h4>
+      <h4 class="text-primary mb-2 mt-4">Helpful Resources</h4>
     </ion-item>
   </div>
   <ion-card class="brainstorm-card m-1">
@@ -62,7 +57,7 @@
       <ion-list>
         <ion-item-sliding class="ion-no-padding" *ngFor="let resource of  otherResources$ | async">
       
-          <ion-item (click)="displayInfo(resource.id)">
+          <ion-item (click)="displayInfo(resource.id)" class="ion-no-padding">
             <ion-avatar slot="start" class="border">
               <img src="{{resource.img_url}}">
             </ion-avatar>

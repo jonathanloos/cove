@@ -121,7 +121,7 @@ export class PlacesToGoPage implements OnInit {
     this.adding = true;
   }
 
-  reset(){
+  cancel(){
     this.adding = false;
     this.PTGForm.reset();
   }
@@ -169,7 +169,7 @@ export class PlacesToGoPage implements OnInit {
 
     this.placesService.create(place);
 
-    this.reset();
+    this.cancel();
   }
 
   async presentToast(message: string, type: string) {

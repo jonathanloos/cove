@@ -8,7 +8,7 @@
       <h2>Check your email!</h2>
       <p>We've sent you a 6 digit confirmation code to finish your account setup. Please type it in below: </p>
       <div class="absolute-bottom">
-        <form [formGroup]="verificationCodeForm" (ngSubmit)="confirmVerificationCode()">
+        <form [formGroup]="verificationCodeForm">
           <ion-card class="brainstorm-card" style="background-color: white; width: 90vw; margin: 0; margin-left: -50%; padding: 1rem;">
             <ion-card-content>
               <ion-item>
@@ -19,7 +19,7 @@
           </ion-card>
           <ion-item  style="width: 90vw; margin: 0; margin-left: -50%; margin-top: 1rem;" lines="none">
             <ion-button fill="clear" [routerLink]="['/register']" slot="start">Back <ion-icon slot="start" name="arrow-back"></ion-icon></ion-button>
-            <ion-button fill="clear" type="submit" slot="end">Confirm Account <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+            <ion-button fill="clear" (click)="confirmVerificationCode()" slot="end">Confirm Account <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
           </ion-item>
         </form>
       </div>

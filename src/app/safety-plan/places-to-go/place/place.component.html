@@ -1,5 +1,5 @@
 <ng-template [ngIf]="editing && place.id == elementId" [ngIfElse]="showMap">
-  <form [formGroup]="PTGForm" (ngSubmit)="save()">
+  <form [formGroup]="PTGForm" >
     <ion-card class="brainstorm-card">
       <ion-card-content class="p-0">
         <div class="h-100 w-100 d-flex flex-row">
@@ -18,8 +18,8 @@
             <app-google-maps-search-bar [current_address]="place.address.street + ', ' + place.address.city" (addressChanged)="updateAddress($event)"></app-google-maps-search-bar>
           </div>
         </div>
-        <ion-button color="light" (click)="cancel()" style="margin: 10px;">Cancel</ion-button>
-        <ion-button color="primary" type="submit" style="float: right; margin: 10px;">Save</ion-button>
+        <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
+        <ion-button color="primary" (ngSubmit)="save()" style="float: right; margin: 10px;">Save</ion-button>
       </ion-card-content>
     </ion-card>
   </form>

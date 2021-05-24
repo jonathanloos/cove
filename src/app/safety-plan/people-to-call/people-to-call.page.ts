@@ -116,7 +116,7 @@ export class PeopleToCallPage implements OnInit {
     this.defaultMessage = "Hey " + ev.target.value + ", I'm using my safety plan right now. Please call me when you get this.";
   }
 
-  reset(){
+  cancel(){
     this.adding = false;
     this.newPTCForm.reset({textMsg: this.defaultMessage})
   }
@@ -137,7 +137,6 @@ export class PeopleToCallPage implements OnInit {
           {
             text: 'Edit',
             role: 'cancel',
-            cssClass: 'secondary',
             handler: () => {
             }
           }, {
@@ -181,7 +180,7 @@ export class PeopleToCallPage implements OnInit {
 
   createContact(contact : Contact){
     this.contactService.create(contact);
-    this.reset();
+    this.cancel();
   }
 
   async presentToast(message: string, type: string) {

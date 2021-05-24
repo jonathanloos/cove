@@ -9,6 +9,7 @@ mutation CreateUser(
     name
     email
     phone
+    bio
     warningSigns {
       items {
         id
@@ -16,10 +17,14 @@ mutation CreateUser(
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -28,10 +33,14 @@ mutation CreateUser(
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -41,10 +50,14 @@ mutation CreateUser(
         automaticTextMessage
         phone
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -55,10 +68,14 @@ mutation CreateUser(
         latitude
         longitude
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     favouriteResources {
       items {
@@ -66,11 +83,18 @@ mutation CreateUser(
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -85,6 +109,7 @@ mutation UpdateUser(
     name
     email
     phone
+    bio
     warningSigns {
       items {
         id
@@ -92,10 +117,14 @@ mutation UpdateUser(
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -104,10 +133,14 @@ mutation UpdateUser(
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -117,10 +150,14 @@ mutation UpdateUser(
         automaticTextMessage
         phone
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -131,10 +168,14 @@ mutation UpdateUser(
         latitude
         longitude
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     favouriteResources {
       items {
@@ -142,11 +183,18 @@ mutation UpdateUser(
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -161,6 +209,7 @@ mutation DeleteUser(
     name
     email
     phone
+    bio
     warningSigns {
       items {
         id
@@ -168,10 +217,14 @@ mutation DeleteUser(
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     copingStrategies {
       items {
@@ -180,10 +233,14 @@ mutation DeleteUser(
         title
         description
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     contacts {
       items {
@@ -193,10 +250,14 @@ mutation DeleteUser(
         automaticTextMessage
         phone
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     places {
       items {
@@ -207,10 +268,14 @@ mutation DeleteUser(
         latitude
         longitude
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
     favouriteResources {
       items {
@@ -218,11 +283,18 @@ mutation DeleteUser(
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -237,6 +309,9 @@ mutation CreateWarningSign(
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -251,6 +326,9 @@ mutation UpdateWarningSign(
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -265,6 +343,9 @@ mutation DeleteWarningSign(
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -279,6 +360,9 @@ mutation CreateCopingStrategy(
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -293,6 +377,9 @@ mutation UpdateCopingStrategy(
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -307,6 +394,9 @@ mutation DeleteCopingStrategy(
     title
     description
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -322,6 +412,9 @@ mutation CreateContact(
     automaticTextMessage
     phone
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -337,6 +430,9 @@ mutation UpdateContact(
     automaticTextMessage
     phone
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -352,6 +448,9 @@ mutation DeleteContact(
     automaticTextMessage
     phone
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -375,6 +474,9 @@ mutation CreatePlace(
     latitude
     longitude
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -398,6 +500,9 @@ mutation UpdatePlace(
     latitude
     longitude
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -421,6 +526,9 @@ mutation DeletePlace(
     latitude
     longitude
     order
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -451,7 +559,11 @@ mutation CreateFavouriteUserResources(
       url
       userFavourites {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -461,24 +573,36 @@ mutation CreateFavouriteUserResources(
       name
       email
       phone
+      bio
       warningSigns {
         nextToken
+        startedAt
       }
       copingStrategies {
         nextToken
+        startedAt
       }
       contacts {
         nextToken
+        startedAt
       }
       places {
         nextToken
+        startedAt
       }
       favouriteResources {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -509,7 +633,11 @@ mutation UpdateFavouriteUserResources(
       url
       userFavourites {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -519,24 +647,36 @@ mutation UpdateFavouriteUserResources(
       name
       email
       phone
+      bio
       warningSigns {
         nextToken
+        startedAt
       }
       copingStrategies {
         nextToken
+        startedAt
       }
       contacts {
         nextToken
+        startedAt
       }
       places {
         nextToken
+        startedAt
       }
       favouriteResources {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -567,7 +707,11 @@ mutation DeleteFavouriteUserResources(
       url
       userFavourites {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -577,24 +721,36 @@ mutation DeleteFavouriteUserResources(
       name
       email
       phone
+      bio
       warningSigns {
         nextToken
+        startedAt
       }
       copingStrategies {
         nextToken
+        startedAt
       }
       contacts {
         nextToken
+        startedAt
       }
       places {
         nextToken
+        startedAt
       }
       favouriteResources {
         nextToken
+        startedAt
       }
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -624,11 +780,18 @@ mutation CreateHelpResource(
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -658,11 +821,18 @@ mutation UpdateHelpResource(
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }
@@ -692,11 +862,18 @@ mutation DeleteHelpResource(
         resourceID
         userID
         order
+        _version
+        _deleted
+        _lastChangedAt
         createdAt
         updatedAt
       }
       nextToken
+      startedAt
     }
+    _version
+    _deleted
+    _lastChangedAt
     createdAt
     updatedAt
   }

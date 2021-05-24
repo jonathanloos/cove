@@ -29,7 +29,7 @@ export class EmptyStateModalPage implements OnInit {
   async presentAlertConfirm(obj) {
     const message = `
       <ion-card class="brainstorm-card m-0 text-left">
-        <ion-card-header class="card-header-border p-2" style="color: var(--ion-color-primary);">
+        <ion-card-header class="card-header-border p-2 text-primary">
           <ion-text class="display-medium" color="primary"><small>${obj.title}</small></ion-text>
         </ion-card-header>
         <ion-card-content class="p-2">

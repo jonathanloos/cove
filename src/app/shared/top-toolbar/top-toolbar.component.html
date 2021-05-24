@@ -1,0 +1,13 @@
+<ion-toolbar >
+  <ion-item lines="none"  class="ion-no-padding pl-2">
+    <ng-template [ngIf]="pageTitle == 'My Safety Plan'" [ngIfElse]="showBackBtn">
+      <ion-avatar slot="start" style="width: 32px; height: 32px;">
+        <img src="../assets/icons/icon-72x72.png">
+      </ion-avatar>
+    </ng-template>
+    <ng-template #showBackBtn>
+      <ion-back-button defaultHref="tabs/safety-plan" slot="start" class="ion-no-margin"></ion-back-button>
+    </ng-template>
+    <ion-label class="page-title ml-2">{{pageTitle}}</ion-label>
+  </ion-item>
+</ion-toolbar>
