@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { EmptyStateModalPage } from './empty-state-modal.page';
+import { EmptyStateComponent } from './empty-state.component';
 
-describe('EmptyStateModalPage', () => {
-  let component: EmptyStateModalPage;
-  let fixture: ComponentFixture<EmptyStateModalPage>;
+describe('EmptyStateComponent', () => {
+  let component: EmptyStateComponent;
+  let fixture: ComponentFixture<EmptyStateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmptyStateModalPage ],
+      declarations: [ EmptyStateComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EmptyStateModalPage);
+    fixture = TestBed.createComponent(EmptyStateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -1,7 +1,7 @@
 <ion-header no-border>
-  <div class="mx-4 py-3 d-flex justify-content-end text-muted">
-    <a class="h4 mr-3" href="sms:/&body='Hey there, have you heard of tryconve.ca?'"><ion-icon name="share"></ion-icon></a>
-    <span class="h4" (click)="settings()"><ion-icon name="settings"></ion-icon></span>
+  <div class="mx-4 d-flex py-3 justify-content-end text-muted">
+    <a class="h4 m-0 mr-3" href="sms:/&body='Hey there, have you heard of tryconve.ca?'"><ion-icon name="share"></ion-icon></a>
+    <span class="h4 m-0" (click)="settings()"><ion-icon name="settings"></ion-icon></span>
   </div>
 </ion-header>
 
@@ -9,7 +9,7 @@
   <div *ngIf="user$ | async as user">
     <div class="row m-4 mb-0">
       <div class="col-3">
-        <ion-avatar slot="start">
+        <ion-avatar slot="start" (click)="showAlert()">
           <img src="../../../assets/avatars/img_avatar2.png"/>
         </ion-avatar>
       </div>
