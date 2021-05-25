@@ -3,11 +3,12 @@ import { ModalController, AlertController } from '@ionic/angular';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
 
 @Component({
-  selector: 'app-empty-state-modal',
-  templateUrl: './empty-state-modal.page.html',
-  styleUrls: ['./empty-state-modal.page.scss'],
+  selector: 'app-empty-state',
+  templateUrl: './empty-state.component.html',
+  styleUrls: ['./empty-state.component.scss'],
 })
-export class EmptyStateModalPage implements OnInit {
+export class EmptyStateComponent implements OnInit {
+
   @Input() userID: string;
   @Input() payload;
 
