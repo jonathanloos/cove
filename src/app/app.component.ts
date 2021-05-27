@@ -37,7 +37,12 @@ export class AppComponent implements OnInit {
         if (confirm('A new version is available. Load it?'))
           window.location.reload();
       });
-    }
+    };
+
+    setInterval(() =>  {
+      this.swUpdate.checkForUpdate();
+    }, 30000);
+   
 
     const listener = async (data) => {
       switch (data.payload.event) {
