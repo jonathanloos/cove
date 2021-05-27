@@ -21,8 +21,6 @@ const logger = new Logger('cove-Logger');
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public warningSignForm: FormGroup;
-  public userForm: FormGroup;
 
   constructor(
     private platform: Platform,
@@ -39,7 +37,12 @@ export class AppComponent implements OnInit {
         if (confirm('A new version is available. Load it?'))
           window.location.reload();
       });
-    }
+    };
+
+    setInterval(() =>  {
+      this.swUpdate.checkForUpdate();
+    }, 30000);
+   
 
     const listener = async (data) => {
       switch (data.payload.event) {

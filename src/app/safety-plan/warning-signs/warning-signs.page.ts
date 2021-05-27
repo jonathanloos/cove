@@ -113,7 +113,7 @@ export class WarningSignsPage implements OnInit {
     this.adding = true;
   }
 
-  reset(){
+  cancel(){
     this.adding = false;
     this.wsForm.reset();
   }
@@ -138,7 +138,7 @@ export class WarningSignsPage implements OnInit {
 
     this.warningSignService.create(ws);
 
-    this.reset();
+    this.cancel();
   }
 
   async presentToast(message: string, type: string) {

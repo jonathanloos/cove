@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { EmptyStateModalPage } from 'src/app/modals/empty-state-modal/empty-state-modal.page';
+import { EmptyStateComponent } from 'src/app/modals/empty-state/empty-state.component';
 
 @Component({
   selector: 'app-empty-state-button',
@@ -19,7 +19,7 @@ export class EmptyStateButtonComponent implements OnInit {
 
   async presentModal() {
     const modal = await this.modalController.create({
-      component: EmptyStateModalPage,//this.modalPage,
+      component: EmptyStateComponent,
       componentProps: {
         'userID': this.userID,
         'payload': this.payload

@@ -3,11 +3,12 @@ import { ModalController, AlertController } from '@ionic/angular';
 import { EmptyStateObjectTransferService } from 'src/app/core/services/empty-state-object-transfer/empty-state-object-transfer.service';
 
 @Component({
-  selector: 'app-empty-state-modal',
-  templateUrl: './empty-state-modal.page.html',
-  styleUrls: ['./empty-state-modal.page.scss'],
+  selector: 'app-empty-state',
+  templateUrl: './empty-state.component.html',
+  styleUrls: ['./empty-state.component.scss'],
 })
-export class EmptyStateModalPage implements OnInit {
+export class EmptyStateComponent implements OnInit {
+
   @Input() userID: string;
   @Input() payload;
 
@@ -29,7 +30,7 @@ export class EmptyStateModalPage implements OnInit {
   async presentAlertConfirm(obj) {
     const message = `
       <ion-card class="brainstorm-card m-0 text-left">
-        <ion-card-header class="card-header-border p-2" style="color: var(--ion-color-primary);">
+        <ion-card-header class="card-header-border p-2 text-primary">
           <ion-text class="display-medium" color="primary"><small>${obj.title}</small></ion-text>
         </ion-card-header>
         <ion-card-content class="p-2">

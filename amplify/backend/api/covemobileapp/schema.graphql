@@ -4,6 +4,7 @@ type User @model{
   name: String
   email: String!
   phone: String
+  bio: String
   warningSigns: [WarningSign] @connection(keyName: "byUser", fields: ["id"])
   copingStrategies: [CopingStrategy] @connection(keyName: "byUser", fields: ["id"])
   contacts: [Contact] @connection(keyName: "byUser", fields: ["id"])

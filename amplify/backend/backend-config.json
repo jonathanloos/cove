@@ -24,5 +24,11 @@
       "customAuth": false
     }
   },
-  "analytics": {}
+  "analytics": {},
+  "storage": {
+    "coveImages": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
+  }
 }

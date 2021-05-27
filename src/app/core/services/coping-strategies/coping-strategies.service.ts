@@ -5,6 +5,7 @@ import { DataStore } from '@aws-amplify/datastore'
 import { CopingStrategy } from 'src/models';
 import { MutableModel } from "@aws-amplify/datastore";
 import { SortDirection } from 'aws-amplify';
+import Storage from '@aws-amplify/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class CopingStrategiesService {
       this.coping_strategies = results;
 
       // Temp method to backfill order, too lazy to write a migration
-      if(this.coping_strategies[0].order == undefined){
+      if(this.coping_strategies.length > 0 && this.coping_strategies[0].order == undefined){
         for(var i = 0; i < this.coping_strategies.length; i++){
           const warning_sign = CopingStrategy.copyOf(this.coping_strategies[i], (mutable_sign: MutableModel<CopingStrategy>) => {
             mutable_sign.order = i;
@@ -65,7 +66,9 @@ export class CopingStrategiesService {
 
   async delete(id: string){
     const todoDelete = await DataStore.query(CopingStrategy, id)
-    await DataStore.delete(todoDelete).then((result : CopingStrategy) => {
+    await DataStore.delete(todoDelete).then(async (result : CopingStrategy) => {
+      await Storage.remove(`${todoDelete.id}-coverPhoto.png`, { level: 'private' });
+
       this.list(result.userID);
     })
     .catch(err => {console.log(err)})

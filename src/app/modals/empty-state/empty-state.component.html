@@ -1,6 +1,6 @@
 <ion-header no-border>
-  <ion-toolbar class="page-header">
-    <ion-item lines="none" class="title-item" ion-no-padding>
+  <ion-toolbar >
+    <ion-item lines="none" class="mt-4" ion-no-padding>
       <h2>
         <span class="float-left mr-2">
           <ion-avatar style="height: 30px; width: 30px;">
@@ -10,7 +10,7 @@
         {{payload.title}}
       </h2>
       <ion-chip outline color="dark" (click)="dismiss()" slot="end" class="mr-0">
-        <ion-label>x</ion-label>
+        <ion-label>Close</ion-label>
       </ion-chip>
     </ion-item>
   </ion-toolbar>

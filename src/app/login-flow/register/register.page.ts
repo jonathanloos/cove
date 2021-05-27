@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController, LoadingController, ToastController } from '@ionic/angular';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { User } from 'src/models';
 import { AuthService } from '../../core/services/auth/auth.service';
 
@@ -24,7 +24,6 @@ export class RegisterPage implements OnInit {
     private authService: AuthService,
     private router: Router,
     public toastController: ToastController,
-    public alertController: AlertController,
     public loadingController: LoadingController
     ) { 
     this.registerForm = this.formBuilder.group({

@@ -23,6 +23,7 @@ export declare class User {
   readonly name?: string;
   readonly email: string;
   readonly phone?: string;
+  readonly bio?: string;
   readonly warningSigns?: (WarningSign | null)[];
   readonly copingStrategies?: (CopingStrategy | null)[];
   readonly contacts?: (Contact | null)[];

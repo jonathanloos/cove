@@ -26,7 +26,6 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
  
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { SafeUrlPipe } from './core/services/pipe/safe-url.pipe';
 import { GetHelpComponent } from './shared/get-help/get-help.component';
 
 /* Add Amplify imports */
@@ -48,7 +47,6 @@ import { AgmCoreModule } from '@agm/core';
     HttpClientModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
       registrationStrategy: "registerImmediately"
@@ -71,7 +69,6 @@ import { AgmCoreModule } from '@agm/core';
     UpdateContactService,
     ContactService,
     PlaceService,
-    SafeUrlPipe,
     LaunchNavigator,
     GetHelpComponent,
     SQLite,

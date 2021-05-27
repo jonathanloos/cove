@@ -2,8 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CopingStrategiesService } from 'src/app/core/services/coping-strategies/coping-strategies.service';
 import { UpdateCopingStrategyService } from 'src/app/core/services/coping-strategies/update-coping-strategy.service';
-import { CopingStrategy } from 'src/models';
+import { CopingStrategy, User } from 'src/models';
 import { MutableModel } from "@aws-amplify/datastore";
+import { LoadingController } from '@ionic/angular';
+import { Observable, Observer, BehaviorSubject } from 'rxjs';
+import { ContactService } from 'src/app/core/services/contacts/contact.service';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
+import Storage from '@aws-amplify/storage';
 
 @Component({
   selector: 'app-strategy',
@@ -17,11 +22,21 @@ export class StrategyComponent implements OnInit {
   editing: boolean = false;
   elementId: string = null;
   public CSForm: FormGroup;
+
+  public user$ = new Observable<User>((observer : Observer<User>) => {
+    this.authService.currentUserSubject.subscribe(user => {
+      observer.next(user);
+    })
+  });
+
+  public imageUrl$ = new BehaviorSubject<Object | String>(null)
   
   constructor(
+    private authService: AuthService,
     private CSService: CopingStrategiesService,
     private updateCSService: UpdateCopingStrategyService,
     private formBuilder: FormBuilder,
+    public loadingController: LoadingController
   ) {
 
     this.updateCSService.editChange.subscribe(result=> {
@@ -41,9 +56,20 @@ export class StrategyComponent implements OnInit {
       title: [this.strategy.title, Validators.required],
       description: [this.strategy.description]
     });
+
+    this.user$.subscribe(async (user) => {
+      const result = await Storage.list(`${this.strategy.id}-coverPhoto.png`, { 
+        level: 'private'
+      });
+
+      if(result.length > 0){
+        const imageUrl = await Storage.get(`${this.strategy.id}-coverPhoto.png`, { level: 'private'})
+        this.imageUrl$.next(imageUrl)
+      }
+    })
   }
 
-  async reset(){
+  async cancel(){
     let curr = await this.CSService.get(this.strategy.id);
     if(curr !== undefined){
       this.CSForm.setValue({
@@ -64,5 +90,32 @@ export class StrategyComponent implements OnInit {
     })
 
     this.updateCSService.save(new_strategy);
+  }
+
+  async uploadFile(e){
+    const file = e.target.files[0];
+
+    const loading = await this.loadingController.create({
+      message: 'Uploading your image...',
+      duration: 2000
+    });
+
+    await loading.present();
+
+    const key = await Storage.put(`${this.strategy.id}-coverPhoto.png`, file, {
+      contentType: 'image/png',
+      level: 'private'
+    });
+
+    loading.dismiss();
+
+    const imageUrl = await Storage.get(`${this.strategy.id}-coverPhoto.png`, { level: 'private'})
+    this.imageUrl$.next(imageUrl)
+  }
+
+  openFileBrowser(e){
+    e.preventDefault();
+    let element : HTMLElement = document.getElementById(`strategyCoverPhotoUpload-${this.strategy.id}`) as HTMLElement;
+    element.click();
   }
 }

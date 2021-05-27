@@ -1,5 +1,10 @@
-<form (ngSubmit)="save()" [formGroup]="CSForm">
+<img *ngIf="imageUrl$ | async" src="{{imageUrl$ | async}}"/>
+<form [formGroup]="CSForm">
   <ion-card-header class="card-header-border">
+    <div class="text-center">
+      <a href="#" class="text-primary text-center w-100" (click)="openFileBrowser($event)" *ngIf="editing && strategy.id == elementId"><u>upload</u></a>
+    </div>
+    <input class="d-none" type="file" id="strategyCoverPhotoUpload-{{this.strategy.id}}" (change)="uploadFile($event)" accept='image/png'>
     <ion-item lines="none" class="ion-no-padding">
       <ng-template [ngIf]="editing && elementId==strategy.id" [ngIfElse]="showBlock">
         <ion-input name="title" formControlName="title" class="display-medium card-header-title" color="primary"></ion-input>
@@ -19,8 +24,8 @@
         <p class="body">{{strategy.description}}</p>
       </ng-template>
       <ng-template [ngIf]="editing && elementId==strategy.id">
-        <ion-button (click)="reset()" color="light" style="margin: 10px;">Cancel</ion-button>
-        <ion-button type="submit" color="primary" style="float: right; margin: 10px;">Save</ion-button>
+        <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
+        <ion-button (click)="save()" color="primary" style="float: right; margin: 10px;">Save</ion-button>
       </ng-template>
     </ion-card-content>
   </ng-template>

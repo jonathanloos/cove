@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { ResourceModalPage } from './resource-modal.page';
+import { ElementToolbarComponent } from './element-toolbar.component';
 
-describe('ResourceModalPage', () => {
-  let component: ResourceModalPage;
-  let fixture: ComponentFixture<ResourceModalPage>;
+describe('ElementToolbarComponent', () => {
+  let component: ElementToolbarComponent;
+  let fixture: ComponentFixture<ElementToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResourceModalPage ],
+      declarations: [ ElementToolbarComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ResourceModalPage);
+    fixture = TestBed.createComponent(ElementToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

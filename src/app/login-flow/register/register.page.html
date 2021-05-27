@@ -1,6 +1,6 @@
 <ion-header no-border>
-  <ion-toolbar class="page-header">
-    <ion-item lines="none" class="title-item" class="ion-no-padding">
+  <ion-toolbar >
+    <ion-item lines="none"  class="ion-no-padding">
       <ion-back-button defaultHref="entry" slot="start" class="ion-no-margin"></ion-back-button>
     </ion-item>
   </ion-toolbar>
@@ -12,14 +12,14 @@
     <h2>Hey there! Lets get started.</h2>
     <p class="my-4">We're excited to have you join our community. To help keep your information safe and secure, please provide your email and a password.</p>
     <div id="spacer" style="height: 5vh; width: 100vw;"></div>
-    <form [formGroup]="registerForm" (ngSubmit)="proceedToVerification()">
+    <form [formGroup]="registerForm">
       <ion-item class="p-0">
         <ion-input name="email" formControlName="email" type="text" placeholder="Email"></ion-input>
       </ion-item>
       <ion-item class="my-4">
         <ion-input name="password" formControlName="password" type="password" placeholder="Password"></ion-input>
       </ion-item>
-      <ion-button class="mt-4" color="primary" type="submit" expand="block">Register</ion-button>
+      <ion-button class="mt-4" color="primary" (click)="proceedToVerification()" expand="block">Register</ion-button>
     </form>
   </div>
 </ion-content>

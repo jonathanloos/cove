@@ -1,6 +1,6 @@
 <ion-header no-border>
-  <ion-toolbar class="page-header">
-    <ion-item lines="none" class="title-item" class="ion-no-padding">
+  <ion-toolbar >
+    <ion-item lines="none"  class="ion-no-padding">
       <ion-back-button defaultHref="entry" slot="start" class="ion-no-margin"></ion-back-button>
     </ion-item>
   </ion-toolbar>
@@ -19,7 +19,7 @@
       <ion-item class="my-4">
         <ion-input name="password" formControlName="password" type="password" placeholder="Password"></ion-input>
       </ion-item>
-      <ion-button class="mt-4" color="primary" type="submit" expand="block">Login</ion-button>
+      <ion-button class="mt-4" color="primary" (click)="login()" expand="block">Login</ion-button>
     </form>
     <div class="d-flex flex-row justify-content-center mt-4">
       <span class="w-25 border-top" style="height: 15px;"></span>
