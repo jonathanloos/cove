@@ -43,6 +43,7 @@ query SyncUsers(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -68,6 +69,7 @@ query GetUser($id: ID!) {
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -84,6 +86,7 @@ query GetUser($id: ID!) {
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -101,6 +104,7 @@ query GetUser($id: ID!) {
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -119,6 +123,7 @@ query GetUser($id: ID!) {
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -134,6 +139,7 @@ query GetUser($id: ID!) {
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -143,6 +149,7 @@ query GetUser($id: ID!) {
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 query ListUsers(
@@ -183,6 +190,7 @@ query ListUsers(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -211,6 +219,7 @@ query SyncWarningSigns(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -228,6 +237,7 @@ query GetWarningSign($id: ID!) {
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 query ListWarningSigns(
@@ -247,6 +257,7 @@ query ListWarningSigns(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -275,6 +286,7 @@ query SyncCopingStrategies(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -292,6 +304,7 @@ query GetCopingStrategy($id: ID!) {
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 query ListCopingStrategys(
@@ -311,6 +324,7 @@ query ListCopingStrategys(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -340,6 +354,7 @@ query SyncContacts(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -358,6 +373,7 @@ query GetContact($id: ID!) {
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 query ListContacts(
@@ -378,6 +394,7 @@ query ListContacts(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -415,6 +432,7 @@ query SyncPlaces(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -441,6 +459,7 @@ query GetPlace($id: ID!) {
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 query ListPlaces(
@@ -469,6 +488,7 @@ query ListPlaces(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -503,6 +523,7 @@ query SyncFavouriteUserResources(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       user {
         id
@@ -516,12 +537,14 @@ query SyncFavouriteUserResources(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -557,6 +580,7 @@ query GetFavouriteUserResources($id: ID!) {
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     user {
       id
@@ -590,12 +614,14 @@ query GetFavouriteUserResources($id: ID!) {
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     _version
     _deleted
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 query ListFavouriteUserResourcess(
@@ -625,6 +651,7 @@ query ListFavouriteUserResourcess(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       user {
         id
@@ -638,12 +665,14 @@ query ListFavouriteUserResourcess(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -685,6 +714,7 @@ query SyncHelpResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt
@@ -717,6 +747,7 @@ query GetHelpResource($id: ID!) {
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -726,6 +757,7 @@ query GetHelpResource($id: ID!) {
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 query ListHelpResources(
@@ -758,6 +790,7 @@ query ListHelpResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     nextToken
     startedAt

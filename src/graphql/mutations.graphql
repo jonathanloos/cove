@@ -22,6 +22,7 @@ mutation CreateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -38,6 +39,7 @@ mutation CreateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -55,6 +57,7 @@ mutation CreateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -73,6 +76,7 @@ mutation CreateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -88,6 +92,7 @@ mutation CreateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -97,6 +102,7 @@ mutation CreateUser(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdateUser(
@@ -122,6 +128,7 @@ mutation UpdateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -138,6 +145,7 @@ mutation UpdateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -155,6 +163,7 @@ mutation UpdateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -173,6 +182,7 @@ mutation UpdateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -188,6 +198,7 @@ mutation UpdateUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -197,6 +208,7 @@ mutation UpdateUser(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeleteUser(
@@ -222,6 +234,7 @@ mutation DeleteUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -238,6 +251,7 @@ mutation DeleteUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -255,6 +269,7 @@ mutation DeleteUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -273,6 +288,7 @@ mutation DeleteUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -288,6 +304,7 @@ mutation DeleteUser(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -297,6 +314,7 @@ mutation DeleteUser(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation CreateWarningSign(
@@ -314,6 +332,7 @@ mutation CreateWarningSign(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdateWarningSign(
@@ -331,6 +350,7 @@ mutation UpdateWarningSign(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeleteWarningSign(
@@ -348,6 +368,7 @@ mutation DeleteWarningSign(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation CreateCopingStrategy(
@@ -365,6 +386,7 @@ mutation CreateCopingStrategy(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdateCopingStrategy(
@@ -382,6 +404,7 @@ mutation UpdateCopingStrategy(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeleteCopingStrategy(
@@ -399,6 +422,7 @@ mutation DeleteCopingStrategy(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation CreateContact(
@@ -417,6 +441,7 @@ mutation CreateContact(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdateContact(
@@ -435,6 +460,7 @@ mutation UpdateContact(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeleteContact(
@@ -453,6 +479,7 @@ mutation DeleteContact(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation CreatePlace(
@@ -479,6 +506,7 @@ mutation CreatePlace(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdatePlace(
@@ -505,6 +533,7 @@ mutation UpdatePlace(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeletePlace(
@@ -531,6 +560,7 @@ mutation DeletePlace(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation CreateFavouriteUserResources(
@@ -566,6 +596,7 @@ mutation CreateFavouriteUserResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     user {
       id
@@ -599,12 +630,14 @@ mutation CreateFavouriteUserResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     _version
     _deleted
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdateFavouriteUserResources(
@@ -640,6 +673,7 @@ mutation UpdateFavouriteUserResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     user {
       id
@@ -673,12 +707,14 @@ mutation UpdateFavouriteUserResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     _version
     _deleted
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeleteFavouriteUserResources(
@@ -714,6 +750,7 @@ mutation DeleteFavouriteUserResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     user {
       id
@@ -747,12 +784,14 @@ mutation DeleteFavouriteUserResources(
       _lastChangedAt
       createdAt
       updatedAt
+      owner
     }
     _version
     _deleted
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation CreateHelpResource(
@@ -785,6 +824,7 @@ mutation CreateHelpResource(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -794,6 +834,7 @@ mutation CreateHelpResource(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation UpdateHelpResource(
@@ -826,6 +867,7 @@ mutation UpdateHelpResource(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -835,6 +877,7 @@ mutation UpdateHelpResource(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
 mutation DeleteHelpResource(
@@ -867,6 +910,7 @@ mutation DeleteHelpResource(
         _lastChangedAt
         createdAt
         updatedAt
+        owner
       }
       nextToken
       startedAt
@@ -876,5 +920,6 @@ mutation DeleteHelpResource(
     _lastChangedAt
     createdAt
     updatedAt
+    owner
   }
 }
