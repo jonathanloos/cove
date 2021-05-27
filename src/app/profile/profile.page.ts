@@ -1,18 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController, ModalController, ToastController } from '@ionic/angular';
-import { BehaviorSubject, Observable, Observer, Subject } from 'rxjs';
-import { User, WarningSign } from 'src/models';
+import { AlertController, LoadingController, ModalController, ToastController } from '@ionic/angular';
+import { BehaviorSubject, Observable, Observer } from 'rxjs';
+import { User } from 'src/models';
 import { AuthService } from '../core/services/auth/auth.service';
-import { UserService } from '../core/services/user/user.service';
-import { MutableModel } from "@aws-amplify/datastore";
-import { ResourceDetailModalComponent } from '../modals/resource-detail-modal/resource-detail-modal.component';
 import { ProfileModalComponent } from '../modals/profile-modal/profile-modal.component';
 import { WarningSignsService } from '../core/services/warning-signs/warning-signs.service';
 import { CopingStrategiesService } from '../core/services/coping-strategies/coping-strategies.service';
 import { PlaceService } from '../core/services/places/place.service';
 import { ContactService } from '../core/services/contacts/contact.service';
+import Storage from '@aws-amplify/storage';
 
 @Component({
   selector: 'app-profile',
@@ -37,6 +34,8 @@ export class ProfilePage implements OnInit {
       this.contactService.list(user.id).then((contacts : any[]) => this.contactsCount$.next(contacts.length))
     })
   });
+
+  public imageUrl$ = new BehaviorSubject<Object | String>('../../../assets/icons/icon-128x128.png')
 
   menu_items = [
     {
@@ -66,10 +65,22 @@ export class ProfilePage implements OnInit {
     private warningSignService: WarningSignsService,
     private copingStrategyService: CopingStrategiesService,
     private placesToGoService: PlaceService,
-    private contactService: ContactService
-      ) { }
+    private contactService: ContactService,
+    public loadingController: LoadingController
+    ) { }
 
-  async ngOnInit() { }
+  async ngOnInit() { 
+    this.user$.subscribe(async (user) => {
+      const result = await Storage.list(`${user.userSub}-profilePicture.png`, { 
+        level: 'private'
+      });
+
+      if(result.length > 0){
+        const imageUrl = await Storage.get(`${user.userSub}-profilePicture.png`, { level: 'private'})
+        this.imageUrl$.next(imageUrl)
+      }
+    })
+  }
 
   async presentToast() {
     const toast = await this.toastController.create({
@@ -104,6 +115,33 @@ export class ProfilePage implements OnInit {
     })
   }
 
+  async uploadFile(e){
+    const file = e.target.files[0];
+
+    const loading = await this.loadingController.create({
+      message: 'Uploading your image...',
+      duration: 2000
+    });
+
+    await loading.present();
+
+    const key = await Storage.put(`${this.user.userSub}-profilePicture.png`, file, {
+      contentType: 'image/png',
+      level: 'private'
+    });
+
+    loading.dismiss();
+
+    const imageUrl = await Storage.get(`${this.user.userSub}-profilePicture.png`, { level: 'private'})
+    this.imageUrl$.next(imageUrl)
+  }
+
+  openFileBrowser(e){
+    e.preventDefault();
+    let element : HTMLElement = document.getElementById('profilePictureUpload') as HTMLElement;
+    element.click();
+  }
+  
   async showAlert(){
     const alert = await this.alertController.create({
       header: '🎉 Coming Soon 🎉',

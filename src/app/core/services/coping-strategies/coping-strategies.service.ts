@@ -5,6 +5,7 @@ import { DataStore } from '@aws-amplify/datastore'
 import { CopingStrategy } from 'src/models';
 import { MutableModel } from "@aws-amplify/datastore";
 import { SortDirection } from 'aws-amplify';
+import Storage from '@aws-amplify/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +66,9 @@ export class CopingStrategiesService {
 
   async delete(id: string){
     const todoDelete = await DataStore.query(CopingStrategy, id)
-    await DataStore.delete(todoDelete).then((result : CopingStrategy) => {
+    await DataStore.delete(todoDelete).then(async (result : CopingStrategy) => {
+      await Storage.remove(`${todoDelete.id}-coverPhoto.png`, { level: 'private' });
+
       this.list(result.userID);
     })
     .catch(err => {console.log(err)})

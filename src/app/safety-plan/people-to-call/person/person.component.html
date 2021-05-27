@@ -1,9 +1,13 @@
 <form [formGroup]="PTCForm" (ngSubmit)="save()">
   <ion-card-header class="card-header-border">
     <ion-item lines="none" class="ion-no-padding">
-      <ion-avatar slot="start">
-        <img src="../../../assets/avatars/img_avatar2.png"/>
-      </ion-avatar>
+      <div slot="start" class="text-center">
+        <ion-avatar class="border">
+          <img src="{{imageUrl$ | async}}"/>
+        </ion-avatar>
+        <a href="#" class="text-primary" (click)="openFileBrowser($event)" *ngIf="editing && contact.id == elementId"><u>edit</u></a>
+        <input class="d-none" type="file" id="contactPictureUpload-{{contact.id}}" (change)="uploadFile($event)" accept='image/png'>
+      </div>
       <ion-input name="name" formControlName="name" class="heading ion-no-padding" value="{{contact.name}}" readonly="{{!editing || contact.id != elementId}}"></ion-input>
       <ng-template [ngIf]="contact.id != elementId">
         <app-ellipsis [id]="contact.id" [type]="'pc'" slot="end"></app-ellipsis>
@@ -27,7 +31,7 @@
       <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
       <ion-button color="primary" (click)="save()" style="float: right; margin: 10px;">Save</ion-button>
     </ng-template>
-    <ng-template [ngIf]="!editing && !(contact.id == elementId)">
+    <ng-template [ngIf]="!(editing && (contact.id == elementId))">
       <ion-row class="ion-justify-content-center ion-text-center">
         <ion-col class="ion-align-self-center" size-md="6" size-lg="6" size-xs="6">
           <a href="{{call_link}}" style="text-decoration: none"><ion-text  color="success"><ion-icon name="call"  style="vertical-align: middle;"></ion-icon> Call</ion-text></a>

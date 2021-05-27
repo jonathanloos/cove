@@ -1,5 +1,10 @@
+<img *ngIf="imageUrl$ | async" src="{{imageUrl$ | async}}"/>
 <form [formGroup]="CSForm">
   <ion-card-header class="card-header-border">
+    <div class="text-center">
+      <a href="#" class="text-primary text-center w-100" (click)="openFileBrowser($event)" *ngIf="editing && strategy.id == elementId"><u>upload</u></a>
+    </div>
+    <input class="d-none" type="file" id="strategyCoverPhotoUpload-{{this.strategy.id}}" (change)="uploadFile($event)" accept='image/png'>
     <ion-item lines="none" class="ion-no-padding">
       <ng-template [ngIf]="editing && elementId==strategy.id" [ngIfElse]="showBlock">
         <ion-input name="title" formControlName="title" class="display-medium card-header-title" color="primary"></ion-input>

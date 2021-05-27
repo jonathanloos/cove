@@ -8,10 +8,12 @@
 <ion-content>
   <div *ngIf="user$ | async as user">
     <div class="row m-4 mb-0">
-      <div class="col-3">
-        <ion-avatar slot="start" (click)="showAlert()">
-          <img src="../../../assets/avatars/img_avatar2.png"/>
+      <div class="col-3 text-center">
+        <ion-avatar slot="start" (click)="openFileBrowser($event)" class="border">
+          <img src="{{imageUrl$ | async}}"/>
         </ion-avatar>
+        <a href="#" class="text-primary" (click)="openFileBrowser($event)"><u>edit</u></a>
+        <input class="d-none" type="file" id="profilePictureUpload" (change)="uploadFile($event)" accept='image/png'>
       </div>
       <div class="col-9 text-left">
           <h3 class="mb-0">{{user.name}}</h3>
