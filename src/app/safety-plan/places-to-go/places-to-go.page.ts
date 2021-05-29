@@ -57,6 +57,8 @@ export class PlacesToGoPage implements OnInit {
   }
 
   public PTGForm: FormGroup;
+  private placesChange : any;
+  private addEmptyStateToList : any;
 
   constructor(
     private placesService: PlaceService,
@@ -67,7 +69,7 @@ export class PlacesToGoPage implements OnInit {
     public toastController: ToastController
     ) {
 
-    placesService.placesChange.subscribe(result => {
+    this.placesChange = placesService.placesChange.subscribe(result => {
       this.places = result;
       if(this.places.length == 0){
         this.adding = true;
@@ -79,7 +81,7 @@ export class PlacesToGoPage implements OnInit {
       description: ['']
     })
 
-    this.emptyStateTransferService.addEmptyStateToList.subscribe((place) => {
+    this.addEmptyStateToList = this.emptyStateTransferService.addEmptyStateToList.subscribe((place) => {
       this.savePlace(place);
     })
    }
@@ -179,5 +181,10 @@ export class PlacesToGoPage implements OnInit {
       duration: 2000
     });
     await toast.present();
+  }
+
+  ngOnDestroy(){
+    this.placesChange.unsubscribe();
+    this.addEmptyStateToList.unsubscribe();
   }
 }

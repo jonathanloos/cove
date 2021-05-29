@@ -25,13 +25,14 @@ export class ProfilePage implements OnInit {
 
   public user$ = new Observable<User>((observer : Observer<User>) => {
     this.authService.currentUserSubject.subscribe(user => {
-      this.user = user
-      observer.next(user);
-
-      this.warningSignService.list(user.id).then((signs : any[]) => this.warningSignCount$.next(signs.length))
-      this.copingStrategyService.list(user.id).then((strategies : any[]) => this.copingStrategyCount$.next(strategies.length))
-      this.placesToGoService.list(user.id).then((places : any[]) => this.placesCount$.next(places.length))
-      this.contactService.list(user.id).then((contacts : any[]) => this.contactsCount$.next(contacts.length))
+      if(user){
+        this.user = user
+        observer.next(user);
+        this.warningSignService.list(user.id).then((signs : any[]) => this.warningSignCount$.next(signs.length))
+        this.copingStrategyService.list(user.id).then((strategies : any[]) => this.copingStrategyCount$.next(strategies.length))
+        this.placesToGoService.list(user.id).then((places : any[]) => this.placesCount$.next(places.length))
+        this.contactService.list(user.id).then((contacts : any[]) => this.contactsCount$.next(contacts.length))
+      }
     })
   });
 

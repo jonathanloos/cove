@@ -15,7 +15,6 @@ import { ItemReorderEventDetail } from '@ionic/core';
 })
 export class WarningSignsPage implements OnInit {
 
-  @ViewChild('content') private content: any;
   @ViewChild(IonReorderGroup) reorderGroup: IonReorderGroup;
 
   currentUser: User;
@@ -55,6 +54,9 @@ export class WarningSignsPage implements OnInit {
     ]
   }
 
+  private signsChange : any;
+  private addEmptyStateToList : any;
+
   constructor(
     private warningSignService: WarningSignsService,
     private formBuilder: FormBuilder,
@@ -63,7 +65,7 @@ export class WarningSignsPage implements OnInit {
     public toastController: ToastController
     ) { 
 
-      warningSignService.signsChange.subscribe(result => {
+      this.signsChange = warningSignService.signsChange.subscribe(result => {
         this.signs = result;
         if(this.signs.length == 0){
           this.adding = true;
@@ -75,7 +77,7 @@ export class WarningSignsPage implements OnInit {
         description: ['']
       });
 
-      this.emptyStateTransferService.addEmptyStateToList.subscribe((sign) => {
+      this.addEmptyStateToList = this.emptyStateTransferService.addEmptyStateToList.subscribe((sign) => {
         this.saveWarningSign(sign);
       });
     }
@@ -148,5 +150,10 @@ export class WarningSignsPage implements OnInit {
       duration: 2000
     });
     await toast.present();
+  }
+
+  ngOnDestroy(){
+    this.signsChange.unsubscribe();
+    this.addEmptyStateToList.unsubscribe();
   }
 }

@@ -50,6 +50,9 @@ export class PeopleToCallPage implements OnInit {
   public newPTCForm: FormGroup;
   adding:boolean = false;
 
+  private contactsChange : any;
+  private addEmptyStateToList : any;
+
   defaultMessage = "Hey, I'm using my safety plan right now. Please call me when you get this.";
 
   constructor(
@@ -61,7 +64,7 @@ export class PeopleToCallPage implements OnInit {
     public toastController: ToastController
     ) {
 
-    contactService.contactsChange.subscribe(result => {
+      this.contactsChange = contactService.contactsChange.subscribe(result => {
       this.personal_contacts = result
       if(this.personal_contacts.length == 0){
         this.adding = true;
@@ -74,7 +77,7 @@ export class PeopleToCallPage implements OnInit {
       automaticTextMessage:[this.defaultMessage]
     })
 
-    this.emptyStateTransferService.addEmptyStateToList.subscribe((contact) => {
+    this.addEmptyStateToList = this.emptyStateTransferService.addEmptyStateToList.subscribe((contact) => {
       this.saveContact(contact);
     })
    }
@@ -190,5 +193,10 @@ export class PeopleToCallPage implements OnInit {
       duration: 2000
     });
     await toast.present();
+  }
+
+  ngOnDestroy(){
+    this.contactsChange.unsubscribe();
+    this.addEmptyStateToList.unsubscribe();
   }
 }
