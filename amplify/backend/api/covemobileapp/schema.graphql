@@ -1,4 +1,4 @@
-type User @model @auth(rules: [{ allow: owner }]){
+type User @model {
   id: ID!
   userSub: ID!
   name: String
@@ -12,7 +12,7 @@ type User @model @auth(rules: [{ allow: owner }]){
   favouriteResources: [FavouriteUserResources] @connection(keyName: "byUser", fields: ["id"])
 }
 
-type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]) {
   id: ID!
   userID: ID!
   title: String!
@@ -20,7 +20,7 @@ type WarningSign @model @key(name: "byUser", fields: ["userID", "title"]) @auth(
   order: Int
 }
 
-type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]) {
   id: ID!
   userID: ID!
   title: String!
@@ -28,7 +28,7 @@ type CopingStrategy @model @key(name: "byUser", fields: ["userID", "title"]) @au
   order: Int
 }
 
-type Contact @model @key(name: "byUser", fields: ["userID", "name"]) @auth(rules: [{ allow: owner }]){
+type Contact @model @key(name: "byUser", fields: ["userID", "name"]) {
   id: ID!
   userID: ID!
   name: String
@@ -37,7 +37,7 @@ type Contact @model @key(name: "byUser", fields: ["userID", "name"]) @auth(rules
   order: Int
 }
 
-type Place @model @key(name: "byUser", fields: ["userID", "title"]) @auth(rules: [{ allow: owner }]){
+type Place @model @key(name: "byUser", fields: ["userID", "title"]) {
   id: ID!
   userID: ID!
   title: String!
@@ -60,7 +60,7 @@ type FavouriteUserResources
   @model
   @key(name: "byUser", fields: ["userID", "resourceID"]) 
   @key(name: "byResource", fields: ["resourceID", "userID"])
-  @auth(rules: [{ allow: owner }]){
+  {
     id: ID!
     resourceID: ID!
     userID: ID!
@@ -69,7 +69,7 @@ type FavouriteUserResources
     user: User! @connection(fields: ["userID"])
 }
 
-type HelpResource @model @auth(rules: [{ allow: owner }]){
+type HelpResource @model {
   id: ID!
   title: String!
   description: String
