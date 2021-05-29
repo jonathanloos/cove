@@ -30,6 +30,10 @@ export class CopingStrategiesPage implements OnInit {
 
   public reordering = false;
 
+  private editChange : any;
+  private strategiesChange : any;
+  private addEmptyStateToList : any;
+
   public payload = {
     title: "Coping Strategies",
     description: "List happy memories, fun activities you could do and anything else that can help you avoid a crisis.",
@@ -63,7 +67,7 @@ export class CopingStrategiesPage implements OnInit {
         description: ['']
       })
 
-      updateCopingStrategyService.editChange.subscribe(result => {
+      this.editChange = updateCopingStrategyService.editChange.subscribe(result => {
         let curr = this.updateCopingStrategyService.get();
         if (result){
           this.elementId = curr.id;
@@ -71,14 +75,14 @@ export class CopingStrategiesPage implements OnInit {
         this.editing = result;
       });
 
-      copingStrategyService.strategiesChange.subscribe(result => {
+      this.strategiesChange = copingStrategyService.strategiesChange.subscribe(result => {
         this.strategies = result;
         if(this.strategies.length == 0){
           this.adding = true;
         }
       })
 
-      this.emptyStateTransferService.addEmptyStateToList.subscribe((strategy) => {
+      this.addEmptyStateToList = emptyStateTransferService.addEmptyStateToList.subscribe((strategy) => {
         this.saveCopingStrategy(strategy);
       })
     }
@@ -154,5 +158,11 @@ export class CopingStrategiesPage implements OnInit {
       duration: 2000
     });
     await toast.present();
+  }
+
+  ngOnDestroy(){
+    this.editChange.unsubscribe();
+    this.strategiesChange.unsubscribe();
+    this.addEmptyStateToList.unsubscribe();
   }
 }
