@@ -143,6 +143,7 @@ export class CopingStrategiesPage implements OnInit {
     const strategy  = new CopingStrategy({
       title: this.strategyForm.value.title,
       description: this.strategyForm.value.description,
+      order: this.strategies.length - 1,
       userID: this.currentUser.id
     });
 

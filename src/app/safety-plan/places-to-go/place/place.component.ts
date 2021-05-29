@@ -106,37 +106,6 @@ export class PlaceComponent implements OnInit {
     this.updatePTGService.save(new_place);
   }
 
-  async launchActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      buttons: [{
-        text: 'Launch Maps',
-        role: 'getDirections',
-        icon: 'navigate',
-        handler: () => {
-          this.mapsSelector();
-        }
-      }, {
-        text: 'Edit',
-        icon: 'create',
-        handler: () => {
-          this.updatePTGService.select(this.place.id);
-        }
-      }, {
-        text: 'Delete',
-        icon: 'trash',
-        handler: () => {
-          this.PlaceService.delete(this.place.id);
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {}
-      }]
-    });
-    await actionSheet.present();
-  }
-
   mapsSelector() {
     let url = "";
     if /* if we're on iOS, open in Apple Maps */

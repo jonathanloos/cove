@@ -19,16 +19,16 @@
           </div>
         </div>
         <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-        <ion-button color="primary" (ngSubmit)="save()" style="float: right; margin: 10px;">Save</ion-button>
+        <ion-button color="primary" (click)="save()" style="float: right; margin: 10px;">Save</ion-button>
       </ion-card-content>
     </ion-card>
   </form>
 </ng-template>
 <ng-template #showMap>
-  <ion-card class="brainstorm-card" (click)="launchActionSheet()">
+  <ion-card class="brainstorm-card">
     <ion-card-content class="p-0">
       <div class="h-100 w-100 d-flex flex-row">
-        <div class="w-25 h-100">
+        <div class="w-25 align-self-center">
           <div *ngIf="(mapsURL$ | async) as mapsURL; else showQuestionMark">
             <img src="{{mapsURL}}" height="100%" width="auto"/>
           </div>
@@ -36,10 +36,11 @@
             <img src="../assets/images/edit.png" style="height: 35px; width: 35px;" class="m-auto">
           </ng-template>
         </div>
-        <div class="align-self-center m-3 w-75">
+        <div class="align-self-center m-3 w-75 d-flex flex-column">
           <ion-text class="display-medium card-header-title" color="primary">{{place.title}}</ion-text>
           <p>{{place.description}}</p>
         </div>
+        <app-ellipsis [id]="place.id" [type]="'ptg'" slot="end"></app-ellipsis>
       </div>
     </ion-card-content>
   </ion-card>

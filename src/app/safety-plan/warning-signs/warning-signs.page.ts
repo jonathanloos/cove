@@ -124,6 +124,7 @@ export class WarningSignsPage implements OnInit {
     const warningSign = new WarningSign({
       title: sign.title,
       description: sign.description,
+      order: this.signs.length - 1,
       userID: this.currentUser.id
     })
     await this.warningSignService.create(warningSign).then(() => {

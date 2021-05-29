@@ -1,6 +1,6 @@
 # this is an auto generated file. This will be overwritten
-subscription OnCreateUser($owner: String!) {
-  onCreateUser(owner: $owner) {
+subscription OnCreateUser {
+  onCreateUser {
     id
     userSub
     name
@@ -19,7 +19,6 @@ subscription OnCreateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -36,7 +35,6 @@ subscription OnCreateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -54,7 +52,6 @@ subscription OnCreateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -73,7 +70,6 @@ subscription OnCreateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -89,7 +85,6 @@ subscription OnCreateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -99,11 +94,10 @@ subscription OnCreateUser($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnUpdateUser($owner: String!) {
-  onUpdateUser(owner: $owner) {
+subscription OnUpdateUser {
+  onUpdateUser {
     id
     userSub
     name
@@ -122,7 +116,6 @@ subscription OnUpdateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -139,7 +132,6 @@ subscription OnUpdateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -157,7 +149,6 @@ subscription OnUpdateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -176,7 +167,6 @@ subscription OnUpdateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -192,7 +182,6 @@ subscription OnUpdateUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -202,11 +191,10 @@ subscription OnUpdateUser($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnDeleteUser($owner: String!) {
-  onDeleteUser(owner: $owner) {
+subscription OnDeleteUser {
+  onDeleteUser {
     id
     userSub
     name
@@ -225,7 +213,6 @@ subscription OnDeleteUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -242,7 +229,6 @@ subscription OnDeleteUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -260,7 +246,6 @@ subscription OnDeleteUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -279,7 +264,6 @@ subscription OnDeleteUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -295,7 +279,6 @@ subscription OnDeleteUser($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -305,11 +288,10 @@ subscription OnDeleteUser($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnCreateWarningSign($owner: String!) {
-  onCreateWarningSign(owner: $owner) {
+subscription OnCreateWarningSign {
+  onCreateWarningSign {
     id
     userID
     title
@@ -320,11 +302,10 @@ subscription OnCreateWarningSign($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnUpdateWarningSign($owner: String!) {
-  onUpdateWarningSign(owner: $owner) {
+subscription OnUpdateWarningSign {
+  onUpdateWarningSign {
     id
     userID
     title
@@ -335,11 +316,10 @@ subscription OnUpdateWarningSign($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnDeleteWarningSign($owner: String!) {
-  onDeleteWarningSign(owner: $owner) {
+subscription OnDeleteWarningSign {
+  onDeleteWarningSign {
     id
     userID
     title
@@ -350,11 +330,10 @@ subscription OnDeleteWarningSign($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnCreateCopingStrategy($owner: String!) {
-  onCreateCopingStrategy(owner: $owner) {
+subscription OnCreateCopingStrategy {
+  onCreateCopingStrategy {
     id
     userID
     title
@@ -365,11 +344,10 @@ subscription OnCreateCopingStrategy($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnUpdateCopingStrategy($owner: String!) {
-  onUpdateCopingStrategy(owner: $owner) {
+subscription OnUpdateCopingStrategy {
+  onUpdateCopingStrategy {
     id
     userID
     title
@@ -380,11 +358,10 @@ subscription OnUpdateCopingStrategy($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnDeleteCopingStrategy($owner: String!) {
-  onDeleteCopingStrategy(owner: $owner) {
+subscription OnDeleteCopingStrategy {
+  onDeleteCopingStrategy {
     id
     userID
     title
@@ -395,11 +372,10 @@ subscription OnDeleteCopingStrategy($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnCreateContact($owner: String!) {
-  onCreateContact(owner: $owner) {
+subscription OnCreateContact {
+  onCreateContact {
     id
     userID
     name
@@ -411,11 +387,10 @@ subscription OnCreateContact($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnUpdateContact($owner: String!) {
-  onUpdateContact(owner: $owner) {
+subscription OnUpdateContact {
+  onUpdateContact {
     id
     userID
     name
@@ -427,11 +402,10 @@ subscription OnUpdateContact($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnDeleteContact($owner: String!) {
-  onDeleteContact(owner: $owner) {
+subscription OnDeleteContact {
+  onDeleteContact {
     id
     userID
     name
@@ -443,11 +417,10 @@ subscription OnDeleteContact($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnCreatePlace($owner: String!) {
-  onCreatePlace(owner: $owner) {
+subscription OnCreatePlace {
+  onCreatePlace {
     id
     userID
     title
@@ -467,11 +440,10 @@ subscription OnCreatePlace($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnUpdatePlace($owner: String!) {
-  onUpdatePlace(owner: $owner) {
+subscription OnUpdatePlace {
+  onUpdatePlace {
     id
     userID
     title
@@ -491,11 +463,10 @@ subscription OnUpdatePlace($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnDeletePlace($owner: String!) {
-  onDeletePlace(owner: $owner) {
+subscription OnDeletePlace {
+  onDeletePlace {
     id
     userID
     title
@@ -515,11 +486,10 @@ subscription OnDeletePlace($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnCreateFavouriteUserResources($owner: String!) {
-  onCreateFavouriteUserResources(owner: $owner) {
+subscription OnCreateFavouriteUserResources {
+  onCreateFavouriteUserResources {
     id
     resourceID
     userID
@@ -548,7 +518,6 @@ subscription OnCreateFavouriteUserResources($owner: String!) {
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
     user {
       id
@@ -582,18 +551,16 @@ subscription OnCreateFavouriteUserResources($owner: String!) {
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
     _version
     _deleted
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnUpdateFavouriteUserResources($owner: String!) {
-  onUpdateFavouriteUserResources(owner: $owner) {
+subscription OnUpdateFavouriteUserResources {
+  onUpdateFavouriteUserResources {
     id
     resourceID
     userID
@@ -622,7 +589,6 @@ subscription OnUpdateFavouriteUserResources($owner: String!) {
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
     user {
       id
@@ -656,18 +622,16 @@ subscription OnUpdateFavouriteUserResources($owner: String!) {
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
     _version
     _deleted
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnDeleteFavouriteUserResources($owner: String!) {
-  onDeleteFavouriteUserResources(owner: $owner) {
+subscription OnDeleteFavouriteUserResources {
+  onDeleteFavouriteUserResources {
     id
     resourceID
     userID
@@ -696,7 +660,6 @@ subscription OnDeleteFavouriteUserResources($owner: String!) {
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
     user {
       id
@@ -730,18 +693,16 @@ subscription OnDeleteFavouriteUserResources($owner: String!) {
       _lastChangedAt
       createdAt
       updatedAt
-      owner
     }
     _version
     _deleted
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnCreateHelpResource($owner: String!) {
-  onCreateHelpResource(owner: $owner) {
+subscription OnCreateHelpResource {
+  onCreateHelpResource {
     id
     title
     description
@@ -767,7 +728,6 @@ subscription OnCreateHelpResource($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -777,11 +737,10 @@ subscription OnCreateHelpResource($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnUpdateHelpResource($owner: String!) {
-  onUpdateHelpResource(owner: $owner) {
+subscription OnUpdateHelpResource {
+  onUpdateHelpResource {
     id
     title
     description
@@ -807,7 +766,6 @@ subscription OnUpdateHelpResource($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -817,11 +775,10 @@ subscription OnUpdateHelpResource($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }
-subscription OnDeleteHelpResource($owner: String!) {
-  onDeleteHelpResource(owner: $owner) {
+subscription OnDeleteHelpResource {
+  onDeleteHelpResource {
     id
     title
     description
@@ -847,7 +804,6 @@ subscription OnDeleteHelpResource($owner: String!) {
         _lastChangedAt
         createdAt
         updatedAt
-        owner
       }
       nextToken
       startedAt
@@ -857,6 +813,5 @@ subscription OnDeleteHelpResource($owner: String!) {
     _lastChangedAt
     createdAt
     updatedAt
-    owner
   }
 }

@@ -460,7 +460,6 @@ export type CreateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -479,7 +478,6 @@ export type CreateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -499,7 +497,6 @@ export type CreateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -520,7 +517,6 @@ export type CreateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -538,7 +534,6 @@ export type CreateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -548,7 +543,6 @@ export type CreateUserMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateUserMutation = {
@@ -573,7 +567,6 @@ export type UpdateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -592,7 +585,6 @@ export type UpdateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -612,7 +604,6 @@ export type UpdateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -633,7 +624,6 @@ export type UpdateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -651,7 +641,6 @@ export type UpdateUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -661,7 +650,6 @@ export type UpdateUserMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteUserMutation = {
@@ -686,7 +674,6 @@ export type DeleteUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -705,7 +692,6 @@ export type DeleteUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -725,7 +711,6 @@ export type DeleteUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -746,7 +731,6 @@ export type DeleteUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -764,7 +748,6 @@ export type DeleteUserMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -774,7 +757,6 @@ export type DeleteUserMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateWarningSignMutation = {
@@ -789,7 +771,6 @@ export type CreateWarningSignMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateWarningSignMutation = {
@@ -804,7 +785,6 @@ export type UpdateWarningSignMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteWarningSignMutation = {
@@ -819,7 +799,6 @@ export type DeleteWarningSignMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateCopingStrategyMutation = {
@@ -834,7 +813,6 @@ export type CreateCopingStrategyMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateCopingStrategyMutation = {
@@ -849,7 +827,6 @@ export type UpdateCopingStrategyMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteCopingStrategyMutation = {
@@ -864,7 +841,6 @@ export type DeleteCopingStrategyMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateContactMutation = {
@@ -880,7 +856,6 @@ export type CreateContactMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateContactMutation = {
@@ -896,7 +871,6 @@ export type UpdateContactMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteContactMutation = {
@@ -912,7 +886,6 @@ export type DeleteContactMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreatePlaceMutation = {
@@ -937,7 +910,6 @@ export type CreatePlaceMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdatePlaceMutation = {
@@ -962,7 +934,6 @@ export type UpdatePlaceMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeletePlaceMutation = {
@@ -987,7 +958,6 @@ export type DeletePlaceMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateFavouriteUserResourcesMutation = {
@@ -1024,7 +994,6 @@ export type CreateFavouriteUserResourcesMutation = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   user: {
     __typename: "User";
@@ -1064,14 +1033,12 @@ export type CreateFavouriteUserResourcesMutation = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateFavouriteUserResourcesMutation = {
@@ -1108,7 +1075,6 @@ export type UpdateFavouriteUserResourcesMutation = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   user: {
     __typename: "User";
@@ -1148,14 +1114,12 @@ export type UpdateFavouriteUserResourcesMutation = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteFavouriteUserResourcesMutation = {
@@ -1192,7 +1156,6 @@ export type DeleteFavouriteUserResourcesMutation = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   user: {
     __typename: "User";
@@ -1232,14 +1195,12 @@ export type DeleteFavouriteUserResourcesMutation = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type CreateHelpResourceMutation = {
@@ -1273,7 +1234,6 @@ export type CreateHelpResourceMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1283,7 +1243,6 @@ export type CreateHelpResourceMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type UpdateHelpResourceMutation = {
@@ -1317,7 +1276,6 @@ export type UpdateHelpResourceMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1327,7 +1285,6 @@ export type UpdateHelpResourceMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type DeleteHelpResourceMutation = {
@@ -1361,7 +1318,6 @@ export type DeleteHelpResourceMutation = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1371,7 +1327,6 @@ export type DeleteHelpResourceMutation = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type SyncUsersQuery = {
@@ -1414,7 +1369,6 @@ export type SyncUsersQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1442,7 +1396,6 @@ export type GetUserQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1461,7 +1414,6 @@ export type GetUserQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1481,7 +1433,6 @@ export type GetUserQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1502,7 +1453,6 @@ export type GetUserQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1520,7 +1470,6 @@ export type GetUserQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -1530,7 +1479,6 @@ export type GetUserQuery = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListUsersQuery = {
@@ -1573,7 +1521,6 @@ export type ListUsersQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1593,7 +1540,6 @@ export type SyncWarningSignsQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1611,7 +1557,6 @@ export type GetWarningSignQuery = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListWarningSignsQuery = {
@@ -1628,7 +1573,6 @@ export type ListWarningSignsQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1648,7 +1592,6 @@ export type SyncCopingStrategiesQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1666,7 +1609,6 @@ export type GetCopingStrategyQuery = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListCopingStrategysQuery = {
@@ -1683,7 +1625,6 @@ export type ListCopingStrategysQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1704,7 +1645,6 @@ export type SyncContactsQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1723,7 +1663,6 @@ export type GetContactQuery = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListContactsQuery = {
@@ -1741,7 +1680,6 @@ export type ListContactsQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1771,7 +1709,6 @@ export type SyncPlacesQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1799,7 +1736,6 @@ export type GetPlaceQuery = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListPlacesQuery = {
@@ -1826,7 +1762,6 @@ export type ListPlacesQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1853,7 +1788,6 @@ export type SyncFavouriteUserResourcesQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     };
     user: {
       __typename: "User";
@@ -1868,14 +1802,12 @@ export type SyncFavouriteUserResourcesQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     };
     _version: number;
     _deleted: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -1915,7 +1847,6 @@ export type GetFavouriteUserResourcesQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   user: {
     __typename: "User";
@@ -1955,14 +1886,12 @@ export type GetFavouriteUserResourcesQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListFavouriteUserResourcessQuery = {
@@ -1986,7 +1915,6 @@ export type ListFavouriteUserResourcessQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     };
     user: {
       __typename: "User";
@@ -2001,14 +1929,12 @@ export type ListFavouriteUserResourcessQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     };
     _version: number;
     _deleted: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -2044,7 +1970,6 @@ export type SyncHelpResourcesQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -2081,7 +2006,6 @@ export type GetHelpResourceQuery = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2091,7 +2015,6 @@ export type GetHelpResourceQuery = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type ListHelpResourcesQuery = {
@@ -2124,7 +2047,6 @@ export type ListHelpResourcesQuery = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   } | null> | null;
   nextToken: string | null;
   startedAt: number | null;
@@ -2152,7 +2074,6 @@ export type OnCreateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2171,7 +2092,6 @@ export type OnCreateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2191,7 +2111,6 @@ export type OnCreateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2212,7 +2131,6 @@ export type OnCreateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2230,7 +2148,6 @@ export type OnCreateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2240,7 +2157,6 @@ export type OnCreateUserSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateUserSubscription = {
@@ -2265,7 +2181,6 @@ export type OnUpdateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2284,7 +2199,6 @@ export type OnUpdateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2304,7 +2218,6 @@ export type OnUpdateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2325,7 +2238,6 @@ export type OnUpdateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2343,7 +2255,6 @@ export type OnUpdateUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2353,7 +2264,6 @@ export type OnUpdateUserSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteUserSubscription = {
@@ -2378,7 +2288,6 @@ export type OnDeleteUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2397,7 +2306,6 @@ export type OnDeleteUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2417,7 +2325,6 @@ export type OnDeleteUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2438,7 +2345,6 @@ export type OnDeleteUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2456,7 +2362,6 @@ export type OnDeleteUserSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2466,7 +2371,6 @@ export type OnDeleteUserSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateWarningSignSubscription = {
@@ -2481,7 +2385,6 @@ export type OnCreateWarningSignSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateWarningSignSubscription = {
@@ -2496,7 +2399,6 @@ export type OnUpdateWarningSignSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteWarningSignSubscription = {
@@ -2511,7 +2413,6 @@ export type OnDeleteWarningSignSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateCopingStrategySubscription = {
@@ -2526,7 +2427,6 @@ export type OnCreateCopingStrategySubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateCopingStrategySubscription = {
@@ -2541,7 +2441,6 @@ export type OnUpdateCopingStrategySubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteCopingStrategySubscription = {
@@ -2556,7 +2455,6 @@ export type OnDeleteCopingStrategySubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateContactSubscription = {
@@ -2572,7 +2470,6 @@ export type OnCreateContactSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateContactSubscription = {
@@ -2588,7 +2485,6 @@ export type OnUpdateContactSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteContactSubscription = {
@@ -2604,7 +2500,6 @@ export type OnDeleteContactSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreatePlaceSubscription = {
@@ -2629,7 +2524,6 @@ export type OnCreatePlaceSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdatePlaceSubscription = {
@@ -2654,7 +2548,6 @@ export type OnUpdatePlaceSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeletePlaceSubscription = {
@@ -2679,7 +2572,6 @@ export type OnDeletePlaceSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateFavouriteUserResourcesSubscription = {
@@ -2716,7 +2608,6 @@ export type OnCreateFavouriteUserResourcesSubscription = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   user: {
     __typename: "User";
@@ -2756,14 +2647,12 @@ export type OnCreateFavouriteUserResourcesSubscription = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateFavouriteUserResourcesSubscription = {
@@ -2800,7 +2689,6 @@ export type OnUpdateFavouriteUserResourcesSubscription = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   user: {
     __typename: "User";
@@ -2840,14 +2728,12 @@ export type OnUpdateFavouriteUserResourcesSubscription = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteFavouriteUserResourcesSubscription = {
@@ -2884,7 +2770,6 @@ export type OnDeleteFavouriteUserResourcesSubscription = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   user: {
     __typename: "User";
@@ -2924,14 +2809,12 @@ export type OnDeleteFavouriteUserResourcesSubscription = {
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
-    owner: string | null;
   };
   _version: number;
   _deleted: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnCreateHelpResourceSubscription = {
@@ -2965,7 +2848,6 @@ export type OnCreateHelpResourceSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -2975,7 +2857,6 @@ export type OnCreateHelpResourceSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnUpdateHelpResourceSubscription = {
@@ -3009,7 +2890,6 @@ export type OnUpdateHelpResourceSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -3019,7 +2899,6 @@ export type OnUpdateHelpResourceSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 export type OnDeleteHelpResourceSubscription = {
@@ -3053,7 +2932,6 @@ export type OnDeleteHelpResourceSubscription = {
       _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
-      owner: string | null;
     } | null> | null;
     nextToken: string | null;
     startedAt: number | null;
@@ -3063,7 +2941,6 @@ export type OnDeleteHelpResourceSubscription = {
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-  owner: string | null;
 };
 
 @Injectable({
@@ -3097,7 +2974,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3116,7 +2992,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3136,7 +3011,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3157,7 +3031,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3175,7 +3048,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3185,7 +3057,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3226,7 +3097,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3245,7 +3115,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3265,7 +3134,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3286,7 +3154,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3304,7 +3171,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3314,7 +3180,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3355,7 +3220,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3374,7 +3238,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3394,7 +3257,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3415,7 +3277,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3433,7 +3294,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -3443,7 +3303,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3474,7 +3333,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3505,7 +3363,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3536,7 +3393,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3567,7 +3423,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3598,7 +3453,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3629,7 +3483,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3661,7 +3514,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3693,7 +3545,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3725,7 +3576,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3766,7 +3616,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3807,7 +3656,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3848,7 +3696,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -3901,7 +3748,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           user {
             __typename
@@ -3941,14 +3787,12 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           _version
           _deleted
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4003,7 +3847,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           user {
             __typename
@@ -4043,14 +3886,12 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           _version
           _deleted
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4105,7 +3946,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           user {
             __typename
@@ -4145,14 +3985,12 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           _version
           _deleted
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4204,7 +4042,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4214,7 +4051,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4264,7 +4100,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4274,7 +4109,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4324,7 +4158,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4334,7 +4167,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4395,7 +4227,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4443,7 +4274,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4462,7 +4292,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4482,7 +4311,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4503,7 +4331,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4521,7 +4348,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -4531,7 +4357,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4588,7 +4413,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4630,7 +4454,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4668,7 +4491,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4699,7 +4521,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4741,7 +4562,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4779,7 +4599,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4810,7 +4629,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4853,7 +4671,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4892,7 +4709,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -4924,7 +4740,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -4976,7 +4791,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -5024,7 +4838,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -5065,7 +4878,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -5114,7 +4926,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             user {
               __typename
@@ -5129,14 +4940,12 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             _version
             _deleted
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -5200,7 +5009,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           user {
             __typename
@@ -5240,14 +5048,12 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           _version
           _deleted
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -5287,7 +5093,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             user {
               __typename
@@ -5302,14 +5107,12 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             _version
             _deleted
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -5369,7 +5172,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -5426,7 +5228,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5436,7 +5237,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`;
     const gqlAPIServiceArguments: any = {
@@ -5483,7 +5283,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           nextToken
           startedAt
@@ -5508,8 +5307,8 @@ export class APIService {
     SubscriptionResponse<OnCreateUserSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateUser($owner: String!) {
-        onCreateUser(owner: $owner) {
+      `subscription OnCreateUser {
+        onCreateUser {
           __typename
           id
           userSub
@@ -5531,7 +5330,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5550,7 +5348,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5570,7 +5367,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5591,7 +5387,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5609,7 +5404,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5619,7 +5413,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5629,8 +5422,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateUserSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateUser($owner: String!) {
-        onUpdateUser(owner: $owner) {
+      `subscription OnUpdateUser {
+        onUpdateUser {
           __typename
           id
           userSub
@@ -5652,7 +5445,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5671,7 +5463,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5691,7 +5482,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5712,7 +5502,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5730,7 +5519,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5740,7 +5528,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5750,8 +5537,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteUserSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteUser($owner: String!) {
-        onDeleteUser(owner: $owner) {
+      `subscription OnDeleteUser {
+        onDeleteUser {
           __typename
           id
           userSub
@@ -5773,7 +5560,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5792,7 +5578,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5812,7 +5597,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5833,7 +5617,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5851,7 +5634,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -5861,7 +5643,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5871,8 +5652,8 @@ export class APIService {
     SubscriptionResponse<OnCreateWarningSignSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateWarningSign($owner: String!) {
-        onCreateWarningSign(owner: $owner) {
+      `subscription OnCreateWarningSign {
+        onCreateWarningSign {
           __typename
           id
           userID
@@ -5884,7 +5665,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5894,8 +5674,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateWarningSignSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateWarningSign($owner: String!) {
-        onUpdateWarningSign(owner: $owner) {
+      `subscription OnUpdateWarningSign {
+        onUpdateWarningSign {
           __typename
           id
           userID
@@ -5907,7 +5687,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5917,8 +5696,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteWarningSignSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteWarningSign($owner: String!) {
-        onDeleteWarningSign(owner: $owner) {
+      `subscription OnDeleteWarningSign {
+        onDeleteWarningSign {
           __typename
           id
           userID
@@ -5930,7 +5709,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5940,8 +5718,8 @@ export class APIService {
     SubscriptionResponse<OnCreateCopingStrategySubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateCopingStrategy($owner: String!) {
-        onCreateCopingStrategy(owner: $owner) {
+      `subscription OnCreateCopingStrategy {
+        onCreateCopingStrategy {
           __typename
           id
           userID
@@ -5953,7 +5731,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5963,8 +5740,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateCopingStrategySubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateCopingStrategy($owner: String!) {
-        onUpdateCopingStrategy(owner: $owner) {
+      `subscription OnUpdateCopingStrategy {
+        onUpdateCopingStrategy {
           __typename
           id
           userID
@@ -5976,7 +5753,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -5986,8 +5762,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteCopingStrategySubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteCopingStrategy($owner: String!) {
-        onDeleteCopingStrategy(owner: $owner) {
+      `subscription OnDeleteCopingStrategy {
+        onDeleteCopingStrategy {
           __typename
           id
           userID
@@ -5999,7 +5775,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6009,8 +5784,8 @@ export class APIService {
     SubscriptionResponse<OnCreateContactSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateContact($owner: String!) {
-        onCreateContact(owner: $owner) {
+      `subscription OnCreateContact {
+        onCreateContact {
           __typename
           id
           userID
@@ -6023,7 +5798,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6033,8 +5807,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateContactSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateContact($owner: String!) {
-        onUpdateContact(owner: $owner) {
+      `subscription OnUpdateContact {
+        onUpdateContact {
           __typename
           id
           userID
@@ -6047,7 +5821,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6057,8 +5830,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteContactSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteContact($owner: String!) {
-        onDeleteContact(owner: $owner) {
+      `subscription OnDeleteContact {
+        onDeleteContact {
           __typename
           id
           userID
@@ -6071,7 +5844,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6081,8 +5853,8 @@ export class APIService {
     SubscriptionResponse<OnCreatePlaceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreatePlace($owner: String!) {
-        onCreatePlace(owner: $owner) {
+      `subscription OnCreatePlace {
+        onCreatePlace {
           __typename
           id
           userID
@@ -6104,7 +5876,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6114,8 +5885,8 @@ export class APIService {
     SubscriptionResponse<OnUpdatePlaceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdatePlace($owner: String!) {
-        onUpdatePlace(owner: $owner) {
+      `subscription OnUpdatePlace {
+        onUpdatePlace {
           __typename
           id
           userID
@@ -6137,7 +5908,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6147,8 +5917,8 @@ export class APIService {
     SubscriptionResponse<OnDeletePlaceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeletePlace($owner: String!) {
-        onDeletePlace(owner: $owner) {
+      `subscription OnDeletePlace {
+        onDeletePlace {
           __typename
           id
           userID
@@ -6170,7 +5940,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6180,8 +5949,8 @@ export class APIService {
     SubscriptionResponse<OnCreateFavouriteUserResourcesSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateFavouriteUserResources($owner: String!) {
-        onCreateFavouriteUserResources(owner: $owner) {
+      `subscription OnCreateFavouriteUserResources {
+        onCreateFavouriteUserResources {
           __typename
           id
           resourceID
@@ -6215,7 +5984,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           user {
             __typename
@@ -6255,14 +6023,12 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           _version
           _deleted
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6274,8 +6040,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateFavouriteUserResourcesSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateFavouriteUserResources($owner: String!) {
-        onUpdateFavouriteUserResources(owner: $owner) {
+      `subscription OnUpdateFavouriteUserResources {
+        onUpdateFavouriteUserResources {
           __typename
           id
           resourceID
@@ -6309,7 +6075,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           user {
             __typename
@@ -6349,14 +6114,12 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           _version
           _deleted
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6368,8 +6131,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteFavouriteUserResourcesSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteFavouriteUserResources($owner: String!) {
-        onDeleteFavouriteUserResources(owner: $owner) {
+      `subscription OnDeleteFavouriteUserResources {
+        onDeleteFavouriteUserResources {
           __typename
           id
           resourceID
@@ -6403,7 +6166,6 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           user {
             __typename
@@ -6443,14 +6205,12 @@ export class APIService {
             _lastChangedAt
             createdAt
             updatedAt
-            owner
           }
           _version
           _deleted
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6462,8 +6222,8 @@ export class APIService {
     SubscriptionResponse<OnCreateHelpResourceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnCreateHelpResource($owner: String!) {
-        onCreateHelpResource(owner: $owner) {
+      `subscription OnCreateHelpResource {
+        onCreateHelpResource {
           __typename
           id
           title
@@ -6494,7 +6254,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -6504,7 +6263,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6514,8 +6272,8 @@ export class APIService {
     SubscriptionResponse<OnUpdateHelpResourceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnUpdateHelpResource($owner: String!) {
-        onUpdateHelpResource(owner: $owner) {
+      `subscription OnUpdateHelpResource {
+        onUpdateHelpResource {
           __typename
           id
           title
@@ -6546,7 +6304,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -6556,7 +6313,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )
@@ -6566,8 +6322,8 @@ export class APIService {
     SubscriptionResponse<OnDeleteHelpResourceSubscription>
   > = API.graphql(
     graphqlOperation(
-      `subscription OnDeleteHelpResource($owner: String!) {
-        onDeleteHelpResource(owner: $owner) {
+      `subscription OnDeleteHelpResource {
+        onDeleteHelpResource {
           __typename
           id
           title
@@ -6598,7 +6354,6 @@ export class APIService {
               _lastChangedAt
               createdAt
               updatedAt
-              owner
             }
             nextToken
             startedAt
@@ -6608,7 +6363,6 @@ export class APIService {
           _lastChangedAt
           createdAt
           updatedAt
-          owner
         }
       }`
     )

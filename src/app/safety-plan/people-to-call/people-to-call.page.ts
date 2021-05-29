@@ -174,6 +174,7 @@ export class PeopleToCallPage implements OnInit {
     const newContact = new Contact({
       name: contact.title,
       automaticTextMessage: contact.automaticTextMessage,
+      order: this.personal_contacts.length - 1,
       userID: this.currentUser.id
     })
     await this.contactService.create(newContact).then(() => {

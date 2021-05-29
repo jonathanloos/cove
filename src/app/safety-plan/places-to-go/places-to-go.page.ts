@@ -149,6 +149,7 @@ export class PlacesToGoPage implements OnInit {
       address: this.address,
       longitude: this.longitude,
       latitude: this.latitude,
+      order: this.places.length - 1,
       userID: this.currentUser.id
     });
 
@@ -166,7 +167,8 @@ export class PlacesToGoPage implements OnInit {
       address: this.address,
       longitude: this.longitude,
       latitude: this.latitude,
-      userID: this.currentUser.id
+      userID: this.currentUser.id,
+      order: this.places.length - 1
     })
 
     this.placesService.create(place);
