@@ -16,7 +16,6 @@ export type CreateUserInput = {
   email: string;
   phone?: string | null;
   bio?: string | null;
-  _version?: number | null;
 };
 
 export type ModelUserConditionInput = {
@@ -92,12 +91,10 @@ export type UpdateUserInput = {
   email?: string | null;
   phone?: string | null;
   bio?: string | null;
-  _version?: number | null;
 };
 
 export type DeleteUserInput = {
   id?: string | null;
-  _version?: number | null;
 };
 
 export type CreateWarningSignInput = {
@@ -106,7 +103,6 @@ export type CreateWarningSignInput = {
   title: string;
   description?: string | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type ModelWarningSignConditionInput = {
@@ -137,12 +133,10 @@ export type UpdateWarningSignInput = {
   title?: string | null;
   description?: string | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type DeleteWarningSignInput = {
   id?: string | null;
-  _version?: number | null;
 };
 
 export type CreateCopingStrategyInput = {
@@ -151,7 +145,6 @@ export type CreateCopingStrategyInput = {
   title: string;
   description?: string | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type ModelCopingStrategyConditionInput = {
@@ -170,12 +163,10 @@ export type UpdateCopingStrategyInput = {
   title?: string | null;
   description?: string | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type DeleteCopingStrategyInput = {
   id?: string | null;
-  _version?: number | null;
 };
 
 export type CreateContactInput = {
@@ -185,7 +176,6 @@ export type CreateContactInput = {
   automaticTextMessage: string;
   phone?: string | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type ModelContactConditionInput = {
@@ -206,12 +196,10 @@ export type UpdateContactInput = {
   automaticTextMessage?: string | null;
   phone?: string | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type DeleteContactInput = {
   id?: string | null;
-  _version?: number | null;
 };
 
 export type CreatePlaceInput = {
@@ -223,7 +211,6 @@ export type CreatePlaceInput = {
   latitude?: number | null;
   longitude?: number | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type AddressInput = {
@@ -267,12 +254,10 @@ export type UpdatePlaceInput = {
   latitude?: number | null;
   longitude?: number | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type DeletePlaceInput = {
   id?: string | null;
-  _version?: number | null;
 };
 
 export type CreateFavouriteUserResourcesInput = {
@@ -280,7 +265,6 @@ export type CreateFavouriteUserResourcesInput = {
   resourceID: string;
   userID: string;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type ModelFavouriteUserResourcesConditionInput = {
@@ -297,12 +281,10 @@ export type UpdateFavouriteUserResourcesInput = {
   resourceID?: string | null;
   userID?: string | null;
   order?: number | null;
-  _version?: number | null;
 };
 
 export type DeleteFavouriteUserResourcesInput = {
   id?: string | null;
-  _version?: number | null;
 };
 
 export type CreateHelpResourceInput = {
@@ -314,7 +296,6 @@ export type CreateHelpResourceInput = {
   live_chat?: boolean | null;
   img_url?: string | null;
   url?: string | null;
-  _version?: number | null;
 };
 
 export type ResourceContactInformationInput = {
@@ -349,12 +330,10 @@ export type UpdateHelpResourceInput = {
   live_chat?: boolean | null;
   img_url?: string | null;
   url?: string | null;
-  _version?: number | null;
 };
 
 export type DeleteHelpResourceInput = {
   id?: string | null;
-  _version?: number | null;
 };
 
 export type ModelUserFilterInput = {
@@ -455,14 +434,10 @@ export type CreateUserMutation = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -473,14 +448,10 @@ export type CreateUserMutation = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -492,14 +463,10 @@ export type CreateUserMutation = {
       automaticTextMessage: string;
       phone: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -512,14 +479,10 @@ export type CreateUserMutation = {
       latitude: number | null;
       longitude: number | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   favouriteResources: {
     __typename: "ModelFavouriteUserResourcesConnection";
@@ -529,18 +492,11 @@ export type CreateUserMutation = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -562,14 +518,10 @@ export type UpdateUserMutation = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -580,14 +532,10 @@ export type UpdateUserMutation = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -599,14 +547,10 @@ export type UpdateUserMutation = {
       automaticTextMessage: string;
       phone: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -619,14 +563,10 @@ export type UpdateUserMutation = {
       latitude: number | null;
       longitude: number | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   favouriteResources: {
     __typename: "ModelFavouriteUserResourcesConnection";
@@ -636,18 +576,11 @@ export type UpdateUserMutation = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -669,14 +602,10 @@ export type DeleteUserMutation = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -687,14 +616,10 @@ export type DeleteUserMutation = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -706,14 +631,10 @@ export type DeleteUserMutation = {
       automaticTextMessage: string;
       phone: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -726,14 +647,10 @@ export type DeleteUserMutation = {
       latitude: number | null;
       longitude: number | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   favouriteResources: {
     __typename: "ModelFavouriteUserResourcesConnection";
@@ -743,18 +660,11 @@ export type DeleteUserMutation = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -766,9 +676,6 @@ export type CreateWarningSignMutation = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -780,9 +687,6 @@ export type UpdateWarningSignMutation = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -794,9 +698,6 @@ export type DeleteWarningSignMutation = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -808,9 +709,6 @@ export type CreateCopingStrategyMutation = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -822,9 +720,6 @@ export type UpdateCopingStrategyMutation = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -836,9 +731,6 @@ export type DeleteCopingStrategyMutation = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -851,9 +743,6 @@ export type CreateContactMutation = {
   automaticTextMessage: string;
   phone: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -866,9 +755,6 @@ export type UpdateContactMutation = {
   automaticTextMessage: string;
   phone: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -881,9 +767,6 @@ export type DeleteContactMutation = {
   automaticTextMessage: string;
   phone: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -905,9 +788,6 @@ export type CreatePlaceMutation = {
   latitude: number | null;
   longitude: number | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -929,9 +809,6 @@ export type UpdatePlaceMutation = {
   latitude: number | null;
   longitude: number | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -953,9 +830,6 @@ export type DeletePlaceMutation = {
   latitude: number | null;
   longitude: number | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -987,11 +861,7 @@ export type CreateFavouriteUserResourcesMutation = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
@@ -1006,37 +876,26 @@ export type CreateFavouriteUserResourcesMutation = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1068,11 +927,7 @@ export type UpdateFavouriteUserResourcesMutation = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
@@ -1087,37 +942,26 @@ export type UpdateFavouriteUserResourcesMutation = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1149,11 +993,7 @@ export type DeleteFavouriteUserResourcesMutation = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
@@ -1168,37 +1008,26 @@ export type DeleteFavouriteUserResourcesMutation = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1229,18 +1058,11 @@ export type CreateHelpResourceMutation = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1271,18 +1093,11 @@ export type UpdateHelpResourceMutation = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1313,65 +1128,13 @@ export type DeleteHelpResourceMutation = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
-};
-
-export type SyncUsersQuery = {
-  __typename: "ModelUserConnection";
-  items: Array<{
-    __typename: "User";
-    id: string;
-    userSub: string;
-    name: string | null;
-    email: string;
-    phone: string | null;
-    bio: string | null;
-    warningSigns: {
-      __typename: "ModelWarningSignConnection";
-      nextToken: string | null;
-      startedAt: number | null;
-    } | null;
-    copingStrategies: {
-      __typename: "ModelCopingStrategyConnection";
-      nextToken: string | null;
-      startedAt: number | null;
-    } | null;
-    contacts: {
-      __typename: "ModelContactConnection";
-      nextToken: string | null;
-      startedAt: number | null;
-    } | null;
-    places: {
-      __typename: "ModelPlaceConnection";
-      nextToken: string | null;
-      startedAt: number | null;
-    } | null;
-    favouriteResources: {
-      __typename: "ModelFavouriteUserResourcesConnection";
-      nextToken: string | null;
-      startedAt: number | null;
-    } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type GetUserQuery = {
@@ -1391,14 +1154,10 @@ export type GetUserQuery = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -1409,14 +1168,10 @@ export type GetUserQuery = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -1428,14 +1183,10 @@ export type GetUserQuery = {
       automaticTextMessage: string;
       phone: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -1448,14 +1199,10 @@ export type GetUserQuery = {
       latitude: number | null;
       longitude: number | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   favouriteResources: {
     __typename: "ModelFavouriteUserResourcesConnection";
@@ -1465,18 +1212,11 @@ export type GetUserQuery = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1494,55 +1234,27 @@ export type ListUsersQuery = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
-  startedAt: number | null;
-};
-
-export type SyncWarningSignsQuery = {
-  __typename: "ModelWarningSignConnection";
-  items: Array<{
-    __typename: "WarningSign";
-    id: string;
-    userID: string;
-    title: string;
-    description: string | null;
-    order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type GetWarningSignQuery = {
@@ -1552,9 +1264,6 @@ export type GetWarningSignQuery = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1568,33 +1277,10 @@ export type ListWarningSignsQuery = {
     title: string;
     description: string | null;
     order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
-  startedAt: number | null;
-};
-
-export type SyncCopingStrategiesQuery = {
-  __typename: "ModelCopingStrategyConnection";
-  items: Array<{
-    __typename: "CopingStrategy";
-    id: string;
-    userID: string;
-    title: string;
-    description: string | null;
-    order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type GetCopingStrategyQuery = {
@@ -1604,9 +1290,6 @@ export type GetCopingStrategyQuery = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1620,34 +1303,10 @@ export type ListCopingStrategysQuery = {
     title: string;
     description: string | null;
     order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
-  startedAt: number | null;
-};
-
-export type SyncContactsQuery = {
-  __typename: "ModelContactConnection";
-  items: Array<{
-    __typename: "Contact";
-    id: string;
-    userID: string;
-    name: string | null;
-    automaticTextMessage: string;
-    phone: string | null;
-    order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type GetContactQuery = {
@@ -1658,9 +1317,6 @@ export type GetContactQuery = {
   automaticTextMessage: string;
   phone: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1675,43 +1331,10 @@ export type ListContactsQuery = {
     automaticTextMessage: string;
     phone: string | null;
     order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
-  startedAt: number | null;
-};
-
-export type SyncPlacesQuery = {
-  __typename: "ModelPlaceConnection";
-  items: Array<{
-    __typename: "Place";
-    id: string;
-    userID: string;
-    title: string;
-    description: string | null;
-    address: {
-      __typename: "Address";
-      street: string | null;
-      city: string | null;
-      postalCode: string | null;
-      province: string | null;
-      country: string | null;
-    } | null;
-    latitude: number | null;
-    longitude: number | null;
-    order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type GetPlaceQuery = {
@@ -1731,9 +1354,6 @@ export type GetPlaceQuery = {
   latitude: number | null;
   longitude: number | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1757,60 +1377,10 @@ export type ListPlacesQuery = {
     latitude: number | null;
     longitude: number | null;
     order: number | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
-  startedAt: number | null;
-};
-
-export type SyncFavouriteUserResourcesQuery = {
-  __typename: "ModelFavouriteUserResourcesConnection";
-  items: Array<{
-    __typename: "FavouriteUserResources";
-    id: string;
-    resourceID: string;
-    userID: string;
-    order: number | null;
-    resource: {
-      __typename: "HelpResource";
-      id: string;
-      title: string;
-      description: string | null;
-      live_chat: boolean | null;
-      img_url: string | null;
-      url: string | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
-      createdAt: string;
-      updatedAt: string;
-    };
-    user: {
-      __typename: "User";
-      id: string;
-      userSub: string;
-      name: string | null;
-      email: string;
-      phone: string | null;
-      bio: string | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
-      createdAt: string;
-      updatedAt: string;
-    };
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type GetFavouriteUserResourcesQuery = {
@@ -1840,11 +1410,7 @@ export type GetFavouriteUserResourcesQuery = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
@@ -1859,37 +1425,26 @@ export type GetFavouriteUserResourcesQuery = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -1910,9 +1465,6 @@ export type ListFavouriteUserResourcessQuery = {
       live_chat: boolean | null;
       img_url: string | null;
       url: string | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     };
@@ -1924,55 +1476,13 @@ export type ListFavouriteUserResourcessQuery = {
       email: string;
       phone: string | null;
       bio: string | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     };
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
-  startedAt: number | null;
-};
-
-export type SyncHelpResourcesQuery = {
-  __typename: "ModelHelpResourceConnection";
-  items: Array<{
-    __typename: "HelpResource";
-    id: string;
-    title: string;
-    description: string | null;
-    phone: {
-      __typename: "ResourceContactInformation";
-      number: string | null;
-      hoursOfOperation: string | null;
-    } | null;
-    sms: {
-      __typename: "ResourceContactInformation";
-      number: string | null;
-      hoursOfOperation: string | null;
-    } | null;
-    live_chat: boolean | null;
-    img_url: string | null;
-    url: string | null;
-    userFavourites: {
-      __typename: "ModelFavouriteUserResourcesConnection";
-      nextToken: string | null;
-      startedAt: number | null;
-    } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
-    createdAt: string;
-    updatedAt: string;
-  } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type GetHelpResourceQuery = {
@@ -2001,18 +1511,11 @@ export type GetHelpResourceQuery = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2040,16 +1543,11 @@ export type ListHelpResourcesQuery = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
   nextToken: string | null;
-  startedAt: number | null;
 };
 
 export type OnCreateUserSubscription = {
@@ -2069,14 +1567,10 @@ export type OnCreateUserSubscription = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -2087,14 +1581,10 @@ export type OnCreateUserSubscription = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -2106,14 +1596,10 @@ export type OnCreateUserSubscription = {
       automaticTextMessage: string;
       phone: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -2126,14 +1612,10 @@ export type OnCreateUserSubscription = {
       latitude: number | null;
       longitude: number | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   favouriteResources: {
     __typename: "ModelFavouriteUserResourcesConnection";
@@ -2143,18 +1625,11 @@ export type OnCreateUserSubscription = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2176,14 +1651,10 @@ export type OnUpdateUserSubscription = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -2194,14 +1665,10 @@ export type OnUpdateUserSubscription = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -2213,14 +1680,10 @@ export type OnUpdateUserSubscription = {
       automaticTextMessage: string;
       phone: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -2233,14 +1696,10 @@ export type OnUpdateUserSubscription = {
       latitude: number | null;
       longitude: number | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   favouriteResources: {
     __typename: "ModelFavouriteUserResourcesConnection";
@@ -2250,18 +1709,11 @@ export type OnUpdateUserSubscription = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2283,14 +1735,10 @@ export type OnDeleteUserSubscription = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   copingStrategies: {
     __typename: "ModelCopingStrategyConnection";
@@ -2301,14 +1749,10 @@ export type OnDeleteUserSubscription = {
       title: string;
       description: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   contacts: {
     __typename: "ModelContactConnection";
@@ -2320,14 +1764,10 @@ export type OnDeleteUserSubscription = {
       automaticTextMessage: string;
       phone: string | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   places: {
     __typename: "ModelPlaceConnection";
@@ -2340,14 +1780,10 @@ export type OnDeleteUserSubscription = {
       latitude: number | null;
       longitude: number | null;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
   favouriteResources: {
     __typename: "ModelFavouriteUserResourcesConnection";
@@ -2357,18 +1793,11 @@ export type OnDeleteUserSubscription = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2380,9 +1809,6 @@ export type OnCreateWarningSignSubscription = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2394,9 +1820,6 @@ export type OnUpdateWarningSignSubscription = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2408,9 +1831,6 @@ export type OnDeleteWarningSignSubscription = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2422,9 +1842,6 @@ export type OnCreateCopingStrategySubscription = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2436,9 +1853,6 @@ export type OnUpdateCopingStrategySubscription = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2450,9 +1864,6 @@ export type OnDeleteCopingStrategySubscription = {
   title: string;
   description: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2465,9 +1876,6 @@ export type OnCreateContactSubscription = {
   automaticTextMessage: string;
   phone: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2480,9 +1888,6 @@ export type OnUpdateContactSubscription = {
   automaticTextMessage: string;
   phone: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2495,9 +1900,6 @@ export type OnDeleteContactSubscription = {
   automaticTextMessage: string;
   phone: string | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2519,9 +1921,6 @@ export type OnCreatePlaceSubscription = {
   latitude: number | null;
   longitude: number | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2543,9 +1942,6 @@ export type OnUpdatePlaceSubscription = {
   latitude: number | null;
   longitude: number | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2567,9 +1963,6 @@ export type OnDeletePlaceSubscription = {
   latitude: number | null;
   longitude: number | null;
   order: number | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2601,11 +1994,7 @@ export type OnCreateFavouriteUserResourcesSubscription = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
@@ -2620,37 +2009,26 @@ export type OnCreateFavouriteUserResourcesSubscription = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2682,11 +2060,7 @@ export type OnUpdateFavouriteUserResourcesSubscription = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
@@ -2701,37 +2075,26 @@ export type OnUpdateFavouriteUserResourcesSubscription = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2763,11 +2126,7 @@ export type OnDeleteFavouriteUserResourcesSubscription = {
     userFavourites: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
@@ -2782,37 +2141,26 @@ export type OnDeleteFavouriteUserResourcesSubscription = {
     warningSigns: {
       __typename: "ModelWarningSignConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     copingStrategies: {
       __typename: "ModelCopingStrategyConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     contacts: {
       __typename: "ModelContactConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     places: {
       __typename: "ModelPlaceConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
     favouriteResources: {
       __typename: "ModelFavouriteUserResourcesConnection";
       nextToken: string | null;
-      startedAt: number | null;
     } | null;
-    _version: number;
-    _deleted: boolean | null;
-    _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   };
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2843,18 +2191,11 @@ export type OnCreateHelpResourceSubscription = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2885,18 +2226,11 @@ export type OnUpdateHelpResourceSubscription = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2927,18 +2261,11 @@ export type OnDeleteHelpResourceSubscription = {
       resourceID: string;
       userID: string;
       order: number | null;
-      _version: number;
-      _deleted: boolean | null;
-      _lastChangedAt: number;
       createdAt: string;
       updatedAt: string;
     } | null> | null;
     nextToken: string | null;
-    startedAt: number | null;
   } | null;
-  _version: number;
-  _deleted: boolean | null;
-  _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
 };
@@ -2969,14 +2296,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           copingStrategies {
             __typename
@@ -2987,14 +2310,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           contacts {
             __typename
@@ -3006,14 +2325,10 @@ export class APIService {
               automaticTextMessage
               phone
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           places {
             __typename
@@ -3026,14 +2341,10 @@ export class APIService {
               latitude
               longitude
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           favouriteResources {
             __typename
@@ -3043,18 +2354,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3092,14 +2396,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           copingStrategies {
             __typename
@@ -3110,14 +2410,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           contacts {
             __typename
@@ -3129,14 +2425,10 @@ export class APIService {
               automaticTextMessage
               phone
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           places {
             __typename
@@ -3149,14 +2441,10 @@ export class APIService {
               latitude
               longitude
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           favouriteResources {
             __typename
@@ -3166,18 +2454,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3215,14 +2496,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           copingStrategies {
             __typename
@@ -3233,14 +2510,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           contacts {
             __typename
@@ -3252,14 +2525,10 @@ export class APIService {
               automaticTextMessage
               phone
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           places {
             __typename
@@ -3272,14 +2541,10 @@ export class APIService {
               latitude
               longitude
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           favouriteResources {
             __typename
@@ -3289,18 +2554,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3328,9 +2586,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3358,9 +2613,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3388,9 +2640,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3418,9 +2667,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3448,9 +2694,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3478,9 +2721,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3509,9 +2749,6 @@ export class APIService {
           automaticTextMessage
           phone
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3540,9 +2777,6 @@ export class APIService {
           automaticTextMessage
           phone
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3571,9 +2805,6 @@ export class APIService {
           automaticTextMessage
           phone
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3611,9 +2842,6 @@ export class APIService {
           latitude
           longitude
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3651,9 +2879,6 @@ export class APIService {
           latitude
           longitude
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3691,9 +2916,6 @@ export class APIService {
           latitude
           longitude
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3741,11 +2963,7 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
@@ -3760,37 +2978,26 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3840,11 +3047,7 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
@@ -3859,37 +3062,26 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -3939,11 +3131,7 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
@@ -3958,37 +3146,26 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4037,18 +3214,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4095,18 +3265,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4153,18 +3316,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4179,76 +3335,6 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <DeleteHelpResourceMutation>response.data.deleteHelpResource;
-  }
-  async SyncUsers(
-    filter?: ModelUserFilterInput,
-    limit?: number,
-    nextToken?: string,
-    lastSync?: number
-  ): Promise<SyncUsersQuery> {
-    const statement = `query SyncUsers($filter: ModelUserFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
-        syncUsers(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
-          __typename
-          items {
-            __typename
-            id
-            userSub
-            name
-            email
-            phone
-            bio
-            warningSigns {
-              __typename
-              nextToken
-              startedAt
-            }
-            copingStrategies {
-              __typename
-              nextToken
-              startedAt
-            }
-            contacts {
-              __typename
-              nextToken
-              startedAt
-            }
-            places {
-              __typename
-              nextToken
-              startedAt
-            }
-            favouriteResources {
-              __typename
-              nextToken
-              startedAt
-            }
-            _version
-            _deleted
-            _lastChangedAt
-            createdAt
-            updatedAt
-          }
-          nextToken
-          startedAt
-        }
-      }`;
-    const gqlAPIServiceArguments: any = {};
-    if (filter) {
-      gqlAPIServiceArguments.filter = filter;
-    }
-    if (limit) {
-      gqlAPIServiceArguments.limit = limit;
-    }
-    if (nextToken) {
-      gqlAPIServiceArguments.nextToken = nextToken;
-    }
-    if (lastSync) {
-      gqlAPIServiceArguments.lastSync = lastSync;
-    }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
-    )) as any;
-    return <SyncUsersQuery>response.data.syncUsers;
   }
   async GetUser(id: string): Promise<GetUserQuery> {
     const statement = `query GetUser($id: ID!) {
@@ -4269,14 +3355,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           copingStrategies {
             __typename
@@ -4287,14 +3369,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           contacts {
             __typename
@@ -4306,14 +3384,10 @@ export class APIService {
               automaticTextMessage
               phone
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           places {
             __typename
@@ -4326,14 +3400,10 @@ export class APIService {
               latitude
               longitude
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           favouriteResources {
             __typename
@@ -4343,18 +3413,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4386,36 +3449,27 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -4433,50 +3487,6 @@ export class APIService {
     )) as any;
     return <ListUsersQuery>response.data.listUsers;
   }
-  async SyncWarningSigns(
-    filter?: ModelWarningSignFilterInput,
-    limit?: number,
-    nextToken?: string,
-    lastSync?: number
-  ): Promise<SyncWarningSignsQuery> {
-    const statement = `query SyncWarningSigns($filter: ModelWarningSignFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
-        syncWarningSigns(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
-          __typename
-          items {
-            __typename
-            id
-            userID
-            title
-            description
-            order
-            _version
-            _deleted
-            _lastChangedAt
-            createdAt
-            updatedAt
-          }
-          nextToken
-          startedAt
-        }
-      }`;
-    const gqlAPIServiceArguments: any = {};
-    if (filter) {
-      gqlAPIServiceArguments.filter = filter;
-    }
-    if (limit) {
-      gqlAPIServiceArguments.limit = limit;
-    }
-    if (nextToken) {
-      gqlAPIServiceArguments.nextToken = nextToken;
-    }
-    if (lastSync) {
-      gqlAPIServiceArguments.lastSync = lastSync;
-    }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
-    )) as any;
-    return <SyncWarningSignsQuery>response.data.syncWarningSigns;
-  }
   async GetWarningSign(id: string): Promise<GetWarningSignQuery> {
     const statement = `query GetWarningSign($id: ID!) {
         getWarningSign(id: $id) {
@@ -4486,9 +3496,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4516,14 +3523,10 @@ export class APIService {
             title
             description
             order
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -4541,50 +3544,6 @@ export class APIService {
     )) as any;
     return <ListWarningSignsQuery>response.data.listWarningSigns;
   }
-  async SyncCopingStrategies(
-    filter?: ModelCopingStrategyFilterInput,
-    limit?: number,
-    nextToken?: string,
-    lastSync?: number
-  ): Promise<SyncCopingStrategiesQuery> {
-    const statement = `query SyncCopingStrategies($filter: ModelCopingStrategyFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
-        syncCopingStrategies(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
-          __typename
-          items {
-            __typename
-            id
-            userID
-            title
-            description
-            order
-            _version
-            _deleted
-            _lastChangedAt
-            createdAt
-            updatedAt
-          }
-          nextToken
-          startedAt
-        }
-      }`;
-    const gqlAPIServiceArguments: any = {};
-    if (filter) {
-      gqlAPIServiceArguments.filter = filter;
-    }
-    if (limit) {
-      gqlAPIServiceArguments.limit = limit;
-    }
-    if (nextToken) {
-      gqlAPIServiceArguments.nextToken = nextToken;
-    }
-    if (lastSync) {
-      gqlAPIServiceArguments.lastSync = lastSync;
-    }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
-    )) as any;
-    return <SyncCopingStrategiesQuery>response.data.syncCopingStrategies;
-  }
   async GetCopingStrategy(id: string): Promise<GetCopingStrategyQuery> {
     const statement = `query GetCopingStrategy($id: ID!) {
         getCopingStrategy(id: $id) {
@@ -4594,9 +3553,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4624,14 +3580,10 @@ export class APIService {
             title
             description
             order
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -4649,51 +3601,6 @@ export class APIService {
     )) as any;
     return <ListCopingStrategysQuery>response.data.listCopingStrategys;
   }
-  async SyncContacts(
-    filter?: ModelContactFilterInput,
-    limit?: number,
-    nextToken?: string,
-    lastSync?: number
-  ): Promise<SyncContactsQuery> {
-    const statement = `query SyncContacts($filter: ModelContactFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
-        syncContacts(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
-          __typename
-          items {
-            __typename
-            id
-            userID
-            name
-            automaticTextMessage
-            phone
-            order
-            _version
-            _deleted
-            _lastChangedAt
-            createdAt
-            updatedAt
-          }
-          nextToken
-          startedAt
-        }
-      }`;
-    const gqlAPIServiceArguments: any = {};
-    if (filter) {
-      gqlAPIServiceArguments.filter = filter;
-    }
-    if (limit) {
-      gqlAPIServiceArguments.limit = limit;
-    }
-    if (nextToken) {
-      gqlAPIServiceArguments.nextToken = nextToken;
-    }
-    if (lastSync) {
-      gqlAPIServiceArguments.lastSync = lastSync;
-    }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
-    )) as any;
-    return <SyncContactsQuery>response.data.syncContacts;
-  }
   async GetContact(id: string): Promise<GetContactQuery> {
     const statement = `query GetContact($id: ID!) {
         getContact(id: $id) {
@@ -4704,9 +3611,6 @@ export class APIService {
           automaticTextMessage
           phone
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4735,14 +3639,10 @@ export class APIService {
             automaticTextMessage
             phone
             order
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -4759,60 +3659,6 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <ListContactsQuery>response.data.listContacts;
-  }
-  async SyncPlaces(
-    filter?: ModelPlaceFilterInput,
-    limit?: number,
-    nextToken?: string,
-    lastSync?: number
-  ): Promise<SyncPlacesQuery> {
-    const statement = `query SyncPlaces($filter: ModelPlaceFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
-        syncPlaces(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
-          __typename
-          items {
-            __typename
-            id
-            userID
-            title
-            description
-            address {
-              __typename
-              street
-              city
-              postalCode
-              province
-              country
-            }
-            latitude
-            longitude
-            order
-            _version
-            _deleted
-            _lastChangedAt
-            createdAt
-            updatedAt
-          }
-          nextToken
-          startedAt
-        }
-      }`;
-    const gqlAPIServiceArguments: any = {};
-    if (filter) {
-      gqlAPIServiceArguments.filter = filter;
-    }
-    if (limit) {
-      gqlAPIServiceArguments.limit = limit;
-    }
-    if (nextToken) {
-      gqlAPIServiceArguments.nextToken = nextToken;
-    }
-    if (lastSync) {
-      gqlAPIServiceArguments.lastSync = lastSync;
-    }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
-    )) as any;
-    return <SyncPlacesQuery>response.data.syncPlaces;
   }
   async GetPlace(id: string): Promise<GetPlaceQuery> {
     const statement = `query GetPlace($id: ID!) {
@@ -4833,9 +3679,6 @@ export class APIService {
           latitude
           longitude
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -4873,14 +3716,10 @@ export class APIService {
             latitude
             longitude
             order
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -4897,79 +3736,6 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <ListPlacesQuery>response.data.listPlaces;
-  }
-  async SyncFavouriteUserResources(
-    filter?: ModelFavouriteUserResourcesFilterInput,
-    limit?: number,
-    nextToken?: string,
-    lastSync?: number
-  ): Promise<SyncFavouriteUserResourcesQuery> {
-    const statement = `query SyncFavouriteUserResources($filter: ModelFavouriteUserResourcesFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
-        syncFavouriteUserResources(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
-          __typename
-          items {
-            __typename
-            id
-            resourceID
-            userID
-            order
-            resource {
-              __typename
-              id
-              title
-              description
-              live_chat
-              img_url
-              url
-              _version
-              _deleted
-              _lastChangedAt
-              createdAt
-              updatedAt
-            }
-            user {
-              __typename
-              id
-              userSub
-              name
-              email
-              phone
-              bio
-              _version
-              _deleted
-              _lastChangedAt
-              createdAt
-              updatedAt
-            }
-            _version
-            _deleted
-            _lastChangedAt
-            createdAt
-            updatedAt
-          }
-          nextToken
-          startedAt
-        }
-      }`;
-    const gqlAPIServiceArguments: any = {};
-    if (filter) {
-      gqlAPIServiceArguments.filter = filter;
-    }
-    if (limit) {
-      gqlAPIServiceArguments.limit = limit;
-    }
-    if (nextToken) {
-      gqlAPIServiceArguments.nextToken = nextToken;
-    }
-    if (lastSync) {
-      gqlAPIServiceArguments.lastSync = lastSync;
-    }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
-    )) as any;
-    return <SyncFavouriteUserResourcesQuery>(
-      response.data.syncFavouriteUserResources
-    );
   }
   async GetFavouriteUserResources(
     id: string
@@ -5002,11 +3768,7 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
@@ -5021,37 +3783,26 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5088,9 +3839,6 @@ export class APIService {
               live_chat
               img_url
               url
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
@@ -5102,20 +3850,13 @@ export class APIService {
               email
               phone
               bio
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -5134,66 +3875,6 @@ export class APIService {
     return <ListFavouriteUserResourcessQuery>(
       response.data.listFavouriteUserResourcess
     );
-  }
-  async SyncHelpResources(
-    filter?: ModelHelpResourceFilterInput,
-    limit?: number,
-    nextToken?: string,
-    lastSync?: number
-  ): Promise<SyncHelpResourcesQuery> {
-    const statement = `query SyncHelpResources($filter: ModelHelpResourceFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
-        syncHelpResources(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
-          __typename
-          items {
-            __typename
-            id
-            title
-            description
-            phone {
-              __typename
-              number
-              hoursOfOperation
-            }
-            sms {
-              __typename
-              number
-              hoursOfOperation
-            }
-            live_chat
-            img_url
-            url
-            userFavourites {
-              __typename
-              nextToken
-              startedAt
-            }
-            _version
-            _deleted
-            _lastChangedAt
-            createdAt
-            updatedAt
-          }
-          nextToken
-          startedAt
-        }
-      }`;
-    const gqlAPIServiceArguments: any = {};
-    if (filter) {
-      gqlAPIServiceArguments.filter = filter;
-    }
-    if (limit) {
-      gqlAPIServiceArguments.limit = limit;
-    }
-    if (nextToken) {
-      gqlAPIServiceArguments.nextToken = nextToken;
-    }
-    if (lastSync) {
-      gqlAPIServiceArguments.lastSync = lastSync;
-    }
-    const response = (await API.graphql(
-      graphqlOperation(statement, gqlAPIServiceArguments)
-    )) as any;
-    return <SyncHelpResourcesQuery>response.data.syncHelpResources;
   }
   async GetHelpResource(id: string): Promise<GetHelpResourceQuery> {
     const statement = `query GetHelpResource($id: ID!) {
@@ -5223,18 +3904,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5276,16 +3950,11 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
           nextToken
-          startedAt
         }
       }`;
     const gqlAPIServiceArguments: any = {};
@@ -5325,14 +3994,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           copingStrategies {
             __typename
@@ -5343,14 +4008,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           contacts {
             __typename
@@ -5362,14 +4023,10 @@ export class APIService {
               automaticTextMessage
               phone
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           places {
             __typename
@@ -5382,14 +4039,10 @@ export class APIService {
               latitude
               longitude
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           favouriteResources {
             __typename
@@ -5399,18 +4052,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5440,14 +4086,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           copingStrategies {
             __typename
@@ -5458,14 +4100,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           contacts {
             __typename
@@ -5477,14 +4115,10 @@ export class APIService {
               automaticTextMessage
               phone
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           places {
             __typename
@@ -5497,14 +4131,10 @@ export class APIService {
               latitude
               longitude
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           favouriteResources {
             __typename
@@ -5514,18 +4144,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5555,14 +4178,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           copingStrategies {
             __typename
@@ -5573,14 +4192,10 @@ export class APIService {
               title
               description
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           contacts {
             __typename
@@ -5592,14 +4207,10 @@ export class APIService {
               automaticTextMessage
               phone
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           places {
             __typename
@@ -5612,14 +4223,10 @@ export class APIService {
               latitude
               longitude
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
           favouriteResources {
             __typename
@@ -5629,18 +4236,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5660,9 +4260,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5682,9 +4279,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5704,9 +4298,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5726,9 +4317,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5748,9 +4336,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5770,9 +4355,6 @@ export class APIService {
           title
           description
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5793,9 +4375,6 @@ export class APIService {
           automaticTextMessage
           phone
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5816,9 +4395,6 @@ export class APIService {
           automaticTextMessage
           phone
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5839,9 +4415,6 @@ export class APIService {
           automaticTextMessage
           phone
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5871,9 +4444,6 @@ export class APIService {
           latitude
           longitude
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5903,9 +4473,6 @@ export class APIService {
           latitude
           longitude
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5935,9 +4502,6 @@ export class APIService {
           latitude
           longitude
           order
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -5977,11 +4541,7 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
@@ -5996,37 +4556,26 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -6068,11 +4617,7 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
@@ -6087,37 +4632,26 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -6159,11 +4693,7 @@ export class APIService {
             userFavourites {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
@@ -6178,37 +4708,26 @@ export class APIService {
             warningSigns {
               __typename
               nextToken
-              startedAt
             }
             copingStrategies {
               __typename
               nextToken
-              startedAt
             }
             contacts {
               __typename
               nextToken
-              startedAt
             }
             places {
               __typename
               nextToken
-              startedAt
             }
             favouriteResources {
               __typename
               nextToken
-              startedAt
             }
-            _version
-            _deleted
-            _lastChangedAt
             createdAt
             updatedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -6249,18 +4768,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -6299,18 +4811,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
@@ -6349,18 +4854,11 @@ export class APIService {
               resourceID
               userID
               order
-              _version
-              _deleted
-              _lastChangedAt
               createdAt
               updatedAt
             }
             nextToken
-            startedAt
           }
-          _version
-          _deleted
-          _lastChangedAt
           createdAt
           updatedAt
         }
