@@ -25,6 +25,13 @@
           "/manifest.webmanifest"
         ]
       }
+    }, {
+      "name": "icons",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [ "/svg/*.svg" ]
+      }
     }
   ]
 }
