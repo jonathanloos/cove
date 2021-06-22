@@ -1,11 +1,13 @@
 {
   "name": "Cove",
   "short_name": "Cove",
-  "theme_color": "#F5AE70",
-  "background_color": "#F5AE70",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "categories": ["Mental Health", "Self Care"],
+  "description": "Cove provides you with easy and secure access to your safety plan whenever and wherever you need it most.",
   "display": "standalone",
-  "scope": "./",
-  "start_url": "./",
+  "scope": "/",
+  "start_url": "https://testing.d2yazbb87pwvcy.amplifyapp.com/",
   "prefer_related_applications": false,
   "icons": [
     {
