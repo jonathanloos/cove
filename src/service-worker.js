@@ -34,24 +34,24 @@ addEventListener('activate', (event) => {
  * on the scope of which your service worker was registered.
  * https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
  */
-// addEventListener('fetch', function(event) {
-//   //return fetch(event.request);
-//   console.log('[Service Worker] Fetch: ', event);
-//   let url = new URL(event.request.url);
-//   //url.pathname
-//   event.respondWith(
-//     caches.match(event.request).then(function(resp) {
-//       return resp || fetch(event.request).then(function(response) {
-//         return caches.open(appCache).then(function(cache) {
-//           if (event.request.method === 'GET') {
-//               cache.put(event.request, response.clone());
-//             }
-//           return response;
-//         });
-//       });
-//     })
-//   );
-// });
+addEventListener('fetch', function(event) {
+  //return fetch(event.request);
+  console.log('[Service Worker] Fetch: ', event);
+  let url = new URL(event.request.url);
+  //url.pathname
+  event.respondWith(
+    caches.match(event.request).then(function(resp) {
+      return resp || fetch(event.request).then(function(response) {
+        return caches.open(appCache).then(function(cache) {
+          if (event.request.method === 'GET') {
+              cache.put(event.request, response.clone());
+            }
+          return response;
+        });
+      });
+    })
+  );
+});
 
 /**
  * The message will receive messages sent from the application.
