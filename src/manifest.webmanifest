@@ -7,7 +7,7 @@
   "description": "Cove provides you with easy and secure access to your safety plan whenever and wherever you need it most.",
   "display": "standalone",
   "scope": "/",
-  "start_url": "https://testing.d2yazbb87pwvcy.amplifyapp.com/",
+  "start_url": "./index.html",
   "prefer_related_applications": false,
   "icons": [
     {

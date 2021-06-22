@@ -1,6 +1,6 @@
 var appCacheFiles = [
-    '../',
-    '../index.html'
+    './',
+    './index.html'
 ],
 
 // The name of the Cache Storage
