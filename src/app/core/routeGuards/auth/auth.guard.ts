@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
     const isSignedIn = await this.auth.isSignedIn();
 
     if(!isSignedIn){
-      this.router.navigateByUrl('/entry');
+      this.router.navigateByUrl('/welcome');
     }
 
     return isSignedIn;

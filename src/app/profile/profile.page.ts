@@ -110,7 +110,7 @@ export class ProfilePage implements OnInit {
 
   async signOut(){
     await this.authService.signOut().then(success => {
-      this.router.navigateByUrl('/entry');
+      this.router.navigateByUrl('/welcome');
     }, error => {
       console.log(error)
     })
@@ -141,21 +141,5 @@ export class ProfilePage implements OnInit {
     e.preventDefault();
     let element : HTMLElement = document.getElementById('profilePictureUpload') as HTMLElement;
     element.click();
-  }
-  
-  async showAlert(){
-    const alert = await this.alertController.create({
-      header: '🎉 Coming Soon 🎉',
-      message: "Support for images coming to Cove soon! 🎥 ",
-      buttons: [
-        {
-          text: 'Wicked',
-          role: 'cancel',
-          cssClass: 'btn btn-primary',
-        }
-      ]
-    });
-
-    await alert.present();
   }
 }

@@ -4,35 +4,10 @@ import { AuthGuard } from './core/routeGuards/auth/auth.guard';
 import { UniqueUserGuard } from './core/routeGuards/unique-user/unique-user.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: './tabs/tabs.module#TabsPageModule',
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'register',
-    loadChildren: './login-flow/register/register.module#RegisterPageModule',
-    canActivate: [UniqueUserGuard]
-  },
-  {
-    path: 'entry',
-    loadChildren: './login-flow/entry/entry.module#EntryPageModule',
-    canActivate: [UniqueUserGuard]
-  },
-  {
-    path: 'account-verification',
-    loadChildren: './login-flow/account-verification/account-verification.module#AccountVerificationPageModule',
-    canActivate: [UniqueUserGuard]
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login-flow/login/login.module').then( m => m.LoginPageModule)
-  },
-  {
-    path: 'password-reset',
-    loadChildren: () => import('./login-flow/password-reset/password-reset.module').then( m => m.PasswordResetPageModule),
-    canActivate: [UniqueUserGuard]
-  }
+  { path: 'welcome', loadChildren: './login-flow/welcome/welcome.module#WelcomePageModule' },
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthGuard] },
+  { path: 'register', loadChildren: './login-flow/register/register.module#RegisterPageModule', canActivate: [UniqueUserGuard] },
+  { path: 'account-verification', loadChildren: './login-flow/account-verification/account-verification.module#AccountVerificationPageModule', canActivate: [UniqueUserGuard] },
 ];
 @NgModule({
   imports: [
