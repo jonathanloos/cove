@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { User } from 'src/models';
 
 @Component({
-  selector: 'app-account-verification',
-  templateUrl: './account-verification.page.html',
-  styleUrls: ['./account-verification.page.scss'],
+  selector: 'app-verify',
+  templateUrl: './verify.component.html',
+  styleUrls: ['./verify.component.scss'],
 })
-export class AccountVerificationPage implements OnInit {
-
+export class VerifyComponent implements OnInit {
   private email =  localStorage.getItem("signup_email");
   verificationCodeForm: FormGroup;
   slideOpts = {
@@ -75,5 +74,4 @@ export class AccountVerificationPage implements OnInit {
     });
     await toast.present();
   }
-
 }
