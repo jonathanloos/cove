@@ -1,0 +1,16 @@
+<div class="d-flex flex-column justify-content-center align-items-center text-center mx-4 px-4 h-100">
+  <ion-avatar class="border shadow-sm mb-4" style="height: 80px !important; width: 80px !important;">
+    <img src="../assets/icons/icon-128x128.png">
+  </ion-avatar>
+  <h2 class="mt-4 text-white">Welcome to Cove</h2>
+  <div class="w-25"><hr class="border-white"/></div>
+  <p class="mb-4 p-0 text-white">For your safety, it is recommended that you complete your safety plan with someone supportive or a healthcare practitioner while you are not in a crisis.</p>
+  <div class="row w-100 mt-4">
+    <div class="col-6 p-1">
+      <ion-button class="w-100" color="primary" [routerLink]="['/welcome/login']" slot="start">Login</ion-button>
+    </div>
+    <div class="col-6 p-1">
+      <ion-button class="w-100" color="light" [routerLink]="['/welcome/register']" slot="end">Register</ion-button>
+    </div>
+  </div>
+</div>

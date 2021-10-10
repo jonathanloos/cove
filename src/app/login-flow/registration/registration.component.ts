@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { ToastController, LoadingController } from '@ionic/angular';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { User } from 'src/models';
-import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.page.html',
-  styleUrls: ['./register.page.scss'],
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegistrationComponent implements OnInit {
   private user: User;
   registerForm: FormGroup;
   slideOpts = {
@@ -68,5 +68,4 @@ export class RegisterPage implements OnInit {
     });
     await toast.present();
   }
-
 }

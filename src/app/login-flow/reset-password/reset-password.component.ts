@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastController, LoadingController } from '@ionic/angular';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { MustMatch } from 'src/app/_helpers/must-match.validator';
 
 @Component({
-  selector: 'app-password-reset',
-  templateUrl: './password-reset.page.html',
-  styleUrls: ['./password-reset.page.scss'],
+  selector: 'app-reset-password',
+  templateUrl: './reset-password.component.html',
+  styleUrls: ['./reset-password.component.scss'],
 })
-export class PasswordResetPage implements OnInit {
+export class ResetPasswordComponent implements OnInit {
   
   verificationCodeForm: FormGroup;
   private email =  localStorage.getItem("signup_email");
@@ -78,5 +78,5 @@ export class PasswordResetPage implements OnInit {
     });
     await toast.present();
   }
-}
 
+}

@@ -166,20 +166,4 @@ export class PersonComponent implements OnInit {
     let element : HTMLElement = document.getElementById(`contactPictureUpload-${this.contact.id}`) as HTMLElement;
     element.click();
   }
-  
-  async showAlert(){
-    const alert = await this.alertController.create({
-      header: '🎉 Coming Soon 🎉',
-      message: "Support for images coming to Cove soon! 🎥 ",
-      buttons: [
-        {
-          text: 'Wicked',
-          role: 'cancel',
-          cssClass: 'btn btn-primary',
-        }
-      ]
-    });
-
-    await alert.present();
-  }
 }

@@ -2,23 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastController, AlertController, LoadingController } from '@ionic/angular';
-import { DataStore } from 'aws-amplify';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-
-  slideOpts = {
-    allowSlideNext: false,
-    allowSlidePrev: false,
-    allowTouchMove: false
-  };
 
   constructor(
     private formBuilder: FormBuilder,
@@ -110,10 +103,8 @@ export class LoginPage implements OnInit {
           text: 'Continue',
           handler: async (data) => {
             await this.authService.sendForgotPasswordConfirmationCode(data.email).then(succ => {
-              console.log(succ)
               localStorage.setItem("signup_email", data.email);
-              console.log('navigate')
-              this.router.navigate(['/password-reset'])
+              this.router.navigate(['/welcome/reset-password'])
             })
             .catch(err => {this.presentToast(err.message, "danger")})
           }
