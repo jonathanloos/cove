@@ -1,0 +1,50 @@
+<ion-split-pane contentId="content"  when="(min-width: 766px)">
+  <ion-menu contentId="safety-plan-elements">
+    <ion-header no-border>
+      <ion-toolbar translucent>
+        <div class="d-flex justify-content-center">
+          <img src="../assets/logos/cove_logo_symbol_text.png" height="85px">
+        </div>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list class="mt-4">
+        <ion-list-header>
+          <ion-label><ion-text color="primary"><h1>Safety Plan</h1></ion-text></ion-label>
+        </ion-list-header>
+        <ion-menu-toggle auto-hide="false" *ngFor="let page of safety_plan_pages">
+          <ion-item [routerLink]="page.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(page.url)">
+            <ion-label>{{page.title}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-item lines="none"></ion-item>
+
+        <ion-list-header>
+          <ion-label><ion-text color="primary"><h1>Resources</h1></ion-text></ion-label>
+        </ion-list-header>
+        <ion-menu-toggle auto-hide="false" *ngFor="let page of resource_pages">
+          <ion-item [routerLink]="page.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(page.url)">
+            <ion-label>{{page.title}}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-stable">
+      <ion-menu-toggle auto-hide="false">
+        <ion-item [routerLink]="['/app/safety-plan/profile']" routerDirection="root" [class.active-item]="selectedPath.startsWith('/app/safety-plan/profile')">
+          <ion-avatar slot="start" (click)="openFileBrowser($event)" class="border">
+            <img src="{{imageUrl$ | async}}"/>
+          </ion-avatar>
+          <div *ngIf="user$ | async as user">
+            <ion-label>{{user.name}}</ion-label>
+          </div>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-footer-bar>
+  </ion-menu>
+
+  <div id="content">
+    <ion-router-outlet id="safety-plan-elements"></ion-router-outlet>
+  </div>
+</ion-split-pane>

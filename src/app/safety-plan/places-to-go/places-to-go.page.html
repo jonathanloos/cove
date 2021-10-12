@@ -1,8 +1,8 @@
-<ion-header no-border>
-  <app-top-toolbar [pageTitle]="'Places To Go'"></app-top-toolbar>
-</ion-header>
+<div class="px-2 mt-4">
+  <div class="d-md-none">
+    <app-top-toolbar [pageTitle]="'Places to Go'"></app-top-toolbar>
+  </div>
 
-<ion-content #content>
   <div *ngIf="user$ | async as user">
     <app-element-toolbar 
       [addBtnText]="'Place'" 
@@ -50,4 +50,4 @@
   <ng-template #showBlock>
     <app-place *ngFor="let place of places" [place]="place"></app-place>
   </ng-template>
-</ion-content>
+</div>

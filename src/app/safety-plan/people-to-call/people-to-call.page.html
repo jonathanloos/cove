@@ -1,8 +1,8 @@
-<ion-header no-border>
-  <app-top-toolbar [pageTitle]="'People To Call'"></app-top-toolbar>
-</ion-header>
+<div class="px-2 mt-4">
+  <div class="d-md-none">
+    <app-top-toolbar [pageTitle]="'People to Call'"></app-top-toolbar>
+  </div>
 
-<ion-content fullscreen #content>
   <div *ngIf="user$ | async as user">
     <app-element-toolbar 
       [addBtnText]="'Contact'" 
@@ -62,4 +62,4 @@
       <app-person [contact]="contact"></app-person>
     </ion-card>
   </ng-template>
-</ion-content>
+</div>

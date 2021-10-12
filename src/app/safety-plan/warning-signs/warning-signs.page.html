@@ -1,8 +1,8 @@
-<ion-header no-border>
-  <app-top-toolbar [pageTitle]="'Warning Signs'"></app-top-toolbar>
-</ion-header>
+<div class="px-2 mt-4">
+  <div class="d-md-none">
+    <app-top-toolbar [pageTitle]="'Warning Signs'"></app-top-toolbar>
+  </div>
 
-<ion-content #content fullscreen>
   <div *ngIf="user$ | async as user">
     <app-element-toolbar 
       [addBtnText]="'Warning Sign'" 
@@ -51,4 +51,4 @@
       <app-sign [sign]="sign"></app-sign>
     </ion-card>
   </ng-template>
-</ion-content>
+</div>

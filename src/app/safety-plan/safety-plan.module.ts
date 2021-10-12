@@ -1,19 +1,25 @@
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { SafetyPlanPageRoutingModule } from './safety-plan-routing.module';
+
 import { SafetyPlanPage } from './safety-plan.page';
+import { MenuComponent } from './menu/menu.component';
+import { TopToolbarComponent } from '../shared/top-toolbar/top-toolbar.component';
 import { ComponentModule } from '../shared/component.module';
 
 @NgModule({
   imports: [
-    IonicModule,
     CommonModule,
     FormsModule,
+    IonicModule,
     ComponentModule,
-    RouterModule.forChild([{ path: '', component: SafetyPlanPage }])
+    SafetyPlanPageRoutingModule
   ],
-  declarations: [SafetyPlanPage]
+  providers: [TopToolbarComponent],
+  declarations: [MenuComponent, SafetyPlanPage]
 })
 export class SafetyPlanPageModule {}
