@@ -1,26 +1,13 @@
-<ion-header no-border>
-  <app-top-toolbar [pageTitle]="'My Safety Plan'"></app-top-toolbar>
-</ion-header>
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="d-md-none">
+    <ion-tab-button (click)="openMenu()" [class.text-primary]="!selectedPath.includes('profile')">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>Safety Plan</ion-label>
+    </ion-tab-button>
 
-<ion-content>
-  <ion-card class="brainstorm-card">
-    <ion-card-content>
-      <div class="row w-100 border-bottom py-3 m-0" *ngFor="let item of menu_items; let i = index" [ngClass]="{'border-0': i == 4}" routerLink="{{item.path}}" routerDirection="forward">
-        <div class="col-2 px-0 d-flex align-items-center justify-content-center">
-          <div shape="round" class="sp-icon-div">
-            <ion-icon color="primary" name="{{item.icon}}"></ion-icon>
-          </div>
-        </div>
-        <div class="col-10 d-flex flex-row pr-0 align-items-center">
-          <div class="flex-grow-1 d-flex flex-column">
-            <h6 class="h6" style="padding-top: 5px;">{{item.title}}</h6>
-            <div *ngFor="let detail of item.details">
-              <ion-text class="caption subdued">{{detail}}</ion-text>
-            </div>
-          </div>
-          <ion-icon name="arrow-dropright" style="font-size: 24px;"></ion-icon>
-        </div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+    <ion-tab-button tab="profile">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

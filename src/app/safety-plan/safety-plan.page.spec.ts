@@ -9,7 +9,7 @@ describe('SafetyPlanPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SafetyPlanPage],
+      declarations: [ SafetyPlanPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 

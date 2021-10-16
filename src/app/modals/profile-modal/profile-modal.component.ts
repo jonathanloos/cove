@@ -26,16 +26,12 @@ export class ProfileModalComponent implements OnInit {
   ngOnInit() { 
     this.updateUserForm = this.formBuilder.group({
       name: [this.user.name, Validators.required],
-      bio: [this.user.bio, Validators.maxLength(140)]
     });
   }
 
   async saveUser(){
-    console.log(this.updateUserForm.value)
-    console.log(this.updateUserForm.valid)
     const updated_user = User.copyOf(this.user, (mutable_user: MutableModel<User>) => {
       mutable_user.name = this.updateUserForm.value.name;
-      mutable_user.bio = this.updateUserForm.value.bio;
     });
 
     await this.authService.updateUser(updated_user).then(async () => {

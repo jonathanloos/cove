@@ -26,7 +26,6 @@ import { SQLite } from '@ionic-native/sqlite/ngx';
  
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { GetHelpComponent } from './shared/get-help/get-help.component';
 
 /* Add Amplify imports */
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
@@ -70,7 +69,6 @@ import { AgmCoreModule } from '@agm/core';
     ContactService,
     PlaceService,
     LaunchNavigator,
-    GetHelpComponent,
     SQLite,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
