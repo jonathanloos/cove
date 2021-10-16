@@ -1,14 +1,10 @@
 <ion-header no-border>
-  <ion-toolbar >
-    <ion-item lines="none" class="mt-4" ion-no-padding>
-      <h2>
-        <span class="float-left mr-2">
-          <ion-avatar style="height: 30px; width: 30px;">
-            <img src="../../assets/icons/icon-128x128.png"/>
-          </ion-avatar>
-        </span>
-        {{payload.title}}
-      </h2>
+  <ion-toolbar>
+    <ion-item lines="none" ion-no-padding class="mt-4">
+      <ion-avatar style="height: 30px; width: 30px;" slot="start">
+        <img src="../../assets/icons/icon-128x128.png"/>
+      </ion-avatar>
+      <ion-label><h1>{{payload.title}}</h1></ion-label>
       <ion-chip outline color="dark" (click)="dismiss()" slot="end" class="mr-0">
         <ion-label>Close</ion-label>
       </ion-chip>

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { SafetyPlanPageRoutingModule } from './safety-plan-routing.module';
 
 import { SafetyPlanPage } from './safety-plan.page';
-import { MenuComponent } from './menu/menu.component';
 import { TopToolbarComponent } from '../shared/top-toolbar/top-toolbar.component';
 import { ComponentModule } from '../shared/component.module';
 
@@ -20,6 +19,6 @@ import { ComponentModule } from '../shared/component.module';
     SafetyPlanPageRoutingModule
   ],
   providers: [TopToolbarComponent],
-  declarations: [MenuComponent, SafetyPlanPage]
+  declarations: [SafetyPlanPage]
 })
 export class SafetyPlanPageModule {}

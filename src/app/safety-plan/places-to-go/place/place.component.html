@@ -25,23 +25,24 @@
   </form>
 </ng-template>
 <ng-template #showMap>
-  <ion-card class="brainstorm-card">
-    <ion-card-content class="p-0">
-      <div class="h-100 w-100 d-flex flex-row">
-        <div class="w-25 align-self-center">
-          <div *ngIf="(mapsURL$ | async) as mapsURL; else showQuestionMark">
-            <img src="{{mapsURL}}" height="100%" width="auto"/>
-          </div>
+  <ion-card class="brainstorm-card mx-1">
+    <ion-card-content class="px-2">
+      <ion-item lines="none" ion-no-padding>
+        <ion-avatar class="border" style="height: 70px !important; width: 70px !important; cursor: pointer;" slot="start" (click)="mapsSelector()">
+          <img src="{{mapsURL}}" *ngIf="(mapsURL$ | async) as mapsURL; else showQuestionMark"/>
           <ng-template #showQuestionMark>
             <img src="../assets/images/edit.png" style="height: 35px; width: 35px;" class="m-auto">
           </ng-template>
-        </div>
-        <div class="align-self-center m-3 w-75 d-flex flex-column">
-          <ion-text class="display-medium card-header-title" color="primary">{{place.title}}</ion-text>
-          <p>{{place.description}}</p>
-        </div>
-        <app-ellipsis [id]="place.id" [type]="'ptg'" slot="end"></app-ellipsis>
-      </div>
+        </ion-avatar>
+        <ion-text class="w-100">
+          <app-ellipsis [id]="place.id" [type]="'ptg'" class="float-right"></app-ellipsis>
+          <ion-text class="display-medium card-header-title d-block mb-0" color="primary">{{place.title}}</ion-text>
+          <small class="text-muted">{{this.place.address.street}}, {{this.place.address.city}}, {{this.place.address.postalCode}}</small>
+        </ion-text>
+      </ion-item>
+      <ion-item lines="none" class="mt-3" ion-no-padding *ngIf="place.description.length > 0">
+        <p>{{place.description}}</p>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ng-template>

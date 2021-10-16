@@ -9,10 +9,9 @@ const routes: Routes = [
     component: AppTemplatePage,
     children: [
       { path: 'safety-plan', loadChildren: '../safety-plan/safety-plan.module#SafetyPlanPageModule' },
-      { path: '', redirectTo: 'app/safety-plan/menu', pathMatch:'full' }
+      { path: '', redirectTo: 'app/safety-plan/coping-strategies', pathMatch:'full' }
     ]
-  },
-  { path: '', redirectTo: 'app/safety-plan/menu'}
+  }
 ];
 
 @NgModule({

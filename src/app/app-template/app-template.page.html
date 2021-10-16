@@ -1,4 +1,4 @@
-<ion-split-pane contentId="content"  when="(min-width: 766px)">
+<ion-split-pane contentId="safety-plan-elements"  when="(min-width: 766px)">
   <ion-menu contentId="safety-plan-elements">
     <ion-header no-border>
       <ion-toolbar translucent>
@@ -30,10 +30,11 @@
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
-    <ion-footer-bar class="bar-stable">
+
+    <ion-footer class="bar-stable">
       <ion-menu-toggle auto-hide="false">
         <ion-item [routerLink]="['/app/safety-plan/profile']" routerDirection="root" [class.active-item]="selectedPath.startsWith('/app/safety-plan/profile')">
-          <ion-avatar slot="start" (click)="openFileBrowser($event)" class="border">
+          <ion-avatar slot="start" class="border">
             <img src="{{imageUrl$ | async}}"/>
           </ion-avatar>
           <div *ngIf="user$ | async as user">
@@ -41,10 +42,8 @@
           </div>
         </ion-item>
       </ion-menu-toggle>
-    </ion-footer-bar>
+    </ion-footer>
   </ion-menu>
 
-  <div id="content">
-    <ion-router-outlet id="safety-plan-elements"></ion-router-outlet>
-  </div>
+  <ion-router-outlet id="safety-plan-elements"></ion-router-outlet>
 </ion-split-pane>

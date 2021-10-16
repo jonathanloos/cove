@@ -1,53 +1,55 @@
-<div class="px-2 mt-4">
-  <div class="d-md-none">
-    <app-top-toolbar [pageTitle]="'Places to Go'"></app-top-toolbar>
-  </div>
-
-  <div *ngIf="user$ | async as user">
-    <app-element-toolbar 
-      [addBtnText]="'Place'" 
-      [adding]="adding" 
-      [userId]="user.id"
-      [payload]="payload"
-      (reorderEvent)="toggleReorderGroup()"
-      (addingEvent)="adding = !adding"
-    ></app-element-toolbar>
-  </div>
-
-  <div *ngIf="adding">
-    <ion-card class="brainstorm-card m-1">
-      <form [formGroup]="PTGForm" (ngSubmit)="create()">
-        <ion-card-header class="card-header-border">
-          <ion-item lines="none" class="ion-no-padding">
-            <ion-input class="display-medium card-header-title" color="primary" placeholder="Title" name="title" formControlName="title"></ion-input>
+<div class="px-2 mt-4" style="overflow: scroll !important;">
+  <div>
+    <div class="d-md-none">
+      <app-top-toolbar [pageTitle]="'Places to Go'"></app-top-toolbar>
+    </div>
+  
+    <div *ngIf="user$ | async as user">
+      <app-element-toolbar 
+        [addBtnText]="'Place'" 
+        [adding]="adding" 
+        [userId]="user.id"
+        [payload]="payload"
+        (reorderEvent)="toggleReorderGroup()"
+        (addingEvent)="adding = !adding"
+      ></app-element-toolbar>
+    </div>
+  
+    <div *ngIf="adding">
+      <ion-card class="brainstorm-card m-1">
+        <form [formGroup]="PTGForm" (ngSubmit)="create()">
+          <ion-card-header class="card-header-border">
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-input class="display-medium card-header-title" color="primary" placeholder="Title" name="title" formControlName="title"></ion-input>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-textarea 
+              autoGrow="true"
+              class="body ion-no-padding" 
+              placeholder="Description"
+              name="description"
+              formControlName="description"
+              clearInput></ion-textarea>
+            <app-google-maps-search-bar (addressChanged)="updateAddress($event)"></app-google-maps-search-bar>
+            <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
+            <ion-button color="primary" (click)="create()" style="float: right; margin: 10px;">Save</ion-button>
+          </ion-card-content>
+        </form>
+      </ion-card>
+    </div>
+    <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
+      <ion-list>
+        <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
+          <ion-item *ngFor="let place of places" class="reorder-item" id="{{place.id}}">
+            <ion-label>{{place.title}}</ion-label>
+            <ion-reorder slot="end"></ion-reorder>
           </ion-item>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-textarea 
-            autoGrow="true"
-            class="body ion-no-padding" 
-            placeholder="Description"
-            name="description"
-            formControlName="description"
-            clearInput></ion-textarea>
-          <app-google-maps-search-bar (addressChanged)="updateAddress($event)"></app-google-maps-search-bar>
-          <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-          <ion-button color="primary" (click)="create()" style="float: right; margin: 10px;">Save</ion-button>
-        </ion-card-content>
-      </form>
-    </ion-card>
+        </ion-reorder-group>
+      </ion-list>
+    </ng-template>
+    <ng-template #showBlock>
+      <app-place *ngFor="let place of places" [place]="place"></app-place>
+    </ng-template>
   </div>
-  <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
-    <ion-list>
-      <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
-        <ion-item *ngFor="let place of places" class="reorder-item" id="{{place.id}}">
-          <ion-label>{{place.title}}</ion-label>
-          <ion-reorder slot="end"></ion-reorder>
-        </ion-item>
-      </ion-reorder-group>
-    </ion-list>
-  </ng-template>
-  <ng-template #showBlock>
-    <app-place *ngFor="let place of places" [place]="place"></app-place>
-  </ng-template>
 </div>

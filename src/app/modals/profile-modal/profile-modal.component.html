@@ -17,10 +17,6 @@
           <ion-label position="stacked">Name:</ion-label>
           <ion-input name="name" formControlName="name"></ion-input>
         </ion-item>
-        <ion-item lines="none" class="ion-no-padding" style="min-height: 40px;">
-          <ion-label position="stacked">Bio:</ion-label>
-          <ion-textarea name="bio" formControlName="bio" maxlength="140" autoGrow="true" style="min-height: 40px;"></ion-textarea>
-        </ion-item>
         <ion-button (click)="saveUser()" [disabled]="!updateUserForm.valid">Submit</ion-button>
       </form>
     </ion-card-content>

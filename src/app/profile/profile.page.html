@@ -7,28 +7,23 @@
 
 <ion-content>
   <div *ngIf="user$ | async as user">
-    <div class="row m-4 mb-0">
-      <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+    <div class="row mx-4 my-0">
+      <div class="col-md-3 d-flex flex-column justify-content-center align-items-center">
           <ion-avatar (click)="openFileBrowser($event)" class="border position-relative" style="height: 100px !important; width: 100px !important; cursor: pointer;">
             <img src="{{imageUrl$ | async}}"/>
             <div class="position-absolute" style="bottom: 0; right: 0;"><ion-badge color="light"><ion-icon name="create"></ion-icon> edit</ion-badge></div>
           </ion-avatar>
         <input class="d-none" type="file" id="profilePictureUpload" (change)="uploadFile($event)" accept='image/png'>
       </div>
-      <div class="col-9 text-left">
-          <h3 class="mb-0">{{user.name}}</h3>
-          <hr class="mt-1 mb-2"/>
+      <div class="col-md-9 text-center d-flex flex-column justify-content-center">
+          <h3 class="d-none d-md-block mb-0">{{user.name}}</h3>
+          <h3 class="d-md-none mt-3 mb-0">{{user.name}}</h3>
+          <div>
+            <hr class="mt-1 mb-2"/>
+          </div>
           <small class="text-muted mb-0">{{user.email}}</small>
       </div>
     </div>
-    <p class="mx-4 px-2 text-muted">
-      <ng-template [ngIf]="(user$ | async).bio?.length > 0" [ngIfElse]="promptBio">
-        {{user.bio}}
-      </ng-template>
-      <ng-template #promptBio>
-        Add your bio in settings!
-      </ng-template>
-    </p>
   </div>
   <div class="row mx-4 mt-4 mb-0 align-items-center">
     <div class="col-6 p-0 text-center w-100 h-100">

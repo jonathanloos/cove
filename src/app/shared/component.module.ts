@@ -4,7 +4,6 @@ import { EllipsisComponent } from './ellipsis/ellipsis.component';
 import { EditPopoverComponent } from './edit-popover/edit-popover.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { ModalComponent } from './get-help/modal/modal.component';
 import { EmptyStateButtonComponent } from './empty-state-button/empty-state-button.component';
 import { GoogleMapsSearchBarComponent } from './google-maps-search-bar/google-maps-search-bar.component';
 import { AgmCoreModule } from '@agm/core';
@@ -17,7 +16,6 @@ import { TopToolbarComponent } from './top-toolbar/top-toolbar.component';
   declarations: [
     EllipsisComponent, 
     EditPopoverComponent, 
-    ModalComponent, 
     EmptyStateButtonComponent,
     GoogleMapsSearchBarComponent,
     ElementToolbarComponent,

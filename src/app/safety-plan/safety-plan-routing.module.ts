@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
 
 import { SafetyPlanPage } from './safety-plan.page';
 
@@ -15,7 +14,6 @@ const routes: Routes = [
       { path: 'places-to-go', loadChildren: '../safety-plan/places-to-go/places-to-go.module#PlacesToGoPageModule' },
       { path: 'resources', loadChildren: '../help-resources/resources.module#ResourcesPageModule' },
       { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
-      { path: 'menu', component: MenuComponent },
       { path: '', redirectTo: 'app/safety-plan/coping-strategies', pathMatch: 'full'}
     ]
   },
