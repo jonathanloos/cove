@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Plugins } from '@capacitor/core';
+import { Device } from '@capacitor/device';
+import { Browser } from '@capacitor/browser';
+import { AppAvailability } from '@ionic-native/app-availability/ngx';
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
-const { Device } = Plugins;
-const { inAppBrowser } = Plugins;
-const { appAvailability } = Plugins;
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,8 @@ export class ExternalAppService {
   deviceInfo;
 
   constructor(
-    private launchNav: LaunchNavigator
+    private launchNav: LaunchNavigator,
+    private appAvailability: AppAvailability
   ) { 
     this.deviceInfo = Device.getInfo();
   }
@@ -38,6 +38,7 @@ export class ExternalAppService {
 
   launchExternalApp(iosSchemaName: string, androidPackageName: string, appUrl: string, httpUrl: string, credentials: string){
     let app: string;
+
     if (this.deviceInfo.platform === 'iOS') {
       app = iosSchemaName;
     } else if (this.deviceInfo.platform === 'Android') {
@@ -47,12 +48,12 @@ export class ExternalAppService {
       return;
     }
 
-    appAvailability.canOpenUrl(app).then(
+    this.appAvailability.check(app).then(
       () => { // success callback
-        inAppBrowser.open(appUrl + credentials, '_system');
+        Browser.open({url: appUrl + credentials});
       },
       () => { // error callback
-        inAppBrowser.open(httpUrl + credentials, '_system');
+        Browser.open({url: httpUrl + credentials});
       }
     );
   }

@@ -58,7 +58,7 @@ export class ResetPasswordComponent implements OnInit {
         await this.authService.signIn(this.email, this.verificationCodeForm.value.newPassword).then(async (res) => {
           loading.dismiss();
           this.presentToast("🎉 Success!", "primary");
-            const url = "/tabs/safety-plan"
+            const url = "/app/safety-plan/coping-strategies"
             this.router.navigateByUrl(url);
         })
         .catch(err => { loading.dismiss(); this.presentToast(err.message, "danger") })

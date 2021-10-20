@@ -1,11 +1,1 @@
-{
-  "appId": "io.essentiahealth.cove",
-  "appName": "Cove",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "cordova": {},
-  "android": {
-    "allowMixedContent": true
-  }
-}
+{}

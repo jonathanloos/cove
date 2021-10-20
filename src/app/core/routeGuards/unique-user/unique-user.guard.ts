@@ -17,7 +17,7 @@ export class UniqueUserGuard implements CanActivate {
 
     if(isSignedIn){
       console.log("Redirect to safety plan")
-      this.router.navigateByUrl('/tabs/safety-plan');
+      this.router.navigateByUrl('/app/safety-plan/coping-strategies');
     }
 
     return !isSignedIn;

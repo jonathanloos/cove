@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         // await this.authService.scrubLocalDb(res.attributes.sub).then(async () => {
         this.loginForm.reset();
 
-        const url = "/tabs/safety-plan";
+        const url = "/app/safety-plan/coping-strategies";
         this.router.navigateByUrl(url);
         // });
       })

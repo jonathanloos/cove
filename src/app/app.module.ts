@@ -29,8 +29,8 @@ import { environment } from '../environments/environment';
 import { GetHelpComponent } from './shared/get-help/get-help.component';
 
 /* Add Amplify imports */
-import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { AgmCoreModule } from '@agm/core';
+import { AppAvailability } from '@ionic-native/app-availability/ngx';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,6 @@ import { AgmCoreModule } from '@agm/core';
       enabled: environment.production,
       registrationStrategy: "registerImmediately"
     }),  
-    AmplifyUIAngularModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDER16t6Erih2cQQzSyPI50sKtQ1EVcyPc',
       libraries: ['places']
@@ -70,7 +69,7 @@ import { AgmCoreModule } from '@agm/core';
     ContactService,
     PlaceService,
     LaunchNavigator,
-    GetHelpComponent,
+    AppAvailability,
     SQLite,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

@@ -55,7 +55,7 @@ export class AccountVerificationPage implements OnInit {
           await this.authService.register(user).then(() => {
             this.verificationCodeForm.reset();
 
-            const url = "/tabs/safety-plan"
+            const url = "/app/safety-plan/coping-strategies"
             this.router.navigateByUrl(url);
           });
         })
