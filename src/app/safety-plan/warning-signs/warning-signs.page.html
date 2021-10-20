@@ -1,54 +1,56 @@
-<ion-header no-border>
-  <app-top-toolbar [pageTitle]="'Warning Signs'"></app-top-toolbar>
-</ion-header>
-
-<ion-content #content fullscreen>
-  <div *ngIf="user$ | async as user">
-    <app-element-toolbar 
-      [addBtnText]="'Warning Sign'" 
-      [adding]="adding" 
-      [userId]="user.id"
-      [payload]="payload"
-      (reorderEvent)="toggleReorderGroup()"
-      (addingEvent)="adding = !adding"
-    ></app-element-toolbar>
-  </div>
-
-  <div *ngIf="adding">
-    <form [formGroup]="wsForm" >
-      <ion-card class="brainstorm-card mt-1">
-        <ion-card-header class="card-header-border">
-          <ion-item lines="none" class="ion-no-padding">
-            <ion-input class="display-medium card-header-title" color="primary" name="title" formControlName="title" placeholder="Title"></ion-input>
+<div class="px-2 mt-4" style="overflow: scroll !important;">
+  <div>
+    <div class="d-md-none">
+      <app-top-toolbar [pageTitle]="'Warning Signs'"></app-top-toolbar>
+    </div>
+  
+    <div *ngIf="user$ | async as user">
+      <app-element-toolbar 
+        [addBtnText]="'Warning Sign'" 
+        [adding]="adding" 
+        [userId]="user.id"
+        [payload]="payload"
+        (reorderEvent)="toggleReorderGroup()"
+        (addingEvent)="adding = !adding"
+      ></app-element-toolbar>
+    </div>
+  
+    <div *ngIf="adding">
+      <form [formGroup]="wsForm" >
+        <ion-card class="brainstorm-card mt-1">
+          <ion-card-header class="card-header-border">
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-input class="display-medium card-header-title" color="primary" name="title" formControlName="title" placeholder="Title"></ion-input>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-textarea 
+                autoGrow="true"
+                class="body ion-no-padding" 
+                name="description" 
+                formControlName="description"
+                placeholder="Description"
+                clearInput></ion-textarea>
+          </ion-card-content>
+          <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
+          <ion-button color="primary" (click)="create()" style="float: right; margin: 10px;">Save</ion-button>
+        </ion-card>
+      </form>
+    </div>
+    <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
+      <ion-list>
+        <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
+          <ion-item *ngFor="let sign of signs" class="reorder-item" id="{{sign.id}}">
+            <ion-label>{{sign.title}}</ion-label>
+            <ion-reorder slot="end"></ion-reorder>
           </ion-item>
-        </ion-card-header>
-        <ion-card-content>
-            <ion-textarea 
-              autoGrow="true"
-              class="body ion-no-padding" 
-              name="description" 
-              formControlName="description"
-              placeholder="Description"
-              clearInput></ion-textarea>
-        </ion-card-content>
-        <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
-        <ion-button color="primary" (click)="create()" style="float: right; margin: 10px;">Save</ion-button>
+        </ion-reorder-group>
+      </ion-list>
+    </ng-template>
+    <ng-template #showBlock>
+      <ion-card *ngFor="let sign of signs; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
+        <app-sign [sign]="sign"></app-sign>
       </ion-card>
-    </form>
+    </ng-template>
   </div>
-  <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
-    <ion-list>
-      <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
-        <ion-item *ngFor="let sign of signs" class="reorder-item" id="{{sign.id}}">
-          <ion-label>{{sign.title}}</ion-label>
-          <ion-reorder slot="end"></ion-reorder>
-        </ion-item>
-      </ion-reorder-group>
-    </ion-list>
-  </ng-template>
-  <ng-template #showBlock>
-    <ion-card *ngFor="let sign of signs; let i = index" class="brainstorm-card" [ngClass]="{'mt-1': i === 0}">
-      <app-sign [sign]="sign"></app-sign>
-    </ion-card>
-  </ng-template>
-</ion-content>
+</div>

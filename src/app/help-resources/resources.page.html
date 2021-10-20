@@ -1,8 +1,8 @@
-<ion-header no-border>
-  <app-top-toolbar [pageTitle]="'Help Resources'"></app-top-toolbar>
-</ion-header>
+<div class="px-2 mt-4">
+  <div class="d-md-none">
+    <app-top-toolbar [pageTitle]="'Help Resources'"></app-top-toolbar>
+  </div>
 
-<ion-content>
   <div *ngIf="(favouriteResources$ | async)?.length > 0">
     <ion-item lines="none">
       <h4 class="text-primary mb-2 mt-4">Favourites</h4>
@@ -76,4 +76,4 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-</ion-content>
+</div>
