@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/github/license/rails/rails)](https://github.com/jonathanloos/cove)
+
 # Cove
 
 ## 🏝 About the initiative
