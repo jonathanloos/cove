@@ -55,7 +55,7 @@ amplify console api
 
 3. Click on __Queries__ to open the GraphiQL Editor. Login with your username and use the `aws_user_pools_web_client_id` located in __aws-exports.js__ for the ClientId.
 
-4. Create help resources manually to be able to select them within the app. This list is universal and will be accessible to all users.
+4. Create help resources manually to be able to select them within the app. This list is universal and will be accessible to all users. Make sure to provide resources that you or others using the app have access to.
 
 ```graphql
 mutation createHelpResource {
@@ -78,8 +78,7 @@ mutation createHelpResource {
 }
 ```
 
-
-
-
+## We need your help
+Cove is looking for contributors / maintainers! Think you could support the platform? Maybe contribute something awesome and meaningful to the mental health community? This is your chance! Drop us a lin on our website [trycove.ca](trycove.ca) or create an issue/PR.
 
 
