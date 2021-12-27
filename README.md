@@ -3,7 +3,7 @@
 ## 🏝 About the initiative
 We're a team of recent University of Waterloo graduates who found a passion for helping others who may be struggling with mental health. With cove, users can build their personalized, digital safety plan and access it anytime, anywhere, on any platform and uner any network conditions. 
 
-> To learn more about our venture, drop us a line at [trycove.ca](https://trycove.ca).
+> To learn more about our venture, reach out to us at [trycove.ca](https://trycove.ca).
 
 ## 🏔 First, a note on mental health
 First and foremost, we recognize mental health affects us all in different ways. We encourage anyone who feels like they are struggling or have a friend who is struggling to reach out, seek help and support others whenever possible.
