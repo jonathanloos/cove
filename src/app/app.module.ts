@@ -51,7 +51,7 @@ import { AppAvailability } from '@ionic-native/app-availability/ngx';
       registrationStrategy: "registerImmediately"
     }),  
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDER16t6Erih2cQQzSyPI50sKtQ1EVcyPc',
+      apiKey: 'INSERT_GCP_API_KEY',
       libraries: ['places']
     })
   ],
