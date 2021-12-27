@@ -7,6 +7,7 @@ import { Place } from 'src/models';
 import { MutableModel } from "@aws-amplify/datastore";
 import { Subject, BehaviorSubject } from 'rxjs';
 import { ActionSheetController } from '@ionic/angular';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-place',
@@ -143,13 +144,13 @@ export class PlaceComponent implements OnInit {
       size: size,
       maptype: 'roadmap',
       markers: 'color:blue%7C' + this.place.latitude + ',' + this.place.longitude,
-      key: 'AIzaSyDER16t6Erih2cQQzSyPI50sKtQ1EVcyPc'
+      key: environment.GCP_MAPS_API_KEY
     }
     let fullUrl = baseline
     for (let [key, value] of Object.entries(params)) {
       fullUrl += key + '=' + value + '&'
     }
-
+    
     this.mapsURL$.next(fullUrl);
   }
 }

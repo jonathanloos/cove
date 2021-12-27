@@ -38,11 +38,18 @@ amplify push
 ```
 > We already have the GraphQL code generated for this project, so generating it here is not necessary.
 
-### 3. Start the App (Once backend is finished deploying)
-```sh
-ng serve
-```
+### 3. Configure GCP Key
+Cove uses Google Maps to search and display location data. To enable it, follow these steps:
+1. Create a GCP API Key as seen [here](https://cloud.google.com/docs/authentication/api-keys#creating_an_api_key)
+2. Ensure the following APIs are enabled for the API key: Geocoding API, Maps Javascript API, Maps Static API and Places API.
+3. Create a `.env` file in the root directory with: `GCP_MAPS_API_KEY=INSERT_GCP_KEY_HERE` and replace `INSERT_GCP_KEY_HERE` with the newly generated key.
+4. Create the `GCP_MAPS_API_KEY` environment variable in the AWS Amplify Console
 
+### 4. Start the App (Once backend is finished deploying)
+```sh
+ng start
+```
+> **Note**: npm start will first set the environment vairables in `.env` then start the app.
 ## 🎉 Usage
 ### Create Help Resources
 1. Sign up in the app after following the previous steps

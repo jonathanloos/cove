@@ -33,6 +33,12 @@ android/
 /www
 resources/
 
+# Environments
+# https://betterprogramming.pub/how-to-secure-angular-environment-variables-for-use-in-github-actions-39c07587d590
+src/environments/environment.ts
+src/environments/environment.prod.ts
+.env
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
