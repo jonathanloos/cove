@@ -1,0 +1,137 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+$theme-colors: (
+  "primary": #38A7C3,
+  "secondary": #86DCDC,
+  "tertiary": #7044ff,
+  "success": #10dc60,
+  "warning": #F5AE70,
+  "danger": #f04141,
+  "dark": #222428,
+  "medium": #6c757d,
+  "light": #e6eaed
+);
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+.brainstorm-card{
+    border: 1px solid rgba(228, 228, 228, 0.6);
+    box-shadow: 0px 4px 8px rgba(50, 50, 71, 0.06), 0px 4px 4px rgba(50, 50, 71, 0.08);
+    border-radius: 10px;
+}
+
+.btn-guided-mode{
+    margin: 0 20px 0px 20px;
+    box-shadow: 0px 4px 8px rgba(50, 50, 71, 0.06), 0px 4px 4px rgba(50, 50, 71, 0.08);
+}
+
+.sp-icon-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.h1{
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 41px;
+}
+
+.h6{
+    font-size: 15px;
+    line-height: 20px;
+    color: #4F4F4F;
+}
+
+.heading{
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.caption{
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0px;
+}
+
+.subdued{
+    color: #637381;
+}
+
+.btn-back{
+    --border: none;
+    --box-shadow: none;
+    margin: 0px;
+    margin-top: 5%;
+    margin-bottom: auto;
+    --padding-start: 0px;
+    --padding-end: 0px;
+}
+
+.display-medium{
+    font-size: 21px;
+    line-height: 28px;
+}
+
+.body{
+    --font-size: 15px;
+    --line-height: 20px;
+    margin-top: 16px !important;
+    color: #212B36;
+}
+
+.card-header-border{
+    border-bottom: 0.5px solid rgba(228, 228, 228, 0.6);
+}
+
+.remove-btn{
+    --box-shadow: none;
+}
+
+.btn-ellipse{
+    --box-shadow: none;
+}
+
+.btn-action{
+    border: 1px solid #6979F8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    --box-shadow: none;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

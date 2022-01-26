@@ -1,0 +1,81 @@
+type User @model {
+  id: ID!
+  userSub: ID!
+  name: String
+  email: String!
+  phone: String
+  bio: String
+  warningSigns: [WarningSign] @hasMany
+  copingStrategies: [CopingStrategy] @hasMany
+  contacts: [Contact] @hasMany
+  places: [Place] @hasMany
+  favouriteResources: [FavouriteUserResources] @hasMany
+}
+
+type WarningSign @model {
+  id: ID!
+  user: User! @belongsTo
+  title: String!
+  description: String
+  order: Int
+}
+
+type CopingStrategy @model {
+  id: ID!
+  user: User! @belongsTo
+  title: String!
+  description: String
+  order: Int
+}
+
+type Contact @model {
+  id: ID!
+  user: User! @belongsTo
+  name: String
+  automaticTextMessage: String!
+  phone: String
+  order: Int
+}
+
+type Place @model {
+  id: ID!
+  user: User! @belongsTo
+  title: String!
+  description: String
+  address: Address
+  latitude: Float
+  longitude: Float
+  order: Int
+}
+
+type Address {
+  street: String,
+  city: String,
+  postalCode: String,
+  province: String,
+  country: String
+}
+
+type FavouriteUserResources @model {
+    id: ID!
+    resourceID: ID!
+    resource: HelpResource! @belongsTo
+    user: User! @belongsTo
+}
+
+type HelpResource @model {
+  id: ID!
+  title: String!
+  description: String
+  phone: ResourceContactInformation
+  sms: ResourceContactInformation
+  live_chat: Boolean
+  img_url: String
+  url: String
+  userFavourites: [FavouriteUserResources] @hasMany
+}
+
+type ResourceContactInformation {
+  number: String,
+  hoursOfOperation: String
+}

@@ -1,0 +1,67 @@
+<div class="px-2 mt-4" style="overflow: scroll !important;">
+  <div>
+    <div class="d-md-none">
+      <app-top-toolbar [pageTitle]="'People to Call'"></app-top-toolbar>
+    </div>
+  
+    <div *ngIf="user$ | async as user">
+      <app-element-toolbar 
+        [addBtnText]="'Contact'" 
+        [adding]="adding" 
+        [userId]="user.id"
+        [payload]="payload"
+        (reorderEvent)="toggleReorderGroup()"
+        (addingEvent)="adding = !adding"
+      ></app-element-toolbar>
+    </div>
+    
+    <div *ngIf="adding">
+      <form [formGroup]="newPTCForm" (ngSubmit)="create()">
+        <ion-card class="brainstorm-card mt-1">
+          <ion-card-header class="card-header-border">
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-avatar slot="start">
+                <img src="../../../assets/avatars/img_avatar2.png"/>
+              </ion-avatar>
+              <ion-label position="floating">
+                <p class="body subdued" style="margin-top: 0px !important;">Name</p>
+              </ion-label>
+              <ion-input name="name" formControlName="name" class="heading ion-no-padding" (keyup)="updateDefaultMessage($event)"></ion-input>
+            </ion-item>
+          </ion-card-header>
+          <ion-card-content>
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label position="floating">
+                  <p class="body subdued" style="margin-top: 0px !important;">Phone</p>
+                </ion-label>
+                <ion-input name="phone" formControlName="phone" class="body" style="margin-top: 0px !important;"></ion-input>
+              </ion-item>
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label position="stacked">
+                  <p class="body subdued" style="margin-top: 0px !important;">Automatic Message</p>
+                </ion-label>
+                <ion-textarea name="automaticTextMessage" formControlName="automaticTextMessage" class="body" style="margin-top: 0px !important;" value="{{defaultMessage}}" autoGrow="true"></ion-textarea>
+              </ion-item>
+              <button color="light" class="btn bg-transparent border-0 text-primary text-underline float-left m-2" (click)="cancel()"><u>Cancel</u></button>
+              <ion-button color="primary" (click)="create()" style="float: right; margin: 10px;" [disabled]="!newPTCForm.valid">Save</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </form>
+    </div>
+    <ng-template [ngIf]="reordering" [ngIfElse]="showBlock">
+      <ion-list>
+        <ion-reorder-group id="reorder" (ionItemReorder)="doReorder($event)" disabled="false">
+          <ion-item *ngFor="let contact of personal_contacts" class="reorder-item" id="{{contact.id}}">
+            <ion-label>{{contact.name}}</ion-label>
+            <ion-reorder slot="end"></ion-reorder>
+          </ion-item>
+        </ion-reorder-group>
+      </ion-list>
+    </ng-template>
+    <ng-template #showBlock>
+      <ion-card *ngFor="let contact of personal_contacts; let i = index" class="brainstorm-card mx-1" [ngClass]="{'mt-1': i === 0}">
+        <app-person [contact]="contact"></app-person>
+      </ion-card>
+    </ng-template>
+  </div>
+</div>

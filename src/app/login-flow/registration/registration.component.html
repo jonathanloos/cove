@@ -1,0 +1,20 @@
+<div class="d-flex flex-column justify-content-center align-items-center text-center mx-4 px-4 h-100">
+  <ion-avatar class="border shadow-sm mb-4" style="height: 80px !important; width: 80px !important;">
+    <img src="../assets/icons/icon-128x128.png">
+  </ion-avatar>
+  <h2 class="m-0 text-white">Hey there! Lets get started.</h2>
+  <div class="w-25"><hr class="border-white"/></div>
+  <p class="mb-4 text-white d-none d-md-block">We're excited to have you join our community. To help keep your information safe and secure, please provide your email and a password.</p>
+  <form class="w-100" [formGroup]="registerForm">
+    <ion-item class="p-0">
+      <ion-input name="email" formControlName="email" type="text" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item class="my-4">
+      <ion-input name="password" formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-button class="mt-4" color="primary" (click)="proceedToVerification()" expand="block">Register</ion-button>
+  </form>
+  <div class="d-flex flex-row w-100 justify-content-start mt-2">
+    <a class="btn text-white" [routerLink]="['/welcome']"><ion-icon name="arrow-back"></ion-icon> Back</a>
+  </div>
+</div>

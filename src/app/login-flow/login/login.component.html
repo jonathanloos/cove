@@ -1,0 +1,23 @@
+<div class="d-flex flex-column justify-content-center align-items-center text-center mx-4 px-4 h-100">
+  <ion-avatar class="border shadow-sm mb-4" style="height: 80px !important; width: 80px !important;">
+    <img src="../assets/icons/icon-128x128.png">
+  </ion-avatar>
+  <h2 class="m-0 text-white">Glad to have you back</h2>
+  <div class="w-25"><hr class="border-white"/></div>
+  <p class="mb-4 text-white d-none d-md-block">Always remember you matter, you are worth it and you are <ion-text color="danger">loved.</ion-text></p>
+  <form class="w-100" [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item class="p-0 rounded w-100">
+      <ion-input name="email" formControlName="email" type="text" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item class="mt-4">
+      <ion-input name="password" formControlName="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <div class="d-flex flex-row w-100 justify-content-end">
+      <a class="btn text-white" (click)="launchPasswordResetFlow()"><small>Forgot your password?</small></a>
+    </div>
+    <ion-button class="mt-2" color="primary" (click)="login()" expand="block">Login</ion-button>
+  </form>
+  <div class="d-flex flex-row w-100 justify-content-start mt-2">
+    <a class="btn text-white" [routerLink]="['/welcome']"><ion-icon name="arrow-back"></ion-icon> Back</a>
+  </div>
+</div>

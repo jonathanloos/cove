@@ -1,0 +1,18 @@
+<div class="d-flex flex-column justify-content-center align-items-center text-center mx-4 px-4 h-100">
+  <ion-avatar class="border shadow-sm mb-4" style="height: 80px !important; width: 80px !important;">
+    <img src="../assets/icons/icon-128x128.png">
+  </ion-avatar>
+  <h2 class="m-0 text-white">Check your email!</h2>
+  <div class="w-25"><hr class="border-white"/></div>
+  <p class="mb-4 text-white d-none d-md-block">We've sent you a 6 digit confirmation code to finish your account setup. Please type it in below: </p>
+  <form class="w-100" [formGroup]="verificationCodeForm">
+    <ion-item class="rounded">
+      <ion-input name="code" formControlName="code" type="number" placeholder="Verification Code"></ion-input>
+      <small><ion-text id="formErrors" color="danger"></ion-text></small>
+    </ion-item>
+    <ion-button class="mt-4" color="primary" (click)="confirmVerificationCode()" expand="block">Confirm Account</ion-button>
+  </form>
+  <div class="d-flex flex-row w-100 justify-content-start mt-2">
+    <a class="btn text-white" [routerLink]="['/welcome/register']"><ion-icon name="arrow-back"></ion-icon> Back</a>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<ion-header no-border>
+  <div class="mx-4 d-flex py-3 justify-content-end text-muted">
+    <a class="h4 m-0 mr-3" href="sms:/&body='Hey there, have you heard of trycove.ca?'"><ion-icon name="share"></ion-icon></a>
+    <span class="h4 m-0" (click)="settings()"><ion-icon name="settings"></ion-icon></span>
+  </div>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="user$ | async as user">
+    <div class="row mx-4 my-0">
+      <div class="col-md-3 d-flex flex-column justify-content-center align-items-center">
+          <ion-avatar (click)="openFileBrowser($event)" class="border position-relative" style="height: 100px !important; width: 100px !important; cursor: pointer;">
+            <img src="{{imageUrl$ | async}}"/>
+            <div class="position-absolute" style="bottom: 0; right: 0;"><ion-badge color="light"><ion-icon name="create"></ion-icon> edit</ion-badge></div>
+          </ion-avatar>
+        <input class="d-none" type="file" id="profilePictureUpload" (change)="uploadFile($event)" accept='image/png'>
+      </div>
+      <div class="col-md-9 text-center d-flex flex-column justify-content-center">
+          <h3 class="d-none d-md-block mb-0">{{user.name}}</h3>
+          <h3 class="d-md-none mt-3 mb-0">{{user.name}}</h3>
+          <div>
+            <hr class="mt-1 mb-2"/>
+          </div>
+          <small class="text-muted mb-0">{{user.email}}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row mx-4 mt-4 mb-0 align-items-center">
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{warningSignCount$ | async}}</h3>
+        <span><small>Warning Signs</small></span>
+      </div>
+    </div>
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{copingStrategyCount$ | async}}</h3>
+        <span><small>Coping Strategies</small></span>
+      </div>
+    </div>
+  </div>
+  <div class="row mx-4 mt-0 mb-4 align-items-center">
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{placesCount$ | async}}</h3>
+        <span><small>Places To Go</small></span>
+      </div>
+    </div>
+    <div class="col-6 p-0 text-center w-100 h-100">
+      <div class="rounded m-1 p-2 bg-light text-dark d-flex flex-column mb-0">
+        <h3 class="text-primary my-1">{{contactsCount$ | async}}</h3>
+        <span><small>People To Call</small></span>
+      </div>
+    </div>
+  </div>
+  <ion-card class="brainstorm-card">
+    <ion-card-content>
+      <ion-list>
+        <ion-item class="ion-no-padding other-items" *ngFor="let item of menu_items; let i = index" [ngClass]="{'first-item': i == 0, 'last-item': i == 3}" (click)="openWebsite()">
+          <ion-grid>
+            <ion-row style="width: 100%;">
+              <ion-col size="2" style="text-align: center;">
+                <div shape="round" class="sp-icon-div">
+                  <ion-icon color="primary" name="{{item.icon}}"></ion-icon>
+                </div>
+              </ion-col>
+              <ion-col size="10">
+                  <h6 class="h6" style="padding-top: 5px;">{{item.title}}</h6>
+                  <div *ngFor="let detail of item.details">
+                    <ion-text class="caption subdued list-ws-item">{{detail}}</ion-text>
+                  </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <div class="w-100 text-center">
+    <span color="light" class="btn bg-transparent border-0 text-primary text-underline m-2" (click)="signOut()"><u>Sign Out</u></span>
+  </div>
+</ion-content>

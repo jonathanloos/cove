@@ -1,0 +1,8 @@
+{
+  "name": "Cove",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

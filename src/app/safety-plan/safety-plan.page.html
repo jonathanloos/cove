@@ -1,0 +1,13 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom" class="d-md-none">
+    <ion-tab-button (click)="openMenu()" [class.text-primary]="!selectedPath.includes('profile')">
+      <ion-icon name="apps"></ion-icon>
+      <ion-label>Safety Plan</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
