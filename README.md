@@ -8,8 +8,7 @@
 [![License](https://img.shields.io/github/license/rails/rails)](https://github.com/jonathanloos/cove)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/jonathanloos/cove)
 ![GitHub issues](https://img.shields.io/github/issues/jonathanloos/cove)
-![Forks](https://img.shields.io/github/forks/jonathanloos/cove.svg)
-![Issues Closed](https://img.shields.io/github/issues-closed/{username}/{repo-name}.svg)
+![Issues Closed](https://img.shields.io/github/issues-closed/jonathanloos/cove.svg)
 
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
